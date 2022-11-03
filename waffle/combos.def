@@ -1,0 +1,17 @@
+// Copyright 2022 jack (@waffle87)
+// SPDX-License-Identifier: GPL-2.0-or-later
+
+//  name     output   keys
+CMB(ru_ent,  KC_ENT,  KC_R, KC_U)
+CMB(dk_eql,  KC_EQL,  LCTL_T(KC_D), RCTL_T(KC_K))
+CMB(gh_quot, TD(QUOT_DQUO), KC_G, KC_H)
+CMB(vm_ques, KC_QUES, KC_V, KC_M)
+CMB(ty_coln, KC_COLN, KC_T, KC_Y)
+CMB(bn_unds, KC_UNDS, KC_B, KC_N)
+CMB(er_cbkt, TD(CBRKT), KC_E, KC_R)
+CMB(ui_brkt, TD(BRKT), KC_U, KC_I)
+CMB(sl_plus, KC_PLUS, LGUI_T(KC_S), RGUI_T(KC_L))
+CMB(ei_bsls, TD(BSLS_PIPE), KC_E, KC_I)
+CMB(wo_mins, TD(EM_DASH), KC_W, KC_O)
+CMB(df_btn1, KC_BTN1, KC_D, KC_F)
+CMB(fg_btn2, KC_BTN2, KC_F, KC_G)
