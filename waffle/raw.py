@@ -25,7 +25,7 @@ def send_packet(data):
     if interface is None:
         print("no device found")
         sys.exit(1)
-    request_data = [0x00] * 33 #hidapi doesn't send first byte to host
+    request_data = [0x00] * 33 #hidapi does not send first byte to host
     request_data[1:len(data) + 1] = data
     request_packet = bytes(request_data)
     try:

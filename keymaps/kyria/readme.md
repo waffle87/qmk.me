@@ -1,4 +1,4 @@
-### RP2040 Kyria rev2
+### rp2040 kyria rev2
 ![photo](https://i.imgur.com/P0urp7n.jpeg)
 
 #### parts & notes
@@ -25,3 +25,5 @@ from there, wired trackpad directly to oled header pins on pcb. looks a bit iffy
 ![trackpad wiring](https://i.imgur.com/tvLVEe0.jpeg)
 
 * [pucks](https://splitkb.com/collections/keyboard-parts/products/tenting-puck) and [tripods](https://www.amazon.com/Manfrotto-MP3-BK-Large-Pocket-Support/dp/B00HCAB8MU) for tenting-puck
+
+* wpm graph is very resource intensive and drops matrix scan rate to ~200/s...
