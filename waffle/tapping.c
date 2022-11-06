@@ -41,11 +41,11 @@ void td_reset(qk_tap_dance_state_t *state, void *user_data) {
 void qmk_dance(qk_tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
     tap_code16(C(KC_T));
-    SEND_STRING(qmkstr);
+    send_string(qmkstr);
     tap_code(KC_ENT);
   } else {
     tap_code16(C(KC_T));
-    SEND_STRING(confstr);
+    send_string(confstr);
     tap_code(KC_ENT);
   }
 }

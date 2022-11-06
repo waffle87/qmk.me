@@ -38,7 +38,7 @@ __attribute__ ((weak)) void housekeeping_task_user(void) {
 }
 #endif
 
-void matrix_io_delay(void) {
+void matrix_output_unselect_delay(uint8_t line, bool key_pressed) {
   __asm__ volatile("nop\nnop\nnop\n");
 }
 
