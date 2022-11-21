@@ -1,4 +1,3 @@
-MCU = STM32F303
 CONVERT_TO = proton_c
 SERIAL_DRIVER = usart
 WS2812_DRIVER = pwm

@@ -1,7 +1,8 @@
 // Copyright 2022 jack (@waffle87)
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include <stdio.h>
-#define FRAME_SIZE 650
+#define FRAME_SIZE 512
+#define FRAME_COUNT 2
 
 void test_decode(unsigned char *rle, size_t rleN, const unsigned char *orig, size_t n) {
   int cursor = 0, bytes = (unsigned char)rle[0];
@@ -56,19 +57,23 @@ int encode(unsigned char *output, const unsigned char *array, size_t n) {
 }
 
 void print_array(unsigned char *array, int n) {
-  printf("{");
+  int char_count = 0;
+  printf("{\n");
   for (int i = 0; i < n; i++) {
     if (i == 0)
       printf("%u", array[i]);
     else
       printf(", %u", array[i]);
+    char_count++;
+    if (char_count >= n / 2)
+      printf("\n"), char_count = 0;
   }
   printf("}");
 }
 
 int main() {
   char output[128 * 32];
-  int size = encode(output, frame[0], FRAME_SIZE);
+  int size = encode(output, frames[1], FRAME_SIZE);
   printf("static const unsigned char PROGMEM prep[][%d] = {", size);
   print_array(output, size);
   printf("};\n");

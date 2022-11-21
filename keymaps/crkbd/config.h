@@ -1,12 +1,15 @@
+// Copyright 2022 jack (@waffle87)
+// SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
 
 #undef SOFT_SERIAL_PIN
-#define SOFT_SERIAL_PIN D3
+#define SERIAL_USART_FULL_DUPLEX
+#define SERIAL_USART_TX_PIN D3
+#define SERIAL_USART_RX_PIN D2
+#define SERIAL_USART_PIN_SWAP
 #define CRC8_USE_TABLE
 #define CRC8_OPTIMIZE_SPEED
 #define SERIAL_USART_SPEED 921600
-#define SERIAL_USART_DRIVER SD1
-#define SERIAL_USART_TX_PAL_MODE 7
 
 #ifdef OLED_ENABLE
 #    define LAYER_ANIM
@@ -32,9 +35,9 @@
 #    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150
 #    define WS2812_PWM_DRIVER PWMD3
 #    define WS2812_PWM_CHANNEL 3
-#    define WS2812_PWM_PAL_MODE 2
 #    define WS2812_DMA_STREAM STM32_DMA1_STREAM3
 #    define WS2812_DMA_CHANNEL 3
+#    define WS2812_DMAMUX_ID STM32_DMAMUX1_TIM3_UP
 #endif
 
 #ifdef ENCODER_ENABLE

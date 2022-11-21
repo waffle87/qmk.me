@@ -26,6 +26,7 @@ ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
 endif
 
 ifeq ($(strip $(UNICODE_COMMON)), yes)
+	UNICODE_ENABLE = no
 	SRC += unicode.c
 endif
 
