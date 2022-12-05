@@ -21,7 +21,7 @@
 #define PRODUCT_ID 0x6B62
 #endif
 #undef MANUFACTURER
-#define MANUFACTURER "Waffles"
+#define MANUFACTURER "waffles"
 
 #ifdef OLED_ENABLE
 #    define OLED_FONT_H "users/waffle/oledfont.h"
