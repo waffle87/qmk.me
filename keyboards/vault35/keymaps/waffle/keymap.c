@@ -4,7 +4,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ___BASE1___, KC_NO,
     ___BASE2___,
     ___BASE3___,
-    ___BASE4___
+    UPDIR, KC_ESC, LWRSPC, RSEBSP, C(S(KC_V)), PNP
   ),
 
   [_LOWER] = LAYOUT_waffle(
@@ -20,3 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ___RAISE4___
   )
 };
+
+void keyboard_post_init_user(void) {
+  rgblight_sethsv_noeeprom(104,255,255);
+}

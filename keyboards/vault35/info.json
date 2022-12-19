@@ -9,9 +9,7 @@
     "cols": ["B1", "D3", "F0", "F1", "F4", "F5", "F6", "F7", "C6", "B6", "B5"],
     "rows": ["B4", "D4", "B0", "C7"]
   },
-  "features": {
-    "rgblight": true
-  },
+  "features": { "rgblight": true },
   "usb": {
     "vid": "0x6A73",
     "pid": "0x3335",
@@ -20,10 +18,7 @@
   "rgblight": {
     "led_count": 12,
     "pin": "D5",
-    "animations": {
-      "twinkle": true,
-      "static_gradient": true
-    }
+    "sleep": true
   },
   "layouts": {
     "LAYOUT": {
@@ -38,7 +33,7 @@
         {"label": "i",    "matrix": [0, 7], "x": 7, "y": 0},
         {"label": "o",    "matrix": [0, 8], "x": 8, "y": 0},
         {"label": "p",    "matrix": [0, 9], "x": 9, "y": 0},
-        {"label": "", "matrix": [0, 10], "x": 10, "y": 0},
+        {"label": "",    "matrix": [0, 10], "x": 10, "y": 0},
         {"label": "a",    "matrix": [1, 0], "x": 0, "y": 1, "w": 1.25},
         {"label": "s",    "matrix": [1, 1], "x": 1.25, "y": 1},
         {"label": "d",    "matrix": [1, 2], "x": 2.25, "y": 1},
@@ -60,11 +55,11 @@
         {"label": ".",    "matrix": [2, 8], "x": 8.75, "y": 2},
         {"label": "/",    "matrix": [2, 9], "x": 9.75, "y": 2, "w": 1.25},
         {"label": "../",  "matrix": [3, 1], "x": 1.5, "y": 3},
-        {"label": "",  "matrix": [3, 2], "x": 2.5, "y": 3, "w": 1.25},
+        {"label": "",    "matrix": [3, 2], "x": 2.5, "y": 3, "w": 1.25},
         {"label": "spc",  "matrix": [3, 3], "x": 3.75, "y": 3, "w": 1.75},
         {"label": "bspc", "matrix": [3, 5], "x": 5.5, "y": 3, "w": 1.75},
-        {"label": "",  "matrix": [3, 6], "x": 7.25, "y": 3, "w": 1.25},
-        {"label": "",  "matrix": [3, 7], "x": 8.5, "y": 3}
+        {"label": "",    "matrix": [3, 6], "x": 7.25, "y": 3, "w": 1.25},
+        {"label": "",    "matrix": [3, 7], "x": 8.5, "y": 3}
       ]
     }
   }

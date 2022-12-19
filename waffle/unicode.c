@@ -40,9 +40,8 @@ void tap_code16_nomods(uint16_t kc) {
   static inline uint32_t translator_name(bool is_shifted, uint32_t keycode) {  \
     static const uint32_t translation[] = {__VA_ARGS__};                       \
     uint32_t ret = keycode;                                                    \
-    if ((keycode - KC_A) < (sizeof(translation) / sizeof(uint32_t))) {         \
+    if ((keycode - KC_A) < ARRAY_SIZE(translation))                            \
       ret = translation[keycode - KC_A];                                       \
-    }                                                                          \
     return ret;                                                                \
   }
 
@@ -155,12 +154,11 @@ DEFINE_UNICODE_LUT_TRANSLATOR(unicode_lut_translator_super,
 bool process_record_aussie(uint16_t keycode, keyrecord_t *record) {
   bool is_shifted = (get_mods()) & MOD_MASK_SHIFT;
   if ((KC_A <= keycode) && (keycode <= KC_0)) {
-    if (record->event.pressed) {
+    if (record->event.pressed)
       if (!process_record_glyph_replacement(keycode, record, unicode_lut_translator_aussie)) {
         tap_code16_nomods(KC_LEFT);
         return false;
       }
-    }
   } else if (record->event.pressed && keycode == KC_SPACE) {
     tap_code16_nomods(KC_SPACE);
     tap_code16_nomods(KC_LEFT);
