@@ -1,3 +1,5 @@
+// Copyright 2022 jack (@waffle87)
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "waffle.h"
 #define ___NONE___ _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 

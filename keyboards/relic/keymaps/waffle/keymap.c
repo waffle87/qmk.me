@@ -1,3 +1,5 @@
+// Copyright 2022 jack (@waffle87)
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "waffle.h"
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_waffle(
@@ -6,7 +8,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ___BASE3___,
     KC_VOLD, KC_ESC, LWRSPC, RSEBSP, C(S(KC_V)), KC_VOLU
   ),
-
   [_LOWER] = LAYOUT_waffle(
     ___LOWER1___, QK_MAKE,
     ___LOWER2___,

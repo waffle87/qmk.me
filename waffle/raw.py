@@ -1,3 +1,5 @@
+# Copyright 2022 jack (@waffle87)
+# SPDX-License-Identifier: GPL-2.0-or-later
 import hid
 import sys
 import psutil

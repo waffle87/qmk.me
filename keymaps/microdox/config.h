@@ -1,3 +1,5 @@
+// Copyright 2022 jack (@waffle87)
+// SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
 #define RGBLED_NUM RGB_MATRIX_LED_COUNT
 #define ENABLE_RGB_MATRIX_ALPHAS_MODS
