@@ -33,12 +33,12 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   }
 }
 
-void td_reset(qk_tap_dance_state_t *state, void *user_data) {
+void td_reset(tap_dance_state_t *state, void *user_data) {
   clear_keyboard();
   layer_clear();
 }
 
-void qmk_dance(qk_tap_dance_state_t *state, void *user_data) {
+void qmk_dance(tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
     tap_code16(C(KC_T));
     send_string(qmkstr);
@@ -50,7 +50,7 @@ void qmk_dance(qk_tap_dance_state_t *state, void *user_data) {
   }
 }
 
-void dash_dance(qk_tap_dance_state_t *state, void *user_data) {
+void dash_dance(tap_dance_state_t *state, void *user_data) {
   if (state->count == 1)
     tap_code(KC_MINS);
 #ifdef UNICODE_COMMON_ENABLE
@@ -59,35 +59,35 @@ void dash_dance(qk_tap_dance_state_t *state, void *user_data) {
 #endif
 }
 
-void curly_bracket_dance(qk_tap_dance_state_t *state, void *user_data) {
+void curly_bracket_dance(tap_dance_state_t *state, void *user_data) {
   if (state->count == 1)
     tap_code16(KC_LCBR);
   else
     tap_code16(KC_RCBR);
 }
 
-void bracket_dance(qk_tap_dance_state_t *state, void *user_data) {
+void bracket_dance(tap_dance_state_t *state, void *user_data) {
   if (state->count == 1)
     tap_code(KC_LBRC);
   else
     tap_code(KC_RBRC);
 }
 
-void bsls_pipe_dance(qk_tap_dance_state_t *state, void *user_data) {
+void bsls_pipe_dance(tap_dance_state_t *state, void *user_data) {
   if (state->count == 1)
     tap_code(KC_BSLS);
   else
     tap_code16(KC_PIPE);
 }
 
-void quot_dquo_dance(qk_tap_dance_state_t *state, void *user_data) {
+void quot_dquo_dance(tap_dance_state_t *state, void *user_data) {
    if (state->count == 1)
       tap_code(KC_QUOT);
    else
       tap_code16(KC_DQUO);
 }
 
-void zero_dance(qk_tap_dance_state_t *state, void *user_data) {
+void zero_dance(tap_dance_state_t *state, void *user_data) {
   if (state->count == 1)
     tap_code(KC_0);
 #ifdef UNICODE_COMMON_ENABLE
@@ -96,7 +96,7 @@ void zero_dance(qk_tap_dance_state_t *state, void *user_data) {
 #endif
 }
 
-void media_dance(qk_tap_dance_state_t *state, void *user_data) {
+void media_dance(tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       tap_code(KC_MPLY);
@@ -110,7 +110,7 @@ void media_dance(qk_tap_dance_state_t *state, void *user_data) {
   }
 }
 
-void clipst_search_dance(qk_tap_dance_state_t *state, void *user_data) {
+void clipst_search_dance(tap_dance_state_t *state, void *user_data) {
   if (state->pressed && !state->interrupted)
     layer_on(_RAISE);
   else if (state->count == 1)
@@ -119,7 +119,7 @@ void clipst_search_dance(qk_tap_dance_state_t *state, void *user_data) {
     tap_code16(C(S(KC_F)));
 }
 
-qk_tap_dance_action_t tap_dance_actions[] = {
+tap_dance_action_t tap_dance_actions[] = {
   [QMK_LINKS] = ACTION_TAP_DANCE_FN(qmk_dance),
   [EM_DASH] = ACTION_TAP_DANCE_FN(dash_dance),
   [CBRKT] = ACTION_TAP_DANCE_FN(curly_bracket_dance),

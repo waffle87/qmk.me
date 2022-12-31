@@ -32,7 +32,11 @@ endif
 
 ifeq ($(PLATFORM), CHIBIOS)
 	RANDWORD = yes
-	EXTRAFLAGS = -O3
+	EXTRAFLAGS += -O3
+endif
+
+ifneq ($(findstring Gentoo, $(shell arm-none-eabi-gcc --version)),)
+	EXTRAFLAGS += -U_FORTIFY_SOURCE
 endif
 
 ifeq ($(strip $(RANDWORD)), yes)

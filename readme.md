@@ -135,6 +135,29 @@ which can be called from `process_record_user` as `INTERCEPT_MOD_TAP(LALT_T, KC_
 | `UPDIR`  | ../                                           |
 | `RWORD`  | outputs a random word ([dict.h](https://raw.githubusercontent.com/qmk/qmk_firmware/master/users/ridingqwerty/dict.h)) |
 
+### misc
+#### gentoo
+mostly ensure following packages are built with `multilib` & `nano` USE flags.
+```
+# /etc/portage/package.use/cross-arm-none-eabi
+cross-arm-none-eabi/binutils multilib
+cross-arm-none-eabi/gcc -openmp -fortran -hardened -sanitize -vtv -selinux -boundschecking -d -gcj -gtk -libffi -mudflap -objc -objc++ -objc-gc -fortran -go -jit -cxx -mpx -openmp -sanitize -vtv multilib
+cross-arm-none-eabi/newlib -selinux -libraries multilib nano
+```
+additionally, if any sort of optimization is enabled (eg. O3), `_FORTIFY_SOURCE` is enabled for unknown reason. (see [`gentoo/01_all_default-fortify-source.patch`](https://gitweb.gentoo.org/proj/gcc-patches.git/tree/11.3.0/gentoo/01_all_default-fortify-source.patch))\
+which subsequently defines `__SSP_FORTIFY_LEVEL` and clashes with [QMK's printf](https://github.com/qmk/printf/tree/master) library:
+```c
+#if __SSP_FORTIFY_LEVEL > 0
+#include <ssp/stdio.h>
+#endif
+```
+so following workaround can be used:
+```make
+ifneq ($(findstring Gentoo, $(shell arm-none-eabi-gcc --version)),)
+	EXTRAFLAGS += -U_FORTIFY_SOURCE
+endif
+```
+
 ### some keyboards
 [crkbd](keymaps/crkbd)\
 [kyria](keymaps/kyria)\
