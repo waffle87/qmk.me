@@ -27,11 +27,11 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1"
-     inkscape:cx="533.5"
-     inkscape:cy="276"
-     inkscape:window-width="1896"
-     inkscape:window-height="1017"
+     inkscape:zoom="0.87492922"
+     inkscape:cx="450.89361"
+     inkscape:cy="1028.6546"
+     inkscape:window-width="1416"
+     inkscape:window-height="849"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -510,20 +510,20 @@
          id="tspan585">alt</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;word-spacing:-0.0105833px;text-anchor:middle;fill:#5fbcd3;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;word-spacing:0px;text-anchor:middle;fill:#5fbcd3;stroke-width:0.264583"
        x="40.138527"
-       y="28.122553"
+       y="28.358446"
        id="text797"><tspan
          sodipodi:role="line"
          id="tspan795"
          style="font-size:7.05556px;fill:#000000;stroke-width:0.264583"
          x="40.138527"
-         y="28.122553"
-         dy="1.8">s</tspan><tspan
+         y="28.358446"
+         dy="2.5">s</tspan><tspan
          sodipodi:role="line"
          style="font-size:7.05556px;fill:#808080;fill-opacity:1;stroke-width:0.264583"
          x="40.138527"
-         y="36.942001"
+         y="37.177895"
          id="tspan799">gui</tspan></text>
     <text
        xml:space="preserve"
@@ -646,18 +646,18 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
        x="242.13852"
-       y="28.668133"
+       y="29.149614"
        id="text1009"><tspan
          sodipodi:role="line"
          id="tspan1007"
          style="font-size:7.05556px;stroke-width:0.264583"
          x="242.13852"
-         y="28.668133"
-         dy="2">l</tspan><tspan
+         y="29.149614"
+         dy="2.5">l</tspan><tspan
          sodipodi:role="line"
          style="font-size:7.05556px;fill:#808080;fill-opacity:1;stroke-width:0.264583"
          x="242.13852"
-         y="37.487583"
+         y="37.969063"
          id="tspan1057">gui</tspan></text>
     <text
        xml:space="preserve"
@@ -695,7 +695,7 @@
        id="text1021"><tspan
          sodipodi:role="line"
          id="tspan1019"
-         style="font-size:7.05556px;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font';stroke-width:0.264583"
          x="187.49577"
          y="56.222496">m</tspan></text>
     <text
@@ -1317,24 +1317,24 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
        x="39.499996"
-       y="187.49768"
+       y="187.49767"
        id="text1359"><tspan
          sodipodi:role="line"
          id="tspan1357"
          style="stroke-width:0.264583"
          x="39.499996"
-         y="187.49768">tab</tspan></text>
+         y="187.49767">tab</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
        x="66.70108"
-       y="186.21356"
+       y="187.37256"
        id="text1363"><tspan
          sodipodi:role="line"
          id="tspan1361"
          style="stroke-width:0.264583"
          x="66.70108"
-         y="186.21356">caps</tspan></text>
+         y="187.37256">caps</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
@@ -1383,24 +1383,24 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
        x="214.69759"
-       y="186.21356"
+       y="187.37256"
        id="text1383"><tspan
          sodipodi:role="line"
          id="tspan1381"
          style="stroke-width:0.264583"
          x="214.69759"
-         y="186.21356">up</tspan></text>
+         y="187.37256">up</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
        x="241.70813"
-       y="187.10254"
+       y="187.69901"
        id="text1387"><tspan
          sodipodi:role="line"
          id="tspan1385"
          style="stroke-width:0.264583"
          x="241.70813"
-         y="187.10254">right</tspan></text>
+         y="187.69901">right</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
@@ -2191,7 +2191,7 @@
          id="tspan32183"
          style="stroke-width:0.264583"
          x="79.151031"
-         y="105.47487"></tspan></text>
+         y="105.47487" /></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;fill-opacity:1;stroke-width:0.264583"
