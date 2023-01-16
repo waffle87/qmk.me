@@ -9,15 +9,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_VOLD, UPDIR, KC_ESC, LWRSPC, C(S(KC_V)), MO(_RAISE), KC_VOLU
   ),
   [_LOWER] = LAYOUT_waffle(
-    KC_TRNS, ___LOWER1___, KC_TRNS,
-    KC_TRNS, ___LOWER2___, KC_TRNS,
-    KC_TRNS, ___LOWER3___, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+    _______, ___LOWER1___, _______,
+    _______, ___LOWER2___, _______,
+    _______, ___LOWER3___, _______,
+    _______, _______, _______, _______, _______, _______, _______
   ),
   [_RAISE] = LAYOUT_waffle(
-    KC_TRNS, ___RAISE1___, KC_TRNS,
-    KC_TRNS, ___RAISE2___, KC_TRNS,
-    KC_TRNS, ___RAISE3___, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+    _______, ___RAISE1___, _______,
+    _______, ___RAISE2___, _______,
+    _______, ___RAISE3___, _______,
+    _______, _______, _______, _______, _______, _______, _______
   )
 };

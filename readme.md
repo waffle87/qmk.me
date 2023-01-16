@@ -15,11 +15,13 @@ qmk compile -kb relic -km waffle
 ```
 
 ### layout
-a simple 34-key layout that makes use of 2 (primary) layers, home-row mods, & combos for many symbols.
+a simple 34-key layout that makes use of 2 (primary) layers, home-row mods, & combos for many symbols.\
+primarily used in sway/i3, vim (c/c++), & other generic computing activities.
+
 ![layout](img/layout.svg)
 
 ### combos
-(illustrated in colored circles above)
+(illustrated in colored circles above)\
 [combos.h](waffle/combos.h) contains macros that allow for combos be simply defined in a `combos.def` file as
 ```
 CMB(<name>,  <output>,  <trigger keycodes>)
@@ -117,7 +119,7 @@ which can be called from `process_record_user` as `INTERCEPT_MOD_TAP(LALT_T, KC_
 | keycode  | action (single/double/triple tap)             |
 | :------: | :-------------------------------------------: |
 | `DEG_0`  | 0 / °                                         |
-| `PNP`    | play/pause / skip/next / back/prev            |
+| `PNP`    | play/pause / skip / prev                      |
 | `CLIPST` | paste (term) / search (term) / layer 2 (hold) |
 | `UPDIR`  | ../                                           |
 | `RWORD`  | outputs a random word ([dict.h](https://raw.githubusercontent.com/qmk/qmk_firmware/master/users/ridingqwerty/dict.h)) |
@@ -125,7 +127,7 @@ which can be called from `process_record_user` as `INTERCEPT_MOD_TAP(LALT_T, KC_
 ### misc
 #### gentoo
 mostly ensure following packages are built with `multilib` & `nano` USE flags.
-```
+```sh
 # /etc/portage/package.use/cross-arm-none-eabi
 cross-arm-none-eabi/binutils multilib
 cross-arm-none-eabi/gcc -openmp -fortran -hardened -sanitize -vtv -selinux -boundschecking -d -gcj -gtk -libffi -mudflap -objc -objc++ -objc-gc -fortran -go -jit -cxx -mpx -openmp -sanitize -vtv multilib

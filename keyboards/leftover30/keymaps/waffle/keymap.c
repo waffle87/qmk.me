@@ -12,6 +12,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ___LOWER1___, KC_DEL,
     ___LOWER2___,
     ___LOWER3___,
-    KC_MUTE, KC_TRNS, KC_TRNS, RGB_MOD, RGB_TOG
+    KC_MUTE, _______, _______, RGB_MOD, RGB_TOG
   )
 };

@@ -16,27 +16,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_LOWER] = LAYOUT_stack_of_waffles(
-    KC_TRNS, KC_1,    KC_2 ,  KC_3,     KC_4,     KC_5,
-    KC_TRNS, HRML(KC_EXLM, KC_AT, KC_HASH, KC_DLR),  KC_PERC,
-    KC_TRNS, KC_TRNS, KC_TAB, KC_CAPS,  KC_TILD,  KC_GRV,  KC_TRNS, KC_TRNS,
-                              KC_TRNS,  KC_TRNS,  KC_TRNS, H_S,     KC_TRNS,
+    _______, KC_1,    KC_2 ,  KC_3,     KC_4,     KC_5,
+    _______, HRML(KC_EXLM, KC_AT, KC_HASH, KC_DLR),  KC_PERC,
+    _______, _______, KC_TAB, KC_CAPS,  KC_TILD,  KC_GRV,  _______, _______,
+                              _______,  _______,  _______, H_S,     _______,
 
-                      KC_6,    KC_7,     KC_8,     KC_9,     DEG0,     KC_TRNS,
-                      KC_CIRC, HRMR(KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN), KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_LEFT, KC_DOWN,  KC_UP,    KC_RGHT,  KC_TRNS,  KC_TRNS,
-    KC_TRNS, STAR,    KC_TRNS, KC_TRNS, KC_TRNS
+                      KC_6,    KC_7,     KC_8,     KC_9,     DEG0,     _______,
+                      KC_CIRC, HRMR(KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN), _______,
+    _______, _______, KC_LEFT, KC_DOWN,  KC_UP,    KC_RGHT,  _______,  _______,
+    _______, STAR,    _______, _______, _______
   ),
 
   [_RAISE] = LAYOUT_stack_of_waffles(
-    KC_TRNS, RGB_TOG, RGB_MOD,  RGB_HUI, RGB_SAI, RGB_VAI,
-    KC_TRNS, KC_TRNS, RGB_RMOD, RGB_HUD, RGB_SAD, RGB_VAD,
-    KC_TRNS, KC_F1,   KC_F2,    KC_F3,   KC_F4,   KC_F5,  RWORD,   KC_TRNS,
-                               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    _______, RGB_TOG, RGB_MOD,  RGB_HUI, RGB_SAI, RGB_VAI,
+    _______, _______, RGB_RMOD, RGB_HUD, RGB_SAD, RGB_VAD,
+    _______, KC_F1,   KC_F2,    KC_F3,   KC_F4,   KC_F5,  RWORD,   _______,
+                               _______, _______, _______, _______, _______,
 
-                      KC_NOMODE, KC_SCRIPT, KC_BLOCKS, KC_REGIONAL, QK_MAKE, KC_TRNS,
-                      KC_WIDE,   KC_AUSSIE, KC_ZALGO,  KC_SUPER,    QK_BOOT, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_F6,     KC_F7,     KC_F8,     KC_F9,       KC_F10,  KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS,   KC_TRNS
+                      KC_NOMODE, KC_SCRIPT, KC_BLOCKS, KC_REGIONAL, QK_MAKE, _______,
+                      KC_WIDE,   KC_AUSSIE, KC_ZALGO,  KC_SUPER,    QK_BOOT, _______,
+    _______, _______, KC_F6,     KC_F7,     KC_F8,     KC_F9,       KC_F10,  _______,
+    _______, _______, _______,   _______,   _______
   )
 };
 

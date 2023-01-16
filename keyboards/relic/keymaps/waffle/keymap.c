@@ -12,12 +12,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ___LOWER1___, QK_MAKE,
     ___LOWER2___,
     ___LOWER3___,
-    KC_TRNS, TABLE1, KC_TRNS, KC_TRNS, TABLE2, KC_TRNS
+    _______, TABLE1, _______, _______, TABLE2, _______
   ),
   [_RAISE] = LAYOUT_waffle(
-    ___RAISE1___, KC_TRNS,
+    ___RAISE1___, _______,
     ___RAISE2___,
     ___RAISE3___,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+    _______, _______, _______, _______, _______, _______
   )
 };
