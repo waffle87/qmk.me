@@ -1,5 +1,6 @@
 ### qmk.me
-this is a self-contained repository for my personal [qmk](https://github.com/qmk/qmk_firmware) userspace & keyboard code.\
+this is a self-contained repository for my personal [qmk](https://github.com/qmk/qmk_firmware) userspace & keyboard code.
+
 ![keyboard](https://i.imgur.com/s0dN0JDh.jpeg)
 
 ### building
@@ -14,35 +15,22 @@ qmk compile -kb relic -km waffle
 ```
 
 ### layout
-![layout](https://i.imgur.com/uKNJuKi.png)
+a simple 34-key layout that makes use of 2 (primary) layers, home-row mods, & combos for many symbols.
+![layout](img/layout.svg)
 
 ### combos
+(illustrated in colored circles above)
 [combos.h](waffle/combos.h) contains macros that allow for combos be simply defined in a `combos.def` file as
 ```
 CMB(<name>,  <output>,  <trigger keycodes>)
 ```
-`#define COMBO_TERM 40`
-| trigger | output (single/double tap) |
-| :-----: | :------------------------: |
-| r + u   | enter                      |
-| v + m   | ?                          |
-| t + y   | :                          |
-| b + n   | _                          |
-| s + l   | +                          |
-| d + k   | =                          |
-| g + h   | ' / "                      |
-| w + o   | - / —                      |
-| e + r   | { / }                      |
-| u + i   | [ / ]                      |
-| e + i   | \ / \|                     |
-| d + f   | left click                 |
-| f + g   | right click                |
 
 ### oled
 [font file](waffle/oledfont.h) can be viewed and modified at [qmk logo editor](https://joric.github.io/qle)\
 all the boring animation code is stored in [oled.h](waffle/oled.h)
 
 **animations:**\
+[bongo cat](https://github.com/waffle87/qmk.me/blob/master/waffle/oled.c#L151-#L168)\
 [felix the dog](https://github.com/waffle87/qmk.me/blob/master/waffle/oled.c#L128-#L149)\
 ![sit](img/sit.png) ![walk](img/walk.png) ![run](img/run.png) ![bark](img/bark.png) ![sneak](img/sneak.png)\
 [layer animation](https://github.com/waffle87/qmk.me/blob/master/waffle/oled.c#L203-#L226)\
@@ -50,8 +38,7 @@ all the boring animation code is stored in [oled.h](waffle/oled.h)
 ![sym](img/sym.png)\
 ![sys](img/sys.png)\
 [wpm graph](https://github.com/waffle87/qmk.me/blob/master/waffle/oled.c#L170-#L201)\
-![gif](img/wpm_graph.gif)\
-[bongo cat](https://github.com/waffle87/qmk.me/blob/master/waffle/oled.c#L151-#L168)
+![gif](img/wpm_graph.gif)
 
 the below snippet is used to render the big byte arrays used by animations.
 where `size` is the array size and `action` is the animation frame name.
@@ -145,7 +132,7 @@ cross-arm-none-eabi/gcc -openmp -fortran -hardened -sanitize -vtv -selinux -boun
 cross-arm-none-eabi/newlib -selinux -libraries multilib nano
 ```
 additionally, if any sort of optimization is enabled (eg. O3), `_FORTIFY_SOURCE` is enabled for unknown reason. (see [`gentoo/01_all_default-fortify-source.patch`](https://gitweb.gentoo.org/proj/gcc-patches.git/tree/11.3.0/gentoo/01_all_default-fortify-source.patch))\
-which subsequently defines `__SSP_FORTIFY_LEVEL` and clashes with [QMK's printf](https://github.com/qmk/printf/tree/master) library:
+which subsequently defines `__SSP_FORTIFY_LEVEL` and clashes with [qmk's printf](https://github.com/qmk/printf/tree/master) library:
 ```c
 #if __SSP_FORTIFY_LEVEL > 0
 #include <ssp/stdio.h>

@@ -20,9 +20,9 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 
 enum layers {
   _BASE,
-  _ADJUST,
   _LOWER,
-  _RAISE
+  _RAISE,
+  _ADJUST
 };
 
 enum tapdances {
