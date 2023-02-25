@@ -55,7 +55,7 @@ bool process_record_glyph_replacement(uint16_t keycode, keyrecord_t *record, tra
       return false;
     } else if (KC_1 <= keycode && keycode <= KC_0) {
       if (is_shifted)
-        return process_record_keymap(keycode, record);
+        return true;
       if (record->event.pressed)
         register_unicode(translator(is_shifted, keycode));
       return false;

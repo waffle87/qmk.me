@@ -57,8 +57,3 @@ bool oled_task_keymap(void) {
   return false;
 }
 #endif
-
-#ifdef RGBLIGHT_ENABLE
-void suspend_power_down_user(void) { rgblight_disable(); }
-void suspend_wakeup_init_user(void) { rgblight_enable(); }
-#endif

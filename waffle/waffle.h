@@ -8,15 +8,12 @@
 
 #ifdef RAW_ENABLE
 #pragma message "check other device's vid/pid"
-typedef struct {
+typedef struct user_config {
   uint8_t cpu_temp;
   uint8_t hour;
   uint8_t min;
-} user_config;
-user_config user_state;
+} user_state;
 #endif
-
-bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 
 enum layers {
   _BASE,
@@ -39,7 +36,7 @@ enum tapdances {
 
 
 enum custom_keycodes {
-  UPDIR = SAFE_RANGE,
+  UPDIR = QK_USER,
   TABLE1,
   TABLE2,
   KC_NOMODE,
@@ -50,8 +47,7 @@ enum custom_keycodes {
   KC_AUSSIE,
   KC_ZALGO,
   KC_SUPER,
-  RWORD,
-  NEW_SAFE_RANGE
+  RWORD
 };
 
 #ifdef UNICODE_COMMON_ENABLE

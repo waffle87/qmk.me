@@ -38,11 +38,6 @@ __attribute__ ((weak)) void housekeeping_task_user(void) {
 }
 #endif
 
-void matrix_output_unselect_delay(uint8_t line, bool key_pressed) {
-  __asm__ volatile("nop\nnop\nnop\n");
-}
-
-__attribute__ ((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *record) { return true; }
 __attribute__ ((weak)) void keyboard_post_init_user(void) {
 #if defined(SPLIT_KEYBOARD) && defined(OLED_ENABLE)
   transaction_register_rpc(RPC_ID_USER_KEYLOG_STR, keylogger_sync);
@@ -69,8 +64,8 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
   if (index == 0) {
     switch (get_highest_layer(layer_state)) {
       case _LOWER:
-#if defined (RGBLIGHT_ENABLE) || defined (RGB_MATRIX_ENABLE)
-        clockwise ? rgblight_increase_hue() : rgblight_decrease_hue();
+#ifdef RGB_MATRIX_ENABLE
+        clockwise ? rgb_matrix_increase_hue_noeeprom() : rgb_matrix_decrease_hue_noeeprom();
 #endif
         break;
       default:
@@ -79,8 +74,8 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
   } else if (index == 1) {
     switch (get_highest_layer(layer_state)) {
       case _LOWER:
-#if defined (RGBLIGHT_ENABLE) || defined (RGB_MATRIX_ENABLE)
-        clockwise ? rgblight_increase_sat() : rgblight_decrease_sat();
+#ifdef RGB_MATRIX_ENABLE
+        clockwise ? rgb_matrix_increase_sat_noeeprom() : rgb_matrix_decrease_sat_noeeprom();
 #endif
       break;
       default:

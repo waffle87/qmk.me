@@ -11,7 +11,6 @@ UNICODE_COMMON = yes
 MOUSEKEY_ENABLE = yes
 MAGIC_ENABLE = no
 CONSOLE_ENABLE = no
-COMMAND_ENABLE = no
 DEBOUNCE_TYPE = asym_eager_defer_pk
 
 SRC += waffle.c tapping.c

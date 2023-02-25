@@ -53,6 +53,8 @@ void qmk_dance(tap_dance_state_t *state, void *user_data) {
 void dash_dance(tap_dance_state_t *state, void *user_data) {
   if (state->count == 1)
     tap_code(KC_MINS);
+  else if (state->count == 3)
+    tap_code(KC_MINS), tap_code(KC_MINS);
 #ifdef UNICODE_COMMON_ENABLE
   else
     register_unicode(0x2014); //—
@@ -76,6 +78,8 @@ void bracket_dance(tap_dance_state_t *state, void *user_data) {
 void bsls_pipe_dance(tap_dance_state_t *state, void *user_data) {
   if (state->count == 1)
     tap_code(KC_BSLS);
+  else if (state->count == 3)
+    tap_code16(KC_PIPE), tap_code16(KC_PIPE);
   else
     tap_code16(KC_PIPE);
 }
@@ -133,11 +137,7 @@ tap_dance_action_t tap_dance_actions[] = {
 
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  if (!(process_record_keymap(keycode, record)
-#ifdef UNICODE_COMMON_ENABLE
-  && process_record_unicode(keycode, record)
-#endif
-  && true))
+  if (!process_record_unicode(keycode, record))
     return false;
 #ifdef OLED_ENABLE
   if (record->event.pressed) {
@@ -168,5 +168,5 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #endif
       break;
   }
-  return process_record_keymap(keycode, record);
+  return true;
 }
