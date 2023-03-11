@@ -11,7 +11,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
                     KC_Y, KC_U,  KC_I,    KC_O,   KC_P,    KC_NO,
                     KC_H, HRMR(KC_J, KC_K, KC_L, KC_SCLN), KC_NO,
-    KC_NO, KC_MPLY, KC_N, KC_M,  KC_COMM, KC_DOT, KC_SLSH, KC_NO,
+    KC_NO, NUKE,   KC_N, KC_M,  KC_COMM, KC_DOT, KC_SLSH, KC_NO,
     KC_NO, KC_BSPC, PSTRSE, PNP, KC_NO
   ),
 

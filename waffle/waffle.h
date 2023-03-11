@@ -37,6 +37,7 @@ enum tapdances {
 
 enum custom_keycodes {
   UPDIR = QK_USER,
+  NUKE,
   TABLE1,
   TABLE2,
   KC_NOMODE,

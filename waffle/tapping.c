@@ -137,8 +137,9 @@ tap_dance_action_t tap_dance_actions[] = {
 
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  if (!process_record_unicode(keycode, record))
-    return false;
+#ifdef UNICODE_COMMON_ENABLE
+  process_record_unicode(keycode, record);
+#endif
 #ifdef OLED_ENABLE
   if (record->event.pressed) {
     oled_timer_reset();
@@ -149,6 +150,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case UPDIR:
       if (record->event.pressed)
         SEND_STRING("../");
+      break;
+    case NUKE:
+      if (record->event.pressed) {
+        tap_code16(C(KC_A));
+        SEND_STRING("\b```suggestion\n```");
+      }
       break;
     INTERCEPT_MOD_TAP(LALT_T, KC_EXLM)
     INTERCEPT_MOD_TAP(LGUI_T, KC_AT)
@@ -169,4 +176,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
   }
   return true;
+}
+
+bool caps_word_press_user(uint16_t keycode) {
+  switch (keycode) {
+    case KC_A ... KC_Z:
+    case KC_MINS:
+      add_weak_mods(MOD_BIT(KC_LSFT));
+      return true;
+    case KC_1 ... KC_0:
+    case KC_BSPC:
+    case KC_DEL:
+    case KC_UNDS:
+      return true;
+    case KC_LPRN: return false;
+    default: return false;
+  }
 }

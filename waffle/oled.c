@@ -90,8 +90,8 @@ void keylock_status(led_t led_usb_state) {
     oled_write_ln(blink ? PSTR("% _") : PSTR("%    "), false);
 }
 
-static uint16_t log_timer = 0;
-char keylog_str[5] = {0};
+char keylog_str[5]  = {};
+static uint16_t keylog_timer = 0;
 const char code_to_name[60] = {
   ' ', ' ', ' ', ' ', 'a', 'b', 'c', 'd', 'e', 'f',
   'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
@@ -102,14 +102,15 @@ const char code_to_name[60] = {
 };
 
 void add_keylog(uint16_t keycode) {
-  if ((keycode >= QK_MOD_TAP && keycode <= QK_MOD_TAP_MAX) || (keycode >= QK_LAYER_TAP && keycode <= QK_LAYER_TAP_MAX))
-    keycode = keycode & 0xFF;
-  for (uint8_t i = 4; i > 0; i--)
+  for (uint8_t i = ARRAY_SIZE(keylog_str) - 1; i > 0; i--)
     keylog_str[i] = keylog_str[i - 1];
-  if (keycode < 60)
-    keylog_str[0] = code_to_name[keycode];
-  keylog_str[4] = 0;
-  log_timer = timer_read();
+  if (keycode < ARRAY_SIZE(code_to_name))
+    keylog_str[0] = code_to_name[keycode & 0xFF];
+  keylog_timer   = timer_read();
+}
+
+void render_keylog(void) {
+  oled_write(keylog_str, false);
 }
 
 void render_keylogger(void) { oled_write(keylog_str, false); }
@@ -225,10 +226,6 @@ void layer_anim(void) {
 }
 #endif
 
-__attribute__((weak)) bool oled_task_keymap(void) {
-  return true;
-}
-
 bool oled_task_user(void) {
   if (is_keyboard_master()) {
     if (timer_elapsed32(oled_timer) > 180000) {
@@ -237,8 +234,7 @@ bool oled_task_user(void) {
     } else
       oled_on();
   }
-  if (!oled_task_keymap())
-    return false;
+  oled_task_keymap();
   return false;
 }
 

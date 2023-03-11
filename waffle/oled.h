@@ -21,6 +21,7 @@ void bongo(void); //solid-filled bongo cat (0 or 180 rotation)
 void wpm_graph(void); //wpm graph for 128x64 oled (memory intensive)
 void layer_anim(void);
 void oled_timer_reset(void);
+bool oled_task_keymap(void);
 
 #ifdef BONGO_CAT
 static const char PROGMEM bongo_idle[5][512] = { {
