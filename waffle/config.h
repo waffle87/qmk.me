@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
 
-#define IGNORE_MOD_TAP_INTERRUPT
 #define TAPPING_TERM_PER_KEY
 #define PERSMISSVE_HOLD
 #define TAPPING_TERM 140

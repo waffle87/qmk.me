@@ -25,13 +25,14 @@ enum layers {
 enum tapdances {
   QMK_LINKS,
   EM_DASH,
+  DEG_0,
+  PLY_NXT_PRV,
+  SPC_QUAD,
+  SRCH_PST_RSE,
   CBRKT,
   BRKT,
   BSLS_PIPE,
-  QUOT_DQUO,
-  DEG_0,
-  PLY_NXT_PRV,
-  CLIPST_RAISE
+  QUOT_DQUO
 };
 
 
@@ -69,11 +70,12 @@ enum unicode_mode {
 #define DEG0 TD(DEG_0)
 #define LINKS TD(QMK_LINKS)
 #define PNP TD(PLY_NXT_PRV)
-#define PSTRSE TD(CLIPST_RAISE)
+#define RSE TD(SRCH_PST_RSE)
+#define QSPC TD(SPC_QUAD)
 #define H_S UC(0x262D) //☭
 #define STAR UC(0x2605) //★
 #define ESCLWR LT(_LOWER, KC_ESC)
-#define LWRSPC LT(_LOWER, KC_SPC)
+#define LWRSPC LT(_LOWER, QSPC)
 #define RSEBSP LT(_RAISE, KC_BSPC)
 #define HRML(k1,k2,k3,k4) LALT_T(k1),LGUI_T(k2),LCTL_T(k3),LSFT_T(k4)
 #define HRMR(k1,k2,k3,k4) RSFT_T(k1),RCTL_T(k2),RGUI_T(k3),RALT_T(k4)
@@ -81,7 +83,7 @@ enum unicode_mode {
 #define ___BASE1___ KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P
 #define ___BASE2___ HRML(KC_A, KC_S, KC_D, KC_F), KC_G, KC_H, HRMR(KC_J, KC_K, KC_L, KC_SCLN)
 #define ___BASE3___ KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH
-#define ___BASE4___ UPDIR, ESCLWR, KC_SPC, KC_BSPC, PSTRSE, PNP
+#define ___BASE4___ UPDIR, ESCLWR, QSPC, KC_BSPC, RSE, PNP
 
 #define ___LOWER1___ KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, DEG0
 #define ___LOWER2___ HRML(KC_EXLM, KC_AT, KC_HASH, KC_DLR), KC_PERC, KC_CIRC, HRMR(KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN)

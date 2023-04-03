@@ -9,7 +9,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, ___BASE1___, _______, _______, PNP,
     LINKS,   ___BASE2___, KC_BSPC, _______,
     _______, ___BASE3___, _______,
-    KC_VOLD, _______,     KC_ESC,  LWRSPC, PSTRSE, _______, KC_VOLU
+    KC_VOLD, _______,     KC_ESC,  LWRSPC, RSE, _______, KC_VOLU
   ),
   [_LOWER] = LAYOUT_waffle_60_ts(
     _______, ___NONE___,

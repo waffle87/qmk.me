@@ -116,13 +116,14 @@ case mod(keycode):                                  \
 ```
 which can be called from `process_record_user` as `INTERCEPT_MOD_TAP(LALT_T, KC_EXLM)` for example.
 
-| keycode  | action (single/double/triple tap)             |
-| :------: | :-------------------------------------------: |
-| `DEG_0`  | 0 / °                                         |
-| `PNP`    | play/pause / skip / prev                      |
-| `CLIPST` | paste (term) / search (term) / layer 2 (hold) |
-| `UPDIR`  | ../                                           |
-| `RWORD`  | outputs a random word ([dict.h](https://raw.githubusercontent.com/qmk/qmk_firmware/master/users/ridingqwerty/dict.h)) |
+| keycode        | action (single/double/triple tap)                   |
+| :------------: | :-------------------------------------------------: |
+| `DEG_0`        | 0 / °                                               |
+| `PNP`          | play/pause / skip / prev                            |
+| `SRCH_PST_RSE` | paste (term) / search (term) / layer 2 (hold)       |
+| `QSPC`         | 1 space / 4 spaces (useful for code outside editor) |
+| `UPDIR`        | ../                                                 |
+| `RWORD`        | outputs a random word ([dict.h](https://raw.githubusercontent.com/qmk/qmk_firmware/master/users/ridingqwerty/dict.h)) |
 
 ### misc
 #### gentoo
@@ -154,6 +155,8 @@ endif
 [microdox](keymaps/microdox)\
 [relic](keyboards/relic)\
 [vault35](keyboards/vault35)\
+[bully](keyboards/bully)\
+[torn-ish](keyboards/tornish)
 [xyz60](keyboards/xyz60)\
 [f60](kemaps/f60)\
 [minidox](keyboards/minidox)\

@@ -38,7 +38,7 @@ void td_reset(tap_dance_state_t *state, void *user_data) {
   layer_clear();
 }
 
-void qmk_dance(tap_dance_state_t *state, void *user_data) {
+void repo_config(tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
     tap_code16(C(KC_T));
     send_string(qmkstr);
@@ -50,48 +50,16 @@ void qmk_dance(tap_dance_state_t *state, void *user_data) {
   }
 }
 
-void dash_dance(tap_dance_state_t *state, void *user_data) {
+void em_dash_mins(tap_dance_state_t *state, void *user_data) {
   if (state->count == 1)
     tap_code(KC_MINS);
-  else if (state->count == 3)
-    tap_code(KC_MINS), tap_code(KC_MINS);
 #ifdef UNICODE_COMMON_ENABLE
   else
     register_unicode(0x2014); //—
 #endif
 }
 
-void curly_bracket_dance(tap_dance_state_t *state, void *user_data) {
-  if (state->count == 1)
-    tap_code16(KC_LCBR);
-  else
-    tap_code16(KC_RCBR);
-}
-
-void bracket_dance(tap_dance_state_t *state, void *user_data) {
-  if (state->count == 1)
-    tap_code(KC_LBRC);
-  else
-    tap_code(KC_RBRC);
-}
-
-void bsls_pipe_dance(tap_dance_state_t *state, void *user_data) {
-  if (state->count == 1)
-    tap_code(KC_BSLS);
-  else if (state->count == 3)
-    tap_code16(KC_PIPE), tap_code16(KC_PIPE);
-  else
-    tap_code16(KC_PIPE);
-}
-
-void quot_dquo_dance(tap_dance_state_t *state, void *user_data) {
-   if (state->count == 1)
-      tap_code(KC_QUOT);
-   else
-      tap_code16(KC_DQUO);
-}
-
-void zero_dance(tap_dance_state_t *state, void *user_data) {
+void zero_degree(tap_dance_state_t *state, void *user_data) {
   if (state->count == 1)
     tap_code(KC_0);
 #ifdef UNICODE_COMMON_ENABLE
@@ -100,7 +68,7 @@ void zero_dance(tap_dance_state_t *state, void *user_data) {
 #endif
 }
 
-void media_dance(tap_dance_state_t *state, void *user_data) {
+void media_control(tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       tap_code(KC_MPLY);
@@ -114,7 +82,15 @@ void media_dance(tap_dance_state_t *state, void *user_data) {
   }
 }
 
-void clipst_search_dance(tap_dance_state_t *state, void *user_data) {
+void spc_quadspc(tap_dance_state_t *state, void *user_data) {
+  if (state->count == 1)
+    tap_code(KC_SPC);
+  else
+    tap_code(KC_SPC), tap_code(KC_SPC),
+    tap_code(KC_SPC), tap_code(KC_SPC);
+}
+
+void rse_pst_srch(tap_dance_state_t *state, void *user_data) {
   if (state->pressed && !state->interrupted)
     layer_on(_RAISE);
   else if (state->count == 1)
@@ -124,17 +100,17 @@ void clipst_search_dance(tap_dance_state_t *state, void *user_data) {
 }
 
 tap_dance_action_t tap_dance_actions[] = {
-  [QMK_LINKS] = ACTION_TAP_DANCE_FN(qmk_dance),
-  [EM_DASH] = ACTION_TAP_DANCE_FN(dash_dance),
-  [CBRKT] = ACTION_TAP_DANCE_FN(curly_bracket_dance),
-  [BRKT] = ACTION_TAP_DANCE_FN(bracket_dance),
-  [BSLS_PIPE] = ACTION_TAP_DANCE_FN(bsls_pipe_dance),
-  [QUOT_DQUO] = ACTION_TAP_DANCE_FN(quot_dquo_dance),
-  [DEG_0] = ACTION_TAP_DANCE_FN(zero_dance),
-  [PLY_NXT_PRV] = ACTION_TAP_DANCE_FN(media_dance),
-  [CLIPST_RAISE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, clipst_search_dance, td_reset)
+  [QMK_LINKS] = ACTION_TAP_DANCE_FN(repo_config),
+  [EM_DASH] = ACTION_TAP_DANCE_FN(em_dash_mins),
+  [DEG_0] = ACTION_TAP_DANCE_FN(zero_degree),
+  [PLY_NXT_PRV] = ACTION_TAP_DANCE_FN(media_control),
+  [SPC_QUAD] = ACTION_TAP_DANCE_FN(spc_quadspc),
+  [SRCH_PST_RSE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, rse_pst_srch, td_reset),
+  [CBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
+  [BRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
+  [BSLS_PIPE] = ACTION_TAP_DANCE_DOUBLE(KC_BSLS, KC_PIPE),
+  [QUOT_DQUO] = ACTION_TAP_DANCE_DOUBLE(KC_QUOT, KC_DQUO),
 };
-
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef UNICODE_COMMON_ENABLE
@@ -176,20 +152,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
   }
   return true;
-}
-
-bool caps_word_press_user(uint16_t keycode) {
-  switch (keycode) {
-    case KC_A ... KC_Z:
-    case KC_MINS:
-      add_weak_mods(MOD_BIT(KC_LSFT));
-      return true;
-    case KC_1 ... KC_0:
-    case KC_BSPC:
-    case KC_DEL:
-    case KC_UNDS:
-      return true;
-    case KC_LPRN: return false;
-    default: return false;
-  }
 }
