@@ -9,7 +9,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_VOLD, KC_ESC, LWRSPC, RSEBSP, C(S(KC_V)), KC_VOLU
   ),
   [_LOWER] = LAYOUT_waffle(
-    ___LOWER1___, QK_MAKE,
+    ___LOWER1___, _______,
     ___LOWER2___,
     ___LOWER3___,
     _______, TABLE1, _______, _______, TABLE2, _______

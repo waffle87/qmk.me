@@ -6,26 +6,29 @@
   "bootloader": "stm32-dfu",
   "diode_direction": "COL2ROW",
   "encoder": {
-    "enabled": true,
     "rotary": [
       {"pin_a": "B12", "pin_b": "B14"}
     ]
   },
   "features": {
-    "rgblight": true
+    "rgblight": true,
+    "encoder": true
   },
   "matrix_pins": {
     "cols": ["A15", "B9", "B8", "B7", "B6", "B5", "C14", "C15", "F1", "F0", "A1"],
     "rows": ["B3", "B4", "C13", "A5"]
   },
   "rgblight": {
-    "led_count": 7,
-    "pin": "B15"
+    "led_count": 7
+  },
+  "ws2812": {
+    "pin": "B15",
+    "driver": "spi"
   },
   "usb": {
-    "device_version": "1.0.0",
     "pid": "0x6C6F",
-    "vid": "0x6A73"
+    "vid": "0x6A73",
+    "device_version": "1.0.0"
   },
   "layouts": {
     "LAYOUT": {

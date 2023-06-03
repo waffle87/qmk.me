@@ -19,7 +19,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case LWRSPC:
     case ESCLWR:
-      return TAPPING_TERM - 20;
+      return TAPPING_TERM - 40;
     case LINKS:
     case PNP:
     case TD(QUOT_DQUO):

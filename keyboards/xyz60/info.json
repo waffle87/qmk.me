@@ -10,9 +10,9 @@
     "rows": ["B7", "B9", "B12", "B14", "B15"]
   },
   "usb": {
-    "device_version": "0.0.1",
     "pid": "0x7879",
-    "vid": "0x6A73"
+    "vid": "0x6A73",
+    "device_version": "0.0.1"
   },
   "layouts": {
     "LAYOUT_60_ansi_tsangan": {

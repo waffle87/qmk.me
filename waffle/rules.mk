@@ -12,6 +12,7 @@ MOUSEKEY_ENABLE = yes
 MAGIC_ENABLE = no
 CONSOLE_ENABLE = no
 DEBOUNCE_TYPE = asym_eager_defer_pk
+INTROSPECTION_KEYMAP_C = waffle.c
 
 SRC += waffle.c tapping.c
 
