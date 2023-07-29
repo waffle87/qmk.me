@@ -47,6 +47,11 @@ __attribute__ ((weak)) void keyboard_post_init_user(void) {
   rgblight_sethsv_noeeprom(HSV_CYAN);
   rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
 #endif
+#ifdef RGB_MATRIX_ENABLE
+  rgb_matrix_enable_noeeprom();
+  rgb_matrix_sethsv_noeeprom(HSV_CYAN);
+  rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
+#endif
 #ifdef CONSOLE_ENABLE
   debug_keyboard = true;
   debug_enable = true;
@@ -59,31 +64,12 @@ __attribute__ ((weak)) void keyboard_post_init_user(void) {
 #endif
 }
 
-#if !defined (ENCODER_MAP_ENABLE) && defined (ENCODER_ENABLE)
-bool encoder_update_user(uint8_t index, bool clockwise) {
-  if (index == 0) {
-    switch (get_highest_layer(layer_state)) {
-      case _LOWER:
-#ifdef RGB_MATRIX_ENABLE
-        clockwise ? rgb_matrix_increase_hue_noeeprom() : rgb_matrix_decrease_hue_noeeprom();
-#endif
-        break;
-      default:
-        clockwise ? tap_code_delay(KC_VOLU, 20) : tap_code_delay(KC_VOLD, 20);
-    }
-  } else if (index == 1) {
-    switch (get_highest_layer(layer_state)) {
-      case _LOWER:
-#ifdef RGB_MATRIX_ENABLE
-        clockwise ? rgb_matrix_increase_sat_noeeprom() : rgb_matrix_decrease_sat_noeeprom();
-#endif
-      break;
-      default:
-        clockwise ? tap_code(KC_MNXT) : tap_code(KC_MPRV);
-    }
-  }
-  return false;
-}
+#ifdef ENCODER_MAP_ENABLE
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
+  [_BASE]  = {{ KC_VOLU, KC_VOLD }, { KC_MNXT, KC_MPRV }},
+  [_LOWER] = {{ RGB_SAI, RGB_SAD }, { RGB_HUI, RGB_HUD }},
+  [_RAISE] = {{ C(KC_LEFT), C(KC_RGHT) }, { C(S(KC_TAB)), C(KC_TAB) }}
+};
 #endif
 
 #ifdef POINTING_DEVICE_DRIVER_pimoroni_trackball

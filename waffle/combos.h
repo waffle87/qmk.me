@@ -2,20 +2,18 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
 
-#define CMB(name, action, ...) C_##name,
+#define CMB(name, action, ...) name,
 enum combos {
 #include "combos.def"
-  COMBO_LENGTH
 };
 #undef CMB
-uint16_t COMBO_LEN = COMBO_LENGTH;
 
-#define CMB(name, action, ...) const uint16_t PROGMEM name##_combo[] = {__VA_ARGS__, COMBO_END};
+#define CMB(name, action, ...) uint16_t const name##_combo[] PROGMEM = {__VA_ARGS__, COMBO_END};
 #include "combos.def"
 #undef CMB
 
-combo_t key_combos[COMBO_LENGTH] = {
-#define CMB(name, action, ...) COMBO(name##_combo, action),
+#define CMB(name, action, ...) [name] = COMBO(name##_combo, action),
+combo_t key_combos[] = {
 #include "combos.def"
-#undef CMB
 };
+#undef CMB

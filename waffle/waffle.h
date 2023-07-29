@@ -75,7 +75,7 @@ enum unicode_mode {
 #define H_S UC(0x262D) //☭
 #define STAR UC(0x2605) //★
 #define ESCLWR LT(_LOWER, KC_ESC)
-#define LWRSPC LT(_LOWER, QSPC)
+#define LWRSPC LT(_LOWER, KC_SPC)
 #define RSEBSP LT(_RAISE, KC_BSPC)
 #define HRML(k1,k2,k3,k4) LALT_T(k1),LGUI_T(k2),LCTL_T(k3),LSFT_T(k4)
 #define HRMR(k1,k2,k3,k4) RSFT_T(k1),RCTL_T(k2),RGUI_T(k3),RALT_T(k4)

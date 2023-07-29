@@ -93,14 +93,6 @@ bool oled_task_keymap(void) {
 }
 #endif //oled
 
-#ifdef ENCODER_MAP_ENABLE
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
-  [_BASE]  = { { KC_VOLU, KC_VOLD }, { KC_MNXT, KC_MPRV } },
-  [_LOWER] = { { RGB_SAI, RGB_SAD }, { RGB_HUI, RGB_HUD } },
-  [_RAISE] = { { KC_LEFT, C(KC_RGHT) }, { C(S(KC_TAB)), C(KC_TAB) } }
-};
-#endif //encoder map
-
 #ifdef RGB_MATRIX_ENABLE
 void matrix_init_user(void) {
   g_led_config = (led_config_t) { {
