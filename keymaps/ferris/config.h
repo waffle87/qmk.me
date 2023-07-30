@@ -1,7 +1,7 @@
 // Copyright 2022 jack (@waffle87)
 // SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
-#define RGB_DI_PIN B0
+#define WS2812_DI_PIN B0
 #define RGB_MATRIX_LED_COUNT 34
 #define RGB_MATRIX_SPLIT {17,17}
 #define RGB_DISABLE_WHEN_USB_SUSPENDED

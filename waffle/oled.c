@@ -170,11 +170,10 @@ void bongo(void) {
 
 #ifdef WPM_GRAPH
 void wpm_graph(void) {
-  float max_wpm = 160;
-  static uint8_t height = OLED_DISPLAY_HEIGHT - 1, vert_count = 0;
+  static uint8_t height = OLED_DISPLAY_HEIGHT - 1, vert_count = 0, max_wpm = 160;
   static uint16_t graph_timer = 0;
   if (timer_elapsed(graph_timer) > 100) {
-    height = 63 - ((get_current_wpm() / max_wpm) * 63);
+    height = 63 - ((get_current_wpm() / (float)max_wpm) * 63);
     for (uint8_t i = 0; i <= 1; i++)
       oled_write_pixel(3, height + i, true);
     if (vert_count == 3) {
@@ -185,7 +184,7 @@ void wpm_graph(void) {
       }
     } else {
       for (uint8_t i = 63; i > height; i--)
-        if (i % 3 == 0)
+        if (!(i % 3))
           oled_write_pixel(3, i, true);
       vert_count++;
     }
