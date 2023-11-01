@@ -14,4 +14,4 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
   return false;
 }
 ```
-above snippet aligns pimoronic trackball rgb led with the active rgb matrix animation, & sets the underglow leds to yellow.
+above snippet aligns pimoroni trackball rgb led with the active rgb matrix animation, & sets the underglow leds to yellow.

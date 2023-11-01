@@ -6,8 +6,11 @@
 #include "oled.h"
 #endif
 
+void housekeeping_task_keymap(void);
+void keyboard_post_init_keymap(void);
+
 #ifdef RAW_ENABLE
-#pragma message "check other device's vid/pid"
+#pragma message "check other device's vid/pid!"
 typedef struct user_config {
   uint8_t cpu_temp;
   uint8_t hour;
@@ -24,13 +27,11 @@ enum layers {
 
 enum tapdances {
   QMK_LINKS,
-  EM_DASH,
-  DEG_0,
+  EM_DASH_MINS,
   PLY_NXT_PRV,
-  SPC_QUAD,
-  SRCH_PST_RSE,
-  CBRKT,
-  BRKT,
+  RAISE_PASTE,
+  CURLY_BRACKET,
+  SQR_BRACKET,
   BSLS_PIPE,
   QUOT_DQUO
 };
@@ -67,13 +68,9 @@ enum unicode_mode {
 };
 #endif
 
-#define DEG0 TD(DEG_0)
 #define LINKS TD(QMK_LINKS)
 #define PNP TD(PLY_NXT_PRV)
-#define RSE TD(SRCH_PST_RSE)
-#define QSPC TD(SPC_QUAD)
-#define H_S UC(0x262D) //☭
-#define STAR UC(0x2605) //★
+#define RSEPST TD(RAISE_PASTE)
 #define ESCLWR LT(_LOWER, KC_ESC)
 #define LWRSPC LT(_LOWER, KC_SPC)
 #define RSEBSP LT(_RAISE, KC_BSPC)
@@ -83,9 +80,9 @@ enum unicode_mode {
 #define ___BASE1___ KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P
 #define ___BASE2___ HRML(KC_A, KC_S, KC_D, KC_F), KC_G, KC_H, HRMR(KC_J, KC_K, KC_L, KC_SCLN)
 #define ___BASE3___ KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH
-#define ___BASE4___ UPDIR, ESCLWR, QSPC, KC_BSPC, RSE, PNP
+#define ___BASE4___ UPDIR, ESCLWR, KC_SPC, KC_BSPC, RSEPST, PNP
 
-#define ___LOWER1___ KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, DEG0
+#define ___LOWER1___ KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0
 #define ___LOWER2___ HRML(KC_EXLM, KC_AT, KC_HASH, KC_DLR), KC_PERC, KC_CIRC, HRMR(KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN)
 #define ___LOWER3___ KC_VOLD, KC_TAB, KC_CAPS, KC_TILD, KC_GRV, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_VOLU
 #define ___LOWER4___ _______, _______, _______, _______, _______, _______

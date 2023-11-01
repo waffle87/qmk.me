@@ -4,43 +4,43 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_waffle_3x6(
-    STAR,   ___BASE1___, H_S,
-    LINKS,  ___BASE2___, RWORD,
-    TABLE1, ___BASE3___, TABLE2,
-    ___BASE4___
+    KC_NO, ___BASE1___, KC_NO,
+    LINKS, ___BASE2___, RWORD,
+    KC_NO, ___BASE3___, KC_NO,
+           ___BASE4___
   ),
   [_LOWER] = LAYOUT_waffle_3x6(
     KC_NO, ___LOWER1___, KC_NO,
     KC_NO, ___LOWER2___, KC_NO,
     KC_NO, ___LOWER3___, KC_NO,
-    ___LOWER4___
+           ___LOWER4___
   ),
   [_RAISE] = LAYOUT_waffle_3x6(
     KC_NO, ___RAISE1___, KC_NO,
     KC_NO, ___RAISE2___, KC_NO,
     KC_NO, ___RAISE3___, KC_NO,
-    ___RAISE4___
+           ___RAISE4___
   )
 };
 
-void housekeeping_task_user(void) {
-  if (last_input_activity_elapsed() > 5000) {
+void housekeeping_task_keymap(void) {
+  if (last_input_activity_elapsed() > 15000) {
     const pin_t row_pins[] = MATRIX_ROW_PINS, col_pins[] = MATRIX_COL_PINS;
-    for (int i = 0; i < ARRAY_SIZE(col_pins); ++i) {
+    for (uint8_t i = 0; i < ARRAY_SIZE(col_pins); ++i) {
       setPinOutput(col_pins[i]);
       writePinLow(col_pins[i]);
     }
-    for (int i = 0; i < ARRAY_SIZE(row_pins); ++i) {
+    for (uint8_t i = 0; i < ARRAY_SIZE(row_pins); ++i) {
       setPinInputHigh(row_pins[i]);
       palEnableLineEvent(row_pins[i], PAL_EVENT_MODE_BOTH_EDGES);
     }
     __WFI();
-    for (int i = 0; i < ARRAY_SIZE(row_pins); ++i) {
+    for (uint8_t i = 0; i < ARRAY_SIZE(row_pins); ++i) {
       palDisableLineEvent(row_pins[i]);
       writePinHigh(row_pins[i]);
       setPinInputHigh(row_pins[i]);
     }
-    for (int i = 0; i < ARRAY_SIZE(col_pins); ++i) {
+    for (uint8_t i = 0; i < ARRAY_SIZE(col_pins); ++i) {
       writePinHigh(col_pins[i]);
       setPinInputHigh(col_pins[i]);
     }
@@ -53,7 +53,7 @@ void keyboard_pre_init_user(void) { //thank you to @sigprof for this
   palSetLineMode(B1, PAL_MODE_INPUT_ANALOG);
 }
 
-void keyboard_post_init_user(void) {
+void keyboard_post_init_keymap(void) {
   // enable OPAMP1 as A5 → B1 follower
   OPAMP3->CSR = OPAMP3_CSR_VMSEL_1 | OPAMP3_CSR_VMSEL_0 | OPAMP3_CSR_VPSEL_0 | OPAMP3_CSR_OPAMP3EN;
 }
@@ -123,16 +123,5 @@ void matrix_init_user(void) {
     4, 4, 4, 4, 4, 1, 2,
     2, 2, 2, 2, 2
   } };
-}
-
-extern rgb_led_t rgb_matrix_ws2812_array[RGB_MATRIX_LED_COUNT];
-bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-#ifdef POINTING_DEVICE_ENABLE
-  pimoroni_trackball_set_rgbw(rgb_matrix_ws2812_array[29].r, rgb_matrix_ws2812_array[29].g, rgb_matrix_ws2812_array[29].b, 0);
-#endif
-  for (uint8_t i = led_min; i <= led_max; i++)
-    if (g_led_config.flags[i] & LED_FLAG_UNDERGLOW)
-      rgb_matrix_set_color(i, RGB_YELLOW);
-  return false;
 }
 #endif //rgb matrix

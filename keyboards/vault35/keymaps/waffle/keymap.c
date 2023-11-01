@@ -22,6 +22,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
-void keyboard_post_init_user(void) {
+void keyboard_post_init_keymap(void) {
   rgblight_sethsv_noeeprom(104,255,255);
 }

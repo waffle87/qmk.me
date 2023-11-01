@@ -4,7 +4,7 @@
 #include "secrets.h"
 #ifdef RANDWORD
 #include "users/ridingqwerty/dict.h"
-uint16_t word;
+uint16_t word = 0;
 #endif
 
 #define INTERCEPT_MOD_TAP(mod, keycode)             \
@@ -19,15 +19,15 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case LWRSPC:
     case ESCLWR:
+    case RSEBSP:
       return TAPPING_TERM - 40;
-    case LINKS:
-    case PNP:
-    case TD(QUOT_DQUO):
-    case TD(EM_DASH):
-    case TD(CBRKT):
-    case TD(BRKT):
+    case TD(QMK_LINKS):
+    case TD(EM_DASH_MINS):
+    case TD(PLY_NXT_PRV):
+    case TD(CURLY_BRACKET):
+    case TD(SQR_BRACKET):
     case TD(BSLS_PIPE):
-    case TD(SPC_QUAD):
+    case TD(QUOT_DQUO):
       return TAPPING_TERM + 60;
     default:
       return TAPPING_TERM;
@@ -39,7 +39,7 @@ void td_reset(tap_dance_state_t *state, void *user_data) {
   layer_clear();
 }
 
-void repo_config(tap_dance_state_t *state, void *user_data) {
+void qmk_links(tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
     tap_code16(C(KC_T));
     send_string(qmkstr);
@@ -52,24 +52,15 @@ void repo_config(tap_dance_state_t *state, void *user_data) {
 }
 
 void em_dash_mins(tap_dance_state_t *state, void *user_data) {
-  if (state->count == 1)
+  if (state->count < 3)
     tap_code(KC_MINS);
 #ifdef UNICODE_COMMON_ENABLE
   else
-    register_unicode(0x2014); //—
+    register_unicode(0x2014); // —
 #endif
 }
 
-void zero_degree(tap_dance_state_t *state, void *user_data) {
-  if (state->count == 1)
-    tap_code(KC_0);
-#ifdef UNICODE_COMMON_ENABLE
-  else
-    register_unicode(0x00B0); //°
-#endif
-}
-
-void media_control(tap_dance_state_t *state, void *user_data) {
+void ply_nxt_prv(tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       tap_code(KC_MPLY);
@@ -83,32 +74,20 @@ void media_control(tap_dance_state_t *state, void *user_data) {
   }
 }
 
-void spc_quadspc(tap_dance_state_t *state, void *user_data) {
-  if (state->count == 1)
-    tap_code(KC_SPC);
-  else
-    tap_code(KC_SPC), tap_code(KC_SPC),
-    tap_code(KC_SPC), tap_code(KC_SPC);
-}
-
-void rse_pst_srch(tap_dance_state_t *state, void *user_data) {
+void raise_paste(tap_dance_state_t *state, void *user_data) {
   if (state->pressed && !state->interrupted)
     layer_on(_RAISE);
   else if (state->count == 1)
     tap_code16(C(S(KC_V)));
-  else if (state->count == 2)
-    tap_code16(C(S(KC_F)));
 }
 
 tap_dance_action_t tap_dance_actions[] = {
-  [QMK_LINKS] = ACTION_TAP_DANCE_FN(repo_config),
-  [EM_DASH] = ACTION_TAP_DANCE_FN(em_dash_mins),
-  [DEG_0] = ACTION_TAP_DANCE_FN(zero_degree),
-  [PLY_NXT_PRV] = ACTION_TAP_DANCE_FN(media_control),
-  [SPC_QUAD] = ACTION_TAP_DANCE_FN(spc_quadspc),
-  [SRCH_PST_RSE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, rse_pst_srch, td_reset),
-  [CBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
-  [BRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
+  [QMK_LINKS] = ACTION_TAP_DANCE_FN(qmk_links),
+  [EM_DASH_MINS] = ACTION_TAP_DANCE_FN(em_dash_mins),
+  [PLY_NXT_PRV] = ACTION_TAP_DANCE_FN(ply_nxt_prv),
+  [RAISE_PASTE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, raise_paste, td_reset),
+  [CURLY_BRACKET] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
+  [SQR_BRACKET] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
   [BSLS_PIPE] = ACTION_TAP_DANCE_DOUBLE(KC_BSLS, KC_PIPE),
   [QUOT_DQUO] = ACTION_TAP_DANCE_DOUBLE(KC_QUOT, KC_DQUO),
 };

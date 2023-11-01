@@ -1,14 +1,14 @@
 // Copyright 2022 jack (@waffle87)
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-//  name       output         keys
-CMB(ru_ent,    KC_ENT,        KC_R, KC_U)
-CMB(dk_eql,    KC_EQL,        LCTL_T(KC_D), RCTL_T(KC_K))
-CMB(gh_quot,   TD(QUOT_DQUO), KC_G, KC_H)
-CMB(ty_coln,   KC_COLN,       KC_T, KC_Y)
-CMB(bn_unds,   KC_UNDS,       KC_B, KC_N)
-CMB(er_cbkt,   TD(CBRKT),     KC_E, KC_R)
-CMB(ui_brkt,   TD(BRKT),      KC_U, KC_I)
-CMB(ccom_plus, KC_PLUS,       KC_C, KC_COMM)
-CMB(ei_bsls,   TD(BSLS_PIPE), KC_E, KC_I)
-CMB(vm_mins,   TD(EM_DASH),   KC_V, KC_M)
+//  name       output              keys
+CMB(ru_ent,    KC_ENT,             KC_R, KC_U)
+CMB(dk_eql,    KC_EQL,             LCTL_T(KC_D), RCTL_T(KC_K))
+CMB(gh_quot,   TD(QUOT_DQUO),      KC_G, KC_H)
+CMB(ty_coln,   KC_COLN,            KC_T, KC_Y)
+CMB(bn_unds,   KC_UNDS,            KC_B, KC_N)
+CMB(er_cbkt,   TD(CURLY_BRACKET),  KC_E, KC_R)
+CMB(ui_brkt,   TD(SQR_BRACKET),    KC_U, KC_I)
+CMB(ccom_plus, KC_PLUS,            KC_C, KC_COMM)
+CMB(ei_bsls,   TD(BSLS_PIPE),      KC_E, KC_I)
+CMB(vm_mins,   TD(EM_DASH_MINS),   KC_V, KC_M)

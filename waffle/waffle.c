@@ -19,7 +19,7 @@ void keylogger_sync(uint8_t initiator2target_buffer_size, const void *initiator2
     memcpy(&keylog_str, initiator2target_buffer, initiator2target_buffer_size);
 }
 
-__attribute__ ((weak)) void housekeeping_task_user(void) {
+void housekeeping_task_user(void) {
   if (is_keyboard_master()) {
     static uint32_t last_sync;
     bool needs_sync = false;
@@ -35,10 +35,11 @@ __attribute__ ((weak)) void housekeeping_task_user(void) {
         last_sync = timer_read32();
     }
   }
+  housekeeping_task_keymap();
 }
 #endif
 
-__attribute__ ((weak)) void keyboard_post_init_user(void) {
+void keyboard_post_init_user(void) {
 #if defined(SPLIT_KEYBOARD) && defined(OLED_ENABLE)
   transaction_register_rpc(RPC_ID_USER_KEYLOG_STR, keylogger_sync);
 #endif
@@ -62,6 +63,7 @@ __attribute__ ((weak)) void keyboard_post_init_user(void) {
   if (!autocorrect_is_enabled())
     autocorrect_enable();
 #endif
+  keyboard_post_init_keymap();
 }
 
 #ifdef ENCODER_MAP_ENABLE
@@ -76,13 +78,13 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 uint8_t red = 255, green = 0, blue = 0;
 
 void trackball_hue(void) {
-  if (red != 255 && green != 255 && blue != 255) red = 255;
-  if (red == 255 && green < 255 && blue == 0) green += 15;
-  else if (green == 255 && blue == 0 && red > 0) red -= 15;
-  else if (red == 0 && blue < 255 && green == 255 ) blue += 15;
-  else if (blue == 255 && green > 0 && red == 0) green -= 15;
-  else if (green == 0 && blue == 255 && red < 255) red += 15;
-  else if (green == 0 && blue > 0 && red == 255) blue -= 15;
+  if (red != 255 && green != 255 && blue != 255) red    = 255;
+  if (red == 255 && green < 255 && !blue)        green += 15;
+  else if (green == 255 && !blue && red)         red   -= 15;
+  else if (!red && blue < 255 && green == 255)   blue  += 15;
+  else if (blue == 255 && green && !red)         green -= 15;
+  else if (!green && blue == 255 && red < 255)   red   += 15;
+  else if (!green && blue && red == 255)         blue  -= 15;
   pimoroni_trackball_set_rgbw(red, green, blue, 0);
 }
 #endif
@@ -109,7 +111,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 #endif
       }
   }
-  return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
+  return state;
 }
 
 report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
