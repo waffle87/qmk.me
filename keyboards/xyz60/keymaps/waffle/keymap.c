@@ -5,11 +5,11 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_waffle_60_ts(
-    KC_DEL,  ___NONE___,
-    _______, ___BASE1___, _______, _______, PNP,
-    LINKS,   ___BASE2___, KC_BSPC, _______,
+    _______, ___NONE___,
+    _______, ___BASE1___, KC_BSPC, _______, PNP,
+    _______, ___BASE2___, _______, _______,
     _______, ___BASE3___, _______,
-    KC_VOLD, _______,     KC_ESC,  LWRSPC, RSE, _______, KC_VOLU
+    _______, _______,     KC_ESC,  LWRSPC, RSE, _______, _______
   ),
   [_LOWER] = LAYOUT_waffle_60_ts(
     _______, ___NONE___,

@@ -20,6 +20,7 @@
     "led_count": 12,
     "sleep": true
   },
+  "debounce": 8,
   "layouts": {
     "LAYOUT": {
       "layout": [

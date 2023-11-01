@@ -125,7 +125,7 @@ void matrix_init_user(void) {
   } };
 }
 
-extern LED_TYPE rgb_matrix_ws2812_array[RGB_MATRIX_LED_COUNT];
+extern rgb_led_t rgb_matrix_ws2812_array[RGB_MATRIX_LED_COUNT];
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
 #ifdef POINTING_DEVICE_ENABLE
   pimoroni_trackball_set_rgbw(rgb_matrix_ws2812_array[29].r, rgb_matrix_ws2812_array[29].g, rgb_matrix_ws2812_array[29].b, 0);
