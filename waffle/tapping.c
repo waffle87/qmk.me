@@ -3,7 +3,7 @@
 #include "waffle.h"
 #include "secrets.h"
 #ifdef RANDWORD
-#include "users/ridingqwerty/dict.h"
+#include "dict.h"
 uint16_t word = 0;
 #endif
 
@@ -52,12 +52,18 @@ void qmk_links(tap_dance_state_t *state, void *user_data) {
 }
 
 void em_dash_mins(tap_dance_state_t *state, void *user_data) {
-  if (state->count < 3)
-    tap_code(KC_MINS);
+  switch (state->count) {
+    case 3:
 #ifdef UNICODE_COMMON_ENABLE
-  else
-    register_unicode(0x2014); // —
+      register_unicode(0x2014); // —
 #endif
+      break;
+    case 2:
+      tap_code(KC_MINS), tap_code(KC_MINS);
+      break;
+    default:
+      tap_code(KC_MINS);
+  }
 }
 
 void ply_nxt_prv(tap_dance_state_t *state, void *user_data) {
@@ -114,6 +120,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         SEND_STRING("\b```suggestion\n```");
       }
       break;
+    case REMOVE:
+      if (record->event.pressed)
+        SEND_STRING("This file should be removed.");
+      break;
     INTERCEPT_MOD_TAP(LALT_T, KC_EXLM)
     INTERCEPT_MOD_TAP(LGUI_T, KC_AT)
     INTERCEPT_MOD_TAP(LCTL_T, KC_HASH)
@@ -124,7 +134,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     INTERCEPT_MOD_TAP(RALT_T, KC_RPRN)
     case RWORD:
 #ifdef RANDWORD
-      word = rand() % NUMBER_OF_WORDS;
+      word = rand() % NUM_WORDS;
       if (record->event.pressed) {
         send_string(dict[word]);
         tap_code(KC_SPC);

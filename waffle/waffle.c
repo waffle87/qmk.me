@@ -35,7 +35,6 @@ void housekeeping_task_user(void) {
         last_sync = timer_read32();
     }
   }
-  housekeeping_task_keymap();
 }
 #endif
 
@@ -63,7 +62,6 @@ void keyboard_post_init_user(void) {
   if (!autocorrect_is_enabled())
     autocorrect_enable();
 #endif
-  keyboard_post_init_keymap();
 }
 
 #ifdef ENCODER_MAP_ENABLE

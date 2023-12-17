@@ -6,9 +6,6 @@
 #include "oled.h"
 #endif
 
-void housekeeping_task_keymap(void);
-void keyboard_post_init_keymap(void);
-
 #ifdef RAW_ENABLE
 #pragma message "check other device's vid/pid!"
 typedef struct user_config {
@@ -40,6 +37,7 @@ enum tapdances {
 enum custom_keycodes {
   UPDIR = QK_USER,
   NUKE,
+  REMOVE,
   TABLE1,
   TABLE2,
   KC_NOMODE,
