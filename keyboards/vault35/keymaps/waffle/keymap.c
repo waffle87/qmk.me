@@ -1,6 +1,7 @@
 // Copyright 2022 jack (@waffle87)
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "waffle.h"
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_waffle(
     ___BASE1___, KC_NO,
@@ -21,7 +22,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ___RAISE4___
   )
 };
-
-void keyboard_post_init_keymap(void) {
-  rgblight_sethsv_noeeprom(104,255,255);
-}

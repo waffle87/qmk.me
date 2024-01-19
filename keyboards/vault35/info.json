@@ -18,7 +18,12 @@
   "ws2812": { "pin": "D5" },
   "rgblight": {
     "led_count": 12,
-    "sleep": true
+    "sleep": true,
+    "default": {
+      "hue": 104,
+      "sat": 255,
+      "val": 255
+    }
   },
   "debounce": 8,
   "layouts": {
