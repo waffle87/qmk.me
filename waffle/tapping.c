@@ -20,7 +20,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     case LWRSPC:
     case ESCLWR:
     case RSEBSP:
-      return TAPPING_TERM - 40;
+      return TAPPING_TERM - SPC_OFFSET;
     case TD(QMK_LINKS):
     case TD(EM_DASH_MINS):
     case TD(PLY_NXT_PRV):

@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "waffle.h"
 #define ___NONE___ _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+#define SPC_OFFSET 20
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_waffle_60_ts(
