@@ -1,4 +1,4 @@
-// Copyright 2022 jack (@waffle87)
+// Copyright 2024 jack (@waffle87)
 // SPDX-License-Identifier: GPL-2.0-or-later
 #define AUTOCORRECT_MIN_LENGTH 5
 #define AUTOCORRECT_MAX_LENGTH 10
