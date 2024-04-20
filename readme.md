@@ -156,7 +156,7 @@ endif
 [relic](keyboards/relic)\
 [vault35](keyboards/vault35)\
 [bully](keyboards/bully)\
-[torn-ish](keyboards/tornish)
+[torn-ish](keyboards/tornish)\
 [xyz60](keyboards/xyz60)\
 [f60](kemaps/f60)\
 [minidox](keyboards/minidox)\
