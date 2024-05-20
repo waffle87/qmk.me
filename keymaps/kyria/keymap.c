@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "waffle.h"
 
+// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_waffle(
     KC_NO,      KC_Q, KC_W, KC_E, KC_R,  KC_T,                                     KC_Y,      KC_U,  KC_I,    KC_O,   KC_P,     KC_NO,
@@ -24,6 +25,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                _______, _______, _______, _______, _______,      _______, _______, _______,   _______,   _______
   )
 };
+// clang-format on
 
 #ifdef OLED_ENABLE
 bool oled_task_keymap(void) {

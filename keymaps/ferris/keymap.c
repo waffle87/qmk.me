@@ -3,6 +3,7 @@
 #include "waffle.h"
 #define XX NO_LED
 
+// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_waffle(
     ___BASE1___,
@@ -52,3 +53,4 @@ led_config_t g_led_config = {{
   4,4,4,4,4,
   4,4
 }};
+// clang-format on

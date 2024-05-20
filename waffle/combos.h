@@ -8,7 +8,8 @@ enum combos {
 };
 #undef CMB
 
-#define CMB(name, action, ...) uint16_t const name##_combo[] PROGMEM = {__VA_ARGS__, COMBO_END};
+#define CMB(name, action, ...)                                                 \
+  uint16_t const name##_combo[] PROGMEM = {__VA_ARGS__, COMBO_END};
 #include "combos.def"
 #undef CMB
 

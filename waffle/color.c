@@ -48,7 +48,7 @@ RGB rgb_matrix_hsv_to_rgb(const HSV hsv) {
           uint8_t twothirds = scale8(offset8, ((256 * 2) / 3));
           r = 171 - twothirds;
           g = 170 + third;
-          b  = 0;
+          b = 0;
           FORCE_REFERENCE(b);
         }
         if (Y2) {

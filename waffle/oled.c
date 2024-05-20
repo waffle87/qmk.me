@@ -18,7 +18,7 @@ void render_scan_rate(void) {
 #ifdef RAW_ENABLE
 void host_info(uint8_t data) {
   char buffer[3];
-  oled_write_ln((char*)itoa(data, buffer, 10), false);
+  oled_write_ln((char *)itoa(data, buffer, 10), false);
 }
 
 void render_time(void) {
@@ -33,34 +33,38 @@ void render_time(void) {
 #endif
 
 void qmk_logo(void) {
-  static const char PROGMEM qmk_logo[16] = {0x8a, 0x8b, 0x8c, 0x8d, 0x8e, 0xaa, 0xab, 0xac, 0xad, 0xae, 0xca, 0xcb, 0xcc, 0xcd, 0xce, 0};
+  static const char PROGMEM qmk_logo[16] = {0x8a, 0x8b, 0x8c, 0x8d, 0x8e, 0xaa,
+                                            0xab, 0xac, 0xad, 0xae, 0xca, 0xcb,
+                                            0xcc, 0xcd, 0xce, 0};
   oled_write(qmk_logo, false);
 };
 
 void render_keyboard(void) {
-  static const char PROGMEM keyboard[16] = {0xba, 0xbb, 0xbc, 0xbd, 0xbe, 0xda, 0xdb, 0xdc, 0xdd, 0xde, 0};
+  static const char PROGMEM keyboard[16] = {0xba, 0xbb, 0xbc, 0xbd, 0xbe, 0xda,
+                                            0xdb, 0xdc, 0xdd, 0xde, 0};
   oled_write(keyboard, false);
 };
 
 void layer_status(void) {
   bool blink = (timer_read() % 1000) < 500;
   switch (get_highest_layer(layer_state)) {
-    case _RAISE:
-      oled_write_ln(PSTR("> hi"), false);
-      break;
-    case _LOWER:
-      oled_write_ln(PSTR("> lo"), false);
-      break;
-    case _ADJUST:
-      oled_write_ln(PSTR("> ad"), false);
-      break;
-    default:
-      oled_write_ln(blink ? PSTR("> _") : PSTR(">   "), false);
+  case _RAISE:
+    oled_write_ln(PSTR("> hi"), false);
+    break;
+  case _LOWER:
+    oled_write_ln(PSTR("> lo"), false);
+    break;
+  case _ADJUST:
+    oled_write_ln(PSTR("> ad"), false);
+    break;
+  default:
+    oled_write_ln(blink ? PSTR("> _") : PSTR(">   "), false);
   }
 };
 
 void mod_status(uint8_t mods) {
-  static const char PROGMEM status [4][3] = {{0xd3, 0xd4, 0}, {0x93, 0x94, 0}, {0xb3, 0xb4, 0}, {0x95, 0x96, 0}};
+  static const char PROGMEM status[4][3] = {
+      {0xd3, 0xd4, 0}, {0x93, 0x94, 0}, {0xb3, 0xb4, 0}, {0x95, 0x96, 0}};
   bool blink = (timer_read() % 1000) < 500;
   if (mods & MOD_MASK_CTRL) {
     oled_set_cursor(2, 11);
@@ -85,33 +89,29 @@ void keylock_status(led_t led_usb_state) {
   else if (led_usb_state.num_lock)
     oled_write_ln(PSTR("% num"), false);
   else if (led_usb_state.scroll_lock)
-     oled_write_ln(PSTR("% scr"), false);
+    oled_write_ln(PSTR("% scr"), false);
   else
     oled_write_ln(blink ? PSTR("% _") : PSTR("%    "), false);
 }
 
-char keylog_str[5]  = {};
+char keylog_str[5] = {};
 static uint16_t keylog_timer = 0;
 const char code_to_name[60] = {
-  ' ', ' ', ' ', ' ', 'a', 'b', 'c', 'd', 'e', 'f',
-  'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
-  'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-  '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
-  'R', 'E', 'B', 'T', '_', '-', '=', '[', ']', '\\',
-  '#', ';', '\'', '`', ',', '.', '/', ' ', ' ', ' '
-};
+    ' ', ' ',  ' ', ' ', 'a',  'b', 'c', 'd', 'e', 'f', 'g', 'h',
+    'i', 'j',  'k', 'l', 'm',  'n', 'o', 'p', 'q', 'r', 's', 't',
+    'u', 'v',  'w', 'x', 'y',  'z', '1', '2', '3', '4', '5', '6',
+    '7', '8',  '9', '0', 'R',  'E', 'B', 'T', '_', '-', '=', '[',
+    ']', '\\', '#', ';', '\'', '`', ',', '.', '/', ' ', ' ', ' '};
 
 void add_keylog(uint16_t keycode) {
   for (uint8_t i = ARRAY_SIZE(keylog_str) - 1; i > 0; i--)
     keylog_str[i] = keylog_str[i - 1];
   if (keycode < ARRAY_SIZE(code_to_name))
     keylog_str[0] = code_to_name[keycode & 0xFF];
-  keylog_timer   = timer_read();
+  keylog_timer = timer_read();
 }
 
-void render_keylog(void) {
-  oled_write(keylog_str, false);
-}
+void render_keylog(void) { oled_write(keylog_str, false); }
 
 void render_keylogger(void) { oled_write(keylog_str, false); }
 
@@ -129,7 +129,8 @@ void anim_frame(uint16_t size, char const action[][size]) {
 #ifdef FELIX_DOG
 void felix(void) {
   static uint16_t felix_anim_timer = 0;
-  bool shifted = get_mods() & MOD_MASK_SHIFT || host_keyboard_led_state().caps_lock || is_caps_word_on();
+  bool shifted = get_mods() & MOD_MASK_SHIFT ||
+                 host_keyboard_led_state().caps_lock || is_caps_word_on();
   void animate(void) {
     if (shifted)
       anim_frame(96, felix_bark);
@@ -155,9 +156,11 @@ void bongo(void) {
   void animate(void) {
     if (get_current_wpm() <= 30) {
       anim_frame(512, bongo_idle);
-    } if (get_current_wpm() > 30 && get_current_wpm() <= 40) {
+    }
+    if (get_current_wpm() > 30 && get_current_wpm() <= 40) {
       anim_frame(512, bongo_prep);
-    } if (get_current_wpm() > 40) {
+    }
+    if (get_current_wpm() > 40) {
       anim_frame(512, bongo_tap);
     }
   }
@@ -170,7 +173,8 @@ void bongo(void) {
 
 #ifdef WPM_GRAPH
 void wpm_graph(void) {
-  static uint8_t height = OLED_DISPLAY_HEIGHT - 1, vert_count = 0, max_wpm = 160;
+  static uint8_t height = OLED_DISPLAY_HEIGHT - 1, vert_count = 0,
+                 max_wpm = 160;
   static uint16_t graph_timer = 0;
   if (timer_elapsed(graph_timer) > 100) {
     height = 63 - ((get_current_wpm() / (float)max_wpm) * 63);
@@ -205,17 +209,17 @@ void layer_anim(void) {
   static uint16_t layer_anim_timer = 0;
   void animate(void) {
     switch (get_highest_layer(layer_state)) {
-      case _RAISE:
-        anim_frame(650, tap_sym);
-        break;
-      case _LOWER:
-        anim_frame(520, tap_num);
-        break;
-      case _ADJUST:
-        anim_frame(520, tap_sys);
-        break;
-      default:
-        bongo();
+    case _RAISE:
+      anim_frame(650, tap_sym);
+      break;
+    case _LOWER:
+      anim_frame(520, tap_num);
+      break;
+    case _ADJUST:
+      anim_frame(520, tap_sys);
+      break;
+    default:
+      bongo();
     }
   }
   if (timer_elapsed(layer_anim_timer) > 200) {
@@ -237,6 +241,4 @@ bool oled_task_user(void) {
   return false;
 }
 
-void oled_timer_reset(void) {
-  oled_timer = timer_read32();
-}
+void oled_timer_reset(void) { oled_timer = timer_read32(); }

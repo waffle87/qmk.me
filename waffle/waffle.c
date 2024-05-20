@@ -14,7 +14,10 @@ void raw_hid_receive(uint8_t *data, uint8_t length) {
 #if defined(SPLIT_KEYBOARD) && defined(OLED_ENABLE)
 #include "transactions.h"
 extern char keylog_str[5];
-void keylogger_sync(uint8_t initiator2target_buffer_size, const void *initiator2target_buffer, uint8_t target2initiator_buffer_size, void *target2initiator_buffer) {
+void keylogger_sync(uint8_t initiator2target_buffer_size,
+                    const void *initiator2target_buffer,
+                    uint8_t target2initiator_buffer_size,
+                    void *target2initiator_buffer) {
   if (initiator2target_buffer_size == 5)
     memcpy(&keylog_str, initiator2target_buffer, initiator2target_buffer_size);
 }
@@ -66,23 +69,29 @@ void keyboard_post_init_user(void) {
 
 #ifdef ENCODER_MAP_ENABLE
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-  [_BASE]  = {{ KC_VOLU, KC_VOLD }, { KC_MNXT, KC_MPRV }},
-  [_LOWER] = {{ RGB_SAI, RGB_SAD }, { RGB_HUI, RGB_HUD }},
-  [_RAISE] = {{ C(KC_LEFT), C(KC_RGHT) }, { C(S(KC_TAB)), C(KC_TAB) }}
-};
+    [_BASE] = {{KC_VOLU, KC_VOLD}, {KC_MNXT, KC_MPRV}},
+    [_LOWER] = {{RGB_SAI, RGB_SAD}, {RGB_HUI, RGB_HUD}},
+    [_RAISE] = {{C(KC_LEFT), C(KC_RGHT)}, {C(S(KC_TAB)), C(KC_TAB)}}};
 #endif
 
 #ifdef POINTING_DEVICE_DRIVER_pimoroni_trackball
 uint8_t red = 255, green = 0, blue = 0;
 
 void trackball_hue(void) {
-  if (red != 255 && green != 255 && blue != 255) red    = 255;
-  if (red == 255 && green < 255 && !blue)        green += 15;
-  else if (green == 255 && !blue && red)         red   -= 15;
-  else if (!red && blue < 255 && green == 255)   blue  += 15;
-  else if (blue == 255 && green && !red)         green -= 15;
-  else if (!green && blue == 255 && red < 255)   red   += 15;
-  else if (!green && blue && red == 255)         blue  -= 15;
+  if (red != 255 && green != 255 && blue != 255)
+    red = 255;
+  if (red == 255 && green < 255 && !blue)
+    green += 15;
+  else if (green == 255 && !blue && red)
+    red -= 15;
+  else if (!red && blue < 255 && green == 255)
+    blue += 15;
+  else if (blue == 255 && green && !red)
+    green -= 15;
+  else if (!green && blue == 255 && red < 255)
+    red += 15;
+  else if (!green && blue && red == 255)
+    blue -= 15;
   pimoroni_trackball_set_rgbw(red, green, blue, 0);
 }
 #endif
@@ -91,23 +100,23 @@ void trackball_hue(void) {
 static bool scrolling = false;
 layer_state_t layer_state_set_user(layer_state_t state) {
   switch (get_highest_layer(state)) {
-    case _LOWER:
-      scrolling = true;
+  case _LOWER:
+    scrolling = true;
 #ifdef POINTING_DEVICE_DRIVER_pimoroni_trackball
-      pimoroni_trackball_set_cpi(0.1);
+    pimoroni_trackball_set_cpi(0.1);
 #else
-      pointing_device_set_cpi(64);
+    pointing_device_set_cpi(64);
 #endif
-      break;
-    default:
-      if (scrolling) {
-        scrolling = false;
+    break;
+  default:
+    if (scrolling) {
+      scrolling = false;
 #ifdef POINTING_DEVICE_DRIVER_pimoroni_trackball
-        pimoroni_trackball_set_cpi(1);
+      pimoroni_trackball_set_cpi(1);
 #else
-        pointing_device_set_cpi(1024);
+      pointing_device_set_cpi(1024);
 #endif
-      }
+    }
   }
   return state;
 }

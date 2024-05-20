@@ -1,6 +1,8 @@
 // Copyright 2024 jack (@waffle87)
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "waffle.h"
+
+// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_waffle_3x5(
     ___BASE1___,
@@ -21,13 +23,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ___RAISE4___
   )
 };
+// clang-format on
 
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
   if (is_keyboard_master())
     return 0;
   else
-   return 2;
+    return 2;
   return rotation;
 }
 

@@ -1,8 +1,11 @@
 // Copyright 2024 jack (@waffle87)
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "waffle.h"
-#define ___NONE___ _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+#define ___NONE___                                                             \
+  _______, _______, _______, _______, _______, _______, _______, _______,      \
+      _______, _______, _______, _______, _______
 
+// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_waffle_60_ts(
     _______, ___NONE___,
@@ -26,3 +29,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______,      _______, _______, _______, _______, _______
   )
 };
+// clang-format on

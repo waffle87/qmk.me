@@ -45,9 +45,10 @@ void tap_code16_nomods(uint16_t kc) {
     return ret;                                                                \
   }
 
-bool process_record_glyph_replacement(uint16_t keycode, keyrecord_t *record, translator_function_t translator) {
+bool process_record_glyph_replacement(uint16_t keycode, keyrecord_t *record,
+                                      translator_function_t translator) {
   uint8_t temp_mod = get_mods();
-  bool is_shifted = (temp_mod) & MOD_MASK_SHIFT;
+  bool is_shifted = (temp_mod)&MOD_MASK_SHIFT;
   if (((temp_mod) & (MOD_MASK_CTRL | MOD_MASK_ALT | MOD_MASK_GUI)) == 0) {
     if (KC_A <= keycode && keycode <= KC_Z) {
       if (record->event.pressed)
@@ -68,94 +69,99 @@ bool process_record_glyph_replacement(uint16_t keycode, keyrecord_t *record, tra
   return true;
 }
 
-DEFINE_UNICODE_RANGE_TRANSLATOR(unicode_range_translator_wide, 0xFF41, 0xFF21, 0xFF10, 0xFF11, 0x2003);
-DEFINE_UNICODE_RANGE_TRANSLATOR(unicode_range_translator_script, 0x1D4EA, 0x1D4D0, 0x1D7CE, 0x1D7C1, 0x2002);
-DEFINE_UNICODE_RANGE_TRANSLATOR(unicode_range_translator_boxes, 0x1F170, 0x1F170, '0', '1', 0x2002);
-DEFINE_UNICODE_RANGE_TRANSLATOR(unicode_range_translator_regional, 0x1F1E6, 0x1F1E6, '0', '1', 0x2003);
+DEFINE_UNICODE_RANGE_TRANSLATOR(unicode_range_translator_wide, 0xFF41, 0xFF21,
+                                0xFF10, 0xFF11, 0x2003);
+DEFINE_UNICODE_RANGE_TRANSLATOR(unicode_range_translator_script, 0x1D4EA,
+                                0x1D4D0, 0x1D7CE, 0x1D7C1, 0x2002);
+DEFINE_UNICODE_RANGE_TRANSLATOR(unicode_range_translator_boxes, 0x1F170,
+                                0x1F170, '0', '1', 0x2002);
+DEFINE_UNICODE_RANGE_TRANSLATOR(unicode_range_translator_regional, 0x1F1E6,
+                                0x1F1E6, '0', '1', 0x2003);
 
 DEFINE_UNICODE_LUT_TRANSLATOR(unicode_lut_translator_aussie,
-  0x0250, // a
-  'q',    // b
-  0x0254, // c
-  'p',    // d
-  0x01DD, // e
-  0x025F, // f
-  0x0183, // g
-  0x0265, // h
-  0x1D09, // i
-  0x027E, // j
-  0x029E, // k
-  'l',    // l
-  0x026F, // m
-  'u',    // n
-  'o',    // o
-  'd',    // p
-  'b',    // q
-  0x0279, // r
-  's',    // s
-  0x0287, // t
-  'n',    // u
-  0x028C, // v
-  0x028D, // w
-  0x2717, // x
-  0x028E, // y
-  'z',    // z
-  0x0269, // 1
-  0x3139, // 2
-  0x0190, // 3
-  0x3123, // 4
-  0x03DB, // 5
-  '9',    // 6
-  0x3125, // 7
-  '8',    // 8
-  '6',    // 9
-  '0'     // 0
+                              0x0250, // a
+                              'q',    // b
+                              0x0254, // c
+                              'p',    // d
+                              0x01DD, // e
+                              0x025F, // f
+                              0x0183, // g
+                              0x0265, // h
+                              0x1D09, // i
+                              0x027E, // j
+                              0x029E, // k
+                              'l',    // l
+                              0x026F, // m
+                              'u',    // n
+                              'o',    // o
+                              'd',    // p
+                              'b',    // q
+                              0x0279, // r
+                              's',    // s
+                              0x0287, // t
+                              'n',    // u
+                              0x028C, // v
+                              0x028D, // w
+                              0x2717, // x
+                              0x028E, // y
+                              'z',    // z
+                              0x0269, // 1
+                              0x3139, // 2
+                              0x0190, // 3
+                              0x3123, // 4
+                              0x03DB, // 5
+                              '9',    // 6
+                              0x3125, // 7
+                              '8',    // 8
+                              '6',    // 9
+                              '0'     // 0
 );
 
 DEFINE_UNICODE_LUT_TRANSLATOR(unicode_lut_translator_super,
-  0x1D43, // a
-  0x1D47, // b
-  0x1D9C, // c
-  0x1D48, // d
-  0x1D49, // e
-  0x1DA0, // f
-  0x1D4D, // g
-  0x02B0, // h
-  0x2071, // i
-  0x02B2, // j
-  0x1D4F, // k
-  0x02E1, // l
-  0x1D50, // m
-  0x207F, // n
-  0x1D52, // o
-  0x1D56, // p
-  0x06F9, // q
-  0x02B3, // r
-  0x02E2, // s
-  0x1D57, // t
-  0x1D58, // u
-  0x1D5B, // v
-  0x02B7, // w
-  0x02E3, // x
-  0x02B8, // y
-  0x1DBB, // z
-  0x00B9, // 1
-  0x00B2, // 2
-  0x00B3, // 3
-  0x2074, // 4
-  0x2075, // 5
-  0x2076, // 6
-  0x2077, // 7
-  0x2078, // 8
-  0x2079, // 9
-  0x2070  // 0
+                              0x1D43, // a
+                              0x1D47, // b
+                              0x1D9C, // c
+                              0x1D48, // d
+                              0x1D49, // e
+                              0x1DA0, // f
+                              0x1D4D, // g
+                              0x02B0, // h
+                              0x2071, // i
+                              0x02B2, // j
+                              0x1D4F, // k
+                              0x02E1, // l
+                              0x1D50, // m
+                              0x207F, // n
+                              0x1D52, // o
+                              0x1D56, // p
+                              0x06F9, // q
+                              0x02B3, // r
+                              0x02E2, // s
+                              0x1D57, // t
+                              0x1D58, // u
+                              0x1D5B, // v
+                              0x02B7, // w
+                              0x02E3, // x
+                              0x02B8, // y
+                              0x1DBB, // z
+                              0x00B9, // 1
+                              0x00B2, // 2
+                              0x00B3, // 3
+                              0x2074, // 4
+                              0x2075, // 5
+                              0x2076, // 6
+                              0x2077, // 7
+                              0x2078, // 8
+                              0x2079, // 9
+                              0x2070  // 0
 );
 
 bool process_record_aussie(uint16_t keycode, keyrecord_t *record) {
   bool is_shifted = (get_mods()) & MOD_MASK_SHIFT;
   if ((KC_A <= keycode) && (keycode <= KC_0)) {
     if (record->event.pressed)
-      if (!process_record_glyph_replacement(keycode, record, unicode_lut_translator_aussie)) {
+      if (!process_record_glyph_replacement(keycode, record,
+                                            unicode_lut_translator_aussie)) {
         tap_code16_nomods(KC_LEFT);
         return false;
       }
@@ -217,9 +223,15 @@ bool process_record_zalgo(uint16_t keycode, keyrecord_t *record) {
 bool process_record_unicode(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
   case TABLE1:
-    if (record->event.pressed) { send_unicode_string("┬──┬ ノ( ゜-゜ノ)"); } break;
+    if (record->event.pressed) {
+      send_unicode_string("┬──┬ ノ( ゜-゜ノ)");
+    }
+    break;
   case TABLE2:
-    if (record->event.pressed) { send_unicode_string("(╯°□°)╯︵┻━┻"); } break;
+    if (record->event.pressed) {
+      send_unicode_string("(╯°□°)╯︵┻━┻");
+    }
+    break;
   case KC_NOMODE ... KC_SUPER:
     if (record->event.pressed) {
       if (typing_mode != keycode - KC_NOMODE)
@@ -231,20 +243,26 @@ bool process_record_unicode(uint16_t keycode, keyrecord_t *record) {
   }
   if (((get_mods()) & ~MOD_MASK_SHIFT) != 0)
     return true;
-  if (((keycode >= QK_MOD_TAP && keycode <= QK_MOD_TAP_MAX) || (keycode >= QK_LAYER_TAP && keycode <= QK_LAYER_TAP_MAX)) && record->tap.count)
+  if (((keycode >= QK_MOD_TAP && keycode <= QK_MOD_TAP_MAX) ||
+       (keycode >= QK_LAYER_TAP && keycode <= QK_LAYER_TAP_MAX)) &&
+      record->tap.count)
     keycode &= 0xFF;
   if (typing_mode == WIDE) {
     if (((KC_A <= keycode) && (keycode <= KC_0)) || keycode == KC_SPACE)
-      return process_record_glyph_replacement(keycode, record, unicode_range_translator_wide);
+      return process_record_glyph_replacement(keycode, record,
+                                              unicode_range_translator_wide);
   } else if (typing_mode == SCRIPT) {
     if (((KC_A <= keycode) && (keycode <= KC_0)) || keycode == KC_SPACE)
-      return process_record_glyph_replacement(keycode, record, unicode_range_translator_script);
+      return process_record_glyph_replacement(keycode, record,
+                                              unicode_range_translator_script);
   } else if (typing_mode == BLOCKS) {
     if (((KC_A <= keycode) && (keycode <= KC_0)) || keycode == KC_SPACE)
-      return process_record_glyph_replacement(keycode, record, unicode_range_translator_boxes);
+      return process_record_glyph_replacement(keycode, record,
+                                              unicode_range_translator_boxes);
   } else if (typing_mode == REGIONAL) {
     if (((KC_A <= keycode) && (keycode <= KC_0)) || keycode == KC_SPACE) {
-      if (!process_record_glyph_replacement(keycode, record, unicode_range_translator_regional)) {
+      if (!process_record_glyph_replacement(
+              keycode, record, unicode_range_translator_regional)) {
         wait_us(500);
         tap_unicode_glyph_nomods(0x200C);
         return false;
@@ -252,7 +270,8 @@ bool process_record_unicode(uint16_t keycode, keyrecord_t *record) {
     }
   } else if (typing_mode == SUPER) {
     if (((KC_A <= keycode) && (keycode <= KC_0)))
-      return process_record_glyph_replacement(keycode, record, unicode_lut_translator_super);
+      return process_record_glyph_replacement(keycode, record,
+                                              unicode_lut_translator_super);
   } else if (typing_mode == AUSSIE)
     return process_record_aussie(keycode, record);
   else if (typing_mode == ZALGO)
