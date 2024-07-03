@@ -1,4 +1,4 @@
-// Copyright 2024 jack (@waffle87)
+// Copyright 2024 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "waffle.h"
 #include "combos.h"
@@ -72,28 +72,6 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [_BASE] = {{KC_VOLU, KC_VOLD}, {KC_MNXT, KC_MPRV}},
     [_LOWER] = {{RGB_SAI, RGB_SAD}, {RGB_HUI, RGB_HUD}},
     [_RAISE] = {{C(KC_LEFT), C(KC_RGHT)}, {C(S(KC_TAB)), C(KC_TAB)}}};
-#endif
-
-#ifdef POINTING_DEVICE_DRIVER_pimoroni_trackball
-uint8_t red = 255, green = 0, blue = 0;
-
-void trackball_hue(void) {
-  if (red != 255 && green != 255 && blue != 255)
-    red = 255;
-  if (red == 255 && green < 255 && !blue)
-    green += 15;
-  else if (green == 255 && !blue && red)
-    red -= 15;
-  else if (!red && blue < 255 && green == 255)
-    blue += 15;
-  else if (blue == 255 && green && !red)
-    green -= 15;
-  else if (!green && blue == 255 && red < 255)
-    red += 15;
-  else if (!green && blue && red == 255)
-    blue -= 15;
-  pimoroni_trackball_set_rgbw(red, green, blue, 0);
-}
 #endif
 
 #ifdef POINTING_DEVICE_ENABLE

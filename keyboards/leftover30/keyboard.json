@@ -1,7 +1,7 @@
 {
   "keyboard_name": "leftover30",
-  "manufacturer": "waffles",
-  "maintainer": "waffle87",
+  "manufacturer": "jacks",
+  "maintainer": "pngu.org",
   "processor": "STM32F072",
   "bootloader": "stm32-dfu",
   "diode_direction": "COL2ROW",

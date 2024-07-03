@@ -1,4 +1,4 @@
-# Copyright 2024 jack (@waffle87)
+# Copyright 2024 jack@pngu.org
 # SPDX-License-Identifier: GPL-2.0-or-later
 import hid
 import sys
@@ -15,10 +15,14 @@ usage = 0x61
 
 def get_raw_hid_interface():
     device_interfaces = hid.enumerate(vendor_id, product_id)
-    raw_hid_interfaces = [i for i in device_interfaces if i['usage_page'] == usage_page and i['usage'] == usage]
+    raw_hid_interfaces = [
+        i
+        for i in device_interfaces
+        if i["usage_page"] == usage_page and i["usage"] == usage
+    ]
     if len(raw_hid_interfaces) == 0:
         return None
-    interface = hid.Device(path=raw_hid_interfaces[0]['path'])
+    interface = hid.Device(path=raw_hid_interfaces[0]["path"])
     return interface
 
 
@@ -28,7 +32,7 @@ def send_packet(data):
         print("no device found")
         sys.exit(1)
     request_data = [0x00] * 32
-    request_data[1:len(data) + 1] = data
+    request_data[1 : len(data) + 1] = data
     request_packet = bytes(request_data)
     try:
         interface.write(request_packet)
@@ -42,8 +46,4 @@ if __name__ == "__main__":
         cpu_temp = psutil.sensors_temperatures()["gigabyte_wmi"][2]
         cur_hour = datetime.datetime.now().strftime("%H")
         cur_minute = datetime.datetime.now().strftime("%M")
-        send_packet([
-            math.trunc(cpu_temp.current),
-            int(cur_hour),
-            int(cur_minute)
-        ])
+        send_packet([math.trunc(cpu_temp.current), int(cur_hour), int(cur_minute)])

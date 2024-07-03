@@ -1,7 +1,7 @@
 {
   "keyboard_name": "vault35",
-  "manufacturer": "waffles",
-  "maintainer": "waffle87",
+  "manufacturer": "jacks",
+  "maintainer": "pngu.org",
   "processor": "atmega32u4",
   "bootloader": "atmel-dfu",
   "diode_direction": "COL2ROW",

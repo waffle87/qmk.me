@@ -1,4 +1,4 @@
-// Copyright 2024 jack (@waffle87)
+// Copyright 2024 jack@pngu.org
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "waffle.h"
 

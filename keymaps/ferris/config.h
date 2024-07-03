@@ -1,9 +1,10 @@
-// Copyright 2024 jack (@waffle87)
+// Copyright 2024 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
+
 #define WS2812_DI_PIN B0
 #define RGB_MATRIX_LED_COUNT 34
-#define RGB_MATRIX_SPLIT {17,17}
+#define RGB_MATRIX_SPLIT {17, 17}
 #define RGB_DISABLE_WHEN_USB_SUSPENDED
 #define ENABLE_RGB_MATRIX_JELLYBEAN_RAINDROPS
 #define ENABLE_RGB_MATRIX_CYCLE_LEFT_RIGHT
@@ -12,6 +13,7 @@
 #define __ NO_PIN
 #undef DIRECT_PINS
 #undef DIRECT_PINS_RIGHT
+// clang-format off
 #define DIRECT_PINS { \
    {D7,F7,F6,F5,F4},  \
    {B1,B3,B2,B6,D3},  \
@@ -24,3 +26,4 @@
    {E6,C6,D4,D0,D1},        \
    {B5,B4,__,__,__}         \
 }
+// clang-format on

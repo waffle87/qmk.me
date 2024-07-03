@@ -1,6 +1,7 @@
-// Copyright 2024 jack (@waffle87)
+// Copyright 2024 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
+
 #define ENABLE_RGB_MATRIX_ALPHAS_MODS
 #define ENABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT
 #define ENABLE_RGB_MATRIX_CYCLE_SPIRAL

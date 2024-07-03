@@ -1,4 +1,4 @@
-### [proton-c crkbd](https://github.com/waffle87/waffle_corne)
+### [proton-c crkbd](https://git.pngu.org/protoncrkbd)
 ![img](https://i.imgur.com/ob8D0hY.jpeg)
 
 #### notes

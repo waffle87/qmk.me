@@ -1,18 +1,15 @@
-// Copyright 2024 jack (@waffle87)
+// Copyright 2024 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
 
 #define TAPPING_TERM_PER_KEY
-#define PERSMISSVE_HOLD
 #define TAPPING_TERM 140
-#define LAYER_STATE_8BIT
 #define FORCE_NKRO
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 #define COMBO_TERM 40
 #define NO_ACTION_ONESHOT
 #define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX
 #define ENABLE_COMPILE_KEYCODE
-#define IGNORE_ATOMIC_BLOCK
 #ifndef SPC_OFFSET
 #define SPC_OFFSET 40
 #endif
@@ -23,7 +20,7 @@
 #define PRODUCT_ID 0x6B62
 #endif
 #undef MANUFACTURER
-#define MANUFACTURER "waffles"
+#define MANUFACTURER "jacks"
 
 #ifdef OLED_ENABLE
 #define OLED_FONT_H "users/waffle/oledfont.h"

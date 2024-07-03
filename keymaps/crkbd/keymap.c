@@ -1,4 +1,4 @@
-// Copyright 2024 jack (@waffle87)
+// Copyright 2024 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "waffle.h"
 
@@ -62,13 +62,31 @@ void keyboard_post_init_keymap(void) {
 }
 #endif // audio
 
+#ifdef POINTING_DEVICE_ENABLE
+uint8_t red = 255, green = 0, blue = 0;
+
+void trackball_hue(void) {
+  if (red != 255 && green != 255 && blue != 255)
+    red = 255;
+  if (red == 255 && green < 255 && !blue)
+    green += 15;
+  else if (green == 255 && !blue && red)
+    red -= 15;
+  else if (!red && blue < 255 && green == 255)
+    blue += 15;
+  else if (blue == 255 && green && !red)
+    green -= 15;
+  else if (!green && blue == 255 && red < 255)
+    red += 15;
+  else if (!green && blue && red == 255)
+    blue -= 15;
+  pimoroni_trackball_set_rgbw(red, green, blue, 0);
+}
+#endif // pointing device
+
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-  if (!is_keyboard_master())
-    return 3;
-  else
-    return 2;
-  return rotation;
+  return is_keyboard_master() ? 2 : 3;
 }
 
 bool oled_task_keymap(void) {

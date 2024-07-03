@@ -1,7 +1,7 @@
 {
   "keyboard_name": "grumpy",
-  "manufacturer": "waffles",
-  "maintainer": "waffle87",
+  "manufacturer": "jacks",
+  "maintainer": "pngu.org",
   "processor": "RP2040",
   "bootloader": "rp2040",
   "diode_direction": "COL2ROW",

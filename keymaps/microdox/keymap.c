@@ -1,4 +1,4 @@
-// Copyright 2024 jack (@waffle87)
+// Copyright 2024 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "waffle.h"
 
@@ -27,11 +27,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-  if (is_keyboard_master())
-    return 0;
-  else
-    return 2;
-  return rotation;
+  return is_keyboard_master() ? 0 : 2;
 }
 
 bool oled_task_keymap(void) {
