@@ -1,2280 +1,710 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="788" height="1048" viewBox="0 0 788 1048" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>/* start glyphs */
+<svg id="mdi:apple-keyboard-caps">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-apple-keyboard-caps" viewBox="0 0 24 24"><path d="M15,14V8H17.17L12,2.83L6.83,8H9V14H15M12,0L22,10H17V16H7V10H2L12,0M7,18H17V24H7V18M15,20H9V22H15V20Z" /></svg>
+</svg>
+<svg id="mdi:apple-keyboard-command">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-apple-keyboard-command" viewBox="0 0 24 24"><path d="M6,2A4,4 0 0,1 10,6V8H14V6A4,4 0 0,1 18,2A4,4 0 0,1 22,6A4,4 0 0,1 18,10H16V14H18A4,4 0 0,1 22,18A4,4 0 0,1 18,22A4,4 0 0,1 14,18V16H10V18A4,4 0 0,1 6,22A4,4 0 0,1 2,18A4,4 0 0,1 6,14H8V10H6A4,4 0 0,1 2,6A4,4 0 0,1 6,2M16,18A2,2 0 0,0 18,20A2,2 0 0,0 20,18A2,2 0 0,0 18,16H16V18M14,10H10V14H14V10M6,16A2,2 0 0,0 4,18A2,2 0 0,0 6,20A2,2 0 0,0 8,18V16H6M8,6A2,2 0 0,0 6,4A2,2 0 0,0 4,6A2,2 0 0,0 6,8H8V6M18,8A2,2 0 0,0 20,6A2,2 0 0,0 18,4A2,2 0 0,0 16,6V8H18Z" /></svg>
+</svg>
+<svg id="mdi:apple-keyboard-control">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-apple-keyboard-control" viewBox="0 0 24 24"><path d="M19.78,11.78L18.36,13.19L12,6.83L5.64,13.19L4.22,11.78L12,4L19.78,11.78Z" /></svg>
+</svg>
+<svg id="mdi:apple-keyboard-option">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-apple-keyboard-option" viewBox="0 0 24 24"><path d="M3,4H9.11L16.15,18H21V20H14.88L7.84,6H3V4M14,4H21V6H14V4Z" /></svg>
+</svg>
+<svg id="mdi:apple-keyboard-shift">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-apple-keyboard-shift" viewBox="0 0 24 24"><path d="M15,18V12H17.17L12,6.83L6.83,12H9V18H15M12,4L22,14H17V20H7V14H2L12,4Z" /></svg>
+</svg>
+<svg id="mdi:arrow-down">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-arrow-down" viewBox="0 0 24 24"><path d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z" /></svg>
+</svg>
+<svg id="mdi:arrow-left">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-arrow-left" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+</svg>
+<svg id="mdi:arrow-right">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-arrow-right" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+</svg>
+<svg id="mdi:arrow-up">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-arrow-up" viewBox="0 0 24 24"><path d="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z" /></svg>
+</svg>
+<svg id="mdi:backspace-outline">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-backspace-outline" viewBox="0 0 24 24"><path d="M19,15.59L17.59,17L14,13.41L10.41,17L9,15.59L12.59,12L9,8.41L10.41,7L14,10.59L17.59,7L19,8.41L15.41,12L19,15.59M22,3A2,2 0 0,1 24,5V19A2,2 0 0,1 22,21H7C6.31,21 5.77,20.64 5.41,20.11L0,12L5.41,3.88C5.77,3.35 6.31,3 7,3H22M22,5H7L2.28,12L7,19H22V5Z" /></svg>
+</svg>
+<svg id="mdi:content-paste">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-content-paste" viewBox="0 0 24 24"><path d="M19,20H5V4H7V7H17V4H19M12,2A1,1 0 0,1 13,3A1,1 0 0,1 12,4A1,1 0 0,1 11,3A1,1 0 0,1 12,2M19,2H14.82C14.4,0.84 13.3,0 12,0C10.7,0 9.6,0.84 9.18,2H5A2,2 0 0,0 3,4V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V4A2,2 0 0,0 19,2Z" /></svg>
+</svg>
+<svg id="mdi:keyboard-space">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-keyboard-space" viewBox="0 0 24 24"><path d="M3 15H5V19H19V15H21V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V15Z" /></svg>
+</svg>
+<svg id="mdi:keyboard-tab">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-keyboard-tab" viewBox="0 0 24 24"><path d="M20,18H22V6H20M11.59,7.41L15.17,11H1V13H15.17L11.59,16.58L13,18L19,12L13,6L11.59,7.41Z" /></svg>
+</svg>
+<svg id="mdi:play-pause">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-play-pause" viewBox="0 0 24 24"><path d="M3,5V19L11,12M13,19H16V5H13M18,5V19H21V5" /></svg>
+</svg>
+<svg id="mdi:volume-minus">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-volume-minus" viewBox="0 0 24 24"><path d="M3,9H7L12,4V20L7,15H3V9M14,11H22V13H14V11Z" /></svg>
+</svg>
+<svg id="mdi:volume-plus">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-volume-plus" viewBox="0 0 24 24"><path d="M3,9H7L12,4V20L7,15H3V9M14,11H17V8H19V11H22V13H19V16H17V13H14V11Z" /></svg>
+</svg>
+</defs>/* end glyphs */
+<style>/* inherit to force styles through use tags */
+svg path {
+    fill: inherit;
+}
 
-<svg
-   width="281mm"
-   height="318mm"
-   viewBox="0 0 281 318"
-   version="1.1"
-   id="svg5"
-   inkscape:export-filename="layout.png"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96"
-   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
-   sodipodi:docname="layout.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview7"
-     pagecolor="#505050"
-     bordercolor="#eeeeee"
-     borderopacity="1"
-     inkscape:showpageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#505050"
-     inkscape:document-units="mm"
-     showgrid="false"
-     inkscape:zoom="0.87492922"
-     inkscape:cx="450.89361"
-     inkscape:cy="1028.6546"
-     inkscape:window-width="1416"
-     inkscape:window-height="849"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
-  <defs
-     id="defs2" />
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1">
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813"
-       width="25"
-       height="20"
-       x="0"
-       y="0"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-4"
-       width="25"
-       height="20"
-       x="27"
-       y="0"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-7"
-       width="25"
-       height="20"
-       x="0"
-       y="22"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-6"
-       width="25"
-       height="20"
-       x="27"
-       y="22"
-       ry="4.30093" />
-    <rect
-       style="fill:#fbf8cc;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-3"
-       width="25"
-       height="20"
-       x="54"
-       y="0"
-       ry="4.30093" />
-    <rect
-       style="fill:#a3c4f3;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-1"
-       width="25"
-       height="20"
-       x="54"
-       y="22"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-75"
-       width="25"
-       height="20"
-       x="0"
-       y="44"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-9"
-       width="25"
-       height="20"
-       x="27"
-       y="44"
-       ry="4.30093" />
-    <rect
-       style="fill:#bae8f8;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-62"
-       width="25"
-       height="20"
-       x="54"
-       y="44"
-       ry="4.30093" />
-    <rect
-       style="fill:#fcd5b5;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-17"
-       width="25"
-       height="20"
-       x="81"
-       y="-3.5527137e-15"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffcfd2;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-8"
-       width="25"
-       height="20"
-       x="108"
-       y="0"
-       ry="4.30093" />
-    <rect
-       style="fill:#cfbaf0;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-5"
-       width="25"
-       height="20"
-       x="81"
-       y="22"
-       ry="4.30093" />
-    <rect
-       style="fill:#8eecf5;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-74"
-       width="25"
-       height="20"
-       x="81"
-       y="44"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-74-6"
-       width="25"
-       height="20"
-       x="81"
-       y="66"
-       ry="4.30093" />
-    <rect
-       style="fill:#f1c0e8;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-18"
-       width="25"
-       height="20"
-       x="108"
-       y="22"
-       ry="4.30093" />
-    <rect
-       style="fill:#b9fbc0;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-59"
-       width="25"
-       height="20"
-       x="108"
-       y="44"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-59-0"
-       width="25"
-       height="20"
-       x="108"
-       y="66"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffcfd2;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-36"
-       width="25"
-       height="20"
-       x="148"
-       y="0"
-       ry="4.30093" />
-    <rect
-       style="fill:#fcd5b5;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-4-7"
-       width="25"
-       height="20"
-       x="175.00002"
-       y="0"
-       ry="4.30093" />
-    <rect
-       style="fill:#f1c0e8;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-7-5"
-       width="25"
-       height="20"
-       x="148"
-       y="21.999996"
-       ry="4.30093" />
-    <rect
-       style="fill:#cfbaf0;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-6-3"
-       width="25"
-       height="20"
-       x="175.00002"
-       y="21.999996"
-       ry="4.30093" />
-    <rect
-       style="fill:#fbf8cc;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-3-5"
-       width="25"
-       height="20"
-       x="202.00002"
-       y="0"
-       ry="4.30093" />
-    <rect
-       style="fill:#a3c4f3;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-1-6"
-       width="25"
-       height="20"
-       x="202.00002"
-       y="21.999996"
-       ry="4.30093" />
-    <rect
-       style="fill:#b9fbc0;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-75-2"
-       width="25"
-       height="20"
-       x="148"
-       y="43.999996"
-       ry="4.30093" />
-    <rect
-       style="fill:#8eecf5;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-9-9"
-       width="25"
-       height="20"
-       x="175.00002"
-       y="43.999996"
-       ry="4.30093" />
-    <rect
-       style="fill:#bae8f8;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-62-1"
-       width="25"
-       height="20"
-       x="202.00002"
-       y="43.999996"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-17-2"
-       width="25"
-       height="20"
-       x="229"
-       y="0"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-8-7"
-       width="25"
-       height="20"
-       x="256"
-       y="0"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.257181"
-       id="rect813-5-0"
-       width="25"
-       height="20"
-       x="229"
-       y="21.999996"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-74-9"
-       width="25"
-       height="20"
-       x="229"
-       y="43.999996"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-18-3"
-       width="25"
-       height="20"
-       x="256"
-       y="21.999996"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-59-6"
-       width="25"
-       height="20"
-       x="256"
-       y="43.999996"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-74-61"
-       width="25"
-       height="20"
-       x="148"
-       y="66"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-74-8"
-       width="25"
-       height="20"
-       x="175"
-       y="66"
-       ry="4.30093" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;stroke-width:0.264583"
-       x="-30.799799"
-       y="-0.020404495"
-       id="text483"><tspan
-         sodipodi:role="line"
-         id="tspan481"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';stroke-width:0.264583"
-         x="-30.799799"
-         y="-0.020404495" /></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;line-height:0;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;stroke-width:0.264583"
-       x="10.602055"
-       y="11.224139"
-       id="text487"><tspan
-         sodipodi:role="line"
-         id="tspan485"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';stroke-width:0.264583"
-         x="10.602055"
-         y="11.224139">q</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;stroke-width:0.264583"
-       x="37.602055"
-       y="11.8415"
-       id="text523"><tspan
-         sodipodi:role="line"
-         id="tspan521"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="37.602055"
-         y="11.8415">w</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;stroke-width:0.264583"
-       x="64.810196"
-       y="11.85914"
-       id="text527"><tspan
-         sodipodi:role="line"
-         id="tspan525"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="64.810196"
-         y="11.85914">e</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;stroke-width:0.264583"
-       x="91.810196"
-       y="11.852084"
-       id="text531"><tspan
-         sodipodi:role="line"
-         id="tspan529"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="91.810196"
-         y="11.852084">r</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;stroke-width:0.264583"
-       x="118.61617"
-       y="12.497666"
-       id="text535"><tspan
-         sodipodi:role="line"
-         id="tspan533"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="118.61617"
-         y="12.497666">t</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;stroke-width:0.264583"
-       x="66.923332"
-       y="28.837944"
-       id="text547"><tspan
-         sodipodi:role="line"
-         id="tspan545"
-         style="font-size:7.05556px;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         x="66.923332"
-         y="28.837944"
-         dy="2.5">d</tspan><tspan
-         sodipodi:role="line"
-         style="font-size:7.05556px;text-align:center;text-anchor:middle;fill:#808080;fill-opacity:1;stroke-width:0.264583"
-         x="66.923332"
-         y="37.657394"
-         id="tspan857">ctl</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;stroke-width:0.264583"
-       x="93.708138"
-       y="28.837944"
-       id="text551"><tspan
-         sodipodi:role="line"
-         id="tspan549"
-         style="font-size:7.05556px;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         x="93.708138"
-         y="28.837944"
-         dy="2.5">f</tspan><tspan
-         sodipodi:role="line"
-         style="font-size:7.05556px;text-align:center;text-anchor:middle;fill:#808080;fill-opacity:1;stroke-width:0.264583"
-         x="93.708138"
-         y="37.657394"
-         id="tspan961">sft</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;stroke-width:0.264583"
-       x="118.71142"
-       y="33.439335"
-       id="text555"><tspan
-         sodipodi:role="line"
-         id="tspan553"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="118.71142"
-         y="33.439335">g</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;stroke-width:0.264583"
-       x="10.602055"
-       y="55.852085"
-       id="text559"><tspan
-         sodipodi:role="line"
-         id="tspan557"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="10.602055"
-         y="55.852085">z</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;stroke-width:0.264583"
-       x="37.609112"
-       y="55.848557"
-       id="text563"><tspan
-         sodipodi:role="line"
-         id="tspan561"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="37.609112"
-         y="55.848557">x</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;stroke-width:0.264583"
-       x="64.810196"
-       y="55.85561"
-       id="text567"><tspan
-         sodipodi:role="line"
-         id="tspan565"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="64.810196"
-         y="55.85561">c</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;stroke-width:0.264583"
-       x="91.602051"
-       y="55.845028"
-       id="text571"><tspan
-         sodipodi:role="line"
-         id="tspan569"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="91.602051"
-         y="55.845028">v</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;stroke-width:0.264583"
-       x="118.8102"
-       y="56.508251"
-       id="text575"><tspan
-         sodipodi:role="line"
-         id="tspan573"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="118.8102"
-         y="56.508251">b</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;stroke-width:0.264583"
-       x="115.02842"
-       y="77.456268"
-       id="text579"><tspan
-         sodipodi:role="line"
-         id="tspan577"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="115.02842"
-         y="77.456268">spc</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;stroke-width:0.264583"
-       x="12.708137"
-       y="28.192362"
-       id="text583"><tspan
-         sodipodi:role="line"
-         id="tspan581"
-         style="font-size:7.05556px;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         x="12.708137"
-         y="28.192362"
-         dy="2.5">a</tspan><tspan
-         sodipodi:role="line"
-         style="font-size:7.05556px;text-align:center;text-anchor:middle;fill:#808080;fill-opacity:1;stroke-width:0.264583"
-         x="12.708137"
-         y="37.01181"
-         id="tspan585">alt</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;word-spacing:0px;text-anchor:middle;fill:#5fbcd3;stroke-width:0.264583"
-       x="40.138527"
-       y="28.358446"
-       id="text797"><tspan
-         sodipodi:role="line"
-         id="tspan795"
-         style="font-size:7.05556px;fill:#000000;stroke-width:0.264583"
-         x="40.138527"
-         y="28.358446"
-         dy="2.5">s</tspan><tspan
-         sodipodi:role="line"
-         style="font-size:7.05556px;fill:#808080;fill-opacity:1;stroke-width:0.264583"
-         x="40.138527"
-         y="37.177895"
-         id="tspan799">gui</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#5fbcd3;stroke-width:0.264583"
-       x="93.70108"
-       y="72.181778"
-       id="text965"><tspan
-         sodipodi:role="line"
-         id="tspan963"
-         style="font-size:7.05556px;fill:#000000;stroke-width:0.264583"
-         x="93.70108"
-         y="72.181778"
-         dy="2.5">esc</tspan><tspan
-         sodipodi:role="line"
-         style="font-size:7.05556px;fill:#808080;fill-opacity:1;stroke-width:0.264583"
-         x="93.70108"
-         y="81.001228"
-         id="tspan967">lwr</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="160.70461"
-       y="11.227667"
-       id="text977"><tspan
-         sodipodi:role="line"
-         id="tspan975"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="160.70461"
-         y="11.227667">y</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="187.48943"
-       y="11.859138"
-       id="text981"><tspan
-         sodipodi:role="line"
-         id="tspan979"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="187.48943"
-         y="11.859138">u</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="214.50354"
-       y="12.497666"
-       id="text985"><tspan
-         sodipodi:role="line"
-         id="tspan983"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="214.50354"
-         y="12.497666">i</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="241.70108"
-       y="11.869581"
-       id="text989"><tspan
-         sodipodi:role="line"
-         id="tspan987"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="241.70108"
-         y="11.869581">o</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="268.70108"
-       y="11.213555"
-       id="text993"><tspan
-         sodipodi:role="line"
-         id="tspan991"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="268.70108"
-         y="11.213555">p</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="160.70108"
-       y="34.518829"
-       id="text997"><tspan
-         sodipodi:role="line"
-         id="tspan995"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="160.70108"
-         y="34.518829">h</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="187.70815"
-       y="28.83794"
-       id="text1001"><tspan
-         sodipodi:role="line"
-         id="tspan999"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="187.70815"
-         y="28.83794"
-         dy="2.5">j</tspan><tspan
-         sodipodi:role="line"
-         style="font-size:7.05556px;fill:#808080;fill-opacity:1;stroke-width:0.264583"
-         x="187.70815"
-         y="37.657391"
-         id="tspan1053">sft</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="214.92334"
-       y="28.83794"
-       id="text1005"><tspan
-         sodipodi:role="line"
-         id="tspan1003"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="214.92334"
-         y="28.83794"
-         dy="2.5">k</tspan><tspan
-         sodipodi:role="line"
-         style="font-size:7.05556px;fill:#808080;fill-opacity:1;stroke-width:0.264583"
-         x="214.92334"
-         y="37.657391"
-         id="tspan1055">ctl</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="242.13852"
-       y="29.149614"
-       id="text1009"><tspan
-         sodipodi:role="line"
-         id="tspan1007"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="242.13852"
-         y="29.149614"
-         dy="2.5">l</tspan><tspan
-         sodipodi:role="line"
-         style="font-size:7.05556px;fill:#808080;fill-opacity:1;stroke-width:0.264583"
-         x="242.13852"
-         y="37.969063"
-         id="tspan1057">gui</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="268.70813"
-       y="28.827162"
-       id="text1013"><tspan
-         sodipodi:role="line"
-         id="tspan1011"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="268.70813"
-         y="28.827162"
-         dy="0.80000001">;</tspan><tspan
-         sodipodi:role="line"
-         style="font-size:7.05556px;fill:#808080;fill-opacity:1;stroke-width:0.264583"
-         x="268.70813"
-         y="37.64661"
-         id="tspan1059">alt</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="160.70108"
-       y="55.85561"
-       id="text1017"><tspan
-         sodipodi:role="line"
-         id="tspan1015"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="160.70108"
-         y="55.85561">n</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="187.49577"
-       y="56.222496"
-       id="text1021"><tspan
-         sodipodi:role="line"
-         id="tspan1019"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font';stroke-width:0.264583"
-         x="187.49577"
-         y="56.222496">m</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="214.47179"
-       y="50.217606"
-       id="text1025"><tspan
-         sodipodi:role="line"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="214.47179"
-         y="50.217606"
-         id="tspan1035"
-         dy="2.5">&lt;</tspan><tspan
-         sodipodi:role="line"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="214.47179"
-         y="59.037056"
-         id="tspan1039">,</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="241.47177"
-       y="50.640938"
-       id="text1029"><tspan
-         sodipodi:role="line"
-         id="tspan1027"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="241.47177"
-         y="50.640938"
-         dy="2.5">&gt;</tspan><tspan
-         sodipodi:role="line"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="241.47177"
-         y="59.460388"
-         id="tspan1041">.</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="268.46118"
-       y="50.800495"
-       id="text1033"><tspan
-         sodipodi:role="line"
-         id="tspan1031"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="268.46118"
-         y="50.800495"
-         dy="1.7">/</tspan><tspan
-         sodipodi:role="line"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="268.46118"
-         y="59.619946"
-         id="tspan1033">?</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="160.70108"
-       y="77.852081"
-       id="text1045"><tspan
-         sodipodi:role="line"
-         id="tspan1043"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="160.70108"
-         y="77.852081">bspc</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="187.70108"
-       y="72.837944"
-       id="text1049"><tspan
-         sodipodi:role="line"
-         id="tspan1047"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="187.70108"
-         y="72.837944"
-         dy="2.5">pste</tspan><tspan
-         sodipodi:role="line"
-         style="font-size:7.05556px;fill:#808080;fill-opacity:1;stroke-width:0.264583"
-         x="187.70108"
-         y="81.657394"
-         id="tspan1051">rse</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#5fbcd3;stroke-width:0.264583"
-       x="214.69884"
-       y="72.077797"
-       id="text1063"><tspan
-         sodipodi:role="line"
-         style="font-size:6.35px;fill:#000000;stroke-width:0.264583"
-         x="214.69884"
-         y="72.077797"
-         id="tspan1858" /></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="224.39272"
-       y="130.36977"
-       id="text564"><tspan
-         sodipodi:role="line"
-         id="tspan562"
-         style="stroke-width:0.264583"
-         x="224.39272"
-         y="130.36977" /></text>
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-55"
-       width="25"
-       height="20"
-       x="0"
-       y="131"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-4-4"
-       width="25"
-       height="20"
-       x="27"
-       y="131"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-7-7"
-       width="25"
-       height="20"
-       x="0"
-       y="153"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-6-6"
-       width="25"
-       height="20"
-       x="27"
-       y="153"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-3-56"
-       width="25"
-       height="20"
-       x="53.999996"
-       y="131"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-1-9"
-       width="25"
-       height="20"
-       x="53.999996"
-       y="153"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-75-3"
-       width="25"
-       height="20"
-       x="0"
-       y="175"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-9-7"
-       width="25"
-       height="20"
-       x="27"
-       y="175"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-62-4"
-       width="25"
-       height="20"
-       x="53.999996"
-       y="175"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-17-5"
-       width="25"
-       height="20"
-       x="81"
-       y="131"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-8-2"
-       width="25"
-       height="20"
-       x="108"
-       y="131"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-5-5"
-       width="25"
-       height="20"
-       x="81"
-       y="153"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-74-4"
-       width="25"
-       height="20"
-       x="81"
-       y="175"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-74-6-7"
-       width="25"
-       height="20"
-       x="81"
-       y="197"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-18-4"
-       width="25"
-       height="20"
-       x="108"
-       y="153"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-59-3"
-       width="25"
-       height="20"
-       x="108"
-       y="175"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-59-0-0"
-       width="25"
-       height="20"
-       x="108"
-       y="197"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-36-7"
-       width="25"
-       height="20"
-       x="147.99998"
-       y="131"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-4-7-8"
-       width="25"
-       height="20"
-       x="175.00003"
-       y="131"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-7-5-6"
-       width="25"
-       height="20"
-       x="147.99998"
-       y="153"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-6-3-8"
-       width="25"
-       height="20"
-       x="175.00003"
-       y="153"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-3-5-8"
-       width="25"
-       height="20"
-       x="202.00003"
-       y="131"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-1-6-4"
-       width="25"
-       height="20"
-       x="202.00003"
-       y="153"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-75-2-3"
-       width="25"
-       height="20"
-       x="147.99998"
-       y="175"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-9-9-1"
-       width="25"
-       height="20"
-       x="175.00003"
-       y="175"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-62-1-4"
-       width="25"
-       height="20"
-       x="202.00003"
-       y="175"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-17-2-9"
-       width="25"
-       height="20"
-       x="229"
-       y="131"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-8-7-2"
-       width="25"
-       height="20"
-       x="256"
-       y="131"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-5-0-0"
-       width="25"
-       height="20"
-       x="229"
-       y="153"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-74-9-6"
-       width="25"
-       height="20"
-       x="229"
-       y="175"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-18-3-8"
-       width="25"
-       height="20"
-       x="256"
-       y="153"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-59-6-9"
-       width="25"
-       height="20"
-       x="256"
-       y="175"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-74-61-2"
-       width="25"
-       height="20"
-       x="147.99998"
-       y="197"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-74-8-6"
-       width="25"
-       height="20"
-       x="175"
-       y="197"
-       ry="4.30093" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="13.949536"
-       y="108.97423"
-       id="text1263"><tspan
-         sodipodi:role="line"
-         id="tspan1261"
-         style="stroke-width:0.264583"
-         x="13.949536"
-         y="108.97423" /></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="39.510582"
-       y="143.50119"
-       id="text1271"><tspan
-         sodipodi:role="line"
-         id="tspan1269"
-         style="font-size:7.05556px;stroke-width:0.264583"
-         x="39.510582"
-         y="143.50119">2</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="12.951553"
-       y="143.49414"
-       id="text1275"><tspan
-         sodipodi:role="line"
-         id="tspan1273"
-         style="stroke-width:0.264583"
-         x="12.951553"
-         y="143.49414">1</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="66.510574"
-       y="143.50473"
-       id="text1279"><tspan
-         sodipodi:role="line"
-         id="tspan1277"
-         style="stroke-width:0.264583"
-         x="66.510574"
-         y="143.50473">3</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="93.514107"
-       y="143.42358"
-       id="text1283"><tspan
-         sodipodi:role="line"
-         id="tspan1281"
-         style="stroke-width:0.264583"
-         x="93.514107"
-         y="143.42358">4</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="120.51058"
-       y="143.50473"
-       id="text1287"><tspan
-         sodipodi:role="line"
-         id="tspan1285"
-         style="stroke-width:0.264583"
-         x="120.51058"
-         y="143.50473">5</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="160.47176"
-       y="143.44475"
-       id="text1291"><tspan
-         sodipodi:role="line"
-         id="tspan1289"
-         style="stroke-width:0.264583"
-         x="160.47176"
-         y="143.44475">6</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="187.5106"
-       y="143.50119"
-       id="text1295"><tspan
-         sodipodi:role="line"
-         id="tspan1293"
-         style="stroke-width:0.264583"
-         x="187.5106"
-         y="143.50119">7</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="214.5106"
-       y="143.49768"
-       id="text1299"><tspan
-         sodipodi:role="line"
-         id="tspan1297"
-         style="stroke-width:0.264583"
-         x="214.5106"
-         y="143.49768">8</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="241.51057"
-       y="143.50119"
-       id="text1303"><tspan
-         sodipodi:role="line"
-         id="tspan1301"
-         style="stroke-width:0.264583"
-         x="241.51057"
-         y="143.50119">9</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="268.51059"
-       y="143.50119"
-       id="text1307"><tspan
-         sodipodi:role="line"
-         id="tspan1305"
-         style="stroke-width:0.264583"
-         x="268.51059"
-         y="143.50119">0</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="12.499997"
-       y="165.49767"
-       id="text1311"><tspan
-         sodipodi:role="line"
-         id="tspan1309"
-         style="stroke-width:0.264583"
-         x="12.499997"
-         y="165.49767">!</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="39.496471"
-       y="165.49414"
-       id="text1315"><tspan
-         sodipodi:role="line"
-         id="tspan1313"
-         style="stroke-width:0.264583"
-         x="39.496471"
-         y="165.49414">@</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="66.722244"
-       y="165.92805"
-       id="text1319"><tspan
-         sodipodi:role="line"
-         id="tspan1317"
-         style="stroke-width:0.264583"
-         x="66.722244"
-         y="165.92805">#</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="93.461189"
-       y="165.28247"
-       id="text1323"><tspan
-         sodipodi:role="line"
-         id="tspan1321"
-         style="stroke-width:0.264583"
-         x="93.461189"
-         y="165.28247">$</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="120.46472"
-       y="165.26836"
-       id="text1327"><tspan
-         sodipodi:role="line"
-         id="tspan1325"
-         style="stroke-width:0.264583"
-         x="120.46472"
-         y="165.26836">%</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="160.50703"
-       y="167.04549"
-       id="text1331"><tspan
-         sodipodi:role="line"
-         id="tspan1329"
-         style="stroke-width:0.264583"
-         x="160.50703"
-         y="167.04549">^</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="187.52219"
-       y="165.09708"
-       id="text1335"><tspan
-         sodipodi:role="line"
-         id="tspan1333"
-         style="stroke-width:0.264583"
-         x="187.52219"
-         y="165.09708">&amp;</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="214.49651"
-       y="165.70934"
-       id="text1339"><tspan
-         sodipodi:role="line"
-         id="tspan1337"
-         style="stroke-width:0.264583"
-         x="214.49651"
-         y="165.70934">*</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="241.44708"
-       y="165.28247"
-       id="text1343"><tspan
-         sodipodi:role="line"
-         id="tspan1341"
-         style="stroke-width:0.264583"
-         x="241.44708"
-         y="165.28247">(</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="268.44708"
-       y="165.28247"
-       id="text1347"><tspan
-         sodipodi:role="line"
-         id="tspan1345"
-         style="stroke-width:0.264583"
-         x="268.44708"
-         y="165.28247">)</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="12.704609"
-       y="187.49414"
-       id="text1351"><tspan
-         sodipodi:role="line"
-         style="stroke-width:0.264583"
-         x="12.704609"
-         y="187.49414"
-         id="tspan1353">vol-</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="39.499996"
-       y="187.49767"
-       id="text1359"><tspan
-         sodipodi:role="line"
-         id="tspan1357"
-         style="stroke-width:0.264583"
-         x="39.499996"
-         y="187.49767">tab</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="66.70108"
-       y="187.37256"
-       id="text1363"><tspan
-         sodipodi:role="line"
-         id="tspan1361"
-         style="stroke-width:0.264583"
-         x="66.70108"
-         y="187.37256">caps</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="93.464722"
-       y="189.01462"
-       id="text1367"><tspan
-         sodipodi:role="line"
-         id="tspan1365"
-         style="stroke-width:0.264583"
-         x="93.464722"
-         y="189.01462">~</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="120.44355"
-       y="189.00403"
-       id="text1371"><tspan
-         sodipodi:role="line"
-         id="tspan1369"
-         style="stroke-width:0.264583"
-         x="120.44355"
-         y="189.00403">`</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="160.07312"
-       y="187.49768"
-       id="text1375"><tspan
-         sodipodi:role="line"
-         id="tspan1373"
-         style="stroke-width:0.264583"
-         x="160.07312"
-         y="187.49768">left</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="187.70111"
-       y="187.48709"
-       id="text1379"><tspan
-         sodipodi:role="line"
-         id="tspan1377"
-         style="stroke-width:0.264583"
-         x="187.70111"
-         y="187.48709">down</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="214.69759"
-       y="187.37256"
-       id="text1383"><tspan
-         sodipodi:role="line"
-         id="tspan1381"
-         style="stroke-width:0.264583"
-         x="214.69759"
-         y="187.37256">up</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="241.70813"
-       y="187.69901"
-       id="text1387"><tspan
-         sodipodi:role="line"
-         id="tspan1385"
-         style="stroke-width:0.264583"
-         x="241.70813"
-         y="187.69901">right</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="268.49295"
-       y="187.49414"
-       id="text1391"><tspan
-         sodipodi:role="line"
-         id="tspan1389"
-         style="stroke-width:0.264583"
-         x="268.49295"
-         y="187.49414">vol+</tspan></text>
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-55-5"
-       width="25"
-       height="20"
-       x="0"
-       y="232"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-4-4-7"
-       width="25"
-       height="20"
-       x="27.000004"
-       y="232"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-7-7-4"
-       width="25"
-       height="20"
-       x="0"
-       y="254"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-6-6-1"
-       width="25"
-       height="20"
-       x="27.000004"
-       y="254"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-3-56-8"
-       width="25"
-       height="20"
-       x="53.999996"
-       y="232"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-1-9-5"
-       width="25"
-       height="20"
-       x="53.999996"
-       y="254"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-75-3-9"
-       width="25"
-       height="20"
-       x="0"
-       y="276"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-9-7-7"
-       width="25"
-       height="20"
-       x="27.000004"
-       y="276"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-62-4-5"
-       width="25"
-       height="20"
-       x="53.999996"
-       y="276"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-17-5-3"
-       width="25"
-       height="20"
-       x="81"
-       y="232"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-8-2-8"
-       width="25"
-       height="20"
-       x="108"
-       y="232"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-5-5-8"
-       width="25"
-       height="20"
-       x="81"
-       y="254"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-74-4-3"
-       width="25"
-       height="20"
-       x="81"
-       y="276"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-74-6-7-1"
-       width="25"
-       height="20"
-       x="81"
-       y="298"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-18-4-8"
-       width="25"
-       height="20"
-       x="108"
-       y="254"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-59-3-9"
-       width="25"
-       height="20"
-       x="108"
-       y="276"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-59-0-0-6"
-       width="25"
-       height="20"
-       x="108"
-       y="298"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-36-7-4"
-       width="25"
-       height="20"
-       x="147.99998"
-       y="232"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-4-7-8-3"
-       width="25"
-       height="20"
-       x="175.00003"
-       y="232"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-7-5-6-3"
-       width="25"
-       height="20"
-       x="147.99998"
-       y="254"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-6-3-8-3"
-       width="25"
-       height="20"
-       x="175.00003"
-       y="254"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-3-5-8-8"
-       width="25"
-       height="20"
-       x="202.00003"
-       y="232"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-1-6-4-6"
-       width="25"
-       height="20"
-       x="202.00003"
-       y="254"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-75-2-3-0"
-       width="25"
-       height="20"
-       x="147.99998"
-       y="276"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-9-9-1-4"
-       width="25"
-       height="20"
-       x="175.00003"
-       y="276"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-62-1-4-8"
-       width="25"
-       height="20"
-       x="202.00003"
-       y="276"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-17-2-9-8"
-       width="25"
-       height="20"
-       x="229"
-       y="232"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-8-7-2-8"
-       width="25"
-       height="20"
-       x="256"
-       y="232"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-5-0-0-9"
-       width="25"
-       height="20"
-       x="229"
-       y="254"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-74-9-6-7"
-       width="25"
-       height="20"
-       x="229"
-       y="276"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-18-3-8-7"
-       width="25"
-       height="20"
-       x="256"
-       y="254"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-59-6-9-6"
-       width="25"
-       height="20"
-       x="256"
-       y="276"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-74-61-2-4"
-       width="25"
-       height="20"
-       x="147.99998"
-       y="298"
-       ry="4.30093" />
-    <rect
-       style="fill:#ffffff;stroke-width:0.257181"
-       id="rect813-74-8-6-3"
-       width="25"
-       height="20"
-       x="175"
-       y="298"
-       ry="4.30093" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="12.40122"
-       y="238.41815"
-       id="text1275-0"><tspan
-         sodipodi:role="line"
-         id="tspan1273-9"
-         style="stroke-width:0.264583"
-         x="12.40122"
-         y="238.41815"
-         dy="2.5">rgb</tspan><tspan
-         sodipodi:role="line"
-         style="stroke-width:0.264583"
-         x="12.40122"
-         y="247.23759"
-         id="tspan1927">togg</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="39.704613"
-       y="260.83795"
-       id="text1931"><tspan
-         sodipodi:role="line"
-         id="tspan1929"
-         style="stroke-width:0.264583"
-         x="39.704613"
-         y="260.83795"
-         dy="2.5">rgb</tspan><tspan
-         sodipodi:role="line"
-         style="stroke-width:0.264583"
-         x="39.704613"
-         y="269.65741"
-         id="tspan1933">mod-</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="39.492947"
-       y="238.83795"
-       id="text1937"><tspan
-         sodipodi:role="line"
-         id="tspan1935"
-         style="stroke-width:0.264583"
-         x="39.492947"
-         y="238.83795"
-         dy="2.5">rgb</tspan><tspan
-         sodipodi:role="line"
-         style="stroke-width:0.264583"
-         x="39.492947"
-         y="247.65739"
-         id="tspan1939">mod+</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="12.701081"
-       y="260.41815"
-       id="text1943"><tspan
-         sodipodi:role="line"
-         id="tspan1941"
-         style="stroke-width:0.264583"
-         x="12.701081"
-         y="260.41815"
-         dy="2.5">audio</tspan><tspan
-         sodipodi:role="line"
-         style="stroke-width:0.264583"
-         x="12.701081"
-         y="269.23761"
-         id="tspan1945">togg</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="66.704605"
-       y="266.51883"
-       id="text1949"><tspan
-         sodipodi:role="line"
-         id="tspan1947"
-         style="stroke-width:0.264583"
-         x="66.704605"
-         y="266.51883">hue-</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="66.492935"
-       y="244.51883"
-       id="text1953"><tspan
-         sodipodi:role="line"
-         id="tspan1951"
-         style="stroke-width:0.264583"
-         x="66.492935"
-         y="244.51883">hue+</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="93.492943"
-       y="244.49768"
-       id="text1957"><tspan
-         sodipodi:role="line"
-         id="tspan1955"
-         style="stroke-width:0.264583"
-         x="93.492943"
-         y="244.49768">sat+</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="93.704613"
-       y="266.49768"
-       id="text1961"><tspan
-         sodipodi:role="line"
-         id="tspan1959"
-         style="stroke-width:0.264583"
-         x="93.704613"
-         y="266.49768">sat-</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="120.49294"
-       y="244.49768"
-       id="text1965"><tspan
-         sodipodi:role="line"
-         id="tspan1963"
-         style="stroke-width:0.264583"
-         x="120.49294"
-         y="244.49768">brt+</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="120.70461"
-       y="266.49768"
-       id="text1969"><tspan
-         sodipodi:role="line"
-         id="tspan1967"
-         style="stroke-width:0.264583"
-         x="120.70461"
-         y="266.49768">brt-</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="13.138526"
-       y="288.49768"
-       id="text1973"><tspan
-         sodipodi:role="line"
-         id="tspan1971"
-         style="stroke-width:0.264583"
-         x="13.138526"
-         y="288.49768">f1</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="39.510586"
-       y="288.50119"
-       id="text1977"><tspan
-         sodipodi:role="line"
-         id="tspan1975"
-         style="stroke-width:0.264583"
-         x="39.510586"
-         y="288.50119">f2</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="66.510574"
-       y="288.50119"
-       id="text1981"><tspan
-         sodipodi:role="line"
-         id="tspan1979"
-         style="stroke-width:0.264583"
-         x="66.510574"
-         y="288.50119">f3</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="93.514107"
-       y="288.42358"
-       id="text1985"><tspan
-         sodipodi:role="line"
-         id="tspan1983"
-         style="stroke-width:0.264583"
-         x="93.514107"
-         y="288.42358">f4</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="120.51058"
-       y="288.50119"
-       id="text1989"><tspan
-         sodipodi:role="line"
-         id="tspan1987"
-         style="stroke-width:0.264583"
-         x="120.51058"
-         y="288.50119">f5</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="160.47176"
-       y="288.44476"
-       id="text1993"><tspan
-         sodipodi:role="line"
-         id="tspan1991"
-         style="stroke-width:0.264583"
-         x="160.47176"
-         y="288.44476">f6</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="187.5106"
-       y="288.50119"
-       id="text1997"><tspan
-         sodipodi:role="line"
-         id="tspan1995"
-         style="stroke-width:0.264583"
-         x="187.5106"
-         y="288.50119">f7</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="214.5106"
-       y="288.49768"
-       id="text2001"><tspan
-         sodipodi:role="line"
-         id="tspan1999"
-         style="stroke-width:0.264583"
-         x="214.5106"
-         y="288.49768">f8</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="241.51057"
-       y="288.50119"
-       id="text2005"><tspan
-         sodipodi:role="line"
-         id="tspan2003"
-         style="stroke-width:0.264583"
-         x="241.51057"
-         y="288.50119">f9</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="268.51059"
-       y="288.50119"
-       id="text2009"><tspan
-         sodipodi:role="line"
-         id="tspan2007"
-         style="stroke-width:0.264583"
-         x="268.51059"
-         y="288.50119">f10</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="268.70108"
-       y="244.49768"
-       id="text2013"><tspan
-         sodipodi:role="line"
-         id="tspan2011"
-         style="stroke-width:0.264583"
-         x="268.70108"
-         y="244.49768">make</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="268.70813"
-       y="266.49768"
-       id="text2017"><tspan
-         sodipodi:role="line"
-         id="tspan2015"
-         style="stroke-width:0.264583"
-         x="268.70813"
-         y="266.49768">reset</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="160.70107"
-       y="238.19589"
-       id="text2021"><tspan
-         sodipodi:role="line"
-         id="tspan2019"
-         style="stroke-width:0.264583"
-         x="160.70107"
-         y="238.19589"
-         dy="2.5">no</tspan><tspan
-         sodipodi:role="line"
-         style="stroke-width:0.264583"
-         x="160.70107"
-         y="247.01534"
-         id="tspan2023">mode</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="160.70107"
-       y="266.48709"
-       id="text2027"><tspan
-         sodipodi:role="line"
-         id="tspan2025"
-         style="stroke-width:0.264583"
-         x="160.70107"
-         y="266.48709">wide</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="187.69759"
-       y="260.82736"
-       id="text2031"><tspan
-         sodipodi:role="line"
-         id="tspan2029"
-         style="stroke-width:0.264583"
-         x="187.69759"
-         y="260.82736"
-         dy="2.5">upside</tspan><tspan
-         sodipodi:role="line"
-         style="stroke-width:0.264583"
-         x="187.69759"
-         y="269.64682"
-         id="tspan2033">down</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="187.70464"
-       y="243.87323"
-       id="text2039"><tspan
-         sodipodi:role="line"
-         id="tspan2037"
-         style="stroke-width:0.264583"
-         x="187.70464"
-         y="243.87323">fancy</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="214.70111"
-       y="244.49768"
-       id="text2043"><tspan
-         sodipodi:role="line"
-         id="tspan2041"
-         style="stroke-width:0.264583"
-         x="214.70111"
-         y="244.49768">block</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="214.70111"
-       y="266.07788"
-       id="text2047"><tspan
-         sodipodi:role="line"
-         id="tspan2045"
-         style="stroke-width:0.264583"
-         x="214.70111"
-         y="266.07788">zalgo</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="241.50352"
-       y="265.87323"
-       id="text2051"><tspan
-         sodipodi:role="line"
-         id="tspan2049"
-         style="stroke-width:0.264583"
-         x="241.50352"
-         y="265.87323">tiny</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264583"
-       x="242.74724"
-       y="238.5528"
-       id="text2055"><tspan
-         sodipodi:role="line"
-         id="tspan2053"
-         style="stroke-width:0.264583"
-         x="242.74724"
-         y="238.5528"
-         dy="2.5">regnl.</tspan><tspan
-         sodipodi:role="line"
-         style="stroke-width:0.264583"
-         x="242.74724"
-         y="247.37224"
-         id="tspan2057">indic.</tspan></text>
-    <rect
-       style="fill:#eba0ac;fill-opacity:1;stroke-width:0.12172"
-       id="rect52900"
-       width="14"
-       height="8"
-       x="73"
-       y="6"
-       ry="1.7203721" />
-    <rect
-       style="fill:#eba0ac;fill-opacity:1;stroke-width:0.12172"
-       id="rect52902"
-       width="14"
-       height="8"
-       x="194"
-       y="6"
-       ry="1.7203721" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font';fill:#000000;fill-opacity:1;stroke-width:0.264583"
-       x="75.097801"
-       y="12.136775"
-       id="text1300"><tspan
-         sodipodi:role="line"
-         id="tspan1298"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;fill-opacity:1;stroke-width:0.264583"
-         x="75.097801"
-         y="12.136775">{/}</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#eba0ac;fill-opacity:1;stroke-width:0.264583"
-       x="195.89461"
-       y="12.05105"
-       id="text21940"><tspan
-         sodipodi:role="line"
-         id="tspan21938"
-         style="fill:#000000;stroke-width:0.264583"
-         x="195.89461"
-         y="12.05105">[/]</tspan></text>
-    <circle
-       style="fill:#fbf8cc;fill-opacity:1;stroke-width:0.228312"
-       id="path23517"
-       cx="18.5"
-       cy="106"
-       r="10" />
-    <circle
-       style="fill:#fcd5b5;fill-opacity:1;stroke-width:0.228314"
-       id="circle23999"
-       cx="49"
-       cy="106"
-       r="10" />
-    <circle
-       style="fill:#ffcfd2;fill-opacity:1;stroke-width:0.228314"
-       id="circle28357"
-       cx="79.5"
-       cy="106"
-       r="10" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;fill-opacity:1;stroke-width:0.264583"
-       x="51.717957"
-       y="100.47611"
-       id="text29927"><tspan
-         sodipodi:role="line"
-         id="tspan29925"
-         style="stroke-width:0.264583"
-         x="51.717957"
-         y="100.47611" /></text>
-    <circle
-       style="fill:#f1c0e8;fill-opacity:1;stroke-width:0.228314"
-       id="circle29931"
-       cx="110"
-       cy="106"
-       r="10" />
-    <circle
-       style="fill:#cfbaf0;fill-opacity:1;stroke-width:0.228314"
-       id="circle31385"
-       cx="140.5"
-       cy="106"
-       r="10" />
-    <circle
-       style="fill:#a3c4f3;fill-opacity:1;stroke-width:0.228314"
-       id="circle31387"
-       cx="171"
-       cy="106"
-       r="10" />
-    <circle
-       style="fill:#bae8f8;fill-opacity:1;stroke-width:0.228314"
-       id="circle31391"
-       cx="201.5"
-       cy="106"
-       r="10" />
-    <circle
-       style="fill:#8eecf5;fill-opacity:1;stroke-width:0.228314"
-       id="circle31393"
-       cx="232"
-       cy="106"
-       r="10" />
-    <circle
-       style="fill:#b9fbc0;fill-opacity:1;stroke-width:0.228314"
-       id="circle32121"
-       cx="262.5"
-       cy="106"
-       r="10" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';letter-spacing:-1.19062px;fill:#b9fbc0;fill-opacity:1;stroke-width:0.264583"
-       x="12.075911"
-       y="108.12373"
-       id="text32177"><tspan
-         sodipodi:role="line"
-         id="tspan32175"
-         style="fill:#000000;stroke-width:0.264583"
-         x="12.075911"
-         y="108.12373">\ / |</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;fill-opacity:1;stroke-width:0.264583"
-       x="43.535473"
-       y="108.49767"
-       id="text32181"><tspan
-         sodipodi:role="line"
-         id="tspan32179"
-         style="stroke-width:0.264583"
-         x="43.535473"
-         y="108.49767">ent</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;fill-opacity:1;stroke-width:0.264583"
-       x="79.151031"
-       y="105.47487"
-       id="text32185"><tspan
-         sodipodi:role="line"
-         id="tspan32183"
-         style="stroke-width:0.264583"
-         x="79.151031"
-         y="105.47487" /></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;fill-opacity:1;stroke-width:0.264583"
-       x="75.046532"
-       y="108.1844"
-       id="text32189"><tspan
-         sodipodi:role="line"
-         id="tspan32187"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46667px;font-family:'Lilex Nerd Font Mono';-inkscape-font-specification:'Lilex Nerd Font Mono';stroke-width:0.264583"
-         x="75.046532"
-         y="108.1844">:</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:-0.79375px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke-width:0.264583"
-       x="101.86079"
-       y="108.4077"
-       id="text32193"><tspan
-         sodipodi:role="line"
-         id="tspan32191"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';stroke-width:0.264583"
-         x="101.86079"
-         y="108.4077"
-         dx="0">' / &quot;</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';fill:#000000;fill-opacity:1;stroke-width:0.264583"
-       x="140.70108"
-       y="102.13883"
-       id="text32197"><tspan
-         sodipodi:role="line"
-         id="tspan32195"
-         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
-         x="140.70108"
-         y="102.13883"
-         dy="2.5999999">cap</tspan><tspan
-         sodipodi:role="line"
-         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
-         x="140.70108"
-         y="110.95828"
-         id="tspan32199">word</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Bold';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.264583"
-       x="171.00423"
-       y="108.99297"
-       id="text32203"><tspan
-         sodipodi:role="line"
-         id="tspan32201"
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:8.46667px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Medium';stroke-width:0.264583"
-         x="171.00423"
-         y="108.99297">=</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:8.46667px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Medium';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.264583"
-       x="201.50423"
-       y="108.73473"
-       id="text32207"><tspan
-         sodipodi:role="line"
-         id="tspan32205"
-         style="font-size:8.46667px;stroke-width:0.264583"
-         x="201.50423"
-         y="108.73473">+</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:8.46667px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Medium';text-align:center;letter-spacing:-0.79375px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.264583"
-       x="231.75023"
-       y="108.72203"
-       id="text32211"><tspan
-         sodipodi:role="line"
-         id="tspan32209"
-         style="stroke-width:0.264583"
-         x="231.35335"
-         y="108.72203">-/—</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:8.46667px;font-family:'3270Medium Nerd Font';-inkscape-font-specification:'3270Medium Nerd Font Medium';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.264583"
-       x="262.49152"
-       y="108.73473"
-       id="text32215"><tspan
-         sodipodi:role="line"
-         id="tspan32213"
-         style="stroke-width:0.264583"
-         x="262.49152"
-         y="108.73473">_</tspan></text>
-  </g>
+/* font and background color specifications */
+svg.keymap {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    font-size: 14px;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    fill: #24292e;
+}
+
+/* default key styling */
+rect.key {
+    fill: #f6f8fa;
+}
+
+rect.key, rect.combo {
+    stroke: #c9cccf;
+    stroke-width: 1;
+}
+
+/* default key side styling, only used is draw_key_sides is set */
+rect.side {
+    filter: brightness(90%);
+}
+
+/* color accent for combo boxes */
+rect.combo, rect.combo-separate {
+    fill: #cdf;
+}
+
+/* color accent for held keys */
+rect.held, rect.combo.held {
+    fill: #fdd;
+}
+
+/* color accent for ghost (optional) keys */
+rect.ghost, rect.combo.ghost {
+    stroke-dasharray: 4, 4;
+    stroke-width: 2;
+}
+
+text {
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+/* styling for layer labels */
+text.label {
+    font-weight: bold;
+    text-anchor: start;
+    stroke: white;
+    stroke-width: 4;
+    paint-order: stroke;
+}
+
+/* styling for optional footer */
+text.footer {
+    text-anchor: end;
+    dominant-baseline: auto;
+    stroke: white;
+    stroke-width: 4;
+    paint-order: stroke;
+}
+
+/* styling for combo tap, and key hold/shifted label text */
+text.combo, text.hold, text.shifted {
+    font-size: 11px;
+}
+
+text.hold {
+    text-anchor: middle;
+    dominant-baseline: auto;
+}
+
+text.shifted {
+    text-anchor: middle;
+    dominant-baseline: hanging;
+}
+
+/* styling for hold/shifted label text in combo box */
+text.combo.hold, text.combo.shifted {
+    font-size: 8px;
+}
+
+/* lighter symbol for transparent keys */
+text.trans {
+    fill: #7b7e81;
+}
+
+/* styling for combo dendrons */
+path.combo {
+    stroke-width: 1;
+    stroke: gray;
+    fill: none;
+}
+
+/* Start Tabler Icons Cleanup */
+/* cannot use height/width with glyphs */
+.icon-tabler > path {
+    fill: inherit;
+    stroke: inherit;
+    stroke-width: 2;
+}
+/* hide tabler's default box */
+.icon-tabler > path[stroke="none"][fill="none"] {
+    visibility: hidden;
+}
+/* End Tabler Icons Cleanup */
+</style>
+<g transform="translate(30, 0)" class="layer-BASE">
+<text x="0" y="28" class="label">BASE:</text>
+<g transform="translate(0, 56)">
+<g transform="translate(28, 49)" class="key keypos-0">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Q</text>
+</g>
+<g transform="translate(84, 35)" class="key keypos-1">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">W</text>
+</g>
+<g transform="translate(140, 28)" class="key keypos-2">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">E</text>
+</g>
+<g transform="translate(196, 35)" class="key keypos-3">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">R</text>
+</g>
+<g transform="translate(252, 42)" class="key keypos-4">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">T</text>
+</g>
+<g transform="translate(476, 42)" class="key keypos-5">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Y</text>
+</g>
+<g transform="translate(532, 35)" class="key keypos-6">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">U</text>
+</g>
+<g transform="translate(588, 28)" class="key keypos-7">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">I</text>
+</g>
+<g transform="translate(644, 35)" class="key keypos-8">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">O</text>
+</g>
+<g transform="translate(700, 49)" class="key keypos-9">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">P</text>
+</g>
+<g transform="translate(28, 105)" class="key keypos-10">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">A</text>
+<use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-6" y="12" height="12" width="12.0" class="key hold glyph mdi:apple-keyboard-option"/>
+</g>
+<g transform="translate(84, 91)" class="key keypos-11">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">S</text>
+<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-6" y="12" height="12" width="12.0" class="key hold glyph mdi:apple-keyboard-command"/>
+</g>
+<g transform="translate(140, 84)" class="key keypos-12">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">D</text>
+<use href="#mdi:apple-keyboard-control" xlink:href="#mdi:apple-keyboard-control" x="-6" y="12" height="12" width="12.0" class="key hold glyph mdi:apple-keyboard-control"/>
+</g>
+<g transform="translate(196, 91)" class="key keypos-13">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">F</text>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-6" y="12" height="12" width="12.0" class="key hold glyph mdi:apple-keyboard-shift"/>
+</g>
+<g transform="translate(252, 98)" class="key keypos-14">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">G</text>
+</g>
+<g transform="translate(476, 98)" class="key keypos-15">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">H</text>
+</g>
+<g transform="translate(532, 91)" class="key keypos-16">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">J</text>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-6" y="12" height="12" width="12.0" class="key hold glyph mdi:apple-keyboard-shift"/>
+</g>
+<g transform="translate(588, 84)" class="key keypos-17">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">K</text>
+<use href="#mdi:apple-keyboard-control" xlink:href="#mdi:apple-keyboard-control" x="-6" y="12" height="12" width="12.0" class="key hold glyph mdi:apple-keyboard-control"/>
+</g>
+<g transform="translate(644, 91)" class="key keypos-18">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">L</text>
+<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-6" y="12" height="12" width="12.0" class="key hold glyph mdi:apple-keyboard-command"/>
+</g>
+<g transform="translate(700, 105)" class="key keypos-19">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">;</text>
+<use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-6" y="12" height="12" width="12.0" class="key hold glyph mdi:apple-keyboard-option"/>
+</g>
+<g transform="translate(28, 161)" class="key keypos-20">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Z</text>
+</g>
+<g transform="translate(84, 147)" class="key keypos-21">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">X</text>
+</g>
+<g transform="translate(140, 140)" class="key keypos-22">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">C</text>
+</g>
+<g transform="translate(196, 147)" class="key keypos-23">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">V</text>
+</g>
+<g transform="translate(252, 154)" class="key keypos-24">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">B</text>
+</g>
+<g transform="translate(476, 154)" class="key keypos-25">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">N</text>
+</g>
+<g transform="translate(532, 147)" class="key keypos-26">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">M</text>
+</g>
+<g transform="translate(588, 140)" class="key keypos-27">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">,</text>
+<text x="0" y="-24" class="key shifted">&lt;</text>
+</g>
+<g transform="translate(644, 147)" class="key keypos-28">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">.</text>
+<text x="0" y="-24" class="key shifted">&gt;</text>
+</g>
+<g transform="translate(700, 161)" class="key keypos-29">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">/</text>
+<text x="0" y="-24" class="key shifted">?</text>
+</g>
+<g transform="translate(168, 205)" class="key ghost keypos-30">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key ghost"/>
+<text x="0" y="0" class="key ghost tap">../</text>
+</g>
+<g transform="translate(230, 213) rotate(15.0)" class="key held keypos-31">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held"/>
+<text x="0" y="0" class="key held tap">Esc</text>
+<text x="0" y="24" class="key held hold">LWR</text>
+</g>
+<g transform="translate(295, 224) rotate(30.0)" class="key keypos-32">
+<rect rx="6" ry="6" x="-26" y="-40" width="52" height="80" class="key"/>
+<use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:keyboard-space"/>
+</g>
+<g transform="translate(433, 224) rotate(-30.0)" class="key keypos-33">
+<rect rx="6" ry="6" x="-26" y="-40" width="52" height="80" class="key"/>
+<use href="#mdi:backspace-outline" xlink:href="#mdi:backspace-outline" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:backspace-outline"/>
+</g>
+<g transform="translate(498, 213) rotate(-15.0)" class="key held keypos-34">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held"/>
+<use href="#mdi:content-paste" xlink:href="#mdi:content-paste" x="-7" y="-7" height="14" width="14.0" class="key held tap glyph mdi:content-paste"/>
+<text x="0" y="24" class="key held hold">RSE</text>
+</g>
+<g transform="translate(560, 205)" class="key ghost keypos-35">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key ghost"/>
+<use href="#mdi:play-pause" xlink:href="#mdi:play-pause" x="-7" y="-7" height="14" width="14.0" class="key ghost tap glyph mdi:play-pause"/>
+</g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="154" y="18" width="28" height="26" class="combo"/>
+<text x="168" y="32" class="combo tap">{}</text>
+</g>
+<g class="combo combopos-1">
+<rect rx="6" ry="6" x="210" y="26" width="28" height="26" class="combo"/>
+<text x="224" y="38" class="combo tap">|</text>
+</g>
+<g class="combo combopos-2">
+<rect rx="6" ry="6" x="546" y="18" width="28" height="26" class="combo"/>
+<text x="560" y="32" class="combo tap">[]</text>
+</g>
+<g class="combo combopos-3">
+<rect rx="6" ry="6" x="98" y="18" width="28" height="26" class="combo"/>
+<text x="112" y="32" class="combo tap">:</text>
+</g>
+<g class="combo combopos-4">
+<rect rx="6" ry="6" x="602" y="18" width="28" height="26" class="combo"/>
+<text x="616" y="32" class="combo tap">Ent</text>
+</g>
+<g class="combo combopos-5">
+<rect rx="6" ry="6" x="210" y="82" width="28" height="26" class="combo"/>
+<text x="224" y="94" class="combo tap">\</text>
+</g>
+<g class="combo combopos-6">
+<rect rx="6" ry="6" x="154" y="74" width="28" height="26" class="combo"/>
+<text x="168" y="88" class="combo tap">+</text>
+</g>
+<g class="combo combopos-7">
+<path d="M364,56 h-162 a6.0,6.0 0 0 0 -6.0,6.0 v10" class="combo"/>
+<path d="M364,56 h162 a6.0,6.0 0 0 1 6.0,6.0 v10" class="combo"/>
+<rect rx="6" ry="6" x="350" y="43" width="28" height="26" class="combo"/>
+<text x="364" y="56" class="combo tap">
+<tspan x="364" dy="-0.6em">Cap</tspan><tspan x="364" dy="1.2em">Wrd</tspan>
+</text>
+</g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="490" y="82" width="28" height="26" class="combo"/>
+<text x="504" y="94" class="combo tap">&#x27;</text>
+</g>
+<g class="combo combopos-9">
+<rect rx="6" ry="6" x="490" y="26" width="28" height="26" class="combo"/>
+<text x="504" y="38" class="combo tap">&quot;</text>
+</g>
+<g class="combo combopos-10">
+<rect rx="6" ry="6" x="98" y="74" width="28" height="26" class="combo"/>
+<text x="112" y="88" class="combo tap">=</text>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="546" y="74" width="28" height="26" class="combo"/>
+<text x="560" y="88" class="combo tap">_</text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="602" y="74" width="28" height="26" class="combo"/>
+<text x="616" y="88" class="combo tap">-</text>
+</g>
+</g>
+</g>
+<g transform="translate(30, 331)" class="layer-LOWER">
+<text x="0" y="28" class="label">LOWER:</text>
+<g transform="translate(0, 56)">
+<g transform="translate(28, 49)" class="key keypos-0">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">1</text>
+</g>
+<g transform="translate(84, 35)" class="key keypos-1">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">2</text>
+</g>
+<g transform="translate(140, 28)" class="key keypos-2">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">3</text>
+</g>
+<g transform="translate(196, 35)" class="key keypos-3">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">4</text>
+</g>
+<g transform="translate(252, 42)" class="key keypos-4">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">5</text>
+</g>
+<g transform="translate(476, 42)" class="key keypos-5">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">6</text>
+</g>
+<g transform="translate(532, 35)" class="key keypos-6">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">7</text>
+</g>
+<g transform="translate(588, 28)" class="key keypos-7">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">8</text>
+</g>
+<g transform="translate(644, 35)" class="key keypos-8">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">9</text>
+</g>
+<g transform="translate(700, 49)" class="key keypos-9">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">0</text>
+</g>
+<g transform="translate(28, 105)" class="key keypos-10">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">!</text>
+</g>
+<g transform="translate(84, 91)" class="key keypos-11">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">@</text>
+</g>
+<g transform="translate(140, 84)" class="key keypos-12">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">#</text>
+</g>
+<g transform="translate(196, 91)" class="key keypos-13">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">$</text>
+</g>
+<g transform="translate(252, 98)" class="key keypos-14">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">%</text>
+</g>
+<g transform="translate(476, 98)" class="key keypos-15">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">^</text>
+</g>
+<g transform="translate(532, 91)" class="key keypos-16">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">&amp;</text>
+</g>
+<g transform="translate(588, 84)" class="key keypos-17">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">*</text>
+</g>
+<g transform="translate(644, 91)" class="key keypos-18">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">(</text>
+</g>
+<g transform="translate(700, 105)" class="key keypos-19">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">)</text>
+</g>
+<g transform="translate(28, 161)" class="key keypos-20">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<use href="#mdi:volume-minus" xlink:href="#mdi:volume-minus" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:volume-minus"/>
+</g>
+<g transform="translate(84, 147)" class="key keypos-21">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:keyboard-tab"/>
+</g>
+<g transform="translate(140, 140)" class="key keypos-22">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<use href="#mdi:apple-keyboard-caps" xlink:href="#mdi:apple-keyboard-caps" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:apple-keyboard-caps"/>
+</g>
+<g transform="translate(196, 147)" class="key keypos-23">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Del</tspan><tspan x="0" dy="1.2em">Wrd</tspan>
+</text>
+</g>
+<g transform="translate(252, 154)" class="key keypos-24">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">`</text>
+<text x="0" y="-24" class="key shifted">~</text>
+</g>
+<g transform="translate(476, 154)" class="key keypos-25">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<use href="#mdi:arrow-left" xlink:href="#mdi:arrow-left" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:arrow-left"/>
+</g>
+<g transform="translate(532, 147)" class="key keypos-26">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<use href="#mdi:arrow-down" xlink:href="#mdi:arrow-down" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:arrow-down"/>
+</g>
+<g transform="translate(588, 140)" class="key keypos-27">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<use href="#mdi:arrow-up" xlink:href="#mdi:arrow-up" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:arrow-up"/>
+</g>
+<g transform="translate(644, 147)" class="key keypos-28">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<use href="#mdi:arrow-right" xlink:href="#mdi:arrow-right" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:arrow-right"/>
+</g>
+<g transform="translate(700, 161)" class="key keypos-29">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<use href="#mdi:volume-plus" xlink:href="#mdi:volume-plus" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:volume-plus"/>
+</g>
+<g transform="translate(168, 205)" class="key trans keypos-30">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(230, 213) rotate(15.0)" class="key trans keypos-31">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(295, 224) rotate(30.0)" class="key trans keypos-32">
+<rect rx="6" ry="6" x="-26" y="-40" width="52" height="80" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(433, 224) rotate(-30.0)" class="key trans keypos-33">
+<rect rx="6" ry="6" x="-26" y="-40" width="52" height="80" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(498, 213) rotate(-15.0)" class="key trans keypos-34">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(560, 205)" class="key trans keypos-35">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+</g>
+</g>
+<g transform="translate(30, 661)" class="layer-RAISE">
+<text x="0" y="28" class="label">RAISE:</text>
+<g transform="translate(0, 56)">
+<g transform="translate(28, 49)" class="key keypos-0">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">RGB</tspan><tspan x="0" dy="1.2em">Togg</tspan>
+</text>
+</g>
+<g transform="translate(84, 35)" class="key keypos-1">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Mode</tspan><tspan x="0" dy="1.2em">+</tspan>
+</text>
+</g>
+<g transform="translate(140, 28)" class="key keypos-2">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Hue</tspan><tspan x="0" dy="1.2em">+</tspan>
+</text>
+</g>
+<g transform="translate(196, 35)" class="key keypos-3">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Sat</tspan><tspan x="0" dy="1.2em">+</tspan>
+</text>
+</g>
+<g transform="translate(252, 42)" class="key keypos-4">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Val</tspan><tspan x="0" dy="1.2em">+</tspan>
+</text>
+</g>
+<g transform="translate(476, 42)" class="key keypos-5">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">No</tspan><tspan x="0" dy="1.2em">Mode</tspan>
+</text>
+</g>
+<g transform="translate(532, 35)" class="key keypos-6">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Fancy</text>
+</g>
+<g transform="translate(588, 28)" class="key keypos-7">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Block</text>
+</g>
+<g transform="translate(644, 35)" class="key keypos-8">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Reg</tspan><tspan x="0" dy="1.2em">Indic</tspan>
+</text>
+</g>
+<g transform="translate(700, 49)" class="key keypos-9">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Make</text>
+</g>
+<g transform="translate(28, 105)" class="key keypos-10">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Audio</tspan><tspan x="0" dy="1.2em">Togg</tspan>
+</text>
+</g>
+<g transform="translate(84, 91)" class="key keypos-11">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Mode</tspan><tspan x="0" dy="1.2em">-</tspan>
+</text>
+</g>
+<g transform="translate(140, 84)" class="key keypos-12">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Hue</tspan><tspan x="0" dy="1.2em">-</tspan>
+</text>
+</g>
+<g transform="translate(196, 91)" class="key keypos-13">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Sat</tspan><tspan x="0" dy="1.2em">-</tspan>
+</text>
+</g>
+<g transform="translate(252, 98)" class="key keypos-14">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Val</tspan><tspan x="0" dy="1.2em">-</tspan>
+</text>
+</g>
+<g transform="translate(476, 98)" class="key keypos-15">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Wide</text>
+</g>
+<g transform="translate(532, 91)" class="key keypos-16">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Upside</tspan><tspan x="0" dy="1.2em">Down</tspan>
+</text>
+</g>
+<g transform="translate(588, 84)" class="key keypos-17">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Zalgo</text>
+</g>
+<g transform="translate(644, 91)" class="key keypos-18">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Tiny</text>
+</g>
+<g transform="translate(700, 105)" class="key keypos-19">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Reset</text>
+</g>
+<g transform="translate(28, 161)" class="key keypos-20">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">F1</text>
+</g>
+<g transform="translate(84, 147)" class="key keypos-21">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">F2</text>
+</g>
+<g transform="translate(140, 140)" class="key keypos-22">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">F3</text>
+</g>
+<g transform="translate(196, 147)" class="key keypos-23">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">F4</text>
+</g>
+<g transform="translate(252, 154)" class="key keypos-24">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">F5</text>
+</g>
+<g transform="translate(476, 154)" class="key keypos-25">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">F6</text>
+</g>
+<g transform="translate(532, 147)" class="key keypos-26">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">F7</text>
+</g>
+<g transform="translate(588, 140)" class="key keypos-27">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">F8</text>
+</g>
+<g transform="translate(644, 147)" class="key keypos-28">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">F9</text>
+</g>
+<g transform="translate(700, 161)" class="key keypos-29">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">F10</text>
+</g>
+<g transform="translate(168, 205)" class="key trans keypos-30">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(230, 213) rotate(15.0)" class="key trans keypos-31">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(295, 224) rotate(30.0)" class="key trans keypos-32">
+<rect rx="6" ry="6" x="-26" y="-40" width="52" height="80" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(433, 224) rotate(-30.0)" class="key trans keypos-33">
+<rect rx="6" ry="6" x="-26" y="-40" width="52" height="80" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(498, 213) rotate(-15.0)" class="key trans keypos-34">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(560, 205)" class="key trans keypos-35">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+</g>
+</g>
 </svg>

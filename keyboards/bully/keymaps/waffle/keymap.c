@@ -5,10 +5,10 @@
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_waffle(
-    REMOVE, ___BASE1___, KC_BSPC, KC_BSPC,
-    NUKE,   ___BASE2___, PNP,
-    KC_NO,  ___BASE3___, KC_NO,
-    KC_VOLD, UPDIR, KC_ESC, LT(_LOWER, KC_SPC), RSEPST, KC_NO, KC_VOLU
+    KC_NO, ___BASE1___, KC_BSPC, KC_BSPC,
+    NUKE,  ___BASE2___, PNP,
+    KC_NO, ___BASE3___, KC_NO,
+    KC_VOLD, UPDIR, KC_ESC, LT(_LOWER, KC_SPC), PSTRSE, KC_NO, KC_VOLU
   ),
   [_LOWER] = LAYOUT_waffle(
     _______, ___LOWER1___, _______, _______,

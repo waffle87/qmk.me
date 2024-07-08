@@ -6,7 +6,7 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_waffle_3x6(
     KC_NO, ___BASE1___, KC_NO,
-    LINKS, ___BASE2___, RWORD,
+    KC_NO, ___BASE2___, RWORD,
     KC_NO, ___BASE3___, KC_NO,
            ___BASE4___
   ),
