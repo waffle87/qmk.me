@@ -2,15 +2,15 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 //  name       output              keys
-CMB(fg_coln, KC_COLN,           KC_W, KC_E)
+CMB(fg_plus, KC_PLUS,           KC_W, KC_E)
 CMB(er_cbkt, TD(CURLY_BRACKET), KC_E, KC_R)
 CMB(rt_pipe, KC_PIPE,           KC_R, KC_T)
 CMB(yu_dqou, KC_DQUO,           KC_Y, KC_U)
 CMB(ui_brkt, TD(SQR_BRACKET),   KC_U, KC_I)
-CMB(io_ent,  KC_ENT,            KC_I, KC_O)
-CMB(sd_eql,  KC_EQL,            LGUI_T(KC_S), LCTL_T(KC_D))
-CMB(df_plus, KC_PLUS,           LCTL_T(KC_D), LSFT_T(KC_F))
+CMB(io_unds, KC_UNDS,           KC_I, KC_O)
+CMB(sd_eqal,  KC_EQL,           LGUI_T(KC_S), LCTL_T(KC_D))
+CMB(df_coln, KC_COLN,           LCTL_T(KC_D), LSFT_T(KC_F))
 CMB(fg_bsls, KC_BSLS,           LSFT_T(KC_F), KC_G)
 CMB(hj_quot, KC_QUOT,           KC_H, RSFT_T(KC_J))
-CMB(jk_unds, KC_UNDS,           RSFT_T(KC_J), RCTL_T(KC_K))
+CMB(jk_entr,  KC_ENT,           RSFT_T(KC_J), RCTL_T(KC_K))
 CMB(kl_mins, TD(EM_DASH_MINS),  RCTL_T(KC_K), RGUI_T(KC_L))

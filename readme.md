@@ -14,7 +14,7 @@ echo "users/waffle\nkeyboards/relic" >> ~/qmk_firmware/.git/info/exclude
 qmk compile -kb relic -km waffle
 ```
 the official [userspace feature](https://docs.qmk.fm/newbs_external_userspace) 
-is used as this repository contains personal keyboards, which are not supported.
+is not used as this repository contains personal keyboards, which are not supported.
 
 ### layout
 a simple 34-key layout that makes use of 2 (primary) layers, home-row mods, & combos for many symbols.
