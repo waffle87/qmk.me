@@ -23,8 +23,8 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     return TAPPING_TERM - SPC_OFFSET;
   case TD(EM_DASH_MINS):
   case TD(PLY_NXT_PRV):
-  case TD(CURLY_BRACKET):
-  case TD(SQR_BRACKET):
+  case TD(CBRACKET):
+  case TD(SBRACKET):
     return TAPPING_TERM + 60;
   default:
     return TAPPING_TERM;
@@ -72,9 +72,9 @@ void raise_paste(tap_dance_state_t *state, void *user_data) {
 tap_dance_action_t tap_dance_actions[] = {
     [EM_DASH_MINS] = ACTION_TAP_DANCE_FN(em_dash_mins),
     [PLY_NXT_PRV] = ACTION_TAP_DANCE_FN(ply_nxt_prv),
-    [RAISE_PASTE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, raise_paste, td_reset),
-    [CURLY_BRACKET] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
-    [SQR_BRACKET] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
+    [PASTE_RAISE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, raise_paste, td_reset),
+    [CBRACKET] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
+    [SBRACKET] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {

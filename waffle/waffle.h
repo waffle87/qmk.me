@@ -17,13 +17,7 @@ typedef struct user_config {
 
 enum layers { _BASE, _LOWER, _RAISE, _ADJUST };
 
-enum tapdances {
-  EM_DASH_MINS,
-  PLY_NXT_PRV,
-  RAISE_PASTE,
-  CURLY_BRACKET,
-  SQR_BRACKET
-};
+enum tapdances { EM_DASH_MINS, PLY_NXT_PRV, PASTE_RAISE, CBRACKET, SBRACKET };
 
 enum custom_keycodes {
   UPDIR = QK_USER,
@@ -57,7 +51,7 @@ enum unicode_mode {
 #endif
 
 #define PNP TD(PLY_NXT_PRV)
-#define PSTRSE TD(RAISE_PASTE)
+#define PSTRSE TD(PASTE_RAISE)
 #define ESCLWR LT(_LOWER, KC_ESC)
 #define LWRSPC LT(_LOWER, KC_SPC)
 #define RSEBSP LT(_RAISE, KC_BSPC)
@@ -82,7 +76,6 @@ enum unicode_mode {
 // clang-format on
 
 #define LAYOUT_waffle_60_ts(...) LAYOUT_60_ansi_tsangan(__VA_ARGS__)
-#define LAYOUT_stack_of_waffles(...) LAYOUT_stack(__VA_ARGS__)
 #define LAYOUT_waffle_3x6(...) LAYOUT_split_3x6_3(__VA_ARGS__)
 #define LAYOUT_waffle_3x5(...) LAYOUT_split_3x5_3(__VA_ARGS__)
 #define LAYOUT_waffle(...) LAYOUT(__VA_ARGS__)
