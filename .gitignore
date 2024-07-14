@@ -1,4 +1,3 @@
-*/secrets.h
 .cache
 *.o
 compile_commands.json

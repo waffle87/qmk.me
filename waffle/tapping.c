@@ -1,6 +1,5 @@
 // Copyright 2024 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
-#include "secrets.h"
 #include "waffle.h"
 #ifdef RANDWORD
 #include "dict.h"
@@ -14,6 +13,64 @@ uint16_t word = 0;
       return false;                                                            \
     }                                                                          \
     break;
+
+static uint8_t select_word_state = NONE;
+
+bool process_select_word(uint16_t keycode, keyrecord_t *record) {
+  if (keycode == KC_LSFT || keycode == KC_RSFT)
+    return true;
+  if (keycode == SELWORD && record->event.pressed) {
+    const bool shifted = get_mods() & MOD_MASK_SHIFT;
+    if (!shifted) {
+      set_mods(MOD_BIT(KC_LCTL));
+      if (select_word_state == NONE) {
+        send_keyboard_report();
+        tap_code(KC_RGHT);
+        tap_code(KC_LEFT);
+      }
+      register_mods(MOD_BIT(KC_LSFT));
+      register_code(KC_RGHT);
+      select_word_state = WORD;
+    } else {
+      if (select_word_state == NONE) {
+        clear_mods();
+        send_keyboard_report();
+        tap_code(KC_HOME);
+        register_mods(MOD_BIT(KC_LSFT));
+        tap_code(KC_END);
+        set_mods(get_mods());
+        select_word_state = FIRST_LINE;
+      } else {
+        register_code(KC_DOWN);
+        select_word_state = LINE;
+      }
+    }
+    return false;
+  }
+  switch (select_word_state) {
+  case WORD:
+    unregister_code(KC_RGHT);
+    unregister_mods(MOD_BIT(KC_LSFT) | MOD_BIT(KC_LCTL));
+    select_word_state = SELECTED;
+    break;
+  case FIRST_LINE:
+    select_word_state = SELECTED;
+    break;
+  case LINE:
+    unregister_code(KC_DOWN);
+    select_word_state = SELECTED;
+    break;
+  case SELECTED:
+    if (keycode == KC_ESC) {
+      tap_code(KC_RGHT);
+      select_word_state = NONE;
+      return false;
+    }
+  default:
+    select_word_state = NONE;
+  }
+  return true;
+}
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
@@ -82,10 +139,37 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (!process_record_unicode(keycode, record))
     return false;
 #endif
+  if (!process_select_word(keycode, record))
+    return false;
 #ifdef OLED_ENABLE
   if (record->event.pressed) {
     oled_timer_reset();
     add_keylog(keycode);
+  }
+#endif
+#ifdef MOUSE_JIGGLE_ENABLE
+  if (record->event.pressed) {
+    static deferred_token token = INVALID_DEFERRED_TOKEN;
+    static report_mouse_t = {0};
+    if (token) {
+      cancel_deferred_exec(token);
+      token = INVALID_DEFERRED_TOKEN;
+      report = (report_mouse_t){};
+      host_mouse_send(&report);
+    } else if (keycode == M_JIGGLE) {
+      uint32_t jiggle_callback(uint32_t trigger_time, void *cb_arg) {
+        static const int8_t deltas[32] = {
+            0, -1, -2, -2, -3, -3, -4, -4, -4, -4, -3, -3, -2, -2, -1, 0,
+            0, 1,  2,  2,  3,  3,  4,  4,  4,  4,  3,  3,  2,  2,  1,  0};
+        static uint8_t phase = 0;
+        report.x = deltas[phase];
+        report.y = deltas[(phase + 8) & 31];
+        phase = (phase + 1) & 31;
+        host_mouse_send(&report);
+        return 16;
+      }
+      token = defer_exec(1, jiggle_callback, NULL);
+    }
   }
 #endif
   switch (keycode) {
