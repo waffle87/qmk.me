@@ -18,7 +18,7 @@ done
 link() {
   src="$QMKME/keymaps/$1"
   dst="$QMKFIRMWARE/keyboards/$2/keymaps/waffle"
-  ln -sv $QMKME/$1 $QMKFIRMWARE/keyboards/$2/keymaps/waffle
+  ln -sv $src $dst
   echo "keyboards/$2/keymaps/waffle" >> $QMKFIRMWARE/.git/info/exclude
 }
 
@@ -27,3 +27,4 @@ link f60 bioi/f60
 link ferris ferris
 link kyria splitkb/kyria
 link microdox boardsource/microdox
+link the_q boardsource/the_q

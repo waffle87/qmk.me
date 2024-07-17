@@ -11,6 +11,14 @@ void raw_hid_receive(uint8_t *data, uint8_t length) {
 }
 #endif
 
+tap_dance_action_t tap_dance_actions[] = {
+    [EM_DASH_MINS] = ACTION_TAP_DANCE_FN(em_dash_mins),
+    [PLY_NXT_PRV] = ACTION_TAP_DANCE_FN(ply_nxt_prv),
+    [PASTE_RAISE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, raise_paste, td_reset),
+    [CBRACKET] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
+    [SBRACKET] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
+};
+
 #if defined(SPLIT_KEYBOARD) && defined(OLED_ENABLE)
 #include "transactions.h"
 extern char keylog_str[5];
@@ -47,12 +55,11 @@ void keyboard_post_init_user(void) {
 #endif
 #ifdef RGBLIGHT_ENABLE
   rgblight_enable_noeeprom();
-  rgblight_sethsv_noeeprom(HSV_CYAN);
+  rgblight_sethsv_noeeprom(RGB_CYAN);
   rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
-#endif
-#ifdef RGB_MATRIX_ENABLE
+#elif RGB_MATRIX_ENABLE
   rgb_matrix_enable_noeeprom();
-  rgb_matrix_sethsv_noeeprom(HSV_CYAN);
+  rgb_matrix_sethsv_noeeprom(RGB_CYAN);
   rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
 #endif
 #ifdef CONSOLE_ENABLE

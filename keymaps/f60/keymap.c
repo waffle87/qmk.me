@@ -4,7 +4,6 @@
 #define ___NONE___                                                             \
   _______, _______, _______, _______, _______, _______, _______, _______,      \
       _______, _______, _______, _______, _______
-#define SPC_OFFSET 20
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {

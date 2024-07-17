@@ -54,6 +54,11 @@ enum unicode_mode {
 };
 #endif
 
+void td_reset(tap_dance_state_t *state, void *user_data);
+void em_dash_mins(tap_dance_state_t *state, void *user_data);
+void ply_nxt_prv(tap_dance_state_t *state, void *user_data);
+void raise_paste(tap_dance_state_t *state, void *user_data);
+
 #define PNP TD(PLY_NXT_PRV)
 #define PSTRSE TD(PASTE_RAISE)
 #define ESCLWR LT(_LOWER, KC_ESC)
