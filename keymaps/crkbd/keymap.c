@@ -26,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // clang-format on
 
 void housekeeping_task_keymap(void) {
-  if (last_input_activity_elapsed() > 15000) {
+  if (last_input_activity_elapsed() > 300000) {
     const pin_t row_pins[] = MATRIX_ROW_PINS, col_pins[] = MATRIX_COL_PINS;
     for (uint8_t i = 0; i < ARRAY_SIZE(col_pins); ++i) {
       setPinOutput(col_pins[i]);
@@ -93,22 +93,13 @@ bool oled_task_keymap(void) {
   if (is_keyboard_master())
     layer_anim();
   else {
-    oled_set_cursor(0, 0);
-    render_wpm();
-    oled_set_cursor(0, 3);
-    felix();
-    oled_set_cursor(0, 7);
-    render_keyboard();
-    oled_set_cursor(0, 9);
     layer_status();
-    oled_set_cursor(0, 11);
-    mod_status(get_mods());
-    oled_set_cursor(0, 13);
-    keylock_status(host_keyboard_led_state());
-    oled_set_cursor(1, 15);
-    render_keylogger();
-    oled_set_cursor(0, 15);
-    keylogger_status();
+    oled_set_cursor(0, 3);
+    felix_dog();
+    oled_set_cursor(0, 7);
+    render_wpm();
+    render_keylog();
+    render_mod_status();
   }
   return false;
 }

@@ -8,12 +8,6 @@
 #define CRC8_OPTIMIZE_SPEED
 #define SERIAL_USART_SPEED 921600
 
-#ifdef OLED_ENABLE
-#define LAYER_ANIM
-#define BONGO_CAT
-#define FELIX_DOG
-#endif
-
 #ifdef RGB_MATRIX_ENABLE
 #undef WS2812_DI_PIN
 #define WS2812_DI_PIN B5

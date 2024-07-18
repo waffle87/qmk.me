@@ -6,16 +6,7 @@
 #include "oled.h"
 #endif
 
-#ifdef RAW_ENABLE
-#pragma message "check other device's vid/pid!"
-typedef struct user_config {
-  uint8_t cpu_temp;
-  uint8_t hour;
-  uint8_t min;
-} user_state;
-#endif
-
-enum layers { _BASE, _LOWER, _RAISE, _ADJUST };
+enum layers { _BASE, _LOWER, _RAISE };
 
 enum tapdances { EM_DASH_MINS, PLY_NXT_PRV, PASTE_RAISE, CBRACKET, SBRACKET };
 

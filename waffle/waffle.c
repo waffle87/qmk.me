@@ -3,14 +3,6 @@
 #include "waffle.h"
 #include "combos.h"
 
-#ifdef RAW_ENABLE
-void raw_hid_receive(uint8_t *data, uint8_t length) {
-  user_state.cpu_temp = data[0];
-  user_state.hour = data[1];
-  user_state.min = data[2];
-}
-#endif
-
 tap_dance_action_t tap_dance_actions[] = {
     [EM_DASH_MINS] = ACTION_TAP_DANCE_FN(em_dash_mins),
     [PLY_NXT_PRV] = ACTION_TAP_DANCE_FN(ply_nxt_prv),
@@ -21,7 +13,7 @@ tap_dance_action_t tap_dance_actions[] = {
 
 #if defined(SPLIT_KEYBOARD) && defined(OLED_ENABLE)
 #include "transactions.h"
-extern char keylog_str[5];
+extern char keylog_str[KEYLOG_LEN + 1];
 void keylogger_sync(uint8_t initiator2target_buffer_size,
                     const void *initiator2target_buffer,
                     uint8_t target2initiator_buffer_size,
@@ -72,6 +64,13 @@ void keyboard_post_init_user(void) {
   if (!autocorrect_is_enabled())
     autocorrect_enable();
 #endif
+}
+
+bool shutdown_user(bool jump_to_bootloader) {
+#ifdef OLED_ENABLE
+  oled_render_boot(jump_to_bootloader);
+#endif
+  return true;
 }
 
 #ifdef ENCODER_MAP_ENABLE

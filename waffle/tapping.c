@@ -136,13 +136,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef OLED_ENABLE
   if (record->event.pressed) {
     oled_timer_reset();
-    add_keylog(keycode);
+    add_keylog(keycode, record);
   }
 #endif
 #ifdef MOUSE_JIGGLE_ENABLE
   if (record->event.pressed) {
     static deferred_token token = INVALID_DEFERRED_TOKEN;
-    static report_mouse_t = {0};
+    static report_mouse_t report = {0};
     if (token) {
       cancel_deferred_exec(token);
       token = INVALID_DEFERRED_TOKEN;

@@ -1,6 +1,5 @@
 // Copyright 2024 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
-#include "lib/oled.h"
 #include "waffle.h"
 
 // clang-format off
@@ -26,18 +25,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 // clang-format on
 
-#ifdef RGB_MATRIX_ENABLE
-bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-  for (uint8_t i = led_min; i <= led_max; i++)
-    if (g_led_config.flags[i] & LED_FLAG_UNDERGLOW)
-      rgb_matrix_set_color(i, RGB_OFF);
-  return false;
-}
-#endif // RGB_MATRIX_ENABLE
-
 #ifdef OLED_ENABLE
+oled_rotation_t oled_init_user(oled_rotation_t rotation) {
+  return OLED_ROTATION_270;
+}
+
 bool oled_task_keymap(void) {
-  render_layer_state();
+  layer_status();
+  oled_set_cursor(0, 3);
+  felix_dog();
+  oled_set_cursor(0, 7);
+  render_wpm();
+  render_keylog();
+  render_mod_status();
   return false;
 }
 #endif // OLED_ENABLE
