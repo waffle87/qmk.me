@@ -77,5 +77,4 @@ void raise_paste(tap_dance_state_t *state, void *user_data);
 
 #define LAYOUT_waffle_60_ts(...) LAYOUT_60_ansi_tsangan(__VA_ARGS__)
 #define LAYOUT_waffle_3x6(...) LAYOUT_split_3x6_3(__VA_ARGS__)
-#define LAYOUT_waffle_3x5(...) LAYOUT_split_3x5_3(__VA_ARGS__)
 #define LAYOUT_waffle(...) LAYOUT(__VA_ARGS__)

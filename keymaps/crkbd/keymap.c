@@ -29,22 +29,22 @@ void housekeeping_task_keymap(void) {
   if (last_input_activity_elapsed() > 300000) {
     const pin_t row_pins[] = MATRIX_ROW_PINS, col_pins[] = MATRIX_COL_PINS;
     for (uint8_t i = 0; i < ARRAY_SIZE(col_pins); ++i) {
-      setPinOutput(col_pins[i]);
-      writePinLow(col_pins[i]);
+      gpio_set_pin_output(col_pins[i]);
+      gpio_write_pin_low(col_pins[i]);
     }
     for (uint8_t i = 0; i < ARRAY_SIZE(row_pins); ++i) {
-      setPinInputHigh(row_pins[i]);
+      gpio_set_pin_input_high(row_pins[i]);
       palEnableLineEvent(row_pins[i], PAL_EVENT_MODE_BOTH_EDGES);
     }
     __WFI();
     for (uint8_t i = 0; i < ARRAY_SIZE(row_pins); ++i) {
       palDisableLineEvent(row_pins[i]);
-      writePinHigh(row_pins[i]);
-      setPinInputHigh(row_pins[i]);
+      gpio_write_pin_high(row_pins[i]);
+      gpio_set_pin_input_high(row_pins[i]);
     }
     for (uint8_t i = 0; i < ARRAY_SIZE(col_pins); ++i) {
-      writePinHigh(col_pins[i]);
-      setPinInputHigh(col_pins[i]);
+      gpio_write_pin_high(col_pins[i]);
+      gpio_set_pin_input_high(col_pins[i]);
     }
   }
 }

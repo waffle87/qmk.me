@@ -23,6 +23,7 @@ link() {
 }
 
 link crkbd crkbd
+link bully mkh_studio/bully
 link f60 bioi/f60
 link ferris ferris
 link kyria splitkb/kyria

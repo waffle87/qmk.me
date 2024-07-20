@@ -47,11 +47,11 @@ void keyboard_post_init_user(void) {
 #endif
 #ifdef RGBLIGHT_ENABLE
   rgblight_enable_noeeprom();
-  rgblight_sethsv_noeeprom(RGB_CYAN);
+  rgblight_sethsv_noeeprom(HSV_CYAN);
   rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
 #elif RGB_MATRIX_ENABLE
   rgb_matrix_enable_noeeprom();
-  rgb_matrix_sethsv_noeeprom(RGB_CYAN);
+  rgb_matrix_sethsv_noeeprom(HSV_CYAN);
   rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
 #endif
 #ifdef CONSOLE_ENABLE
