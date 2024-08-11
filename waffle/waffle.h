@@ -67,12 +67,12 @@ void raise_paste(tap_dance_state_t *state, void *user_data);
 #define ___LOWER1___ KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0
 #define ___LOWER2___ HRML(KC_EXLM, KC_AT, KC_HASH, KC_DLR), KC_PERC, KC_CIRC, HRMR(KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN)
 #define ___LOWER3___ KC_VOLD, KC_TAB, KC_CAPS, SELWORD, KC_GRV, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_VOLU
-#define ___LOWER4___ _______, _______, _______, _______, _______, _______
+#define ___LOWER4___ _______, _______, _______, _______, NUKE, _______
 
 #define ___RAISE1___ RGB_TOG, RGB_MOD,  RGB_HUI, RGB_SAI, RGB_VAI, KC_NOMODE, KC_SCRIPT, KC_BLOCKS, KC_REGIONAL, QK_MAKE
 #define ___RAISE2___ M_JIGGLE, RGB_RMOD, RGB_HUD, RGB_SAD, RGB_VAD, KC_WIDE,   KC_AUSSIE, KC_ZALGO,  KC_SUPER,    QK_BOOT
 #define ___RAISE3___ KC_F1,   KC_F2,    KC_F3,   KC_F4,   KC_F5,   KC_F6,     KC_F7,     KC_F8,     KC_F9,       KC_F10
-#define ___RAISE4___ _______, _______, _______, _______, _______, _______
+#define ___RAISE4___ _______, RWORD, _______, _______, _______, _______
 // clang-format on
 
 #define LAYOUT_waffle_60_ts(...) LAYOUT_60_ansi_tsangan(__VA_ARGS__)

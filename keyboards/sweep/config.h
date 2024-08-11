@@ -1,0 +1,35 @@
+// Copyright 2024 jack@pngu.org
+// SPDX-License-Identifier: GPL-2.0-or-later
+#pragma once
+
+#define SERIAL_USART_FULL_DUPLEX
+#define SERIAL_USART_TX_PIN GP0
+#define SERIAL_USART_RX_PIN GP1
+
+#ifdef HAL_USE_SPI
+#define SPI_DRIVER SPID0
+#define SPI_SCK_PIN GP6
+#define SPI_MOSI_PIN GP3
+#define SPI_MISO_PIN GP5
+#endif
+
+#ifdef QUANTUM_PAINTER_ENABLE
+#define LS0XX_CS_PIN GP7
+#define LS0XX_DISPLAY_HEIGHT 160
+#define LS0XX_DISPLAY_WIDTH 68
+#define LCD_SPI_DIVISOR 4
+#endif
+
+#ifdef POINTING_DEVICE_ENABLE
+#define POINTING_DEVICE_CS_PIN GP4
+#define CIRQUE_PINNACLE_CURVED_OVERLAY
+#define CIRQUE_PINNACLE_TAP_ENABLE
+#define CIRQUE_PINNACLE_SECONDARY_TAP_ENABLE
+#define CIRQUE_PINNACLE_DIAMETER_MM 35
+#endif
+
+#ifdef HAL_USE_I2C
+#define I2C_DRIVER I2CD0
+#define I2C_SDA_PIN GP3
+#define I2C_SCL_PIN GP6
+#endif

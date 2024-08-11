@@ -146,7 +146,7 @@ void render_mod_status(void) {
     oled_write(off_off_1, false);
   oled_write(mods & MOD_MASK_ALT ? alt_on_1 : alt_off_1, false);
   oled_write(mods & MOD_MASK_GUI ? gui_on_2 : gui_off_2, false);
-  if (mods & MOD_MASK_GUI & MOD_MASK_ALT)
+  if ((mods & MOD_MASK_GUI) && (mods & MOD_MASK_ALT))
     oled_write(on_on_2, false);
   else if (mods & MOD_MASK_GUI)
     oled_write(on_off_2, false);
@@ -166,7 +166,7 @@ void render_mod_status(void) {
     oled_write(off_off_1, false);
   oled_write(mods & MOD_MASK_SHIFT ? shift_on_1 : shift_off_1, false);
   oled_write(mods & MOD_MASK_CTRL ? ctrl_on_2 : ctrl_off_2, false);
-  if (mods & MOD_MASK_CTRL & MOD_MASK_SHIFT)
+  if ((mods & MOD_MASK_CTRL) && (mods & MOD_MASK_SHIFT))
     oled_write(on_on_2, false);
   else if (mods & MOD_MASK_CTRL)
     oled_write(on_off_2, false);
