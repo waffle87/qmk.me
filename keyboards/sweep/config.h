@@ -6,6 +6,8 @@
 #define SERIAL_USART_TX_PIN GP0
 #define SERIAL_USART_RX_PIN GP1
 
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
+
 #ifdef HAL_USE_SPI
 #define SPI_DRIVER SPID0
 #define SPI_SCK_PIN GP6
@@ -29,7 +31,7 @@
 #endif
 
 #ifdef HAL_USE_I2C
-#define I2C_DRIVER I2CD0
-#define I2C_SDA_PIN GP3
-#define I2C_SCL_PIN GP6
+#define I2C_DRIVER I2CD1
+#define I2C1_SDA_PIN GP3
+#define I2C1_SCL_PIN GP6
 #endif

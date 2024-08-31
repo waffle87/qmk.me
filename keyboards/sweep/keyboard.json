@@ -7,7 +7,7 @@
         "bootmagic": true,
         "oled": false,
         "pointing_device": true,
-        "quantum_painter": false,
+        "quantum_painter": true,
         "rgb_matrix": true
     },
     "matrix_pins": {

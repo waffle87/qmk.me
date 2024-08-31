@@ -95,10 +95,13 @@ void td_reset(tap_dance_state_t *state, void *user_data) {
 
 void em_dash_mins(tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
-  case 2:
+  case 3:
 #ifdef UNICODE_COMMON_ENABLE
     register_unicode(0x2014); // —
 #endif
+    break;
+  case 2:
+    tap_code(KC_MINS), tap_code(KC_MINS);
     break;
   default:
     tap_code(KC_MINS);
