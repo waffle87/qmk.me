@@ -35,4 +35,15 @@ void suspend_wakeup_init_kb(void) {
   qp_power(display, true);
   suspend_wakeup_init_user();
 }
-#endif
+#endif // QUANTUM_PAINTER_ENABLE
+
+#ifdef OLED_ENABLE
+oled_rotation_t oled_init_kb(oled_rotation_t rotation) { return rotation; }
+
+bool oled_task_kb(void) {
+  if (!oled_task_user())
+    return false;
+  oled_write(PSTR("foo bar baz"), false);
+  return true;
+}
+#endif // OLED_ENABLE

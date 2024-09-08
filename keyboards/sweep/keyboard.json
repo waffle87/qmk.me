@@ -1,7 +1,7 @@
 {
-    "manufacturer": "jacks",
+    "manufacturer": "pngu.org",
     "keyboard_name": "sweep",
-    "maintainer": "pngu.org",
+    "maintainer": "jack",
     "bootloader": "rp2040",
     "features": {
         "bootmagic": true,
@@ -72,18 +72,18 @@
         "handedness": {
             "pin": "GP8"
         },
+        "matrix_pins": {
+            "right": {
+                "direct": [
+                    ["GP25", "GP22", "GP17", "GP16", "GP13"],
+                    ["GP24", "GP20", "GP18", "GP15", "GP12"],
+                    ["GP23", "GP21", "GP19", "GP14", "GP11"],
+                    ["GP10", "GP9", null, null, null]
+                ]
+            }
+        },
         "serial": {
             "driver": "vendor"
-        },
-        "matrix_pins": {
-          "right": {
-            "direct": [
-              ["GP13", "GP16", "GP17", "GP22", "GP25"],
-              ["GP12", "GP15", "GP18", "GP20", "GP24"],
-              ["GP11", "GP14", "GP19", "GP21", "GP23"],
-              [null, null, null, "GP9", "GP10"]
-            ]
-          }
         }
     },
     "url": "https://git.pngu.org/sweep",
@@ -95,6 +95,10 @@
     "ws2812": {
         "driver": "vendor",
         "pin": "GP2"
+    },
+    "community_layouts": ["split_3x5_2"],
+    "layout_aliases": {
+        "LAYOUT": "LAYOUT_split_3x5_2"
     },
     "layouts": {
         "LAYOUT_split_3x5_2": {

@@ -2,9 +2,9 @@
 
 ![%KEYBOARD%](imgur.com image replace me!)
 
-* Keyboard Maintainer: [Jack Sangdahl][https://github.com/waffle87]
+* Keyboard Maintainer: [Jack Sangdahl](https://github.com/waffle87)
 * Hardware Supported: PCBs with integrated RP2040 microcontroller
-* Hardware Availability: [git/sweep][https://git.pngu.org/sweep]
+* Hardware Availability: [git/sweep](https://git.pngu.org/sweep)
 
 Make example for this keyboard (after setting up your build environment):
 
@@ -12,7 +12,7 @@ Make example for this keyboard (after setting up your build environment):
 
 Flashing example for this keyboard:
 
-    make sweep:default
+    make sweep:default:flash
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
