@@ -58,6 +58,28 @@ void raise_paste(tap_dance_state_t *state, void *user_data);
 #define HRML(k1, k2, k3, k4) LALT_T(k1), LGUI_T(k2), LCTL_T(k3), LSFT_T(k4)
 #define HRMR(k1, k2, k3, k4) RSFT_T(k1), RCTL_T(k2), RGUI_T(k3), RALT_T(k4)
 
+#ifdef RGB_MATRIX_ENABLE
+#define XRGB_TOG RM_TOGG
+#define XRGB_NXT RM_NEXT
+#define XRGB_PRV RM_PREV
+#define XRGB_HUI RM_HUEU
+#define XRGB_HUD RM_HUED
+#define XRGB_SAI RM_SATU
+#define XRGB_SAD RM_SATD
+#define XRGB_VAI RM_VALU
+#define XRGB_VAD RM_VALD
+#elif RGBLIGHT_ENABLE
+#define XRGB_TOG UG_TOGG
+#define XRGB_NXT UG_NEXT
+#define XRGB_PRV UG_PREV
+#define XRGB_HUI UG_HUEU
+#define XRGB_HUD UG_HUED
+#define XRGB_SAI UG_SATU
+#define XRGB_SAD UG_SATD
+#define XRGB_VAI UG_VALU
+#define XRGB_VAD UG_VALD
+#endif
+
 // clang-format off
 #define ___BASE1___ KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P
 #define ___BASE2___ HRML(KC_A, KC_S, KC_D, KC_F), KC_G, KC_H, HRMR(KC_J, KC_K, KC_L, KC_SCLN)
@@ -69,8 +91,8 @@ void raise_paste(tap_dance_state_t *state, void *user_data);
 #define ___LOWER3___ KC_VOLD, KC_TAB, KC_CAPS, SELWORD, KC_GRV, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_VOLU
 #define ___LOWER4___ _______, _______, _______, _______, NUKE, _______
 
-#define ___RAISE1___ RGB_TOG, RGB_MOD,  RGB_HUI, RGB_SAI, RGB_VAI, KC_NOMODE, KC_SCRIPT, KC_BLOCKS, KC_REGIONAL, QK_MAKE
-#define ___RAISE2___ M_JIGGLE, RGB_RMOD, RGB_HUD, RGB_SAD, RGB_VAD, KC_WIDE,   KC_AUSSIE, KC_ZALGO,  KC_SUPER,    QK_BOOT
+#define ___RAISE1___ XRGB_TOG, XRGB_NXT,  XRGB_HUI, XRGB_SAI, XRGB_VAI, KC_NOMODE, KC_SCRIPT, KC_BLOCKS, KC_REGIONAL, QK_MAKE
+#define ___RAISE2___ M_JIGGLE, XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD, KC_WIDE,   KC_AUSSIE, KC_ZALGO,  KC_SUPER,    QK_BOOT
 #define ___RAISE3___ KC_F1,   KC_F2,    KC_F3,   KC_F4,   KC_F5,   KC_F6,     KC_F7,     KC_F8,     KC_F9,       KC_F10
 #define ___RAISE4___ _______, RWORD, _______, _______, _______, _______
 // clang-format on

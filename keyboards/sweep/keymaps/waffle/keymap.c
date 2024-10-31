@@ -14,13 +14,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ___LOWER1___,
     ___LOWER2___,
     ___LOWER3___,
-    KC_NO, KC_NO, NUKE, PNP
+    KC_TRNS, KC_TRNS, KC_TRNS, PNP
   ),
   [_RAISE] = LAYOUT_waffle(
     ___RAISE1___,
     ___RAISE2___,
     ___RAISE3___,
-    UPDIR, RWORD, KC_NO, KC_NO
+    NUKE, KC_TRNS, KC_TRNS, KC_TRNS
   )
 };
 // clang-format on

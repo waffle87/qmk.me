@@ -32,7 +32,7 @@ endif
 
 ifeq ($(PLATFORM), CHIBIOS)
 	RANDWORD = yes
-	EXTRAFLAGS += -O3
+	EXTRAFLAGS += -Os
 endif
 
 ifneq ($(findstring Gentoo, $(shell arm-none-eabi-gcc --version)),)
