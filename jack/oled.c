@@ -1,7 +1,7 @@
 // Copyright 2024 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "oled.h"
-#include "waffle.h"
+#include "jack.h"
 
 uint32_t oled_timer = 0;
 char keylog_str[KEYLOG_LEN + 1] = {0};

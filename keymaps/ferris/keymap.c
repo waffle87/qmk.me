@@ -1,27 +1,27 @@
 // Copyright 2024 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
-#include "waffle.h"
+#include "jack.h"
 #define XX NO_LED
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_BASE] = LAYOUT_waffle(
+  [_BASE] = LAYOUT_jack(
     ___BASE1___,
     ___BASE2___,
     ___BASE3___,
     ESCLWR, KC_SPC, KC_BSPC, PSTRSE
   ),
-  [_LOWER] = LAYOUT_waffle(
+  [_LOWER] = LAYOUT_jack(
     ___LOWER1___,
     ___LOWER2___,
     ___LOWER3___,
-    KC_NO, KC_NO, KC_NO, PNP
+    XXXXXXX, XXXXXXX, XXXXXXX, PNP
   ),
-  [_RAISE] = LAYOUT_waffle(
+  [_RAISE] = LAYOUT_jack(
     ___RAISE1___,
     ___RAISE2___,
     ___RAISE3___,
-    UPDIR, KC_NO, KC_NO, KC_NO
+    UPDIR, XXXXXXX, XXXXXXX, XXXXXXX
   )
 };
 

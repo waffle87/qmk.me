@@ -12,7 +12,7 @@ AUTOCORRECT_ENABLE = yes
 MOUSE_JIGGLE_ENABLE = yes
 DEBOUNCE_TYPE = asym_eager_defer_pk
 AVR_CFLAGS += -mrelax
-INTROSPECTION_KEYMAP_C = waffle.c
+INTROSPECTION_KEYMAP_C = jack.c
 
 SRC += tapping.c
 

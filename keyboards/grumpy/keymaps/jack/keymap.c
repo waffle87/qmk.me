@@ -1,6 +1,6 @@
 // Copyright 2024 jack@pngu.org
 // SPDX-License-Identifier: GPL-3.0-or-later
-#include "waffle.h"
+#include "jack.h"
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {

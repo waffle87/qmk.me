@@ -1,6 +1,6 @@
 // Copyright 2024 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
-#include "waffle.h"
+#include "jack.h"
 #include "combos.h"
 
 tap_dance_action_t tap_dance_actions[] = {

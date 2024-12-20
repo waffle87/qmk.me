@@ -8,10 +8,10 @@ symlinks are used to compile this code in a proper `qmk_firmware` repository.
 
 eg.
 ```shell
-ln -s ~/qmk.me/waffle ~/qmk_firmware/users/waffle
+ln -s ~/qmk.me/jack ~/qmk_firmware/users/jack
 ln -s ~/qmk.me/keyboards/relic ~/qmk_firmware/keyboards/relic
-echo "users/waffle\nkeyboards/relic" >> ~/qmk_firmware/.git/info/exclude
-qmk compile -kb relic -km waffle
+echo "users/jack\nkeyboards/relic" >> ~/qmk_firmware/.git/info/exclude
+qmk compile -kb relic -km jack
 ```
 the official [userspace feature](https://docs.qmk.fm/newbs_external_userspace) 
 is not used as this repository contains personal keyboards, which are not supported.

@@ -1,6 +1,6 @@
 // Copyright 2024 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
-#include "waffle.h"
+#include "jack.h"
 #ifdef RANDWORD
 #include "dict.h"
 uint16_t word = 0;

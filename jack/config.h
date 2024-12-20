@@ -14,7 +14,7 @@
 #define MANUFACTURER "jacks"
 
 #ifdef OLED_ENABLE
-#define OLED_FONT_H "users/waffle/oledfont.h"
+#define OLED_FONT_H "users/jack/oledfont.h"
 #define OLED_UPDATE_INTERVAL 50
 #define OLED_DISABLE_TIMEOUT
 #endif

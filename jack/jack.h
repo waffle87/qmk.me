@@ -78,6 +78,16 @@ void raise_paste(tap_dance_state_t *state, void *user_data);
 #define XRGB_SAD UG_SATD
 #define XRGB_VAI UG_VALU
 #define XRGB_VAD UG_VALD
+#else
+#define XRGB_TOG _______
+#define XRGB_NXT _______
+#define XRGB_PRV _______
+#define XRGB_HUI _______
+#define XRGB_HUD _______
+#define XRGB_SAI _______
+#define XRGB_SAD _______
+#define XRGB_VAI _______
+#define XRGB_VAD _______
 #endif
 
 // clang-format off
@@ -97,6 +107,7 @@ void raise_paste(tap_dance_state_t *state, void *user_data);
 #define ___RAISE4___ _______, RWORD, _______, _______, _______, _______
 // clang-format on
 
-#define LAYOUT_waffle_60_ts(...) LAYOUT_60_ansi_tsangan(__VA_ARGS__)
-#define LAYOUT_waffle_3x6(...) LAYOUT_split_3x6_3(__VA_ARGS__)
-#define LAYOUT_waffle(...) LAYOUT(__VA_ARGS__)
+#define LAYOUT_jack_60_ts(...) LAYOUT_60_ansi_tsangan(__VA_ARGS__)
+#define LAYOUT_jack_3x6(...) LAYOUT_split_3x6_3(__VA_ARGS__)
+#define LAYOUT_jack_all(...) LAYOUT_all(__VA_ARGS__)
+#define LAYOUT_jack(...) LAYOUT(__VA_ARGS__)

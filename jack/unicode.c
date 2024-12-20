@@ -1,6 +1,6 @@
 // Copyright 2024 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
-#include "waffle.h"
+#include "jack.h"
 
 uint8_t typing_mode = NOMODE;
 typedef uint32_t (*translator_function_t)(bool is_shifted, uint32_t keycode);
