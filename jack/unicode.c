@@ -1,6 +1,17 @@
-// Copyright 2024 jack@pngu.org
+// Copyright 2025 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "jack.h"
+
+enum unicode_mode {
+  NOMODE,
+  WIDE,
+  SCRIPT,
+  BLOCKS,
+  REGIONAL,
+  AUSSIE,
+  ZALGO,
+  SUPER
+};
 
 uint8_t typing_mode = NOMODE;
 typedef uint32_t (*translator_function_t)(bool is_shifted, uint32_t keycode);
@@ -157,7 +168,7 @@ DEFINE_UNICODE_LUT_TRANSLATOR(unicode_lut_translator_super,
 );
 
 bool process_record_aussie(uint16_t keycode, keyrecord_t *record) {
-  bool is_shifted = (get_mods()) & MOD_MASK_SHIFT;
+  bool is_shifted = (get_mods())&MOD_MASK_SHIFT;
   if ((KC_A <= keycode) && (keycode <= KC_0)) {
     if (record->event.pressed)
       if (!process_record_glyph_replacement(keycode, record,
@@ -222,20 +233,10 @@ bool process_record_zalgo(uint16_t keycode, keyrecord_t *record) {
 
 bool process_record_unicode(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-  case TABLE1:
+  case UC_NOMODE ... UC_SUPER:
     if (record->event.pressed) {
-      send_unicode_string("┬──┬ ノ( ゜-゜ノ)");
-    }
-    break;
-  case TABLE2:
-    if (record->event.pressed) {
-      send_unicode_string("(╯°□°)╯︵┻━┻");
-    }
-    break;
-  case KC_NOMODE ... KC_SUPER:
-    if (record->event.pressed) {
-      if (typing_mode != keycode - KC_NOMODE)
-        typing_mode = keycode - KC_NOMODE;
+      if (typing_mode != keycode - UC_NOMODE)
+        typing_mode = keycode - UC_NOMODE;
       else
         typing_mode = NOMODE;
     }

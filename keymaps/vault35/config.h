@@ -1,4 +1,4 @@
-// Copyright 2024 jack_all@pngu.org
+// Copyright 2025 jack_all@pngu.org
 // SPDX-License-Identifier: GPL-3.0-or-later
 #pragma once
 

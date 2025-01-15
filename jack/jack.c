@@ -1,7 +1,6 @@
-// Copyright 2024 jack@pngu.org
+// Copyright 2025 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "jack.h"
-#include "combos.h"
 
 tap_dance_action_t tap_dance_actions[] = {
     [EM_DASH_MINS] = ACTION_TAP_DANCE_FN(em_dash_mins),
@@ -10,6 +9,23 @@ tap_dance_action_t tap_dance_actions[] = {
     [CBRACKET] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
     [SBRACKET] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
 };
+
+#define CMB(name, action, ...) name,
+enum combos {
+#include "combos.def"
+};
+#undef CMB
+
+#define CMB(name, action, ...)                                                 \
+  uint16_t const name##_combo[] PROGMEM = {__VA_ARGS__, COMBO_END};
+#include "combos.def"
+#undef CMB
+
+#define CMB(name, action, ...) [name] = COMBO(name##_combo, action),
+combo_t key_combos[] = {
+#include "combos.def"
+};
+#undef CMB
 
 #if defined(SPLIT_KEYBOARD) && defined(OLED_ENABLE)
 #include "transactions.h"
@@ -33,10 +49,9 @@ void housekeeping_task_user(void) {
     }
     if (timer_elapsed32(last_sync) > 250)
       needs_sync = true;
-    if (needs_sync) {
+    if (needs_sync)
       if (transaction_rpc_send(RPC_ID_USER_KEYLOG_STR, 5, &keylog_str))
         last_sync = timer_read32();
-    }
   }
 }
 #endif
@@ -44,6 +59,9 @@ void housekeeping_task_user(void) {
 void keyboard_post_init_user(void) {
 #if defined(SPLIT_KEYBOARD) && defined(OLED_ENABLE)
   transaction_register_rpc(RPC_ID_USER_KEYLOG_STR, keylogger_sync);
+#endif
+#ifdef CUSTOM_TAP_CODE_ENABLE
+  tap_code_buffer_init();
 #endif
 #ifdef RGBLIGHT_ENABLE
   rgblight_enable_noeeprom();
@@ -54,23 +72,16 @@ void keyboard_post_init_user(void) {
   rgb_matrix_sethsv_noeeprom(HSV_CYAN);
   rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
 #endif
-#ifdef CONSOLE_ENABLE
-  debug_keyboard = true;
-  debug_enable = true;
-  debug_matrix = true;
-  debug_mouse = true;
-#endif
 #ifdef AUTOCORRECT_ENABLE
   if (!autocorrect_is_enabled())
     autocorrect_enable();
 #endif
 }
 
-bool shutdown_user(bool jump_to_bootloader) {
-#ifdef OLED_ENABLE
-  oled_render_boot(jump_to_bootloader);
+void matrix_scan_user(void) {
+#ifdef CUSTOM_TAP_CODE_ENABLE
+  process_tap_code_buffer();
 #endif
-  return true;
 }
 
 #ifdef ENCODER_MAP_ENABLE
@@ -80,38 +91,10 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [_RAISE] = {{C(KC_LEFT), C(KC_RGHT)}, {C(S(KC_TAB)), C(KC_TAB)}}};
 #endif
 
-#ifdef POINTING_DEVICE_ENABLE
-static bool scrolling = false;
-layer_state_t layer_state_set_user(layer_state_t state) {
-  switch (get_highest_layer(state)) {
-  case _LOWER:
-    scrolling = true;
-#ifdef POINTING_DEVICE_DRIVER_pimoroni_trackball
-    pimoroni_trackball_set_cpi(0.1);
-#else
-    pointing_device_set_cpi(64);
+#ifndef MAGIC_ENABLE
+uint16_t keycode_config(uint16_t keycode) { return keycode; }
 #endif
-    break;
-  default:
-    if (scrolling) {
-      scrolling = false;
-#ifdef POINTING_DEVICE_DRIVER_pimoroni_trackball
-      pimoroni_trackball_set_cpi(1);
-#else
-      pointing_device_set_cpi(1024);
-#endif
-    }
-  }
-  return state;
-}
 
-report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
-  if (scrolling) {
-    mouse_report.h = mouse_report.x;
-    mouse_report.v = -mouse_report.y;
-    mouse_report.x = 0;
-    mouse_report.y = 0;
-  }
-  return mouse_report;
-}
+#ifndef MAGIC_ENABLE
+uint8_t mod_config(uint8_t mod) { return mod; }
 #endif

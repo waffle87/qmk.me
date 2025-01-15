@@ -1,5 +1,5 @@
 ### rp2040 kyria rev2
-![photo](https://i.imgur.com/P0urp7nh.jpeg)
+![photo](https://i.imgur.com/P0urp7n.jpeg)
 
 #### parts & notes
 * microcontrollers: [boardsource blok](https://boardsource.xyz/store/628b95b494dfa308a6581622)

@@ -1,54 +1,50 @@
-// Copyright 2024 jack@pngu.org
+// Copyright 2025 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
 #include QMK_KEYBOARD_H
-#ifdef OLED_ENABLE
-#include "oled.h"
-#endif
 
 enum layers { _BASE, _LOWER, _RAISE };
 
 enum tapdances { EM_DASH_MINS, PLY_NXT_PRV, PASTE_RAISE, CBRACKET, SBRACKET };
 
-enum sw_state { NONE, SELECTED, WORD, FIRST_LINE, LINE };
-
 enum custom_keycodes {
   UPDIR = QK_USER,
-  NUKE,
-  SELWORD,
+  REMOVE,
   M_JIGGLE,
-  TABLE1,
-  TABLE2,
-  KC_NOMODE,
-  KC_WIDE,
-  KC_SCRIPT,
-  KC_BLOCKS,
-  KC_REGIONAL,
-  KC_AUSSIE,
-  KC_ZALGO,
-  KC_SUPER,
-  RWORD
+  UC_NOMODE,
+  UC_WIDE,
+  UC_SCRIPT,
+  UC_BLOCKS,
+  UC_REGIONAL,
+  UC_AUSSIE,
+  UC_ZALGO,
+  UC_SUPER
 };
 
-#ifdef UNICODE_COMMON_ENABLE
 bool process_record_unicode(uint16_t keycode, keyrecord_t *record);
-
-enum unicode_mode {
-  NOMODE,
-  WIDE,
-  SCRIPT,
-  BLOCKS,
-  REGIONAL,
-  AUSSIE,
-  ZALGO,
-  SUPER
-};
-#endif
-
+bool process_record_taps(uint16_t keycode, keyrecord_t *record);
+extern uint8_t extract_mod_bits(uint16_t code);
+void tap_code_buffer_init(void);
+void tap_code_register(uint8_t code, uint8_t mods, uint16_t delay,
+                       bool register_tap);
+void process_tap_code_buffer(void);
+void tap_string(const char *str);
 void td_reset(tap_dance_state_t *state, void *user_data);
 void em_dash_mins(tap_dance_state_t *state, void *user_data);
 void ply_nxt_prv(tap_dance_state_t *state, void *user_data);
 void raise_paste(tap_dance_state_t *state, void *user_data);
+void oled_timer_reset(void);
+bool oled_task_keymap(void);
+void anim_frame(uint16_t size, char const action[][size]);
+void wpm_graph(void);
+void felix_dog(void);
+void layer_anim(void);
+void layer_status(void);
+void render_mod_status(void);
+void add_keylog(uint16_t keycode, keyrecord_t *record);
+void render_keylog(void);
+void render_wpm(void);
+void render_scan_rate(void);
 
 #define PNP TD(PLY_NXT_PRV)
 #define PSTRSE TD(PASTE_RAISE)
@@ -98,13 +94,13 @@ void raise_paste(tap_dance_state_t *state, void *user_data);
 
 #define ___LOWER1___ KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0
 #define ___LOWER2___ HRML(KC_EXLM, KC_AT, KC_HASH, KC_DLR), KC_PERC, KC_CIRC, HRMR(KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN)
-#define ___LOWER3___ KC_VOLD, KC_TAB, KC_CAPS, SELWORD, KC_GRV, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_VOLU
-#define ___LOWER4___ _______, _______, _______, _______, NUKE, _______
+#define ___LOWER3___ KC_VOLD, KC_TAB, KC_CAPS, REMOVE, KC_GRV, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_VOLU
+#define ___LOWER4___ _______, _______, _______, _______, _______, _______
 
-#define ___RAISE1___ XRGB_TOG, XRGB_NXT,  XRGB_HUI, XRGB_SAI, XRGB_VAI, KC_NOMODE, KC_SCRIPT, KC_BLOCKS, KC_REGIONAL, QK_MAKE
-#define ___RAISE2___ M_JIGGLE, XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD, KC_WIDE,   KC_AUSSIE, KC_ZALGO,  KC_SUPER,    QK_BOOT
-#define ___RAISE3___ KC_F1,   KC_F2,    KC_F3,   KC_F4,   KC_F5,   KC_F6,     KC_F7,     KC_F8,     KC_F9,       KC_F10
-#define ___RAISE4___ _______, RWORD, _______, _______, _______, _______
+#define ___RAISE1___ XRGB_TOG, XRGB_NXT,  XRGB_HUI, XRGB_SAI, XRGB_VAI, UC_NOMODE, UC_SCRIPT, UC_BLOCKS, UC_REGIONAL, QK_MAKE
+#define ___RAISE2___ M_JIGGLE, XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD, UC_WIDE, UC_AUSSIE, UC_ZALGO, UC_SUPER, QK_BOOT
+#define ___RAISE3___ KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10
+#define ___RAISE4___ _______, _______, _______, _______, _______, _______
 // clang-format on
 
 #define LAYOUT_jack_60_ts(...) LAYOUT_60_ansi_tsangan(__VA_ARGS__)

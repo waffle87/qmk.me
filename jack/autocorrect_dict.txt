@@ -1,4 +1,4 @@
-# Copyright 2024 jack@pngu.org
+# Copyright 2025 jack@pngu.org
 # SPDX-License-Identifier: GPL-2.0-or-later
 
 :theri        -> their
@@ -120,9 +120,6 @@ aparrent      -> apparent
 apparant      -> apparent
 apparrent     -> apparent
 asthetic      -> aesthetic
-auxilary      -> auxiliary
-auxillary     -> auxiliary
-auxilliary    -> auxiliary
 bankrupcy     -> bankruptcy
 busness       -> business
 bussiness     -> business
@@ -177,8 +174,6 @@ relevent      -> relevant
 repitition    -> repetition
 safty         -> safety
 saftey        -> safety
-seperat       -> separat
-spectogram    -> spectrogram
 symetric      -> symmetric
 tolerence     -> tolerance
 cacheing      -> caching
@@ -197,7 +192,6 @@ interator     -> iterator
 looup         -> lookup
 namesapce     -> namespace
 namespcae     -> namespace
-nulltpr       -> nullptr
 operaotr      -> operator
 overide       -> override
 ovveride      -> override
@@ -237,7 +231,6 @@ fromthe       -> from the
 :aslo:        -> also
 :casue        -> cause
 :choses       -> chooses
-:gaurd        -> guard
 :haev         -> have
 :hapen        -> happen
 :idaes        -> ideas
@@ -299,7 +292,6 @@ cheif         -> chief
 cieling       -> ceiling
 circut        -> circuit
 clasic        -> classic
-cmoputer      -> computer
 coform        -> conform
 comming:      -> coming
 considerd     -> considered
@@ -330,7 +322,6 @@ greatful      -> grateful
 heigher       -> higher
 higest        -> highest
 howver        -> however
-hydogen       -> hydrogen
 importamt     -> important
 inclued       -> include
 insted        -> instead
@@ -388,7 +379,6 @@ supress       -> suppress
 surpress      -> suppress
 thresold      -> threshold
 tongiht       -> tonight
-tranpose      -> transpose
 typcial       -> typical
 udpate        -> update
 ususally      -> usually

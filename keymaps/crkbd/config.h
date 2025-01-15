@@ -1,4 +1,4 @@
-// Copyright 2024 jack@pngu.org
+// Copyright 2025 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
 
@@ -13,9 +13,9 @@
 #define WS2812_DI_PIN B5
 #define WS2812_PWM_DRIVER PWMD3
 #define WS2812_PWM_CHANNEL 3
-#define WS2812_DMA_STREAM STM32_DMA1_STREAM3
-#define WS2812_DMA_CHANNEL 3
-#define WS2812_DMAMUX_ID STM32_DMAMUX1_TIM3_UP
+#define WS2812_PWM_DMA_STREAM STM32_DMA1_STREAM3
+#define WS2812_PWM_DMA_CHANNEL 3
+#define WS2812_PWM_DMAMUX_ID STM32_DMAMUX1_TIM3_UP
 #endif
 
 #ifdef ENCODER_ENABLE

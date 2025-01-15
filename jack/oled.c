@@ -1,10 +1,12 @@
-// Copyright 2024 jack@pngu.org
+// Copyright 2025 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
-#include "oled.h"
 #include "jack.h"
+#include "oled.h"
 
 uint32_t oled_timer = 0;
 char keylog_str[KEYLOG_LEN + 1] = {0};
+extern uint8_t oled_buffer[OLED_MATRIX_SIZE];
+extern OLED_BLOCK_TYPE oled_dirty;
 
 void oled_timer_reset(void) { oled_timer = timer_read32(); }
 
@@ -220,18 +222,3 @@ void render_scan_rate(void) {
   oled_write_ln(get_u16_str(get_matrix_scan_rate(), ' '), false);
 }
 #endif
-
-void oled_render_boot(bool jump_to_bootloader) {
-  oled_clear();
-  static const char PROGMEM qmk_logo[16] = {0x80, 0x81, 0x82, 0x83, 0x84,
-                                            0xA0, 0xA1, 0xA2, 0xA3, 0xA4,
-                                            0xC0, 0xC1, 0xC2, 0xC3, 0xC4};
-  oled_write(qmk_logo, false);
-  oled_set_cursor(0, 4);
-  oled_write(qmk_logo, false);
-  oled_set_cursor(0, 8);
-  oled_write(qmk_logo, false);
-  oled_set_cursor(0, 12);
-  oled_write(qmk_logo, false);
-  oled_render_dirty(true);
-}

@@ -1,15 +1,17 @@
-// Copyright 2024 jack@pngu.org
+// Copyright 2025 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
 
 #define TAPPING_TERM_PER_KEY
 #define TAPPING_TERM 140
-#define FORCE_NKRO
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 #define COMBO_TERM 40
 #define NO_ACTION_ONESHOT
 #define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX
 #define ENABLE_COMPILE_KEYCODE
+#define LAYER_STATE_8BIT
+#undef LOCKING_SUPPORT_ENABLE
+#undef LOCKING_RESYNC_ENABLE
 #undef MANUFACTURER
 #define MANUFACTURER "jacks"
 

@@ -1,4 +1,4 @@
-// Copyright 2024 jack@pngu.org
+// Copyright 2025 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "jack.h"
 
@@ -6,21 +6,21 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_jack_3x6(
     XXXXXXX, ___BASE1___, XXXXXXX,
-    XXXXXXX, ___BASE2___, RWORD,
+    XXXXXXX, ___BASE2___, XXXXXXX,
     XXXXXXX, ___BASE3___, XXXXXXX,
-           ___BASE4___
+             ___BASE4___
   ),
   [_LOWER] = LAYOUT_jack_3x6(
-    XXXXXXX, ___LOWER1___, XXXXXXX,
-    XXXXXXX, ___LOWER2___, XXXXXXX,
-    XXXXXXX, ___LOWER3___, XXXXXXX,
-           ___LOWER4___
+    _______, ___LOWER1___, _______,
+    _______, ___LOWER2___, _______,
+    _______, ___LOWER3___, _______,
+             ___LOWER4___
   ),
   [_RAISE] = LAYOUT_jack_3x6(
-    XXXXXXX, ___RAISE1___, XXXXXXX,
-    XXXXXXX, ___RAISE2___, XXXXXXX,
-    XXXXXXX, ___RAISE3___, XXXXXXX,
-           ___RAISE4___
+    _______, ___RAISE1___, _______,
+    _______, ___RAISE2___, _______,
+    _______, ___RAISE3___, _______,
+             ___RAISE4___
   )
 };
 // clang-format on
@@ -62,31 +62,9 @@ void keyboard_post_init_keymap(void) {
 }
 #endif // audio
 
-#ifdef POINTING_DEVICE_ENABLE
-uint8_t red = 255, green = 0, blue = 0;
-
-void trackball_hue(void) {
-  if (red != 255 && green != 255 && blue != 255)
-    red = 255;
-  if (red == 255 && green < 255 && !blue)
-    green += 15;
-  else if (green == 255 && !blue && red)
-    red -= 15;
-  else if (!red && blue < 255 && green == 255)
-    blue += 15;
-  else if (blue == 255 && green && !red)
-    green -= 15;
-  else if (!green && blue == 255 && red < 255)
-    red += 15;
-  else if (!green && blue && red == 255)
-    blue -= 15;
-  pimoroni_trackball_set_rgbw(red, green, blue, 0);
-}
-#endif // pointing device
-
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-  return is_keyboard_master() ? 2 : 3;
+  return is_keyboard_master() ? OLED_ROTATION_180 : OLED_ROTATION_270;
 }
 
 bool oled_task_keymap(void) {

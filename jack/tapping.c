@@ -1,9 +1,9 @@
-// Copyright 2024 jack@pngu.org
+// Copyright 2025 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "jack.h"
-#ifdef RANDWORD
-#include "dict.h"
-uint16_t word = 0;
+
+#ifndef CUSTOM_TAP_CODE_ENABLE
+#define tap_string send_string_P
 #endif
 
 #define INTERCEPT_MOD_TAP(mod, keycode)                                        \
@@ -13,64 +13,6 @@ uint16_t word = 0;
       return false;                                                            \
     }                                                                          \
     break;
-
-static uint8_t select_word_state = NONE;
-
-bool process_select_word(uint16_t keycode, keyrecord_t *record) {
-  if (keycode == KC_LSFT || keycode == KC_RSFT)
-    return true;
-  if (keycode == SELWORD && record->event.pressed) {
-    const bool shifted = get_mods() & MOD_MASK_SHIFT;
-    if (!shifted) {
-      set_mods(MOD_BIT(KC_LCTL));
-      if (select_word_state == NONE) {
-        send_keyboard_report();
-        tap_code(KC_RGHT);
-        tap_code(KC_LEFT);
-      }
-      register_mods(MOD_BIT(KC_LSFT));
-      register_code(KC_RGHT);
-      select_word_state = WORD;
-    } else {
-      if (select_word_state == NONE) {
-        clear_mods();
-        send_keyboard_report();
-        tap_code(KC_HOME);
-        register_mods(MOD_BIT(KC_LSFT));
-        tap_code(KC_END);
-        set_mods(get_mods());
-        select_word_state = FIRST_LINE;
-      } else {
-        register_code(KC_DOWN);
-        select_word_state = LINE;
-      }
-    }
-    return false;
-  }
-  switch (select_word_state) {
-  case WORD:
-    unregister_code(KC_RGHT);
-    unregister_mods(MOD_BIT(KC_LSFT) | MOD_BIT(KC_LCTL));
-    select_word_state = SELECTED;
-    break;
-  case FIRST_LINE:
-    select_word_state = SELECTED;
-    break;
-  case LINE:
-    unregister_code(KC_DOWN);
-    select_word_state = SELECTED;
-    break;
-  case SELECTED:
-    if (keycode == KC_ESC) {
-      tap_code(KC_RGHT);
-      select_word_state = NONE;
-      return false;
-    }
-  default:
-    select_word_state = NONE;
-  }
-  return true;
-}
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
@@ -134,8 +76,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (!process_record_unicode(keycode, record))
     return false;
 #endif
-  if (!process_select_word(keycode, record))
+#ifdef CUSTOM_TAP_CODE_ENABLE
+  if (!process_record_taps(keycode, record))
     return false;
+#endif
 #ifdef OLED_ENABLE
   if (record->event.pressed) {
     oled_timer_reset();
@@ -170,12 +114,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
   case UPDIR:
     if (record->event.pressed)
-      SEND_STRING("../");
+      tap_string(PSTR("../"));
     break;
-  case NUKE:
+  case REMOVE:
     if (record->event.pressed) {
-      tap_code16(C(KC_A));
-      SEND_STRING("\b```suggestion\n```");
+      tap_string(PSTR("```suggestion\n```"));
+      tap_code(KC_UP);
+      tap_code(KC_UP);
+      tap_code(KC_ENT);
+      tap_code(KC_UP);
     }
     break;
     INTERCEPT_MOD_TAP(LALT_T, KC_EXLM)
@@ -186,15 +133,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     INTERCEPT_MOD_TAP(RCTL_T, KC_ASTR)
     INTERCEPT_MOD_TAP(RGUI_T, KC_LPRN)
     INTERCEPT_MOD_TAP(RALT_T, KC_RPRN)
-  case RWORD:
-#ifdef RANDWORD
-    word = rand() % NUM_WORDS;
-    if (record->event.pressed) {
-      send_string(dict[word]);
-      tap_code(KC_SPC);
-    }
-#endif
-    break;
   }
   return true;
 }

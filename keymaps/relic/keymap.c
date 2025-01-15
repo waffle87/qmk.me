@@ -1,4 +1,4 @@
-// Copyright 2024 jack@pngu.org
+// Copyright 2025 jack@pngu.org
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "jack.h"
 
@@ -14,7 +14,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ___LOWER1___, _______,
     ___LOWER2___,
     ___LOWER3___,
-    _______, TABLE1, _______, _______, _______, _______, _______, TABLE2, _______
+    _______, _______, _______, _______, _______, _______, _______, _______, _______
   ),
   [_RAISE] = LAYOUT_jack_all(
     ___RAISE1___, _______,
