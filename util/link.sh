@@ -29,3 +29,4 @@ link ferris ferris
 link kyria splitkb/kyria
 link relic projectcain/relic
 link vault35 projectcain/vault35
+link qaz tominabox1/qaz

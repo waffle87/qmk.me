@@ -20,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_RAISE] = LAYOUT_jack(
     _______, RGB_TOG,  RGB_MOD,  RGB_HUI, RGB_SAI, RGB_VAI,                                         UC_NOMODE, UC_SCRIPT, UC_BLOCKS, UC_REGIONAL, QK_MAKE, _______,
-    _______, M_JIGGLE, RGB_RMOD, RGB_HUD, RGB_SAD, RGB_VAD,                                         KC_WIDE,   KC_AUSSIE, KC_ZALGO,  KC_SUPER,    QK_BOOT, _______,
+    _______, M_JIGGLE, RGB_RMOD, RGB_HUD, RGB_SAD, RGB_VAD,                                         UC_WIDE,   UC_AUSSIE, UC_ZALGO,  UC_SUPER,    QK_BOOT, _______,
     _______, KC_F1,    KC_F2,    KC_F3,   KC_F4,   KC_F5,  _______, _______,      _______, _______, KC_F6,     KC_F7,     KC_F8,     KC_F9,       KC_F10,  _______,
                                 _______, _______, _______, _______, _______,      _______, _______, _______, _______, _______
   )

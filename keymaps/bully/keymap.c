@@ -8,7 +8,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, ___BASE1___, KC_BSPC, KC_BSPC,
     REMOVE,  ___BASE2___, PNP,
     XXXXXXX, ___BASE3___, XXXXXXX,
-    KC_VOLD, UPDIR, KC_ESC, _______, LT(_LOWER, KC_SPC), _______, PSTRSE, XXXXXXX, KC_VOLU
+    KC_VOLD, UPDIR, KC_ESC, XXXXXXX, LWRSPC, XXXXXXX, PSTRSE, XXXXXXX, KC_VOLU
   ),
   [_LOWER] = LAYOUT_jack(
     _______, ___LOWER1___, _______, _______,

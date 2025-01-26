@@ -1,7 +1,5 @@
 # Sweep RP2040
 
-![%KEYBOARD%](imgur.com image replace me!)
-
 * Keyboard Maintainer: [Jack Sangdahl](https://github.com/waffle87)
 * Hardware Supported: PCBs with integrated RP2040 microcontroller
 * Hardware Availability: [git/sweep](https://git.pngu.org/sweep)

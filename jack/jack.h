@@ -46,6 +46,7 @@ void render_keylog(void);
 void render_wpm(void);
 void render_scan_rate(void);
 
+#define KEYLOG_LEN 5
 #define PNP TD(PLY_NXT_PRV)
 #define PSTRSE TD(PASTE_RAISE)
 #define ESCLWR LT(_LOWER, KC_ESC)
@@ -105,5 +106,6 @@ void render_scan_rate(void);
 
 #define LAYOUT_jack_60_ts(...) LAYOUT_60_ansi_tsangan(__VA_ARGS__)
 #define LAYOUT_jack_3x6(...) LAYOUT_split_3x6_3(__VA_ARGS__)
+#define LAYOUT_jack_sp(...) LAYOUT_split_space(__VA_ARGS__)
 #define LAYOUT_jack_all(...) LAYOUT_all(__VA_ARGS__)
 #define LAYOUT_jack(...) LAYOUT(__VA_ARGS__)

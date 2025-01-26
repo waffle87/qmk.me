@@ -1,0 +1,3 @@
+RGBLIGHT_ENABLE = no
+MOUSEKEY_ENABLE = no
+BOOTLOADER = atmel-dfu
