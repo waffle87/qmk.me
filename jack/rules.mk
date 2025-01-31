@@ -25,6 +25,10 @@ ifeq ($(strip $(OLED_ENABLE)), yes)
 	WPM_ENABLE = yes
 endif
 
+ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
+	RGB_MATRIX_CUSTOM_USER = yes
+endif
+
 ifeq ($(strip $(UNICODE_COMMON)), yes)
 	UNICODE_ENABLE = no
 	SRC += unicode.c
