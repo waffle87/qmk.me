@@ -109,12 +109,4 @@ void matrix_init_user(void) {
        4, 4, 4, 2, 2, 2, 2, 2, 2, 1, 1, 1, 4, 4, 4, 4, 4, 1,
        1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 2, 2, 2, 2, 2, 2}};
 }
-
-bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-  rgb_matrix_sethsv_noeeprom(43, 255, 120);
-  for (uint8_t i = led_min; i <= led_max; i++)
-    if (g_led_config.flags[i] & LED_FLAG_UNDERGLOW)
-      rgb_matrix_set_color(i, RGB_RED);
-  return false;
-}
 #endif // rgb matrix

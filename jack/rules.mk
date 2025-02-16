@@ -27,6 +27,7 @@ endif
 
 ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
 	RGB_MATRIX_CUSTOM_USER = yes
+	SRC += color.c
 endif
 
 ifeq ($(strip $(UNICODE_COMMON)), yes)
@@ -40,7 +41,7 @@ ifeq ($(strip $(CUSTOM_TAP_CODE_ENABLE)), yes)
 endif
 
 ifeq ($(PLATFORM), CHIBIOS)
-	EXTRAFLAGS += -Os
+	EXTRAFLAGS += -O3
 endif
 
 ifneq ($(findstring Gentoo, $(shell arm-none-eabi-gcc --version)),)
