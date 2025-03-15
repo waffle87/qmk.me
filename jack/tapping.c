@@ -30,6 +30,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   }
 }
 
+#ifdef TAP_DANCE_ENABLE
 void td_reset(tap_dance_state_t *state, void *user_data) {
   clear_keyboard();
   layer_clear();
@@ -70,6 +71,7 @@ void raise_paste(tap_dance_state_t *state, void *user_data) {
   else if (state->count == 1)
     tap_code16(C(S(KC_V)));
 }
+#endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef UNICODE_COMMON_ENABLE

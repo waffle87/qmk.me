@@ -23,6 +23,7 @@ link() {
 }
 
 link crkbd crkbd
+link beiwagon boardsource/beiwagon
 link bully mkh_studio/bully
 link f60 bioi/f60
 link ferris ferris

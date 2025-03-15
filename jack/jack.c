@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "jack.h"
 
+#ifdef TAP_DANCE_ENABLE
 tap_dance_action_t tap_dance_actions[] = {
     [EM_DASH_MINS] = ACTION_TAP_DANCE_FN(em_dash_mins),
     [PLY_NXT_PRV] = ACTION_TAP_DANCE_FN(ply_nxt_prv),
@@ -9,7 +10,9 @@ tap_dance_action_t tap_dance_actions[] = {
     [CBRACKET] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
     [SBRACKET] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
 };
+#endif
 
+#ifdef COMBO_ENABLE
 #define CMB(name, action, ...) name,
 enum combos {
 #include "combos.def"
@@ -26,6 +29,7 @@ combo_t key_combos[] = {
 #include "combos.def"
 };
 #undef CMB
+#endif
 
 #if defined(SPLIT_KEYBOARD) && defined(OLED_ENABLE)
 #include "transactions.h"
