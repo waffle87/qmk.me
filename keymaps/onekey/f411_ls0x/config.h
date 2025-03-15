@@ -18,5 +18,5 @@
 
 #define LS0XX_CS_PIN A6
 #define LS0XX_HEIGHT 160
-#define LS0XX_WIDTH 80
+#define LS0XX_WIDTH 68
 #define LS0XX_SPI_DIVISOR 16
