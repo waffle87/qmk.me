@@ -102,3 +102,16 @@ uint16_t keycode_config(uint16_t keycode) { return keycode; }
 #ifndef MAGIC_ENABLE
 uint8_t mod_config(uint8_t mod) { return mod; }
 #endif
+
+#ifdef RP2040_MATH_IN_ROM
+typedef void (*init_fn)(void);
+
+extern init_fn __preinit_array_base__;
+extern init_fn __preinit_array_end__;
+
+void keyboard_pre_init_user(void) {
+  for (init_fn *func = &__preinit_array_base__; func < &__preinit_array_end__;
+       func++)
+    (*func)();
+}
+#endif

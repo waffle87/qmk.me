@@ -41,11 +41,15 @@ ifeq ($(strip $(CUSTOM_TAP_CODE_ENABLE)), yes)
 endif
 
 ifeq ($(PLATFORM), CHIBIOS)
+	ifeq ($(MCU_SERIES), RP2040)
+		RP2040_MATH_IN_ROM = no
+	endif
 	EXTRAFLAGS += -O3
 endif
 
-ifneq ($(findstring Gentoo, $(shell arm-none-eabi-gcc --version)),)
-	EXTRAFLAGS += -U_FORTIFY_SOURCE
+ifeq ($(strip $(RP2040_MATH_IN_ROM)), yes)
+	OPT_DEFS += -DRP2040_MATH_IN_ROM
+	MCU_LDSCRIPT = RP2040_FLASH_TIMECRIT_ROM_MATH
 endif
 
 ifeq ($(strip $(MOUSE_JIGGLE_ENABLE)), yes)
