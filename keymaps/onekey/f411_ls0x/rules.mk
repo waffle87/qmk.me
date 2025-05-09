@@ -1,6 +1,3 @@
-CONSOLE_ENABLE = yes
 BOOTMAGIC_ENABLE = yes
 QUANTUM_PAINTER_ENABLE = yes
-QUANTUM_PAINTER_DRIVERS += ls0xx_spi
 SRC += 3270_11.qff.c
-EXTRAFLAGS += -Wno-maybe-uninitialized

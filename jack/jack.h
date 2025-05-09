@@ -29,6 +29,7 @@ void tap_code_register(uint8_t code, uint8_t mods, uint16_t delay,
                        bool register_tap);
 void process_tap_code_buffer(void);
 void tap_string(const char *str);
+void keyboard_post_init_keymap(void);
 #ifdef TAP_DANCE_ENABLE
 void td_reset(tap_dance_state_t *state, void *user_data);
 void em_dash_mins(tap_dance_state_t *state, void *user_data);

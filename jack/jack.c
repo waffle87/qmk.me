@@ -80,6 +80,7 @@ void keyboard_post_init_user(void) {
   if (!autocorrect_is_enabled())
     autocorrect_enable();
 #endif
+  keyboard_post_init_keymap();
 }
 
 void matrix_scan_user(void) {
@@ -102,6 +103,8 @@ uint16_t keycode_config(uint16_t keycode) { return keycode; }
 #ifndef MAGIC_ENABLE
 uint8_t mod_config(uint8_t mod) { return mod; }
 #endif
+
+__attribute__((weak)) void keyboard_post_init_keymap(void) {}
 
 #ifdef RP2040_MATH_IN_ROM
 typedef void (*init_fn)(void);
