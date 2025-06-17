@@ -1,6 +1,8 @@
 # Sweep RP2040
 
-* Keyboard Maintainer: [Jack Sangdahl](https://github.com/waffle87)
+![image](https://git.pngu.org/sweep/about/img/image1.jpg)
+
+* Keyboard Maintainer: [jack@pngu.org](mailto:jack@pngu.org)
 * Hardware Supported: PCBs with integrated RP2040 microcontroller
 * Hardware Availability: [git/sweep](https://git.pngu.org/sweep)
 
@@ -18,6 +20,6 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 
 Enter the bootloader in 3 ways:
 
-* **Bootmagic reset**: Hold down the key at (0,0) in the matrix (usually the top left key or Escape) and plug in the keyboard
-* **Physical reset button**: Briefly press the button on the back of the PCB - some may have pads you must short instead
+* **Bootmagic reset**: Hold down the key at (0,0) in the matrix and plug in the keyboard
+* **Physical reset button**: Hold button labeled BOOT and tap RESET button
 * **Keycode in layout**: Press the key mapped to `QK_BOOT` if it is available
