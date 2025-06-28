@@ -11,7 +11,6 @@ extern OLED_BLOCK_TYPE oled_dirty;
 void oled_timer_reset(void) { oled_timer = timer_read32(); }
 
 __attribute__((weak)) bool oled_task_keymap(void) { return true; }
-
 bool oled_task_user(void) {
   if (is_keyboard_master()) {
     if (timer_elapsed32(oled_timer) > 300000) {

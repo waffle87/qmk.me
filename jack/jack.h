@@ -21,6 +21,12 @@ enum custom_keycodes {
   UC_SUPER
 };
 
+#define CMB(name, action, ...) name,
+enum combos {
+#include "combos.def"
+};
+#undef CMB
+
 bool process_record_unicode(uint16_t keycode, keyrecord_t *record);
 bool process_record_taps(uint16_t keycode, keyrecord_t *record);
 extern uint8_t extract_mod_bits(uint16_t code);
@@ -29,15 +35,15 @@ void tap_code_register(uint8_t code, uint8_t mods, uint16_t delay,
                        bool register_tap);
 void process_tap_code_buffer(void);
 void tap_string(const char *str);
-void keyboard_post_init_keymap(void);
+
 #ifdef TAP_DANCE_ENABLE
 void td_reset(tap_dance_state_t *state, void *user_data);
 void em_dash_mins(tap_dance_state_t *state, void *user_data);
 void ply_nxt_prv(tap_dance_state_t *state, void *user_data);
 void raise_paste(tap_dance_state_t *state, void *user_data);
 #endif
+
 void oled_timer_reset(void);
-bool oled_task_keymap(void);
 void anim_frame(uint16_t size, char const action[][size]);
 void wpm_graph(void);
 void felix_dog(void);
@@ -48,6 +54,11 @@ void add_keylog(uint16_t keycode, keyrecord_t *record);
 void render_keylog(void);
 void render_wpm(void);
 void render_scan_rate(void);
+
+void keyboard_pre_init_keymap(void);
+void keyboard_post_init_keymap(void);
+void housekeeping_task_keymap(void);
+bool oled_task_keymap(void);
 
 #define KEYLOG_LEN 5
 #define PNP TD(PLY_NXT_PRV)

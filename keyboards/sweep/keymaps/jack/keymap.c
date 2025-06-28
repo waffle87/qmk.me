@@ -1,6 +1,7 @@
 // Copyright 2025 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "jack.h"
+#include "analog.h"
 
 #define NUM_ADC_READS 32
 
@@ -16,13 +17,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ___LOWER1___,
     ___LOWER2___,
     ___LOWER3___,
-    _______, _______, _______, PNP
+    _______, _______, _______, UPDIR
   ),
   [_RAISE] = LAYOUT_jack(
     ___RAISE1___,
     ___RAISE2___,
     ___RAISE3___,
-    REMOVE, _______, _______, _______
+    PNP, _______, _______, _______
   )
 };
 // clang-format on
@@ -62,8 +63,8 @@ void housekeeping_task_keymap(void) {
       total_current_ma += current_reads[i];
       total_voltage_mv += voltage_reads[i];
     }
-    int16_t avg_current_ma = (int16_t)(total_current_ma / NUM_ADC_READS);
-    int16_t avg_voltage_mv = (int16_t)(total_voltage_mv / NUM_ADC_READS);
+    // int16_t avg_current_ma = (int16_t)(total_current_ma / NUM_ADC_READS);
+    // int16_t avg_voltage_mv = (int16_t)(total_voltage_mv / NUM_ADC_READS);
     last_draw = timer_read32();
   }
 }
