@@ -2,29 +2,6 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "jack.h"
 
-// clang-format off
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_BASE] = LAYOUT_jack_3x6(
-    XXXXXXX, ___BASE1___, XXXXXXX,
-    XXXXXXX, ___BASE2___, XXXXXXX,
-    XXXXXXX, ___BASE3___, XXXXXXX,
-             ___BASE4___
-  ),
-  [_LOWER] = LAYOUT_jack_3x6(
-    _______, ___LOWER1___, _______,
-    _______, ___LOWER2___, _______,
-    _______, ___LOWER3___, _______,
-             ___LOWER4___
-  ),
-  [_RAISE] = LAYOUT_jack_3x6(
-    _______, ___RAISE1___, _______,
-    _______, ___RAISE2___, _______,
-    _______, ___RAISE3___, _______,
-             ___RAISE4___
-  )
-};
-// clang-format on
-
 void housekeeping_task_keymap(void) {
   if (last_input_activity_elapsed() > 300000) {
     const pin_t row_pins[] = MATRIX_ROW_PINS, col_pins[] = MATRIX_COL_PINS;
@@ -108,5 +85,16 @@ void matrix_init_user(void) {
       {1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 4, 4,
        4, 4, 4, 2, 2, 2, 2, 2, 2, 1, 1, 1, 4, 4, 4, 4, 4, 1,
        1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 2, 2, 2, 2, 2, 2}};
+}
+
+extern LED_TYPE rgb_matrix_ws2812_array[RGB_MATRIX_LED_COUNT];
+bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+  pimoroni_trackball_set_rgbw(rgb_matrix_ws2812_array[29].r,
+                              rgb_matrix_ws2812_array[29].g,
+                              rgb_matrix_ws2812_array[29].b, 0);
+  for (uint8_t i = led_min; i <= led_max; i++)
+    if (g_led_config.flags[i] & LED_FLAG_UNDERGLOW)
+      rgb_matrix_set_color(i, RGB_YELLOW);
+  return false;
 }
 #endif // rgb matrix

@@ -10,6 +10,7 @@ enum tapdances { EM_DASH_MINS, PLY_NXT_PRV, PASTE_RAISE, CBRACKET, SBRACKET };
 enum custom_keycodes {
   UPDIR = QK_USER,
   REMOVE,
+  OS_SWAP,
   M_JIGGLE,
   UC_NOMODE,
   UC_WIDE,
@@ -113,13 +114,11 @@ bool oled_task_keymap(void);
 #define ___LOWER4___ _______, _______, _______, _______, _______, _______
 
 #define ___RAISE1___ XRGB_TOG, XRGB_NXT,  XRGB_HUI, XRGB_SAI, XRGB_VAI, UC_NOMODE, UC_SCRIPT, UC_BLOCKS, UC_REGIONAL, QK_MAKE
-#define ___RAISE2___ M_JIGGLE, XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD, UC_WIDE, UC_AUSSIE, UC_ZALGO, UC_SUPER, QK_BOOT
+#define ___RAISE2___ OS_SWAP, XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD, UC_WIDE, UC_AUSSIE, UC_ZALGO, UC_SUPER, QK_BOOT
 #define ___RAISE3___ KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10
 #define ___RAISE4___ _______, _______, _______, _______, _______, _______
 // clang-format on
 
 #define LAYOUT_jack_60_ts(...) LAYOUT_60_ansi_tsangan(__VA_ARGS__)
-#define LAYOUT_jack_3x6(...) LAYOUT_split_3x6_3(__VA_ARGS__)
-#define LAYOUT_jack_sp(...) LAYOUT_split_space(__VA_ARGS__)
 #define LAYOUT_jack_all(...) LAYOUT_all(__VA_ARGS__)
 #define LAYOUT_jack(...) LAYOUT(__VA_ARGS__)
