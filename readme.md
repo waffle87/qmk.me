@@ -18,4 +18,4 @@ The official external [userspace feature](https://docs.qmk.fm/newbs_external_use
 ### layout
 A simple 34-key layout that makes use of 2 (primary) layers, home-row mods, & combos for many symbols. Mostly used in Sway, Vim (C, Python), & other generic computing tasks.
 
-![layout](img/layout.svg)
+![layout](util/layout.svg)

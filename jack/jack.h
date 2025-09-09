@@ -29,13 +29,6 @@ enum combos {
 #undef CMB
 
 bool process_record_unicode(uint16_t keycode, keyrecord_t *record);
-bool process_record_taps(uint16_t keycode, keyrecord_t *record);
-extern uint8_t extract_mod_bits(uint16_t code);
-void tap_code_buffer_init(void);
-void tap_code_register(uint8_t code, uint8_t mods, uint16_t delay,
-                       bool register_tap);
-void process_tap_code_buffer(void);
-void tap_string(const char *str);
 
 #ifdef TAP_DANCE_ENABLE
 void td_reset(tap_dance_state_t *state, void *user_data);

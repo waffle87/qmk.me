@@ -1,4 +1,5 @@
-#!/bin/zsh
+#!/bin/sh
+
 QMKME="$HOME/git/qmk_me"
 QMKFIRMWARE="$HOME/git/qmk_firmware"
 
@@ -15,17 +16,16 @@ for dir in "keyboards"/*; do
   echo "$dir" >> $QMKFIRMWARE/.git/info/exclude
 done
 
-link() {
+link_keymap() {
   src="$QMKME/keymaps/$1"
   dst="$QMKFIRMWARE/keyboards/$2/keymaps/jack"
   ln -sv $src $dst
   echo "keyboards/$2/keymaps/jack" >> $QMKFIRMWARE/.git/info/exclude
 }
 
-link crkbd crkbd
-link beiwagon boardsource/beiwagon
-link bully mkh_studio/bully
-link f60 bioi/f60
-link kyria splitkb/kyria
-link relic projectcain/relic
-link vault35 projectcain/vault35
+link_keymap beiwagon boardsource/beiwagon
+link_keymap bully mkh_studio/bully
+link_keymap f60 bioi/f60
+link_keymap kyria splitkb/kyria
+link_keymap relic projectcain/relic
+link_keymap vault35 projectcain/vault35

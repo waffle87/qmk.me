@@ -29,7 +29,7 @@ layers:
         $$mdi:volume-minus$$,
         $$mdi:keyboard-tab$$,
         $$mdi:apple-keyboard-caps$$,
-        "Sel Wrd", {t: "`", s: "~"},
+        "Remove", {t: "`", s: "~"},
         $$mdi:arrow-left$$,
         $$mdi:arrow-down$$,
         $$mdi:arrow-up$$,

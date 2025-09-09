@@ -13,8 +13,7 @@ TAP_DANCE_ENABLE = yes
 SPACE_CADET_ENABLE = no
 AUTOCORRECT_ENABLE = yes
 MOUSE_JIGGLE_ENABLE = yes
-OS_DETECTION_ENABLE = yes
-CUSTOM_TAP_CODE_ENABLE = no
+OS_DETECTION_ENABLE = no
 DEBOUNCE_TYPE = asym_eager_defer_pk
 AVR_CFLAGS += -mrelax
 INTROSPECTION_KEYMAP_C = introspection.c
@@ -22,8 +21,8 @@ INTROSPECTION_KEYMAP_C = introspection.c
 SRC += $(USER_PATH)/jack.c $(USER_PATH)/tapping.c
 
 ifeq ($(strip $(OLED_ENABLE)), yes)
-	SRC += $(USER_PATH)/oled.c
-	WPM_ENABLE = yes
+       SRC += $(USER_PATH)/oled.c
+       WPM_ENABLE = yes
 endif
 
 ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
@@ -34,11 +33,6 @@ endif
 ifeq ($(strip $(UNICODE_COMMON)), yes)
 	UNICODE_ENABLE = no
 	SRC += $(USER_PATH)/unicode.c
-endif
-
-ifeq ($(strip $(CUSTOM_TAP_CODE_ENABLE)), yes)
-	OPT_DEFS += -DCUSTOM_TAP_CODE_ENABLE
-	SRC += $(USER_PATH)tap_code.c
 endif
 
 ifeq ($(PLATFORM), CHIBIOS)

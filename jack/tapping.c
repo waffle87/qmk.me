@@ -2,10 +2,6 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "jack.h"
 
-#ifndef CUSTOM_TAP_CODE_ENABLE
-#define tap_string send_string_P
-#endif
-
 #define INTERCEPT_MOD_TAP(mod, keycode)                                        \
   case mod(keycode):                                                           \
     if (record->tap.count && record->event.pressed) {                          \
@@ -78,10 +74,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (!process_record_unicode(keycode, record))
     return false;
 #endif
-#ifdef CUSTOM_TAP_CODE_ENABLE
-  if (!process_record_taps(keycode, record))
-    return false;
-#endif
 #ifdef OLED_ENABLE
   if (record->event.pressed) {
     oled_timer_reset();
@@ -125,6 +117,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       tap_code(KC_UP);
       tap_code(KC_ENT);
       tap_code(KC_UP);
+    }
+    break;
+  case OS_SWAP:
+    if (record->event.pressed) {
+      keymap_config.swap_lctl_lgui = !keymap_config.swap_lctl_lgui;
+      keymap_config.swap_rctl_rgui = !keymap_config.swap_rctl_rgui;
+      eeconfig_update_keymap(&keymap_config);
+      unicode_input_mode_step();
     }
     break;
     INTERCEPT_MOD_TAP(LALT_T, KC_EXLM)

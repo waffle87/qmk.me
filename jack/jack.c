@@ -41,9 +41,6 @@ void keyboard_post_init_user(void) {
 #if defined(SPLIT_KEYBOARD) && defined(OLED_ENABLE)
   transaction_register_rpc(RPC_ID_USER_KEYLOG_STR, keylogger_sync);
 #endif
-#ifdef CUSTOM_TAP_CODE_ENABLE
-  tap_code_buffer_init();
-#endif
 #ifdef RGBLIGHT_ENABLE
   rgblight_enable_noeeprom();
   rgblight_sethsv_noeeprom(HSV_CYAN);
@@ -61,12 +58,6 @@ void keyboard_post_init_user(void) {
   keyboard_post_init_keymap();
 }
 
-void matrix_scan_user(void) {
-#ifdef CUSTOM_TAP_CODE_ENABLE
-  process_tap_code_buffer();
-#endif
-}
-
 #ifdef OS_DETECTION_ENABLE
 typedef struct {
   bool swap_ctl_gui;
@@ -74,11 +65,11 @@ typedef struct {
 } os_detection_config;
 
 bool process_detected_host_os_user(os_variant_t detected_os) {
-  os_detection_config os_config = {.swap_ctl_gui = false,
-                                   .unicode_input_mode = UNICODE_MODE_LINUX};
-  if (detected_os == OS_MACOS)
-    os_config = (os_detection_config){.swap_ctl_gui = true,
-                                      .unicode_input_mode = UNICODE_MODE_MACOS};
+  os_detection_config os_config = {.swap_ctl_gui = true,
+                                   .unicode_input_mode = UNICODE_MODE_MACOS};
+  if (detected_os == OS_LINUX)
+    os_config = (os_detection_config){.swap_ctl_gui = false,
+                                      .unicode_input_mode = UNICODE_MODE_LINUX};
   keymap_config.swap_lctl_lgui = keymap_config.swap_rctl_rgui =
       os_config.swap_ctl_gui;
   eeconfig_update_keymap(&keymap_config);

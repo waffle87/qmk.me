@@ -1,146 +1,146 @@
 {
-  "manufacturer": "pngu.org",
-  "keyboard_name": "sweep",
-  "maintainer": "jack",
-  "bootloader": "rp2040",
-  "features": {
-    "backlight": true,
-    "bootmagic": true,
-    "quantum_painter": true,
-    "rgb_matrix": true
-  },
-  "backlight": {
-    "pin": "GP7"
-  },
-  "matrix_pins": {
-    "direct": [
-      ["GP18", "GP13", "GP12", "GP24", "GP22"],
-      ["GP16", "GP14", "GP10", "GP25", "GP21"],
-      ["GP17", "GP15", "GP11", "GP9", "GP23"],
-      [null, null, null, "GP19", "GP20"]
-    ]
-  },
-  "processor": "RP2040",
-  "rgb_matrix": {
-    "driver": "ws2812",
-    "layout": [
-      { "matrix": [3, 3], "x": 71, "y": 60, "flags": 4 },
-      { "matrix": [3, 4], "x": 92, "y": 64, "flags": 4 },
-      { "matrix": [2, 4], "x": 81, "y": 39, "flags": 4 },
-      { "matrix": [2, 3], "x": 61, "y": 36, "flags": 4 },
-      { "matrix": [2, 2], "x": 41, "y": 32, "flags": 4 },
-      { "matrix": [2, 1], "x": 20, "y": 37, "flags": 4 },
-      { "matrix": [2, 0], "x": 0, "y": 47, "flags": 4 },
-      { "matrix": [1, 0], "x": 0, "y": 31, "flags": 4 },
-      { "matrix": [1, 1], "x": 20, "y": 21, "flags": 4 },
-      { "matrix": [1, 2], "x": 41, "y": 16, "flags": 4 },
-      { "matrix": [1, 3], "x": 61, "y": 20, "flags": 4 },
-      { "matrix": [1, 4], "x": 81, "y": 23, "flags": 4 },
-      { "matrix": [0, 4], "x": 81, "y": 7, "flags": 4 },
-      { "matrix": [0, 3], "x": 61, "y": 4, "flags": 4 },
-      { "matrix": [0, 2], "x": 41, "y": 0, "flags": 4 },
-      { "matrix": [0, 1], "x": 20, "y": 5, "flags": 4 },
-      { "matrix": [0, 0], "x": 0, "y": 15, "flags": 4 },
-      { "x": 10, "y": 14, "flags": 2 },
-      { "x": 71, "y": 6, "flags": 2 },
-      { "x": 83, "y": 56, "flags": 2 },
-      { "x": 10, "y": 45, "flags": 2 },
-      { "matrix": [7, 1], "x": 132, "y": 64, "flags": 4 },
-      { "matrix": [7, 0], "x": 153, "y": 60, "flags": 4 },
-      { "matrix": [6, 0], "x": 143, "y": 39, "flags": 4 },
-      { "matrix": [6, 1], "x": 163, "y": 36, "flags": 4 },
-      { "matrix": [6, 2], "x": 183, "y": 32, "flags": 4 },
-      { "matrix": [6, 3], "x": 204, "y": 37, "flags": 4 },
-      { "matrix": [6, 4], "x": 224, "y": 47, "flags": 4 },
-      { "matrix": [5, 4], "x": 224, "y": 31, "flags": 4 },
-      { "matrix": [5, 3], "x": 204, "y": 21, "flags": 4 },
-      { "matrix": [5, 2], "x": 183, "y": 16, "flags": 4 },
-      { "matrix": [5, 1], "x": 163, "y": 20, "flags": 4 },
-      { "matrix": [5, 0], "x": 143, "y": 23, "flags": 4 },
-      { "matrix": [4, 0], "x": 143, "y": 7, "flags": 4 },
-      { "matrix": [4, 1], "x": 163, "y": 4, "flags": 4 },
-      { "matrix": [4, 2], "x": 183, "y": 0, "flags": 4 },
-      { "matrix": [4, 3], "x": 204, "y": 5, "flags": 4 },
-      { "matrix": [4, 4], "x": 224, "y": 15, "flags": 4 },
-      { "x": 214, "y": 14, "flags": 2 },
-      { "x": 153, "y": 6, "flags": 2 },
-      { "x": 144, "y": 56, "flags": 2 },
-      { "x": 214, "y": 45, "flags": 2 }
-    ],
-    "split_count": [21, 21],
-    "sleep": true
-  },
-  "split": {
-    "enabled": true,
-    "handedness": {
-      "pin": "GP8"
+    "manufacturer": "pngu.org",
+    "keyboard_name": "sweep",
+    "maintainer": "jack",
+    "backlight": {
+        "pin": "GP7"
+    },
+    "bootloader": "rp2040",
+    "features": {
+        "backlight": true,
+        "bootmagic": true,
+        "quantum_painter": true,
+        "rgb_matrix": true
     },
     "matrix_pins": {
-      "right": {
         "direct": [
-          ["GP25", "GP21", "GP17", "GP16", "GP13"],
-          ["GP24", "GP20", "GP18", "GP15", "GP12"],
-          ["GP22", "GP23", "GP19", "GP14", "GP11"],
-          ["GP10", "GP9", null, null, null]
+            ["GP18", "GP13", "GP12", "GP24", "GP22"],
+            ["GP16", "GP14", "GP10", "GP25", "GP21"],
+            ["GP17", "GP15", "GP11", "GP9", "GP23"],
+            [null, null, null, "GP19", "GP20"]
         ]
-      }
     },
-    "serial": {
-      "driver": "vendor"
+    "processor": "RP2040",
+    "rgb_matrix": {
+        "driver": "ws2812",
+        "layout": [
+            {"matrix": [3, 3], "x": 71, "y": 60, "flags": 4},
+            {"matrix": [3, 4], "x": 92, "y": 64, "flags": 4},
+            {"matrix": [2, 4], "x": 81, "y": 39, "flags": 4},
+            {"matrix": [2, 3], "x": 61, "y": 36, "flags": 4},
+            {"matrix": [2, 2], "x": 41, "y": 32, "flags": 4},
+            {"matrix": [2, 1], "x": 20, "y": 37, "flags": 4},
+            {"matrix": [2, 0], "x": 0, "y": 47, "flags": 4},
+            {"matrix": [1, 0], "x": 0, "y": 31, "flags": 4},
+            {"matrix": [1, 1], "x": 20, "y": 21, "flags": 4},
+            {"matrix": [1, 2], "x": 41, "y": 16, "flags": 4},
+            {"matrix": [1, 3], "x": 61, "y": 20, "flags": 4},
+            {"matrix": [1, 4], "x": 81, "y": 23, "flags": 4},
+            {"matrix": [0, 4], "x": 81, "y": 7, "flags": 4},
+            {"matrix": [0, 3], "x": 61, "y": 4, "flags": 4},
+            {"matrix": [0, 2], "x": 41, "y": 0, "flags": 4},
+            {"matrix": [0, 1], "x": 20, "y": 5, "flags": 4},
+            {"matrix": [0, 0], "x": 0, "y": 15, "flags": 4},
+            {"x": 10, "y": 14, "flags": 2},
+            {"x": 71, "y": 6, "flags": 2},
+            {"x": 83, "y": 56, "flags": 2},
+            {"x": 10, "y": 45, "flags": 2},
+            {"matrix": [7, 1], "x": 132, "y": 64, "flags": 4},
+            {"matrix": [7, 0], "x": 153, "y": 60, "flags": 4},
+            {"matrix": [6, 0], "x": 143, "y": 39, "flags": 4},
+            {"matrix": [6, 1], "x": 163, "y": 36, "flags": 4},
+            {"matrix": [6, 2], "x": 183, "y": 32, "flags": 4},
+            {"matrix": [6, 3], "x": 204, "y": 37, "flags": 4},
+            {"matrix": [6, 4], "x": 224, "y": 47, "flags": 4},
+            {"matrix": [5, 4], "x": 224, "y": 31, "flags": 4},
+            {"matrix": [5, 3], "x": 204, "y": 21, "flags": 4},
+            {"matrix": [5, 2], "x": 183, "y": 16, "flags": 4},
+            {"matrix": [5, 1], "x": 163, "y": 20, "flags": 4},
+            {"matrix": [5, 0], "x": 143, "y": 23, "flags": 4},
+            {"matrix": [4, 0], "x": 143, "y": 7, "flags": 4},
+            {"matrix": [4, 1], "x": 163, "y": 4, "flags": 4},
+            {"matrix": [4, 2], "x": 183, "y": 0, "flags": 4},
+            {"matrix": [4, 3], "x": 204, "y": 5, "flags": 4},
+            {"matrix": [4, 4], "x": 224, "y": 15, "flags": 4},
+            {"x": 214, "y": 14, "flags": 2},
+            {"x": 153, "y": 6, "flags": 2},
+            {"x": 144, "y": 56, "flags": 2},
+            {"x": 214, "y": 45, "flags": 2}
+        ],
+        "sleep": true,
+        "split_count": [21, 21]
+    },
+    "split": {
+        "enabled": true,
+        "handedness": {
+            "pin": "GP8"
+        },
+        "matrix_pins": {
+            "right": {
+                "direct": [
+                    ["GP25", "GP21", "GP17", "GP16", "GP13"],
+                    ["GP24", "GP20", "GP18", "GP15", "GP12"],
+                    ["GP22", "GP23", "GP19", "GP14", "GP11"],
+                    ["GP10", "GP9", null, null, null]
+                ]
+            }
+        },
+        "serial": {
+            "driver": "vendor"
+        }
+    },
+    "url": "https://git.pngu.org/sweep",
+    "usb": {
+        "device_version": "1.0.0",
+        "pid": "0x7370",
+        "vid": "0x6A73"
+    },
+    "ws2812": {
+        "driver": "vendor",
+        "pin": "GP2"
+    },
+    "community_layouts": ["split_3x5_2"],
+    "layout_aliases": {
+        "LAYOUT": "LAYOUT_split_3x5_2"
+    },
+    "layouts": {
+        "LAYOUT_split_3x5_2": {
+            "layout": [
+                {"matrix": [0, 0], "x": 0, "y": 0.25},
+                {"matrix": [0, 1], "x": 1, "y": 0.125},
+                {"matrix": [0, 2], "x": 2, "y": 0},
+                {"matrix": [0, 3], "x": 3, "y": 0.125},
+                {"matrix": [0, 4], "x": 4, "y": 0.25},
+                {"matrix": [4, 0], "x": 7, "y": 0.25},
+                {"matrix": [4, 1], "x": 8, "y": 0.125},
+                {"matrix": [4, 2], "x": 9, "y": 0},
+                {"matrix": [4, 3], "x": 10, "y": 0.125},
+                {"matrix": [4, 4], "x": 11, "y": 0.25},
+                {"matrix": [1, 0], "x": 0, "y": 1.25},
+                {"matrix": [1, 1], "x": 1, "y": 1.125},
+                {"matrix": [1, 2], "x": 2, "y": 1},
+                {"matrix": [1, 3], "x": 3, "y": 1.125},
+                {"matrix": [1, 4], "x": 4, "y": 1.25},
+                {"matrix": [5, 0], "x": 7, "y": 1.25},
+                {"matrix": [5, 1], "x": 8, "y": 1.125},
+                {"matrix": [5, 2], "x": 9, "y": 1},
+                {"matrix": [5, 3], "x": 10, "y": 1.125},
+                {"matrix": [5, 4], "x": 11, "y": 1.25},
+                {"matrix": [2, 0], "x": 0, "y": 2.25},
+                {"matrix": [2, 1], "x": 1, "y": 2.125},
+                {"matrix": [2, 2], "x": 2, "y": 2},
+                {"matrix": [2, 3], "x": 3, "y": 2.125},
+                {"matrix": [2, 4], "x": 4, "y": 2.25},
+                {"matrix": [6, 0], "x": 7, "y": 2.25},
+                {"matrix": [6, 1], "x": 8, "y": 2.125},
+                {"matrix": [6, 2], "x": 9, "y": 2},
+                {"matrix": [6, 3], "x": 10, "y": 2.125},
+                {"matrix": [6, 4], "x": 11, "y": 2.25},
+                {"matrix": [3, 3], "x": 3.5, "y": 3.25},
+                {"matrix": [3, 4], "x": 4.5, "y": 3.5},
+                {"matrix": [7, 0], "x": 6.5, "y": 3.5},
+                {"matrix": [7, 1], "x": 7.5, "y": 3.25}
+            ]
+        }
     }
-  },
-  "url": "https://git.pngu.org/sweep",
-  "usb": {
-    "device_version": "1.0.0",
-    "pid": "0x7370",
-    "vid": "0x6A73"
-  },
-  "ws2812": {
-    "driver": "vendor",
-    "pin": "GP2"
-  },
-  "community_layouts": ["split_3x5_2"],
-  "layout_aliases": {
-    "LAYOUT": "LAYOUT_split_3x5_2"
-  },
-  "layouts": {
-    "LAYOUT_split_3x5_2": {
-      "layout": [
-        { "matrix": [0, 0], "x": 0, "y": 0.25 },
-        { "matrix": [0, 1], "x": 1, "y": 0.125 },
-        { "matrix": [0, 2], "x": 2, "y": 0 },
-        { "matrix": [0, 3], "x": 3, "y": 0.125 },
-        { "matrix": [0, 4], "x": 4, "y": 0.25 },
-        { "matrix": [4, 0], "x": 7, "y": 0.25 },
-        { "matrix": [4, 1], "x": 8, "y": 0.125 },
-        { "matrix": [4, 2], "x": 9, "y": 0 },
-        { "matrix": [4, 3], "x": 10, "y": 0.125 },
-        { "matrix": [4, 4], "x": 11, "y": 0.25 },
-        { "matrix": [1, 0], "x": 0, "y": 1.25 },
-        { "matrix": [1, 1], "x": 1, "y": 1.125 },
-        { "matrix": [1, 2], "x": 2, "y": 1 },
-        { "matrix": [1, 3], "x": 3, "y": 1.125 },
-        { "matrix": [1, 4], "x": 4, "y": 1.25 },
-        { "matrix": [5, 0], "x": 7, "y": 1.25 },
-        { "matrix": [5, 1], "x": 8, "y": 1.125 },
-        { "matrix": [5, 2], "x": 9, "y": 1 },
-        { "matrix": [5, 3], "x": 10, "y": 1.125 },
-        { "matrix": [5, 4], "x": 11, "y": 1.25 },
-        { "matrix": [2, 0], "x": 0, "y": 2.25 },
-        { "matrix": [2, 1], "x": 1, "y": 2.125 },
-        { "matrix": [2, 2], "x": 2, "y": 2 },
-        { "matrix": [2, 3], "x": 3, "y": 2.125 },
-        { "matrix": [2, 4], "x": 4, "y": 2.25 },
-        { "matrix": [6, 0], "x": 7, "y": 2.25 },
-        { "matrix": [6, 1], "x": 8, "y": 2.125 },
-        { "matrix": [6, 2], "x": 9, "y": 2 },
-        { "matrix": [6, 3], "x": 10, "y": 2.125 },
-        { "matrix": [6, 4], "x": 11, "y": 2.25 },
-        { "matrix": [3, 3], "x": 3.5, "y": 3.25 },
-        { "matrix": [3, 4], "x": 4.5, "y": 3.5 },
-        { "matrix": [7, 0], "x": 6.5, "y": 3.5 },
-        { "matrix": [7, 1], "x": 7.5, "y": 3.25 }
-      ]
-    }
-  }
 }
