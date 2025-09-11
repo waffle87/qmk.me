@@ -21,13 +21,13 @@ INTROSPECTION_KEYMAP_C = introspection.c
 SRC += $(USER_PATH)/jack.c $(USER_PATH)/tapping.c
 
 ifeq ($(strip $(OLED_ENABLE)), yes)
-       SRC += $(USER_PATH)/oled.c
-       WPM_ENABLE = yes
+  SRC += $(USER_PATH)/oled.c
+  WPM_ENABLE = yes
 endif
 
 ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
 	RGB_MATRIX_CUSTOM_USER = yes
-	SRC += $(USER_PATH)/color.c
+	SRC += $(USER_PATH)/colour.c
 endif
 
 ifeq ($(strip $(UNICODE_COMMON)), yes)

@@ -12,8 +12,9 @@
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-  case LWRSPC:
   case ESCLWR:
+  case PSTRSE:
+  case LWRSPC:
   case RSEBSP:
     return TAPPING_TERM - 40;
   case TD(EM_DASH_MINS):
@@ -27,11 +28,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 }
 
 #ifdef TAP_DANCE_ENABLE
-void td_reset(tap_dance_state_t *state, void *user_data) {
-  clear_keyboard();
-  layer_clear();
-}
-
 void em_dash_mins(tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
   case 3:
@@ -59,13 +55,6 @@ void ply_nxt_prv(tap_dance_state_t *state, void *user_data) {
     tap_code(KC_MPRV);
     break;
   }
-}
-
-void raise_paste(tap_dance_state_t *state, void *user_data) {
-  if (state->pressed && !state->interrupted)
-    layer_on(_RAISE);
-  else if (state->count == 1)
-    tap_code16(C(S(KC_V)));
 }
 #endif
 
@@ -106,11 +95,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
   case UPDIR:
     if (record->event.pressed)
-      tap_string(PSTR("../"));
+      SEND_STRING("../");
     break;
   case REMOVE:
     if (record->event.pressed) {
-      tap_string(PSTR("```suggestion\n```"));
+      SEND_STRING("```suggestion\n```");
       tap_code(KC_UP);
       tap_code(KC_UP);
       tap_code(KC_ENT);

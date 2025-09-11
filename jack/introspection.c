@@ -6,7 +6,6 @@
 tap_dance_action_t tap_dance_actions[] = {
     [EM_DASH_MINS] = ACTION_TAP_DANCE_FN(em_dash_mins),
     [PLY_NXT_PRV] = ACTION_TAP_DANCE_FN(ply_nxt_prv),
-    [PASTE_RAISE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, raise_paste, td_reset),
     [CBRACKET] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
     [SBRACKET] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
 };

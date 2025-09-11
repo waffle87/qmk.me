@@ -5,7 +5,7 @@
 
 enum layers { _BASE, _LOWER, _RAISE };
 
-enum tapdances { EM_DASH_MINS, PLY_NXT_PRV, PASTE_RAISE, CBRACKET, SBRACKET };
+enum tapdances { EM_DASH_MINS, PLY_NXT_PRV, CBRACKET, SBRACKET };
 
 enum custom_keycodes {
   UPDIR = QK_USER,
@@ -31,10 +31,8 @@ enum combos {
 bool process_record_unicode(uint16_t keycode, keyrecord_t *record);
 
 #ifdef TAP_DANCE_ENABLE
-void td_reset(tap_dance_state_t *state, void *user_data);
 void em_dash_mins(tap_dance_state_t *state, void *user_data);
 void ply_nxt_prv(tap_dance_state_t *state, void *user_data);
-void raise_paste(tap_dance_state_t *state, void *user_data);
 #endif
 
 void oled_timer_reset(void);
@@ -49,14 +47,6 @@ void keyboard_pre_init_keymap(void);
 void keyboard_post_init_keymap(void);
 void housekeeping_task_keymap(void);
 bool oled_task_keymap(void);
-
-#define PNP TD(PLY_NXT_PRV)
-#define PSTRSE TD(PASTE_RAISE)
-#define ESCLWR LT(_LOWER, KC_ESC)
-#define LWRSPC LT(_LOWER, KC_SPC)
-#define RSEBSP LT(_RAISE, KC_BSPC)
-#define HRML(k1, k2, k3, k4) LALT_T(k1), LGUI_T(k2), LCTL_T(k3), LSFT_T(k4)
-#define HRMR(k1, k2, k3, k4) RSFT_T(k1), RCTL_T(k2), RGUI_T(k3), RALT_T(k4)
 
 #ifdef RGB_MATRIX_ENABLE
 #define XRGB_TOG RM_TOGG
@@ -89,6 +79,14 @@ bool oled_task_keymap(void);
 #define XRGB_VAI _______
 #define XRGB_VAD _______
 #endif
+
+#define ESCLWR LT(_LOWER, KC_ESC)
+#define PSTRSE LT(_RAISE, KC_PSTE)
+#define LWRSPC LT(_LOWER, KC_SPC)
+#define RSEBSP LT(_RAISE, KC_BSPC)
+#define PNP TD(PLY_NXT_PRV)
+#define HRML(k1, k2, k3, k4) LALT_T(k1), LGUI_T(k2), LCTL_T(k3), LSFT_T(k4)
+#define HRMR(k1, k2, k3, k4) RSFT_T(k1), RCTL_T(k2), RGUI_T(k3), RALT_T(k4)
 
 // clang-format off
 #define ___BASE1___ KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P

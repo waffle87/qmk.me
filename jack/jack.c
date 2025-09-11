@@ -12,11 +12,6 @@ void keyboard_post_init_user(void) {
   rgblight_sethsv_noeeprom(HSV_CYAN);
   rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
 #endif
-#ifdef RGB_MATRIX_ENABLE
-  rgb_matrix_enable_noeeprom();
-  rgb_matrix_sethsv_noeeprom(HSV_CYAN);
-  rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
-#endif
 #ifdef AUTOCORRECT_ENABLE
   if (!autocorrect_is_enabled())
     autocorrect_enable();
