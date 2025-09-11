@@ -75,10 +75,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return false;
 #endif
 #ifdef OLED_ENABLE
-  if (record->event.pressed) {
+  if (record->event.pressed)
     oled_timer_reset();
-    add_keylog(keycode, record);
-  }
 #endif
 #ifdef MOUSE_JIGGLE_ENABLE
   if (record->event.pressed) {

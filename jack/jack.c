@@ -2,45 +2,11 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "jack.h"
 
-#if defined(SPLIT_KEYBOARD) && defined(OLED_ENABLE)
-#include "transactions.h"
-extern char keylog_str[KEYLOG_LEN + 1];
-void keylogger_sync(uint8_t initiator2target_buffer_size,
-                    const void *initiator2target_buffer,
-                    uint8_t target2initiator_buffer_size,
-                    void *target2initiator_buffer) {
-  if (initiator2target_buffer_size == 5)
-    memcpy(&keylog_str, initiator2target_buffer, initiator2target_buffer_size);
-}
-#endif
-
 __attribute__((weak)) void housekeeping_task_keymap(void) {}
-void housekeeping_task_user(void) {
-#if defined(SPLIT_KEYBOARD) && defined(OLED_ENABLE)
-  if (is_keyboard_master()) {
-    static uint32_t last_sync;
-    bool needs_sync = false;
-    static char tmp_keylog[5] = {0};
-    if (memcmp(&keylog_str, &tmp_keylog, sizeof(tmp_keylog))) {
-      needs_sync = true;
-      memcpy(&tmp_keylog, &keylog_str, sizeof(tmp_keylog));
-    }
-    if (timer_elapsed32(last_sync) > 250)
-      needs_sync = true;
-    if (needs_sync)
-      if (transaction_rpc_send(RPC_ID_USER_KEYLOG_STR, sizeof(tmp_keylog),
-                               &keylog_str))
-        last_sync = timer_read32();
-  }
-#endif
-  housekeeping_task_keymap();
-}
+void housekeeping_task_user(void) { housekeeping_task_keymap(); }
 
 __attribute__((weak)) void keyboard_post_init_keymap(void) {}
 void keyboard_post_init_user(void) {
-#if defined(SPLIT_KEYBOARD) && defined(OLED_ENABLE)
-  transaction_register_rpc(RPC_ID_USER_KEYLOG_STR, keylogger_sync);
-#endif
 #ifdef RGBLIGHT_ENABLE
   rgblight_enable_noeeprom();
   rgblight_sethsv_noeeprom(HSV_CYAN);

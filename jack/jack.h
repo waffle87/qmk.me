@@ -38,23 +38,18 @@ void raise_paste(tap_dance_state_t *state, void *user_data);
 #endif
 
 void oled_timer_reset(void);
-void anim_frame(uint16_t size, char const action[][size]);
-void wpm_graph(void);
-void felix_dog(void);
-void layer_anim(void);
-void layer_status(void);
+void render_wpm_graph(void);
+void render_felix_dog(void);
+void render_layer_anim(void);
+void render_layer_status(void);
 void render_mod_status(void);
-void add_keylog(uint16_t keycode, keyrecord_t *record);
-void render_keylog(void);
 void render_wpm(void);
-void render_scan_rate(void);
 
 void keyboard_pre_init_keymap(void);
 void keyboard_post_init_keymap(void);
 void housekeeping_task_keymap(void);
 bool oled_task_keymap(void);
 
-#define KEYLOG_LEN 5
 #define PNP TD(PLY_NXT_PRV)
 #define PSTRSE TD(PASTE_RAISE)
 #define ESCLWR LT(_LOWER, KC_ESC)

@@ -4,9 +4,6 @@
 #include "oled.h"
 
 uint32_t oled_timer = 0;
-char keylog_str[KEYLOG_LEN + 1] = {0};
-extern uint8_t oled_buffer[OLED_MATRIX_SIZE];
-extern OLED_BLOCK_TYPE oled_dirty;
 
 void oled_timer_reset(void) { oled_timer = timer_read32(); }
 
@@ -29,10 +26,11 @@ void anim_frame(uint16_t size, char const action[][size]) {
   oled_write_raw(action[current_frame], size);
 }
 
-#ifdef OLED_DISPLAY_128X64
-void wpm_graph(void) {
+void render_wpm_graph(void) {
   static uint8_t height = OLED_DISPLAY_HEIGHT - 1, vert_count = 0,
                  max_wpm = 160;
+  extern uint8_t oled_buffer[OLED_MATRIX_SIZE];
+  extern OLED_BLOCK_TYPE oled_dirty;
   static uint16_t graph_timer = 0;
   if (timer_elapsed(graph_timer) > 100) {
     height = 63 - ((get_current_wpm() / (float)max_wpm) * 63);
@@ -60,28 +58,26 @@ void wpm_graph(void) {
     graph_timer = timer_read();
   }
 }
-#endif
 
-void felix_dog(void) {
+void render_felix_dog(void) {
   static uint16_t felix_anim_timer = 0;
-  bool shifted =
-      get_mods() & MOD_MASK_SHIFT || host_keyboard_led_state().caps_lock;
   if (timer_elapsed(felix_anim_timer) > 200) {
     felix_anim_timer = timer_read();
-    if (shifted || is_caps_word_on())
-      anim_frame(96, felix_bark);
+    if (get_mods() & MOD_MASK_SHIFT || host_keyboard_led_state().caps_lock ||
+        is_caps_word_on())
+      anim_frame(FELIX_FRAME_SIZE, felix_bark);
     else if (get_mods() & MOD_MASK_CAG)
-      anim_frame(96, felix_sneak);
+      anim_frame(FELIX_FRAME_SIZE, felix_sneak);
     else if (get_current_wpm() > 60)
-      anim_frame(96, felix_run);
+      anim_frame(FELIX_FRAME_SIZE, felix_run);
     else if (get_current_wpm() && get_current_wpm() <= 60)
-      anim_frame(96, felix_walk);
+      anim_frame(FELIX_FRAME_SIZE, felix_walk);
     else
-      anim_frame(96, felix_sit);
+      anim_frame(FELIX_FRAME_SIZE, felix_sit);
   }
 }
 
-void layer_anim(void) {
+void render_layer_anim(void) {
   static uint16_t layer_anim_timer = 0;
   if (timer_elapsed(layer_anim_timer) > 200) {
     layer_anim_timer = timer_read();
@@ -99,7 +95,7 @@ void layer_anim(void) {
   }
 }
 
-void layer_status(void) {
+void render_layer_status(void) {
   static const char PROGMEM base[] = {0x20, 0x94, 0x95, 0x96, 0x20,
                                       0x20, 0xb4, 0xb5, 0xb6, 0x20,
                                       0x20, 0xd4, 0xd5, 0xd6, 0x20};
@@ -178,46 +174,7 @@ void render_mod_status(void) {
   oled_write(mods & MOD_MASK_SHIFT ? shift_on_2 : shift_off_2, false);
 }
 
-void add_keylog(uint16_t keycode, keyrecord_t *record) {
-  if (IS_QK_MOD_TAP(keycode))
-    keycode =
-        record->tap.count
-            ? keycode_config(QK_MOD_TAP_GET_TAP_KEYCODE(keycode))
-            : keycode_config(0xE0 + biton(QK_MOD_TAP_GET_MODS(keycode) & 0xF) +
-                             biton(QK_MOD_TAP_GET_MODS(keycode) & 0x10));
-  else if (IS_QK_LAYER_TAP(keycode) && (record->tap.count))
-    keycode = keycode_config(QK_LAYER_TAP_GET_TAP_KEYCODE(keycode));
-  else if (IS_QK_MODS(keycode))
-    keycode = keycode_config(QK_MODS_GET_BASIC_KEYCODE(keycode));
-  else if (IS_QK_BASIC(keycode))
-    keycode = keycode_config(keycode);
-  if ((keycode == KC_BSPC) && mod_config(get_mods()) & MOD_MASK_CTRL) {
-    memset(keylog_str, ' ', KEYLOG_LEN);
-    keylog_str[KEYLOG_LEN] = '\0';
-    return;
-  }
-  char code = 0;
-  if (keycode < ARRAY_SIZE(code_to_name))
-    code = pgm_read_byte(&code_to_name[keycode]);
-  if (code) {
-    memmove(keylog_str, keylog_str + 1, KEYLOG_LEN - 1);
-    keylog_str[KEYLOG_LEN - 1] = code;
-  }
-}
-
-void render_keylog(void) {
-  oled_write(PSTR("KLG: "), false);
-  oled_write_ln(keylog_str, false);
-}
-
 void render_wpm(void) {
   oled_write(PSTR("WPM: "), false);
   oled_write_ln(get_u8_str(get_current_wpm(), ' '), false);
 }
-
-#ifdef DEBUG_MATRIX_SCAN_RATE
-void render_scan_rate(void) {
-  oled_write(PSTR("MSR: "), false);
-  oled_write_ln(get_u16_str(get_matrix_scan_rate(), ' '), false);
-}
-#endif
