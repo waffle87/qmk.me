@@ -26,7 +26,6 @@ ifeq ($(strip $(OLED_ENABLE)), yes)
 endif
 
 ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
-	RGB_MATRIX_CUSTOM_USER = yes
 	SRC += $(USER_PATH)/colour.c
 endif
 

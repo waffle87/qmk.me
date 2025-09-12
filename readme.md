@@ -1,21 +1,18 @@
-## qmk.me
+# qmk.me
 This is a self-contained repository for my personal [QMK](https://github.com/qmk/qmk_firmware) userspace & keyboard code.
 
 ![keyboard](https://i.imgur.com/s0dN0JD.jpeg)
 
-### building
-Symlinks are used to compile this code in a proper `qmk_firmware` repository.
+## Building
+Keymaps for keyboards that exist in [upstream QMK](https://github.com/qmk/qmk_firmware) can be compiled like normal, or through GitHub actions. For the custom keyboards this repository contains, they can be symlinked to a proper `qmk_firmware` repository.
 
 eg.
 ```shell
-ln -s qmk.me/jack qmk_firmware/users/jack
-ln -s qmk.me/keyboards/relic qmk_firmware/keyboards/relic
-echo "users/jack\nkeyboards/relic" >> qmk_firmware/.git/info/exclude
-qmk compile -kb relic -km jack
+ln -s qmk.me/keyboards/endgame qmk_firmware/keyboards/endgame
+echo "keyboards/endgame" >> qmk_firmware/.git/info/exclude
+qmk compile -kb endgame -km jack
 ```
-The official external [userspace feature](https://docs.qmk.fm/newbs_external_userspace)  is not used as this repository contains personal keyboards, which are not supported.
-
-### layout
+## Layout
 A simple 34-key layout that makes use of 2 (primary) layers, home-row mods, & combos for many symbols. Mostly used in Sway, Vim (C, Python), & other generic computing tasks.
 
 ![layout](util/layout.svg)
