@@ -1,4 +1,16 @@
-.cache
-*.o
+# Junk files
+*.bak
+*.swp
+*~
+.DS_Store
+._*
+
+# Firmware files
+*.hex
+*.bin
+*.uf2
+
+# clangd
 compile_commands.json
-.venv
+.clangd/
+.cache/

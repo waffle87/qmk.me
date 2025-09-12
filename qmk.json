@@ -1,0 +1,11 @@
+{
+    "userspace_version": "1.1",
+    "build_targets": [
+        ["bioi/f60", "jack"],
+        ["boardsource/beiwagon", "jack"],
+        ["mkh_studio/bully", "jack"],
+        ["projectcain/relic", "jack"],
+        ["projectcain/vault35", "jack"],
+        ["splitkb/kyria/rev2", "jack"]
+    ]
+}
