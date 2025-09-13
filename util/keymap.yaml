@@ -1,6 +1,6 @@
 layout:
   qmk_keyboard: corne_rotated
-  qmk_layout: LAYOUT_split_3x5_3
+  layout_name: LAYOUT_split_3x5_3
 layers:
   BASE:
     - [Q, W, E, R, T, Y, U, I, O, P]
@@ -16,12 +16,12 @@ layers:
         {h: $$mdi:apple-keyboard-option$$, t: ;}
       ]
     - [Z, X, C, V, B, N, M, {t: ",", s: "<"}, {t: ., s: ">"}, {t: /, s: "?"}]
-    - {t: "../", type: ghost}
+    - {t: "../"}
     - {h: LWR, t: Esc, type: held}
     - {t: $$mdi:keyboard-space$$ }
     - {t: $$mdi:backspace-outline$$}
     - {h: RSE, t: $$mdi:content-paste$$, type: held}
-    - {t: $$mdi:play-pause$$, type: ghost}
+    - {t: $$mdi:play-pause$$}
   LOWER:
     - [1,2,3,4,5,6,7,8,9,0]
     - ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]

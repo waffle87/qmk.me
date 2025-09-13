@@ -76,7 +76,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       token = INVALID_DEFERRED_TOKEN;
       report = (report_mouse_t){};
       host_mouse_send(&report);
-    } else if (keycode == M_JIGGLE) {
+    } else if (keycode == MS_JIGGLE) {
       uint32_t jiggle_callback(uint32_t trigger_time, void *cb_arg) {
         static const int8_t deltas[32] = {
             0, -1, -2, -2, -3, -3, -4, -4, -4, -4, -3, -3, -2, -2, -1, 0,
@@ -104,14 +104,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       tap_code(KC_UP);
       tap_code(KC_ENT);
       tap_code(KC_UP);
-    }
-    break;
-  case OS_SWAP:
-    if (record->event.pressed) {
-      keymap_config.swap_lctl_lgui = !keymap_config.swap_lctl_lgui;
-      keymap_config.swap_rctl_rgui = !keymap_config.swap_rctl_rgui;
-      eeconfig_update_keymap(&keymap_config);
-      unicode_input_mode_step();
     }
     break;
     INTERCEPT_MOD_TAP(LALT_T, KC_EXLM)

@@ -10,8 +10,7 @@ enum tapdances { EM_DASH_MINS, PLY_NXT_PRV, CBRACKET, SBRACKET };
 enum custom_keycodes {
   UPDIR = QK_USER,
   REMOVE,
-  OS_SWAP,
-  M_JIGGLE,
+  MS_JIGGLE,
   UC_NOMODE,
   UC_WIDE,
   UC_SCRIPT,
@@ -100,7 +99,7 @@ bool oled_task_keymap(void);
 #define ___LOWER4___ _______, _______, _______, _______, _______, _______
 
 #define ___RAISE1___ XRGB_TOG, XRGB_NXT,  XRGB_HUI, XRGB_SAI, XRGB_VAI, UC_NOMODE, UC_SCRIPT, UC_BLOCKS, UC_REGIONAL, QK_MAKE
-#define ___RAISE2___ OS_SWAP, XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD, UC_WIDE, UC_AUSSIE, UC_ZALGO, UC_SUPER, QK_BOOT
+#define ___RAISE2___ MS_JIGGLE, XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD, UC_WIDE, UC_AUSSIE, UC_ZALGO, UC_SUPER, QK_BOOT
 #define ___RAISE3___ KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10
 #define ___RAISE4___ _______, _______, _______, _______, _______, _______
 // clang-format on
