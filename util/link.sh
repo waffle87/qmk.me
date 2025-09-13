@@ -1,14 +1,20 @@
 #!/bin/sh
 
-QMKME="$HOME/git/qmk_me"
-QMKFIRMWARE="$HOME/git/qmk_firmware"
+QMK_ME="$HOME/git/qmk_me"
+QMK_FIRMWARE="$HOME/git/qmk_firmware"
 
-find $QMKFIRMWARE -type l -not -path "$QMKFIRMWARE/.venv/*" -delete
-rm $QMKFIRMWARE/.git/info/exclude
+find $QMK_FIRMWARE -type l -not -path "$QMK_FIRMWARE/.venv/*" -delete
+rm $QMK_FIRMWARE/.git/info/exclude
 
-for dir in "keyboards"/*; do
-  src="$QMKME/$dir"
-  dst="$QMKFIRMWARE/$dir"
+link_keyboard() {
+  src="$QMK_ME/keyboards/$1"
+  dst="$QMK_FIRMWARE/keyboards/$1"
   ln -sv $src $dst
-  echo "$dir" >> $QMKFIRMWARE/.git/info/exclude
-done
+  echo "keyboards/$1" >> $QMK_FIRMWARE/.git/info/exclude
+}
+
+link_keyboard endgame
+link_keyboard locus
+link_keyboard pseusplit
+link_keyboard sweep
+link_keyboard xyz60
