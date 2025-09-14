@@ -16,7 +16,7 @@ MOUSE_JIGGLE_ENABLE = yes
 OS_DETECTION_ENABLE = yes
 DEBOUNCE_TYPE = asym_eager_defer_pk
 AVR_CFLAGS += -mrelax
-INTROSPECTION_KEYMAP_C = introspection.c
+INTROSPECTION_KEYMAP_C = user_introspection.c
 
 SRC += $(USER_PATH)/jack.c $(USER_PATH)/tapping.c
 

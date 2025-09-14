@@ -1,6 +1,5 @@
 {
   "modules": [
-    "getreuer/palettefx",
     "dave-thompson/switcher"
   ]
 }
