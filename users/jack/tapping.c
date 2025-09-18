@@ -63,6 +63,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (!process_record_unicode(keycode, record))
     return false;
 #endif
+#ifdef RGB_MATRIX_ENABLE
+  if (!process_record_rgb_matrix(keycode, record))
+    return false;
+#endif
 #ifdef OLED_ENABLE
   if (record->event.pressed)
     oled_timer_reset();

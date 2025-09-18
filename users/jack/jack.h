@@ -27,13 +27,23 @@ enum combos {
 };
 #undef CMB
 
+#ifdef UNICODE_COMMON_ENABLE
 bool process_record_unicode(uint16_t keycode, keyrecord_t *record);
+#endif
+
+#ifdef RGB_MATRIX_ENABLE
+void housekeeping_task_rgb_matrix(void);
+void keyboard_post_init_rgb_matrix(void);
+bool process_record_rgb_matrix(uint16_t keycode, keyrecord_t *record);
+#endif
 
 #ifdef TAP_DANCE_ENABLE
 void em_dash_mins(tap_dance_state_t *state, void *user_data);
 void ply_nxt_prv(tap_dance_state_t *state, void *user_data);
 #endif
 
+#ifdef OLED_ENABLE
+bool oled_task_keymap(void);
 void oled_timer_reset(void);
 void render_wpm_graph(void);
 void render_felix_dog(void);
@@ -41,11 +51,11 @@ void render_layer_anim(void);
 void render_layer_status(void);
 void render_mod_status(void);
 void render_wpm(void);
+#endif
 
 void keyboard_pre_init_keymap(void);
 void keyboard_post_init_keymap(void);
 void housekeeping_task_keymap(void);
-bool oled_task_keymap(void);
 
 #ifdef RGB_MATRIX_ENABLE
 #define XRGB_TOG RM_TOGG

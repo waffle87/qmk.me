@@ -3,7 +3,12 @@
 #include "jack.h"
 
 __attribute__((weak)) void housekeeping_task_keymap(void) {}
-void housekeeping_task_user(void) { housekeeping_task_keymap(); }
+void housekeeping_task_user(void) {
+#ifdef RGB_MATRIX_ENABLE
+  housekeeping_task_rgb_matrix();
+#endif
+  housekeeping_task_keymap();
+}
 
 __attribute__((weak)) void keyboard_post_init_keymap(void) {}
 void keyboard_post_init_user(void) {
@@ -11,6 +16,9 @@ void keyboard_post_init_user(void) {
   rgblight_enable_noeeprom();
   rgblight_sethsv_noeeprom(HSV_CYAN);
   rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
+#endif
+#ifdef RGB_MATRIX_ENABLE
+  keyboard_post_init_rgb_matrix();
 #endif
 #ifdef AUTOCORRECT_ENABLE
   if (!autocorrect_is_enabled())
