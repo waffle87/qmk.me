@@ -42,15 +42,20 @@ void em_dash_mins(tap_dance_state_t *state, void *user_data);
 void ply_nxt_prv(tap_dance_state_t *state, void *user_data);
 #endif
 
+#ifdef QUANTUM_PAINTER_ENABLE
+void keyboard_post_init_qp(void);
+extern painter_font_handle_t qp_font;
+#endif
+
 #ifdef OLED_ENABLE
 bool oled_task_keymap(void);
 void oled_timer_reset(void);
-void render_wpm_graph(void);
-void render_felix_dog(void);
-void render_layer_anim(void);
-void render_layer_status(void);
-void render_mod_status(void);
-void render_wpm(void);
+void oled_wpm_graph(void);
+void oled_felix_dog(void);
+void oled_layer_anim(void);
+void oled_layer_status(void);
+void oled_mod_status(void);
+void oled_wpm(void);
 #endif
 
 void keyboard_pre_init_keymap(void);

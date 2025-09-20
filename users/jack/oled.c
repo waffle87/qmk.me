@@ -26,7 +26,7 @@ void anim_frame(uint16_t size, char const action[][size]) {
   oled_write_raw(action[current_frame], size);
 }
 
-void render_wpm_graph(void) {
+void oled_wpm_graph(void) {
   static uint8_t height = OLED_DISPLAY_HEIGHT - 1, vert_count = 0,
                  max_wpm = 160;
   extern uint8_t oled_buffer[OLED_MATRIX_SIZE];
@@ -59,7 +59,7 @@ void render_wpm_graph(void) {
   }
 }
 
-void render_felix_dog(void) {
+void oled_felix_dog(void) {
   static uint16_t felix_anim_timer = 0;
   if (timer_elapsed(felix_anim_timer) > 200) {
     felix_anim_timer = timer_read();
@@ -77,7 +77,7 @@ void render_felix_dog(void) {
   }
 }
 
-void render_layer_anim(void) {
+void oled_layer_anim(void) {
   static uint16_t layer_anim_timer = 0;
   if (timer_elapsed(layer_anim_timer) > 200) {
     layer_anim_timer = timer_read();
@@ -95,7 +95,7 @@ void render_layer_anim(void) {
   }
 }
 
-void render_layer_status(void) {
+void oled_layer_status(void) {
   static const char PROGMEM base[] = {0x20, 0x94, 0x95, 0x96, 0x20,
                                       0x20, 0xb4, 0xb5, 0xb6, 0x20,
                                       0x20, 0xd4, 0xd5, 0xd6, 0x20};
@@ -117,7 +117,7 @@ void render_layer_status(void) {
   }
 }
 
-void render_mod_status(void) {
+void oled_mod_status(void) {
   const uint8_t mods = get_mods();
   static const char PROGMEM
       gui_off_1[] = {0x85, 0x86},
@@ -174,7 +174,7 @@ void render_mod_status(void) {
   oled_write(mods & MOD_MASK_SHIFT ? shift_on_2 : shift_off_2, false);
 }
 
-void render_wpm(void) {
+void oled_wpm(void) {
   oled_write(PSTR("WPM: "), false);
   oled_write_ln(get_u8_str(get_current_wpm(), ' '), false);
 }

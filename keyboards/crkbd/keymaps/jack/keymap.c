@@ -46,14 +46,14 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 
 bool oled_task_keymap(void) {
   if (is_keyboard_master())
-    render_layer_anim();
+    oled_layer_anim();
   else {
-    render_layer_status();
+    oled_layer_status();
     oled_set_cursor(0, 3);
-    render_felix_dog();
+    oled_felix_dog();
     oled_set_cursor(0, 7);
-    render_wpm();
-    render_mod_status();
+    oled_wpm();
+    oled_mod_status();
   }
   return false;
 }

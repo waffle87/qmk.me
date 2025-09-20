@@ -29,6 +29,10 @@ ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
 	SRC += $(USER_PATH)/colour.c $(USER_PATH)/rgb_matrix.c
 endif
 
+ifeq ($(strip $(QUANTUM_PAINTER_ENABLE)), yes)
+	SRC += $(USER_PATH)/painter.c $(USER_PATH)/fonts.qff.c
+endif
+
 ifeq ($(strip $(UNICODE_COMMON)), yes)
 	UNICODE_ENABLE = no
 	SRC += $(USER_PATH)/unicode.c

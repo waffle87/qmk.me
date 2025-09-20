@@ -20,6 +20,9 @@ void keyboard_post_init_user(void) {
 #ifdef RGB_MATRIX_ENABLE
   keyboard_post_init_rgb_matrix();
 #endif
+#ifdef QUANTUM_PAINTER_ENABLE
+  keyboard_post_init_qp();
+#endif
 #ifdef AUTOCORRECT_ENABLE
   if (!autocorrect_is_enabled())
     autocorrect_enable();

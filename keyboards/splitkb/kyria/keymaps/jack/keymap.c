@@ -30,8 +30,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #ifdef OLED_ENABLE
 bool oled_task_keymap(void) {
   if (is_keyboard_left()) {
-    render_wpm_graph();
-    render_wpm();
+    oled_wpm_graph();
+    oled_wpm();
   }
   return false;
 }

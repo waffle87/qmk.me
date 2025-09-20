@@ -70,6 +70,9 @@
         "sleep": true,
         "split_count": [21, 21]
     },
+    "rp2040_bootloader": {
+        "double_tap_reset": true
+    },
     "split": {
         "enabled": true,
         "handedness": {

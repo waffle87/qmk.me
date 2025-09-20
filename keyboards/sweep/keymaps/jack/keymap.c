@@ -3,8 +3,6 @@
 #include "jack.h"
 #include "analog.h"
 
-#define NUM_ADC_READS 32
-
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_jack(
@@ -27,6 +25,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 // clang-format on
+
+static painter_device_t display;
+
+void keyboard_post_init_keymap() {
+  display = qp_st7789_make_spi_device(LCD_DISPLAY_WIDTH, LCD_DISPLAY_HEIGHT,
+                                      LCD_CS_PIN, LCD_DC_PIN, LCD_RST_PIN,
+                                      LCD_SPI_DIVISOR, 0);
+  qp_init(display, QP_ROTATION_0);
+}
 
 void housekeeping_task_keymap(void) {
   static uint32_t last_read = 0;
@@ -63,8 +70,20 @@ void housekeeping_task_keymap(void) {
       total_current_ma += current_reads[i];
       total_voltage_mv += voltage_reads[i];
     }
-    // int16_t avg_current_ma = (int16_t)(total_current_ma / NUM_ADC_READS);
-    // int16_t avg_voltage_mv = (int16_t)(total_voltage_mv / NUM_ADC_READS);
+    int16_t avg_current_ma = (int16_t)(total_current_ma / NUM_ADC_READS);
+    int16_t avg_voltage_mv = (int16_t)(total_voltage_mv / NUM_ADC_READS);
+    char data[32] = {};
+    sprintf(data, "Current: %dmA", avg_current_ma);
+    qp_drawtext(display, 0, LCD_DISPLAY_WIDTH - qp_font->line_height * 2,
+                qp_font, data);
+    sprintf(data, "Voltage: %dmV", avg_voltage_mv);
+    qp_drawtext(display, 0, LCD_DISPLAY_WIDTH - qp_font->line_height, qp_font,
+                data);
+    qp_flush(display);
     last_draw = timer_read32();
   }
 }
+
+void suspend_power_down_user(void) { qp_power(display, false); }
+
+void suspend_wakeup_init_user(void) { qp_power(display, true); }
