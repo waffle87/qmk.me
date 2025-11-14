@@ -2,6 +2,12 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "quantum.h"
 
+void keyboard_pre_init_kb(void) {
+  // Disable UCPDx_CCy AF on PB15
+  SYSCFG->CFGR1 |= SYSCFG_CFGR1_UCPD1_STROBE | SYSCFG_CFGR1_UCPD2_STROBE;
+  keyboard_pre_init_user();
+}
+
 #if defined(QUANTUM_PAINTER_ENABLE) && defined(POINTING_DEVICE_ENABLE)
 #error "Cannot enable both Quantum Painter and Pointing Device"
 #endif
