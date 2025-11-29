@@ -43,8 +43,10 @@ void ply_nxt_prv(tap_dance_state_t *state, void *user_data);
 #endif
 
 #ifdef QUANTUM_PAINTER_ENABLE
-void keyboard_post_init_qp(void);
 extern painter_font_handle_t qp_font;
+void keyboard_post_init_qp(void);
+void display_timer_reset(void);
+void housekeeping_task_qp(void);
 #endif
 
 #ifdef OLED_ENABLE
@@ -111,12 +113,12 @@ void housekeeping_task_keymap(void);
 #define ___LOWER1___ KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0
 #define ___LOWER2___ HRML(KC_EXLM, KC_AT, KC_HASH, KC_DLR), KC_PERC, KC_CIRC, HRMR(KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN)
 #define ___LOWER3___ KC_VOLD, KC_TAB, KC_CAPS, REMOVE, KC_GRV, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_VOLU
-#define ___LOWER4___ _______, _______, SWTCH, PNP
+#define ___LOWER4___ _______, _______, _______, PNP
 
 #define ___RAISE1___ XRGB_TOG, XRGB_NXT,  XRGB_HUI, XRGB_SAI, XRGB_VAI, UC_NOMODE, UC_SCRIPT, UC_BLOCKS, UC_REGIONAL, QK_MAKE
 #define ___RAISE2___ MS_JIGGLE, XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD, UC_WIDE, UC_AUSSIE, UC_ZALGO, UC_SUPER, QK_BOOT
 #define ___RAISE3___ KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10
-#define ___RAISE4___ _______, UPDIR, _______, _______
+#define ___RAISE4___ UPDIR, _______, _______, _______
 // clang-format on
 
 #define LAYOUT_jack_60_ts(...) LAYOUT_60_ansi_tsangan(__VA_ARGS__)

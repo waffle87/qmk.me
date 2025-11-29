@@ -4,3 +4,5 @@
 
 #include "qp.h"
 #include "fonts.qff.h"
+
+extern painter_device_t display;

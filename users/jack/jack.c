@@ -7,6 +7,9 @@ void housekeeping_task_user(void) {
 #ifdef RGB_MATRIX_ENABLE
   housekeeping_task_rgb_matrix();
 #endif
+#ifdef QUANTUM_PAINTER_ENABLE
+  housekeeping_task_qp();
+#endif
   housekeeping_task_keymap();
 }
 

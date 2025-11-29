@@ -1,7 +1,6 @@
 // Copyright 2025 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "jack.h"
-#include "analog.h"
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -25,6 +24,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 // clang-format on
+
+#ifdef QUANTUM_PAINTER_ENABLE
+#include "analog.h"
 
 static painter_device_t display;
 
@@ -87,3 +89,4 @@ void housekeeping_task_keymap(void) {
 void suspend_power_down_user(void) { qp_power(display, false); }
 
 void suspend_wakeup_init_user(void) { qp_power(display, true); }
+#endif
