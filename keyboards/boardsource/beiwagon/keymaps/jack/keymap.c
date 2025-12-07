@@ -5,7 +5,7 @@
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER0] = LAYOUT_jack(
-    G(KC_F),  G(KC_Q),  G(KC_R),
+    LUMINO,  G(KC_Q),  G(KC_R),
     KC_VOLD,  PNP,      KC_VOLU,
     REMOVE,   XRGB_HUI, XRGB_NXT,
     XRGB_TOG, XRGB_HUD, TG(LAYER1)

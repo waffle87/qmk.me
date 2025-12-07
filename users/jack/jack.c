@@ -33,6 +33,16 @@ bool process_detected_host_os_user(os_variant_t detected_os) {
 }
 #endif
 
+__attribute__((weak))
+layer_state_t layer_state_set_keymap(layer_state_t state) {
+  return state;
+}
+layer_state_t layer_state_set_user(layer_state_t state) {
+  state = update_tri_layer_state(state, LAYER1, LAYER2, LAYER3);
+  state = layer_state_set_keymap(state);
+  return state;
+}
+
 #define INTERCEPT_MOD_TAP(mod, keycode)                                        \
   case mod(keycode):                                                           \
     if (record->tap.count && record->event.pressed) {                          \
@@ -45,6 +55,8 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
   case ESC_L1:
   case REP_L2:
+  case SPC_L1:
+  case BSPC_L2:
     return TAPPING_TERM - 40;
   case TD(EM_DASH_MINS):
   case TD(PLY_NXT_PRV):

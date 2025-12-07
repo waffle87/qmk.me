@@ -16,6 +16,7 @@ void ply_nxt_prv(tap_dance_state_t *state, void *user_data);
 
 void keyboard_pre_init_keymap(void);
 void keyboard_post_init_keymap(void);
+layer_state_t layer_state_set_keymap(layer_state_t state);
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 
 #ifdef RGB_MATRIX_ENABLE
@@ -52,6 +53,8 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 
 #define ESC_L1 LT(LAYER1, KC_ESC)
 #define REP_L2 LT(LAYER2, QK_REP)
+#define SPC_L1 LT(LAYER1, KC_SPC)
+#define BSPC_L2 LT(LAYER2, KC_BSPC)
 #define PNP TD(PLY_NXT_PRV)
 #define HRML(k1, k2, k3, k4) LALT_T(k1), LGUI_T(k2), LCTL_T(k3), LSFT_T(k4)
 #define HRMR(k1, k2, k3, k4) RSFT_T(k1), RCTL_T(k2), RGUI_T(k3), RALT_T(k4)
@@ -75,7 +78,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 #define ___LAYER10___ PNP, KC_9, KC_8, KC_7, KC_TAB, _______, _______, _______, _______, _______
 #define ___LAYER11___ HRML(KC_VOLU, KC_3, KC_2, KC_1), KC_CAPS, KC_LEFT, HRMR(KC_DOWN, KC_UP, KC_RGHT, _______)
 #define ___LAYER12___ KC_VOLD, KC_6, KC_5, KC_4, _______, _______, _______, _______, _______, _______
-#define ___LAYER13___ _______, _______, _______, TG(LAYER3)
+#define ___LAYER13___ _______, _______, _______, _______
 
 #define ___LAYER20___ KC_GRV, KC_LABK, KC_RABK, KC_DQUO, KC_DOT, KC_AMPR, REMOVE, KC_LBRC, KC_RBRC, KC_PERC
 #define ___LAYER21___ KC_EXLM, TD(EM_DASH_MINS), KC_PLUS, KC_EQL, KC_HASH, KC_PIPE, KC_COLN, KC_LPRN, KC_RPRN, KC_QUES
@@ -85,7 +88,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 #define ___LAYER30___ XRGB_TOG, XRGB_NXT,  XRGB_HUI, XRGB_SAI, XRGB_VAI, _______, _______, _______, _______, QK_MAKE
 #define ___LAYER31___ _______, XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD, _______, _______, _______, _______, QK_BOOT
 #define ___LAYER32___ KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10
-#define ___LAYER33___ _______, _______, _______, TG(LAYER3)
+#define ___LAYER33___ _______, _______, _______, _______
 // clang-format on
 
 #define LAYOUT_jack_60_ts(...) LAYOUT_60_ansi_tsangan(__VA_ARGS__)
