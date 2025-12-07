@@ -49,6 +49,25 @@ bool process_detected_host_os_user(os_variant_t detected_os) {
 }
 #endif
 
+#ifdef OLED_ENABLE
+uint32_t oled_timer = 0;
+
+void oled_timer_reset(void) { oled_timer = timer_read32(); }
+
+__attribute__((weak)) bool oled_task_keymap(void) { return true; }
+bool oled_task_user(void) {
+  if (is_keyboard_master()) {
+    if (timer_elapsed32(oled_timer) > THREE_MIN) {
+      oled_off();
+      return false;
+    } else
+      oled_on();
+  }
+  oled_task_keymap();
+  return false;
+}
+#endif
+
 #ifndef MAGIC_ENABLE
 uint16_t keycode_config(uint16_t keycode) { return keycode; }
 uint8_t mod_config(uint8_t mod) { return mod; }

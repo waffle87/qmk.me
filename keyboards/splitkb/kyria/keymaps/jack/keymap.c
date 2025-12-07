@@ -28,6 +28,44 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // clang-format on
 
 #ifdef OLED_ENABLE
+void oled_wpm_graph(void) {
+  static uint8_t height = OLED_DISPLAY_HEIGHT - 1, vert_count = 0,
+                 max_wpm = 160;
+  extern uint8_t oled_buffer[OLED_MATRIX_SIZE];
+  extern OLED_BLOCK_TYPE oled_dirty;
+  static uint16_t graph_timer = 0;
+  if (timer_elapsed(graph_timer) > 100) {
+    height = 63 - ((get_current_wpm() / (float)max_wpm) * 63);
+    for (uint8_t i = 0; i <= 1; i++)
+      oled_write_pixel(3, height + i, true);
+    if (vert_count == 3) {
+      vert_count = 0;
+      while (height <= 63) {
+        oled_write_pixel(3, height, true);
+        height++;
+      }
+    } else {
+      for (uint8_t i = 63; i > height; i--)
+        if (!(i % 3))
+          oled_write_pixel(3, i, true);
+      vert_count++;
+    }
+    for (uint16_t y = 0; y < 8; y++) {
+      for (uint16_t x = 124; x > 0; x--) {
+        uint16_t i = y * OLED_DISPLAY_WIDTH + x;
+        oled_buffer[i] = oled_buffer[i - 1];
+        oled_dirty |= ((OLED_BLOCK_TYPE)1 << (i / OLED_BLOCK_SIZE));
+      }
+    }
+    graph_timer = timer_read();
+  }
+}
+
+void oled_wpm(void) {
+  oled_write(PSTR("WPM: "), false);
+  oled_write_ln(get_u8_str(get_current_wpm(), ' '), false);
+}
+
 bool oled_task_keymap(void) {
   if (is_keyboard_left()) {
     oled_wpm_graph();

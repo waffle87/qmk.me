@@ -30,12 +30,6 @@ void housekeeping_task_qp(void);
 #ifdef OLED_ENABLE
 bool oled_task_keymap(void);
 void oled_timer_reset(void);
-void oled_wpm_graph(void);
-void oled_felix_dog(void);
-void oled_layer_anim(void);
-void oled_layer_status(void);
-void oled_mod_status(void);
-void oled_wpm(void);
 #endif
 
 void keyboard_pre_init_keymap(void);

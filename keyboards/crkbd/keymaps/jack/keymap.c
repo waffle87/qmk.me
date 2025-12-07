@@ -43,20 +43,6 @@ void keyboard_post_init_keymap(void) {
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
   return is_keyboard_master() ? OLED_ROTATION_180 : OLED_ROTATION_270;
 }
-
-bool oled_task_keymap(void) {
-  if (is_keyboard_master())
-    oled_layer_anim();
-  else {
-    oled_layer_status();
-    oled_set_cursor(0, 3);
-    oled_felix_dog();
-    oled_set_cursor(0, 7);
-    oled_wpm();
-    oled_mod_status();
-  }
-  return false;
-}
 #endif // oled
 
 #ifdef RGB_MATRIX_ENABLE

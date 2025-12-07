@@ -19,11 +19,6 @@ INTROSPECTION_KEYMAP_C = user_introspection.c
 
 SRC += $(USER_PATH)/jack.c $(USER_PATH)/tapping.c
 
-ifeq ($(strip $(OLED_ENABLE)), yes)
-  SRC += $(USER_PATH)/oled.c
-  WPM_ENABLE = yes
-endif
-
 ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
 	SRC += $(USER_PATH)/colour.c
 endif
