@@ -28,6 +28,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // clang-format on
 
 #ifdef OLED_ENABLE
+uint32_t oled_timer = 0;
+
+void oled_timer_reset(void) { oled_timer = timer_read32(); }
+
 void oled_wpm_graph(void) {
   static uint8_t height = OLED_DISPLAY_HEIGHT - 1, vert_count = 0,
                  max_wpm = 160;
@@ -67,11 +71,24 @@ void oled_wpm(void) {
 }
 
 bool oled_task_keymap(void) {
+  if (is_keyboard_master()) {
+    if (timer_elapsed32(oled_timer) > THREE_MIN) {
+      oled_off();
+      return false;
+    } else
+      oled_on();
+  }
   if (is_keyboard_left()) {
     oled_wpm_graph();
     oled_wpm();
   }
   return false;
+}
+
+bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
+  if (record->event.pressed)
+    oled_timer_reset();
+  return true;
 }
 #endif
 

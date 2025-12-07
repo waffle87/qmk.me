@@ -2,6 +2,8 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
 
+#define OLED_DISABLE_TIMEOUT
+
 #define SPLIT_WPM_ENABLE
 #define SPLIT_POINTING_ENABLE
 #define POINTING_DEVICE_RIGHT

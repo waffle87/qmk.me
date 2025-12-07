@@ -2,23 +2,24 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
 
+// Input related
 #define TAPPING_TERM_PER_KEY
 #define TAPPING_TERM 140
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 #define COMBO_TERM 40
 #define NO_ACTION_ONESHOT
 #define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX, UNICODE_MODE_MACOS
-#define ENABLE_COMPILE_KEYCODE
+
+// Space saving
 #define LAYER_STATE_8BIT
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
+
+// Miscellaneous
 #undef MANUFACTURER
 #define MANUFACTURER "jack"
 #define THREE_MIN (1000 * 60) * 3
-
-#ifdef OLED_ENABLE
-#define OLED_DISABLE_TIMEOUT
-#endif
+#define ENABLE_COMPILE_KEYCODE
 
 #ifdef RGB_MATRIX_ENABLE
 #define RGB_MATRIX_SLEEP

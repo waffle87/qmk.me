@@ -3,7 +3,7 @@
 #pragma once
 #include QMK_KEYBOARD_H
 
-enum layers { LAYER0, LAYER1, LAYER3 };
+enum layers { LAYER0, LAYER1, LAYER2, LAYER3 };
 
 enum tapdances { EM_DASH_MINS, PLY_NXT_PRV, CBRACKET, SBRACKET };
 
@@ -14,13 +14,9 @@ void em_dash_mins(tap_dance_state_t *state, void *user_data);
 void ply_nxt_prv(tap_dance_state_t *state, void *user_data);
 #endif
 
-#ifdef OLED_ENABLE
-bool oled_task_keymap(void);
-void oled_timer_reset(void);
-#endif
-
 void keyboard_pre_init_keymap(void);
 void keyboard_post_init_keymap(void);
+bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 
 #ifdef RGB_MATRIX_ENABLE
 #define XRGB_TOG RM_TOGG

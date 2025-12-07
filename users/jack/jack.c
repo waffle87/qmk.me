@@ -33,25 +33,6 @@ bool process_detected_host_os_user(os_variant_t detected_os) {
 }
 #endif
 
-#ifdef OLED_ENABLE
-uint32_t oled_timer = 0;
-
-void oled_timer_reset(void) { oled_timer = timer_read32(); }
-
-__attribute__((weak)) bool oled_task_keymap(void) { return true; }
-bool oled_task_user(void) {
-  if (is_keyboard_master()) {
-    if (timer_elapsed32(oled_timer) > THREE_MIN) {
-      oled_off();
-      return false;
-    } else
-      oled_on();
-  }
-  oled_task_keymap();
-  return false;
-}
-#endif
-
 #define INTERCEPT_MOD_TAP(mod, keycode)                                        \
   case mod(keycode):                                                           \
     if (record->tap.count && record->event.pressed) {                          \
@@ -114,12 +95,13 @@ tap_dance_action_t tap_dance_actions[] = {
     [SBRACKET] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
 };
 #endif
-
+__attribute__((weak)) bool process_record_keymap(uint16_t keycode,
+                                                 keyrecord_t *record) {
+  return true;
+}
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-#ifdef OLED_ENABLE
-  if (record->event.pressed)
-    oled_timer_reset();
-#endif
+  if (!process_record_keymap(keycode, record))
+    return false;
   switch (keycode) {
   case UPDIR:
     if (record->event.pressed)
