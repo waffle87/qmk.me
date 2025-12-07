@@ -63,10 +63,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (!process_record_rgb_matrix(keycode, record))
     return false;
 #endif
-#ifdef QUANTUM_PAINTER_ENABLE
-  if (record->event.pressed)
-    display_timer_reset();
-#endif
 #ifdef OLED_ENABLE
   if (record->event.pressed)
     oled_timer_reset();

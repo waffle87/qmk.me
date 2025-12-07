@@ -23,10 +23,6 @@ ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
 	SRC += $(USER_PATH)/colour.c
 endif
 
-ifeq ($(strip $(QUANTUM_PAINTER_ENABLE)), yes)
-	SRC += $(USER_PATH)/painter.c $(USER_PATH)/fonts.qff.c
-endif
-
 ifeq ($(PLATFORM), CHIBIOS)
 	ifeq ($(MCU_SERIES), RP2040)
 		RP2040_MATH_IN_ROM = no

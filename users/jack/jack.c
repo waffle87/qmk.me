@@ -2,23 +2,12 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "jack.h"
 
-__attribute__((weak)) void housekeeping_task_keymap(void) {}
-void housekeeping_task_user(void) {
-#ifdef QUANTUM_PAINTER_ENABLE
-  housekeeping_task_qp();
-#endif
-  housekeeping_task_keymap();
-}
-
 __attribute__((weak)) void keyboard_post_init_keymap(void) {}
 void keyboard_post_init_user(void) {
 #ifdef RGBLIGHT_ENABLE
   rgblight_enable_noeeprom();
   rgblight_sethsv_noeeprom(HSV_CYAN);
   rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
-#endif
-#ifdef QUANTUM_PAINTER_ENABLE
-  keyboard_post_init_qp();
 #endif
 #ifdef AUTOCORRECT_ENABLE
   if (!autocorrect_is_enabled())

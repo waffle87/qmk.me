@@ -20,13 +20,6 @@ void em_dash_mins(tap_dance_state_t *state, void *user_data);
 void ply_nxt_prv(tap_dance_state_t *state, void *user_data);
 #endif
 
-#ifdef QUANTUM_PAINTER_ENABLE
-extern painter_font_handle_t qp_font;
-void keyboard_post_init_qp(void);
-void display_timer_reset(void);
-void housekeeping_task_qp(void);
-#endif
-
 #ifdef OLED_ENABLE
 bool oled_task_keymap(void);
 void oled_timer_reset(void);
@@ -34,7 +27,6 @@ void oled_timer_reset(void);
 
 void keyboard_pre_init_keymap(void);
 void keyboard_post_init_keymap(void);
-void housekeeping_task_keymap(void);
 
 #ifdef RGB_MATRIX_ENABLE
 #define XRGB_TOG RM_TOGG
