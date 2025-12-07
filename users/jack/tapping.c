@@ -59,10 +59,6 @@ void ply_nxt_prv(tap_dance_state_t *state, void *user_data) {
 #endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-#ifdef UNICODE_COMMON_ENABLE
-  if (!process_record_unicode(keycode, record))
-    return false;
-#endif
 #ifdef RGB_MATRIX_ENABLE
   if (!process_record_rgb_matrix(keycode, record))
     return false;

@@ -7,29 +7,13 @@ enum layers { LAYER0, LAYER1, LAYER3 };
 
 enum tapdances { EM_DASH_MINS, PLY_NXT_PRV, CBRACKET, SBRACKET };
 
-enum custom_keycodes {
-  UPDIR = QK_USER,
-  REMOVE,
-  MS_JIGGLE,
-  UC_NOMODE,
-  UC_WIDE,
-  UC_SCRIPT,
-  UC_BLOCKS,
-  UC_REGIONAL,
-  UC_AUSSIE,
-  UC_ZALGO,
-  UC_SUPER
-};
+enum custom_keycodes { UPDIR = QK_USER, REMOVE, MS_JIGGLE };
 
 #define CMB(name, action, ...) name,
 enum combos {
 #include "combos.def"
 };
 #undef CMB
-
-#ifdef UNICODE_COMMON_ENABLE
-bool process_record_unicode(uint16_t keycode, keyrecord_t *record);
-#endif
 
 #ifdef TAP_DANCE_ENABLE
 void em_dash_mins(tap_dance_state_t *state, void *user_data);
@@ -126,8 +110,8 @@ void housekeeping_task_keymap(void);
 // #define ___LAYER12___ KC_VOLD, KC_6, KC_5, KC_4, _______, _______, _______, _______, _______, _______
 // #define ___LAYER13___ _______, _______, _______, _______
 
-#define ___LAYER30___ XRGB_TOG, XRGB_NXT,  XRGB_HUI, XRGB_SAI, XRGB_VAI, UC_NOMODE, UC_SCRIPT, UC_BLOCKS, UC_REGIONAL, QK_MAKE
-#define ___LAYER31___ MS_JIGGLE, XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD, UC_WIDE, UC_AUSSIE, UC_ZALGO, UC_SUPER, QK_BOOT
+#define ___LAYER30___ XRGB_TOG, XRGB_NXT,  XRGB_HUI, XRGB_SAI, XRGB_VAI, _______, _______, _______, _______, QK_MAKE
+#define ___LAYER31___ MS_JIGGLE, XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD, _______, _______, _______, _______, QK_BOOT
 #define ___LAYER32___ KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10
 #define ___LAYER33___ _______, _______, _______, _______
 // clang-format on
