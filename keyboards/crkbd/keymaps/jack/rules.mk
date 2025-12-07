@@ -1,9 +1,0 @@
-CONVERT_TO = proton_c
-SERIAL_DRIVER = usart
-WS2812_DRIVER = pwm
-OLED_ENABLE = yes
-AUDIO_ENABLE = yes
-AUDIO_DRIVER = dac_basic
-ENCODER_ENABLE = yes
-POINTING_DEVICE_ENABLE = yes
-POINTING_DEVICE_DRIVER = pimoroni_trackball

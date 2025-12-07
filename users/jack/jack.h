@@ -7,13 +7,7 @@ enum layers { LAYER0, LAYER1, LAYER3 };
 
 enum tapdances { EM_DASH_MINS, PLY_NXT_PRV, CBRACKET, SBRACKET };
 
-enum custom_keycodes { UPDIR = QK_USER, REMOVE, MS_JIGGLE };
-
-#define CMB(name, action, ...) name,
-enum combos {
-#include "combos.def"
-};
-#undef CMB
+enum custom_keycodes { UPDIR = QK_USER, REMOVE };
 
 #ifdef TAP_DANCE_ENABLE
 void em_dash_mins(tap_dance_state_t *state, void *user_data);
@@ -97,7 +91,7 @@ void keyboard_post_init_keymap(void);
 // #define ___LAYER13___ _______, _______, _______, _______
 
 #define ___LAYER30___ XRGB_TOG, XRGB_NXT,  XRGB_HUI, XRGB_SAI, XRGB_VAI, _______, _______, _______, _______, QK_MAKE
-#define ___LAYER31___ MS_JIGGLE, XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD, _______, _______, _______, _______, QK_BOOT
+#define ___LAYER31___ LUMINO, XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD, _______, _______, _______, _______, QK_BOOT
 #define ___LAYER32___ KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10
 #define ___LAYER33___ _______, _______, _______, _______
 // clang-format on

@@ -11,16 +11,9 @@ CAPS_WORD_ENABLE = yes
 TAP_DANCE_ENABLE = yes
 SPACE_CADET_ENABLE = no
 AUTOCORRECT_ENABLE = yes
-MOUSE_JIGGLE_ENABLE = yes
 OS_DETECTION_ENABLE = yes
-INTROSPECTION_KEYMAP_C = user_introspection.c
-
-SRC += $(USER_PATH)/jack.c $(USER_PATH)/tapping.c
+INTROSPECTION_KEYMAP_C = jack.c
 
 ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
 	SRC += $(USER_PATH)/colour.c
-endif
-
-ifeq ($(PLATFORM), CHIBIOS)
-	EXTRAFLAGS += -O3
 endif

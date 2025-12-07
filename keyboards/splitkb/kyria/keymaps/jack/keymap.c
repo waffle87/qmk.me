@@ -19,10 +19,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [LAYER3] = LAYOUT_jack(
-    _______, XRGB_TOG,  XRGB_NXT, XRGB_HUI, XRGB_SAI, XRGB_VAI,                                        _______, _______, _______, _______, QK_MAKE, _______,
-    _______, MS_JIGGLE, XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD,                                        _______, _______, _______, _______, QK_BOOT, _______,
-    _______, KC_F1,     KC_F2,    KC_F3,    KC_F4,    KC_F5,  _______, _______,      _______, _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
-                                   _______, _______, _______, _______, _______,      _______, _______, _______, _______, _______
+    _______, XRGB_TOG, XRGB_NXT, XRGB_HUI, XRGB_SAI, XRGB_VAI,                                        _______, _______, _______, _______, QK_MAKE, _______,
+    _______, LUMINO,   XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD,                                        _______, _______, _______, _______, QK_BOOT, _______,
+    _______, KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,  _______, _______,      _______, _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
+                                  _______, _______, _______, _______, _______,      _______, _______, _______, _______, _______
   )
 };
 // clang-format on

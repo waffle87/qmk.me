@@ -1,5 +1,0 @@
-ifeq ($(strip $(MOUSE_JIGGLE_ENABLE)), yes)
-	OPT_DEFS += -DMOUSE_JIGGLE_ENABLE
-	MOUSEKEY_ENABLE = yes
-	DEFERRED_EXEC_ENABLE = yes
-endif
