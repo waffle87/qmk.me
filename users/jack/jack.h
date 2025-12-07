@@ -9,6 +9,12 @@ enum tapdances { EM_DASH_MINS, PLY_NXT_PRV, CBRACKET, SBRACKET };
 
 enum custom_keycodes { UPDIR = QK_USER, REMOVE };
 
+#define CMB(name, action, ...) name,
+enum combos {
+#include "combos.def"
+};
+#undef CMB
+
 #ifdef TAP_DANCE_ENABLE
 void em_dash_mins(tap_dance_state_t *state, void *user_data);
 void ply_nxt_prv(tap_dance_state_t *state, void *user_data);
@@ -76,7 +82,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 // #define ___LAYER00___ KC_X, KC_Q, KC_M, KC_W, KC_Z, KC_K, KC_F, KC_QUOT, KC_SCLN, KC_DOT
 // #define ___LAYER03___ _______, _______, _______, _______
 
-#define ___LAYER10___ KC_GRV, KC_LT, KC_RT, KC_DQUO, KC_DOT, KC_AMPR, REMOVE, KC_LBRC, KC_RBRC, KC_PERC
+#define ___LAYER10___ KC_GRV, KC_LABK, KC_RABK, KC_DQUO, KC_DOT, KC_AMPR, REMOVE, KC_LBRC, KC_RBRC, KC_PERC
 #define ___LAYER11___ HRML(KC_EXLM, KC_MINS, KC_PLUS, KC_EQL), KC_HASH, KC_PIPE, HRMR(KC_COLN, KC_LPRN, KC_RPRN, KC_QUES)
 #define ___LAYER12___ KC_CIRC, KC_SLSH, KC_ASTR, KC_BSLS, UPDIR, KC_TILD, KC_DLR, KC_LCBR, KC_RCBR, KC_AT
 #define ___LAYER13___ _______, _______, _______, _______
@@ -87,7 +93,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 // #define ___LAYER13___ _______, _______, _______, _______
 
 #define ___LAYER30___ XRGB_TOG, XRGB_NXT,  XRGB_HUI, XRGB_SAI, XRGB_VAI, _______, _______, _______, _______, QK_MAKE
-#define ___LAYER31___ LUMINO, XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD, _______, _______, _______, _______, QK_BOOT
+#define ___LAYER31___ _______, XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD, _______, _______, _______, _______, QK_BOOT
 #define ___LAYER32___ KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10
 #define ___LAYER33___ _______, _______, _______, _______
 // clang-format on

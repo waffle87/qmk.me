@@ -15,7 +15,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,      KC_1,    KC_2 ,  KC_3,    KC_4,    KC_5,                                             KC_6,         KC_7,    KC_8,    KC_9,    KC_0,     _______,
     _______, HRML(KC_EXLM, KC_AT,  KC_HASH, KC_DLR), KC_PERC,                                          KC_CIRC, HRMR(KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN), _______,
     _______,      KC_VOLD, KC_TAB, KC_CAPS, REMOVE,  KC_GRV,  _______, _______,      _______, _______, KC_LEFT,      KC_DOWN, KC_UP,   KC_RGHT, KC_VOLU,  _______,
-                                   _______, _______, _______, _______, _______,      _______, _______, SWTCH, _______, _______
+                                   _______, _______, _______, _______, _______,      _______, _______, _______, _______, _______
   ),
 
   [LAYER3] = LAYOUT_jack(
@@ -70,7 +70,7 @@ void oled_wpm(void) {
   oled_write_ln(get_u8_str(get_current_wpm(), ' '), false);
 }
 
-bool oled_task_keymap(void) {
+bool oled_task_user(void) {
   if (is_keyboard_master()) {
     if (timer_elapsed32(oled_timer) > THREE_MIN) {
       oled_off();

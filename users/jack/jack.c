@@ -87,13 +87,6 @@ void ply_nxt_prv(tap_dance_state_t *state, void *user_data) {
     break;
   }
 }
-
-tap_dance_action_t tap_dance_actions[] = {
-    [EM_DASH_MINS] = ACTION_TAP_DANCE_FN(em_dash_mins),
-    [PLY_NXT_PRV] = ACTION_TAP_DANCE_FN(ply_nxt_prv),
-    [CBRACKET] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
-    [SBRACKET] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
-};
 #endif
 __attribute__((weak)) bool process_record_keymap(uint16_t keycode,
                                                  keyrecord_t *record) {
@@ -127,42 +120,3 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
   return true;
 }
-
-#ifdef ENCODER_MAP_ENABLE
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    [LAYER0] = {{KC_VOLU, KC_VOLD}, {KC_MNXT, KC_MPRV}},
-    [LAYER1] = {{XRGB_SAI, XRGB_SAD}, {XRGB_HUI, XRGB_HUD}},
-    [LAYER3] = {{C(KC_LEFT), C(KC_RGHT)}, {C(S(KC_TAB)), C(KC_TAB)}}};
-#endif
-
-#ifdef COMBO_ENABLE
-const uint16_t PROGMEM we_eqal[] = {KC_W, KC_E, COMBO_END};
-const uint16_t PROGMEM er_cbkt[] = {KC_E, KC_R COMBO_END};
-const uint16_t PROGMEM rt_bsls[] = {KC_R, KC_T, COMBO_END};
-const uint16_t PROGMEM yu_quot[] = {KC_Y, KC_U, COMBO_END};
-const uint16_t PROGMEM ui_brkt[] = {KC_U, KC_I, COMBO_END};
-const uint16_t PROGMEM io_mins[] = {KC_I, KC_O, COMBO_END};
-const uint16_t PROGMEM sd_plus[] = {LGUI_T(KC_S), LCTL_T(KC_D), COMBO_END};
-const uint16_t PROGMEM df_coln[] = {LCTL_T(KC_D), LSFT_T(KC_F), COMBO_END};
-const uint16_t PROGMEM fg_pipe[] = {LSFT_T(KC_F), KC_G, COMBO_END};
-const uint16_t PROGMEM hj_dquo[] = {KC_H, RSFT_T(KC_J), COMBO_END};
-const uint16_t PROGMEM jk_entr[] = {RSFT_T(KC_J), RCTL_T(KC_K), COMBO_END};
-const uint16_t PROGMEM kl_unds[] = {RCTL_T(KC_K), RGUI_T(KC_L), COMBO_END};
-
-combo_t key_combos[] = {
-    // clang-format off
-    COMBO(we_eqal, KC_EQL),
-    COMBO(er_cbkt, TD(CBRACKET)),
-    COMBO(rt_bsls, KC_BSLS),
-    COMBO(yu_quot, KC_QUOT),
-    COMBO(ui_brkt, TD(SBRACKET)),
-    COMBO(io_mins, TD(EM_DASH_MINS)),
-    COMBO(sd_plus, KC_PLUS),
-    COMBO(df_coln, KC_COLN),
-    COMBO(fg_pipe, KC_PIPE),
-    COMBO(hj_dquo, KC_DQUO),
-    COMBO(jk_entr, KC_ENT),
-    COMBO(kl_unds, KC_UNDS)
-    // clang-format on
-};
-#endif
