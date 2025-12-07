@@ -1,5 +1,4 @@
 LTO_ENABLE = yes
-TOP_SYMBOLS = yes
 MAGIC_ENABLE = yes
 COMBO_ENABLE = yes
 COMMAND_ENABLE = no
@@ -14,7 +13,6 @@ SPACE_CADET_ENABLE = no
 AUTOCORRECT_ENABLE = yes
 MOUSE_JIGGLE_ENABLE = yes
 OS_DETECTION_ENABLE = yes
-DEBOUNCE_TYPE = asym_eager_defer_pk
 INTROSPECTION_KEYMAP_C = user_introspection.c
 
 SRC += $(USER_PATH)/jack.c $(USER_PATH)/tapping.c
@@ -26,7 +24,6 @@ endif
 ifeq ($(PLATFORM), CHIBIOS)
 	ifeq ($(MCU_SERIES), RP2040)
 		RP2040_MATH_IN_ROM = no
-		PROGRAM_CMD = doas picotool load $(BUILD_DIR)/$(TARGET).uf2
 	endif
 	EXTRAFLAGS += -O3
 endif
