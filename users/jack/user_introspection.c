@@ -13,9 +13,9 @@ tap_dance_action_t tap_dance_actions[] = {
 
 #ifdef ENCODER_MAP_ENABLE
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    [_BASE] = {{KC_VOLU, KC_VOLD}, {KC_MNXT, KC_MPRV}},
-    [_LOWER] = {{XRGB_SAI, XRGB_SAD}, {XRGB_HUI, XRGB_HUD}},
-    [_RAISE] = {{C(KC_LEFT), C(KC_RGHT)}, {C(S(KC_TAB)), C(KC_TAB)}}};
+    [LAYER0] = {{KC_VOLU, KC_VOLD}, {KC_MNXT, KC_MPRV}},
+    [LAYER1] = {{XRGB_SAI, XRGB_SAD}, {XRGB_HUI, XRGB_HUD}},
+    [LAYER3] = {{C(KC_LEFT), C(KC_RGHT)}, {C(S(KC_TAB)), C(KC_TAB)}}};
 #endif
 
 #ifdef COMBO_ENABLE

@@ -4,23 +4,23 @@
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_BASE] = LAYOUT_jack(
-    ___BASE1___,
-    ___BASE2___,
-    ___BASE3___,
-    ___BASE4___
+  [LAYER0] = LAYOUT_jack(
+    ___LAYER00___,
+    ___LAYER01___,
+    ___LAYER02___,
+    ___LAYER03___
   ),
-  [_LOWER] = LAYOUT_jack(
-    ___LOWER1___,
-    ___LOWER2___,
-    ___LOWER3___,
-    ___LOWER4___
+  [LAYER1] = LAYOUT_jack(
+    ___LAYER10___,
+    ___LAYER11___,
+    ___LAYER12___,
+    ___LAYER13___
   ),
-  [_RAISE] = LAYOUT_jack(
-    ___RAISE1___,
-    ___RAISE2___,
-    ___RAISE3___,
-    ___RAISE4___
+  [LAYER3] = LAYOUT_jack(
+    ___LAYER30___,
+    ___LAYER31___,
+    ___LAYER32___,
+    ___LAYER33___
   )
 };
 // clang-format on

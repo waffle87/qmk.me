@@ -3,7 +3,7 @@
 #pragma once
 #include QMK_KEYBOARD_H
 
-enum layers { _BASE, _LOWER, _RAISE };
+enum layers { LAYER0, LAYER1, LAYER3 };
 
 enum tapdances { EM_DASH_MINS, PLY_NXT_PRV, CBRACKET, SBRACKET };
 
@@ -96,29 +96,46 @@ void housekeeping_task_keymap(void);
 #define XRGB_VAD _______
 #endif
 
-#define ESCLWR LT(_LOWER, KC_ESC)
-#define PSTRSE LT(_RAISE, KC_PSTE)
-#define LWRSPC LT(_LOWER, KC_SPC)
-#define RSEBSP LT(_RAISE, KC_BSPC)
+#define ESCLWR LT(LAYER1, KC_ESC)
+#define PSTRSE LT(LAYER3, KC_PSTE)
+#define LWRSPC LT(LAYER1, KC_SPC)
+#define RSEBSP LT(LAYER3, KC_BSPC)
 #define PNP TD(PLY_NXT_PRV)
 #define HRML(k1, k2, k3, k4) LALT_T(k1), LGUI_T(k2), LCTL_T(k3), LSFT_T(k4)
 #define HRMR(k1, k2, k3, k4) RSFT_T(k1), RCTL_T(k2), RGUI_T(k3), RALT_T(k4)
 
 // clang-format off
-#define ___BASE1___ KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P
-#define ___BASE2___ HRML(KC_A, KC_S, KC_D, KC_F), KC_G, KC_H, HRMR(KC_J, KC_K, KC_L, KC_SCLN)
-#define ___BASE3___ KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH
-#define ___BASE4___ ESCLWR, KC_SPC, KC_BSPC, PSTRSE
+#define ___LAYER00___ KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P
+#define ___LAYER01___ HRML(KC_A, KC_S, KC_D, KC_F), KC_G, KC_H, HRMR(KC_J, KC_K, KC_L, KC_SCLN)
+#define ___LAYER02___ KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH
+#define ___LAYER03___ ESCLWR, KC_SPC, KC_BSPC, PSTRSE
 
-#define ___LOWER1___ KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0
-#define ___LOWER2___ HRML(KC_EXLM, KC_AT, KC_HASH, KC_DLR), KC_PERC, KC_CIRC, HRMR(KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN)
-#define ___LOWER3___ KC_VOLD, KC_TAB, KC_CAPS, REMOVE, KC_GRV, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_VOLU
-#define ___LOWER4___ _______, _______, _______, PNP
+// https://oxey.dev/sturdy/index.html
+// #define ___LAYER00___ KC_V, KC_M, KC_L, KC_C, KC_P, KC_X, KC_F, KC_O, KC_U, KC_J
+// #define ___LAYER01___ KC_S, KC_T, KC_R, KC_D, KC_Y, KC_DOT, KC_N, KC_A, KC_E, KC_I
+// #define ___LAYER02___ KC_Z, KC_K, KC_Q, KC_G, KC_W, KC_B, KC_H, KC_QUOT, KC_SCLN, KC_COMM
+// #define ___LAYER03___ _______, _______, _______, _______
 
-#define ___RAISE1___ XRGB_TOG, XRGB_NXT,  XRGB_HUI, XRGB_SAI, XRGB_VAI, UC_NOMODE, UC_SCRIPT, UC_BLOCKS, UC_REGIONAL, QK_MAKE
-#define ___RAISE2___ MS_JIGGLE, XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD, UC_WIDE, UC_AUSSIE, UC_ZALGO, UC_SUPER, QK_BOOT
-#define ___RAISE3___ KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10
-#define ___RAISE4___ UPDIR, _______, _______, _______
+// https://github.com/GalileoBlues/Gallium
+// #define ___LAYER00___ KC_B, KC_L, KC_D, KC_C, KC_V KC_J, KC_Y, KC_O, KC_U, KC_COMM
+// #define ___LAYER00___ KC_N, KC_R, KC_T, KC_S, KC_G, KC_P, KC_H, KC_A, KC_E, KC_I
+// #define ___LAYER00___ KC_X, KC_Q, KC_M, KC_W, KC_Z, KC_K, KC_F, KC_QUOT, KC_SCLN, KC_DOT
+// #define ___LAYER03___ _______, _______, _______, _______
+
+#define ___LAYER10___ KC_GRV, KC_LT, KC_RT, KC_DQUO, KC_DOT, KC_AMPR, REMOVE, KC_LBRC, KC_RBRC, KC_PERC
+#define ___LAYER11___ HRML(KC_EXLM, KC_MINS, KC_PLUS, KC_EQL), KC_HASH, KC_PIPE, HRMR(KC_COLN, KC_LPRN, KC_RPRN, KC_QUES)
+#define ___LAYER12___ KC_CIRC, KC_SLSH, KC_ASTR, KC_BSLS, UPDIR, KC_TILD, KC_DLR, KC_LCBR, KC_RCBR, KC_AT
+#define ___LAYER13___ _______, _______, _______, _______
+
+// #define ___LAYER10___ _______, KC_9, KC_8, KC_7, KC_TAB, _______, _______, _______, _______, _______
+// #define ___LAYER11___ HRML(KC_VOLU, KC_3, KC_2, KC_1), KC_CAPS, KC_LEFT, HRMR(KC_DOWN, KC_UP, KC_RGHT, _______)
+// #define ___LAYER12___ KC_VOLD, KC_6, KC_5, KC_4, _______, _______, _______, _______, _______, _______
+// #define ___LAYER13___ _______, _______, _______, _______
+
+#define ___LAYER30___ XRGB_TOG, XRGB_NXT,  XRGB_HUI, XRGB_SAI, XRGB_VAI, UC_NOMODE, UC_SCRIPT, UC_BLOCKS, UC_REGIONAL, QK_MAKE
+#define ___LAYER31___ MS_JIGGLE, XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD, UC_WIDE, UC_AUSSIE, UC_ZALGO, UC_SUPER, QK_BOOT
+#define ___LAYER32___ KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10
+#define ___LAYER33___ _______, _______, _______, _______
 // clang-format on
 
 #define LAYOUT_jack_60_ts(...) LAYOUT_60_ansi_tsangan(__VA_ARGS__)

@@ -1,25 +1,25 @@
-// Copyright 2025 jack_all@pngu.org
+// Copyright 2025 jack@pngu.org
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "jack.h"
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_BASE] = LAYOUT_jack_all(
-    ___BASE1___, XXXXXXX,
-    ___BASE2___,
-    ___BASE3___,
+  [LAYER0] = LAYOUT_jack_all(
+    ___LAYER00___, XXXXXXX,
+    ___LAYER01___,
+    ___LAYER02___,
     UPDIR, KC_ESC, LWRSPC, XXXXXXX, RSEBSP, C(S(KC_V)), PNP
   ),
-  [_LOWER] = LAYOUT_jack_all(
-    ___LOWER1___, _______,
-    ___LOWER2___,
-    ___LOWER3___,
+  [LAYER1] = LAYOUT_jack_all(
+    ___LAYER10___, _______,
+    ___LAYER11___,
+    ___LAYER12___,
     _______, _______, _______, _______, SWTCH, _______, _______
   ),
-  [_RAISE] = LAYOUT_jack_all(
-    ___RAISE1___, _______,
-    ___RAISE2___,
-    ___RAISE3___,
+  [LAYER3] = LAYOUT_jack_all(
+    ___LAYER30___, _______,
+    ___LAYER31___,
+    ___LAYER32___,
     _______, _______, _______, _______, _______, _______, _______
   )
 };

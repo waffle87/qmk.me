@@ -4,22 +4,22 @@
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_BASE] = LAYOUT_jack(
-    _______, ___BASE1___, _______,
-    _______, ___BASE2___,
-    _______, ___BASE3___,
+  [LAYER0] = LAYOUT_jack(
+    _______, ___LAYER00___, _______,
+    _______, ___LAYER01___,
+    _______, ___LAYER02___,
     UPDIR, KC_ESC, LWRSPC, RSEBSP, C(S(KC_V)), PNP
   ),
-  [_LOWER] = LAYOUT_jack(
-    _______, ___LOWER1___, _______,
-    _______, ___LOWER2___,
-    _______, ___LOWER3___,
+  [LAYER1] = LAYOUT_jack(
+    _______, ___LAYER10___, _______,
+    _______, ___LAYER11___,
+    _______, ___LAYER12___,
     _______, _______, _______, _______, _______, _______
   ),
-  [_RAISE] = LAYOUT_jack(
-    _______, ___RAISE1___, _______,
-    _______, ___RAISE2___,
-    _______, ___RAISE3___,
+  [LAYER3] = LAYOUT_jack(
+    _______, ___LAYER30___, _______,
+    _______, ___LAYER31___,
+    _______, ___LAYER32___,
     _______, _______, _______, _______, _______, _______
   )
 };

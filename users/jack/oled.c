@@ -82,13 +82,13 @@ void oled_layer_anim(void) {
   if (timer_elapsed(layer_anim_timer) > 200) {
     layer_anim_timer = timer_read();
     switch (get_highest_layer(layer_state)) {
-    case _BASE:
+    case LAYER0:
       anim_frame(520, tap_num);
       break;
-    case _LOWER:
+    case LAYER1:
       anim_frame(650, tap_sym);
       break;
-    case _RAISE:
+    case LAYER3:
       anim_frame(520, tap_sys);
       break;
     }
@@ -106,10 +106,10 @@ void oled_layer_status(void) {
                                        0x20, 0xb7, 0xb8, 0xb9, 0x20,
                                        0x20, 0xd7, 0xd8, 0xd9, 0x20};
   switch (get_highest_layer(layer_state)) {
-  case _LOWER:
+  case LAYER1:
     oled_write(lower, false);
     break;
-  case _RAISE:
+  case LAYER3:
     oled_write(raise, false);
     break;
   default:
