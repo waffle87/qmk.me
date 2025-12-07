@@ -43,15 +43,11 @@ bool process_detected_host_os_user(os_variant_t detected_os) {
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-  case ESCLWR:
-  case PSTRSE:
-  case LWRSPC:
-  case RSEBSP:
+  case ESC_L1:
+  case REP_L2:
     return TAPPING_TERM - 40;
   case TD(EM_DASH_MINS):
   case TD(PLY_NXT_PRV):
-  case TD(CBRACKET):
-  case TD(SBRACKET):
     return TAPPING_TERM + 60;
   default:
     return TAPPING_TERM;
@@ -63,7 +59,7 @@ void em_dash_mins(tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
   case 3:
 #ifdef UNICODE_COMMON_ENABLE
-    register_unicode(0x2014); // —
+    register_unicode(0x2014);
 #endif
     break;
   case 2:
@@ -109,14 +105,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       tap_code(KC_UP);
     }
     break;
-    INTERCEPT_MOD_TAP(LALT_T, KC_EXLM)
-    INTERCEPT_MOD_TAP(LGUI_T, KC_AT)
-    INTERCEPT_MOD_TAP(LCTL_T, KC_HASH)
-    INTERCEPT_MOD_TAP(LSFT_T, KC_DLR)
-    INTERCEPT_MOD_TAP(RSFT_T, KC_AMPR)
-    INTERCEPT_MOD_TAP(RCTL_T, KC_ASTR)
-    INTERCEPT_MOD_TAP(RGUI_T, KC_LPRN)
-    INTERCEPT_MOD_TAP(RALT_T, KC_RPRN)
   }
   return true;
 }

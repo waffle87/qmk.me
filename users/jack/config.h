@@ -21,6 +21,7 @@
 #define THREE_MIN (1000 * 60) * 3
 #define ENABLE_COMPILE_KEYCODE
 
+// RGB Matrix configuration
 #ifdef RGB_MATRIX_ENABLE
 #define RGB_MATRIX_SLEEP
 #define LUMINO_LONG_TIMEOUT THREE_MIN

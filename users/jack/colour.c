@@ -10,7 +10,7 @@
 
 // Adapted from https://fastled.io/docs/hsv2rgb_8cpp_source.html
 // void hsv2rgb_rainbow() function
-RGB rgb_matrix_hsv_to_rgb(const HSV hsv) {
+rgb_t rgb_matrix_hsv_to_rgb(hsv_t hsv) {
   // Yellow has a higher inherent brightness than
   // any other color; 'pure' yellow is perceived to
   // be 93% as bright as white.  In order to make
@@ -136,5 +136,5 @@ RGB rgb_matrix_hsv_to_rgb(const HSV hsv) {
       b = scale8(b, val);
     }
   }
-  return (RGB){.r = r, .g = g, .b = b};
+  return (rgb_t){.r = r, .g = g, .b = b};
 }
