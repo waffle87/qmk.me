@@ -4,9 +4,6 @@
 
 __attribute__((weak)) void housekeeping_task_keymap(void) {}
 void housekeeping_task_user(void) {
-#ifdef RGB_MATRIX_ENABLE
-  housekeeping_task_rgb_matrix();
-#endif
 #ifdef QUANTUM_PAINTER_ENABLE
   housekeeping_task_qp();
 #endif
@@ -19,9 +16,6 @@ void keyboard_post_init_user(void) {
   rgblight_enable_noeeprom();
   rgblight_sethsv_noeeprom(HSV_CYAN);
   rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
-#endif
-#ifdef RGB_MATRIX_ENABLE
-  keyboard_post_init_rgb_matrix();
 #endif
 #ifdef QUANTUM_PAINTER_ENABLE
   keyboard_post_init_qp();

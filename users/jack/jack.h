@@ -31,12 +31,6 @@ enum combos {
 bool process_record_unicode(uint16_t keycode, keyrecord_t *record);
 #endif
 
-#ifdef RGB_MATRIX_ENABLE
-void housekeeping_task_rgb_matrix(void);
-void keyboard_post_init_rgb_matrix(void);
-bool process_record_rgb_matrix(uint16_t keycode, keyrecord_t *record);
-#endif
-
 #ifdef TAP_DANCE_ENABLE
 void em_dash_mins(tap_dance_state_t *state, void *user_data);
 void ply_nxt_prv(tap_dance_state_t *state, void *user_data);

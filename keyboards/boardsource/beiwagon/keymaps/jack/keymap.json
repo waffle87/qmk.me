@@ -1,5 +1,6 @@
 {
   "modules": [
+    "getreuer/lumino",
     "getreuer/palettefx"
   ]
 }

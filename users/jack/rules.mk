@@ -25,7 +25,7 @@ ifeq ($(strip $(OLED_ENABLE)), yes)
 endif
 
 ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
-	SRC += $(USER_PATH)/colour.c $(USER_PATH)/rgb_matrix.c
+	SRC += $(USER_PATH)/colour.c
 endif
 
 ifeq ($(strip $(QUANTUM_PAINTER_ENABLE)), yes)
