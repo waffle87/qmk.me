@@ -1,0 +1,2 @@
+include picosdk_math.mk
+MCU_LDSCRIPT = RP2040_FLASH_TIMECRIT_ROM_MATH

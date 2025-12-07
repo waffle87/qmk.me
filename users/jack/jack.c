@@ -51,17 +51,3 @@ bool oled_task_user(void) {
   return false;
 }
 #endif
-
-__attribute__((weak)) void keyboard_pre_init_keymap(void) {}
-void keyboard_pre_init_user(void) {
-#ifdef RP2040_MATH_IN_ROM
-  typedef void (*init_fn)(void);
-  extern init_fn __preinit_array_base__;
-  extern init_fn __preinit_array_end__;
-
-  for (init_fn *func = &__preinit_array_base__; func < &__preinit_array_end__;
-       func++)
-    (*func)();
-#endif
-  keyboard_pre_init_keymap();
-}

@@ -22,8 +22,5 @@ ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
 endif
 
 ifeq ($(PLATFORM), CHIBIOS)
-	ifeq ($(MCU_SERIES), RP2040)
-		RP2040_MATH_IN_ROM = no
-	endif
 	EXTRAFLAGS += -O3
 endif
