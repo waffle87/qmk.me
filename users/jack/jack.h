@@ -19,6 +19,14 @@ void keyboard_post_init_keymap(void);
 layer_state_t layer_state_set_keymap(layer_state_t state);
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 
+#define INTERCEPT_MOD_TAP(mod, keycode)                                        \
+  case mod(keycode):                                                           \
+    if (record->tap.count && record->event.pressed) {                          \
+      tap_code16(keycode);                                                     \
+      return false;                                                            \
+    }                                                                          \
+    break;
+
 #ifdef RGB_MATRIX_ENABLE
 #define XRGB_TOG RM_TOGG
 #define XRGB_NXT RM_NEXT
@@ -55,7 +63,6 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 #define REP_L2 LT(LAYER2, QK_REP)
 #define SPC_L1 LT(LAYER1, KC_SPC)
 #define BSPC_L2 LT(LAYER2, KC_BSPC)
-#define PNP TD(PLY_NXT_PRV)
 #define HRML(k1, k2, k3, k4) LALT_T(k1), LGUI_T(k2), LCTL_T(k3), LSFT_T(k4)
 #define HRMR(k1, k2, k3, k4) RSFT_T(k1), RCTL_T(k2), RGUI_T(k3), RALT_T(k4)
 
@@ -65,19 +72,13 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 #define ___LAYER02___ KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH
 #define ___LAYER03___ ESC_L1, KC_SPC, KC_BSPC, REP_L2
 
-// https://oxey.dev/sturdy/index.html
 // #define ___LAYER00___ KC_V, KC_M, KC_L, KC_C, KC_P, KC_X, KC_F, KC_O, KC_U, KC_J
 // #define ___LAYER01___ KC_S, KC_T, KC_R, KC_D, KC_Y, KC_DOT, KC_N, KC_A, KC_E, KC_I
 // #define ___LAYER02___ KC_Z, KC_K, KC_Q, KC_G, KC_W, KC_B, KC_H, KC_QUOT, KC_SCLN, KC_COMM
 
-// https://github.com/GalileoBlues/Gallium
-// #define ___LAYER00___ KC_B, KC_L, KC_D, KC_C, KC_V KC_J, KC_Y, KC_O, KC_U, KC_COMM
-// #define ___LAYER01___ KC_N, KC_R, KC_T, KC_S, KC_G, KC_P, KC_H, KC_A, KC_E, KC_I
-// #define ___LAYER02___ KC_X, KC_Q, KC_M, KC_W, KC_Z, KC_K, KC_F, KC_QUOT, KC_SCLN, KC_DOT
-
-#define ___LAYER10___ PNP, KC_9, KC_8, KC_7, KC_TAB, _______, _______, _______, _______, _______
-#define ___LAYER11___ HRML(KC_VOLU, KC_3, KC_2, KC_1), KC_CAPS, KC_LEFT, HRMR(KC_DOWN, KC_UP, KC_RGHT, _______)
-#define ___LAYER12___ KC_VOLD, KC_6, KC_5, KC_4, _______, _______, _______, _______, _______, _______
+#define ___LAYER10___ KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0
+#define ___LAYER11___ HRML(KC_VOLD, KC_VOLU, KC_TAB, KC_CAPS), _______, KC_LEFT, HRMR(KC_DOWN, KC_UP, KC_RGHT, _______)
+#define ___LAYER12___ _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______
 #define ___LAYER13___ _______, _______, _______, _______
 
 #define ___LAYER20___ KC_GRV, KC_LABK, KC_RABK, KC_DQUO, KC_DOT, KC_AMPR, REMOVE, KC_LBRC, KC_RBRC, KC_PERC

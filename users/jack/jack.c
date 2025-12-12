@@ -43,14 +43,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
   return state;
 }
 
-#define INTERCEPT_MOD_TAP(mod, keycode)                                        \
-  case mod(keycode):                                                           \
-    if (record->tap.count && record->event.pressed) {                          \
-      tap_code16(keycode);                                                     \
-      return false;                                                            \
-    }                                                                          \
-    break;
-
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
   case ESC_L1:

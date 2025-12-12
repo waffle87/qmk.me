@@ -18,7 +18,7 @@
 // Miscellaneous
 #undef MANUFACTURER
 #define MANUFACTURER "jack"
-#define THREE_MIN (1000 * 60) * 3
+#define THREE_MIN 180000
 #define ENABLE_COMPILE_KEYCODE
 
 // RGB Matrix configuration
