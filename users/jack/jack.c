@@ -109,6 +109,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       tap_code(KC_UP);
     }
     break;
+  case REP_L2:
+    if (!record->tap.count) {
+      repeat_key_invoke(&record->event);
+      return false;
+    }
+    break;
+    INTERCEPT_MOD_TAP(LALT_T, KC_EXLM)
+    INTERCEPT_MOD_TAP(LCTL_T, KC_PLUS)
+    INTERCEPT_MOD_TAP(RSFT_T, KC_COLN)
+    INTERCEPT_MOD_TAP(RCTL_T, KC_LPRN)
+    INTERCEPT_MOD_TAP(RGUI_T, KC_RPRN)
+    INTERCEPT_MOD_TAP(RALT_T, KC_QUES)
   }
   return true;
 }

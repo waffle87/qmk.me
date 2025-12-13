@@ -11,7 +11,12 @@ tap_dance_action_t tap_dance_actions[] = {
 
 #ifdef COMBO_ENABLE
 const uint16_t PROGMEM enter_combo[] = {KC_J, KC_K, COMBO_END};
-combo_t key_combos[] = {COMBO(enter_combo, KC_ENT)};
+const uint16_t PROGMEM caps_combo[] = {KC_D, KC_F, COMBO_END};
+
+combo_t key_combos[] = {
+    COMBO(enter_combo, KC_ENT),
+    COMBO(caps_combo, KC_CAPS),
+};
 #endif
 
 #ifdef ENCODER_MAP_ENABLE
