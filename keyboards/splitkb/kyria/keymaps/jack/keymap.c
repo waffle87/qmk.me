@@ -11,7 +11,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       XXXXXXX,  XXXXXXX,  ESC_L1, KC_SPC, XXXXXXX,      XXXXXXX, KC_BSPC, REP_L2, XXXXXXX, XXXXXXX
   ),
   [LAYER1] = LAYOUT_jack(
-    _______,      PNP,     KC_9, KC_8, KC_7,  KC_TAB,                                           _______,      _______, _______, _______, _______,  _______,
+    _______,      TD(PLY_NXT_PRV),     KC_9, KC_8, KC_7,  KC_TAB,                                           _______,      _______, _______, _______, _______,  _______,
     _______, HRML(KC_VOLU, KC_3, KC_2, KC_1), KC_CAPS,                                          KC_LEFT, HRMR(KC_DOWN, KC_UP,   KC_RGHT, _______), _______,
     _______,      KC_VOLD, KC_6, KC_5, KC_4,  _______, _______, _______,      _______, _______, _______,      _______, _______, _______, _______,  _______,
                             _______, _______, _______, _______, _______,      _______, _______, _______, _______, _______

@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "jack.h"
 
-__attribute__((weak)) void keyboard_post_init_keymap(void) {}
 void keyboard_post_init_user(void) {
 #ifdef AUTOCORRECT_ENABLE
   if (!autocorrect_is_enabled())
@@ -33,10 +32,6 @@ bool process_detected_host_os_user(os_variant_t detected_os) {
 }
 #endif
 
-__attribute__((weak))
-layer_state_t layer_state_set_keymap(layer_state_t state) {
-  return state;
-}
 layer_state_t layer_state_set_user(layer_state_t state) {
   state = update_tri_layer_state(state, LAYER1, LAYER2, LAYER3);
   state = layer_state_set_keymap(state);
@@ -87,11 +82,23 @@ void ply_nxt_prv(tap_dance_state_t *state, void *user_data) {
     break;
   }
 }
+
+tap_dance_action_t tap_dance_actions[] = {
+    [EM_DASH_MINS] = ACTION_TAP_DANCE_FN(em_dash_mins),
+    [PLY_NXT_PRV] = ACTION_TAP_DANCE_FN(ply_nxt_prv),
+};
 #endif
-__attribute__((weak)) bool process_record_keymap(uint16_t keycode,
-                                                 keyrecord_t *record) {
-  return true;
-}
+
+#ifdef COMBO_ENABLE
+const uint16_t PROGMEM enter_combo[] = {KC_J, KC_K, COMBO_END};
+const uint16_t PROGMEM caps_combo[] = {KC_D, KC_F, COMBO_END};
+
+combo_t key_combos[] = {
+    COMBO(enter_combo, KC_ENT),
+    COMBO(caps_combo, KC_CAPS),
+};
+#endif
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (!process_record_keymap(keycode, record))
     return false;
@@ -124,3 +131,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
   return true;
 }
+
+#ifdef ENCODER_MAP_ENABLE
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
+    [LAYER0] = {{KC_VOLU, KC_VOLD}, {KC_MNXT, KC_MPRV}},
+    [LAYER1] = {{XRGB_SAI, XRGB_SAD}, {XRGB_HUI, XRGB_HUD}},
+    [LAYER2] = {{_______, _______}, {_______, _______}},
+    [LAYER3] = {{_______, _______}, {_______, _______}},
+};
+#endif

@@ -13,9 +13,9 @@ REPEAT_KEY_ENABLE = yes
 SPACE_CADET_ENABLE = no
 AUTOCORRECT_ENABLE = yes
 OS_DETECTION_ENABLE = yes
-INTROSPECTION_KEYMAP_C = user_introspection.c
+INTROSPECTION_KEYMAP_C = jack.c
 
-SRC += $(USER_PATH)/jack.c
+SRC += $(USER_PATH)/callbacks.c
 
 ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
 	SRC += $(USER_PATH)/colour.c

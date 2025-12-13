@@ -14,7 +14,6 @@ void em_dash_mins(tap_dance_state_t *state, void *user_data);
 void ply_nxt_prv(tap_dance_state_t *state, void *user_data);
 #endif
 
-void keyboard_pre_init_keymap(void);
 void keyboard_post_init_keymap(void);
 layer_state_t layer_state_set_keymap(layer_state_t state);
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
