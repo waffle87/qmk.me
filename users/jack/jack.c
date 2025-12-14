@@ -45,7 +45,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   case SPC_L1:
   case BSPC_L2:
     return TAPPING_TERM - 40;
-  case TD(EM_DASH_MINS):
   case TD(PLY_NXT_PRV):
     return TAPPING_TERM + 60;
   default:
@@ -54,21 +53,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 }
 
 #ifdef TAP_DANCE_ENABLE
-void em_dash_mins(tap_dance_state_t *state, void *user_data) {
-  switch (state->count) {
-  case 3:
-#ifdef UNICODE_COMMON_ENABLE
-    register_unicode(0x2014);
-#endif
-    break;
-  case 2:
-    tap_code(KC_MINS), tap_code(KC_MINS);
-    break;
-  default:
-    tap_code(KC_MINS);
-  }
-}
-
 void ply_nxt_prv(tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
   case 1:
@@ -84,7 +68,6 @@ void ply_nxt_prv(tap_dance_state_t *state, void *user_data) {
 }
 
 tap_dance_action_t tap_dance_actions[] = {
-    [EM_DASH_MINS] = ACTION_TAP_DANCE_FN(em_dash_mins),
     [PLY_NXT_PRV] = ACTION_TAP_DANCE_FN(ply_nxt_prv),
 };
 #endif
@@ -103,6 +86,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (!process_record_keymap(keycode, record))
     return false;
   switch (keycode) {
+  case KC_MINS:
+#ifdef UNICODE_COMMON_ENABLE
+    if (get_mods() & MOD_MASK_SHIFT) {
+      if (record->event.pressed)
+        register_unicode(0x2014);
+      return false;
+    }
+#endif
+    break;
   case UPDIR:
     if (record->event.pressed)
       SEND_STRING("../");
@@ -116,18 +108,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       tap_code(KC_UP);
     }
     break;
+  case USRNME:
+    if (record->event.pressed)
+      SEND_STRING("jack@pngu.org");
+    break;
   case REP_L2:
     if (!record->tap.count) {
       repeat_key_invoke(&record->event);
       return false;
     }
     break;
+    INTERCEPT_MOD_TAP(LALT_T, KC_PLUS)
     INTERCEPT_MOD_TAP(LALT_T, KC_EXLM)
-    INTERCEPT_MOD_TAP(LCTL_T, KC_PLUS)
-    INTERCEPT_MOD_TAP(RSFT_T, KC_COLN)
-    INTERCEPT_MOD_TAP(RCTL_T, KC_LPRN)
-    INTERCEPT_MOD_TAP(RGUI_T, KC_RPRN)
-    INTERCEPT_MOD_TAP(RALT_T, KC_QUES)
+    INTERCEPT_MOD_TAP(LCTL_T, KC_ASTR)
+    INTERCEPT_MOD_TAP(RSFT_T, KC_LPRN)
+    INTERCEPT_MOD_TAP(RCTL_T, KC_RPRN)
+    INTERCEPT_MOD_TAP(RALT_T, KC_DQUO)
   }
   return true;
 }

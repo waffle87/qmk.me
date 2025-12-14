@@ -5,14 +5,9 @@
 
 enum layers { LAYER0, LAYER1, LAYER2, LAYER3 };
 
-enum tapdances { EM_DASH_MINS, PLY_NXT_PRV };
+enum tapdances { PLY_NXT_PRV };
 
-enum custom_keycodes { UPDIR = QK_USER, REMOVE };
-
-#ifdef TAP_DANCE_ENABLE
-void em_dash_mins(tap_dance_state_t *state, void *user_data);
-void ply_nxt_prv(tap_dance_state_t *state, void *user_data);
-#endif
+enum custom_keycodes { UPDIR = QK_USER, REMOVE, USRNME };
 
 void keyboard_post_init_keymap(void);
 layer_state_t layer_state_set_keymap(layer_state_t state);
@@ -68,7 +63,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 // clang-format off
 #define ___LAYER00___ KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P
 #define ___LAYER01___ HRML(KC_A, KC_S, KC_D, KC_F), KC_G, KC_H, HRMR(KC_J, KC_K, KC_L, KC_SCLN)
-#define ___LAYER02___ KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH
+#define ___LAYER02___ KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_QUOT
 #define ___LAYER03___ ESC_L1, KC_SPC, KC_BSPC, REP_L2
 
 // #define ___LAYER00___ KC_V, KC_M, KC_L, KC_C, KC_P, KC_X, KC_F, KC_O, KC_U, KC_J
@@ -76,13 +71,13 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 // #define ___LAYER02___ KC_Z, KC_K, KC_Q, KC_G, KC_W, KC_B, KC_H, KC_QUOT, KC_SCLN, KC_COMM
 
 #define ___LAYER10___ KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0
-#define ___LAYER11___ HRML(KC_VOLD, KC_VOLU, _______, _______), TD(PLY_NXT_PRV), KC_LEFT, HRMR(KC_DOWN, KC_UP, KC_RGHT, _______)
-#define ___LAYER12___ _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______
+#define ___LAYER11___ HRML(KC_PLUS, KC_MINS, KC_ASTR, KC_SLSH), REMOVE, KC_LEFT, HRMR(KC_DOWN, KC_UP, KC_RGHT, _______)
+#define ___LAYER12___ KC_VOLD, TD(PLY_NXT_PRV), KC_VOLU, _______, USRNME, _______, _______, _______, _______, _______
 #define ___LAYER13___ _______, _______, _______, _______
 
-#define ___LAYER20___ KC_GRV, KC_LABK, KC_RABK, KC_DQUO, KC_TAB, KC_AMPR, REMOVE, KC_LBRC, KC_RBRC, KC_PERC
-#define ___LAYER21___ HRML(KC_EXLM, TD(EM_DASH_MINS), KC_PLUS, KC_EQL), KC_HASH, KC_PIPE, HRMR(KC_COLN, KC_LPRN, KC_RPRN, KC_QUES)
-#define ___LAYER22___ KC_CIRC, KC_SLSH, KC_ASTR, KC_BSLS, UPDIR, KC_TILD, KC_DLR, KC_LCBR, KC_RCBR, KC_AT
+#define ___LAYER20___ KC_GRV, KC_LABK, KC_RABK, KC_MINS, KC_PIPE, KC_CIRC, KC_LCBR, KC_RCBR, KC_DLR, KC_BSLS
+#define ___LAYER21___ HRML(KC_EXLM, KC_ASTR, KC_SLSH, KC_EQL), KC_AMPR, KC_HASH, HRMR(KC_LPRN, KC_RPRN, KC_SCLN, KC_DQUO)
+#define ___LAYER22___ KC_TILD, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC, KC_AT, KC_COLN, KC_COMM, KC_DOT, KC_QUOT
 #define ___LAYER23___ _______, _______, _______, _______
 
 #define ___LAYER30___ XRGB_NXT,  XRGB_HUI, XRGB_SAI, XRGB_VAI, XRGB_TOG, _______, _______, _______, _______, QK_MAKE
