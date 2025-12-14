@@ -2,7 +2,7 @@ layout:
   qmk_keyboard: corne_rotated
   layout_name: LAYOUT_split_3x5_3
 layers:
-  BASE:
+  LAYER0:
     - [Q, W, E, R, T, Y, U, I, O, P]
     - [
         {h: $$mdi:apple-keyboard-option$$, t: A},
@@ -15,54 +15,55 @@ layers:
         {h: $$mdi:apple-keyboard-command$$, t: L},
         {h: $$mdi:apple-keyboard-option$$, t: ;}
       ]
-    - [Z, X, C, V, B, N, M, {t: ",", s: "<"}, {t: ., s: ">"}, {t: /, s: "?"}]
-    - {t: "../"}
-    - {h: LWR, t: Esc, type: held}
+    - [Z, X, C, V, B, N, M, ",", ., "'"]
+    - {type: ghost}
+    - {h: L1, t: Esc, type: held}
     - {t: $$mdi:keyboard-space$$ }
     - {t: $$mdi:backspace-outline$$}
-    - {h: RSE, t: $$mdi:content-paste$$, type: held}
-    - {t: $$mdi:play-pause$$}
-  LOWER:
+    - {h: L2, t: "Repeat", type: held}
+    - {type: ghost}
+  LAYER1:
     - [1,2,3,4,5,6,7,8,9,0]
-    - ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
+    - ["+", "-", "*", "/", "Remove", $$mdi:arrow-left$$, $$mdi:arrow-down$$, $$mdi:arrow-up$$, $$mdi:arrow-right$$, null]
     - [
         $$mdi:volume-minus$$,
-        $$mdi:keyboard-tab$$,
-        $$mdi:apple-keyboard-caps$$,
-        "Remove", {t: "`", s: "~"},
-        $$mdi:arrow-left$$,
-        $$mdi:arrow-down$$,
-        $$mdi:arrow-up$$,
-        $$mdi:arrow-right$$,
-        $$mdi:volume-plus$$
+        $$mdi:play-pause$$,
+        $$mdi:volume-plus$$,
+        "../",
+        "User Name",
+        null,
+        null,
+        null,
+        null,
+        null,
       ]
+    - {type: ghost}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
+    - {type: ghost}
+  LAYER2:
+    - ["`", "<", ">", "-", "|", "^", "{", "}", "$", "\\"]
+    - ["!", "*", "/", "=", "&", "#", "(", ")", ";", "\""]
+    - ["~", "+", "[", "]", "%", "@", ":", ",", ".", "'"]
+    - {type: ghost}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-  RAISE:
-    - ["RGB Togg", "Mode +", "Hue +", "Sat +", "Val +", "No Mode", "Fancy", "Block", "Reg Indic", "QK Cmpl"]
-    - ["Mouse Jig", "Mode -", "Hue -", "Sat -", "Val -", "Wide", "Upsd Down", "Zalgo", "Tiny", "QK Boot"]
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {type: ghost}
+  LAYER3:
+    - ["Mode +", "Hue +", "Sat +", "Val +", "RGB Togg", null, null, null, null, "QK Cmpl"]
+    - ["Mode -", "Hue -", "Sat -", "Val -", null, null, null, null, null, "QK Boot"]
     - [F1, F2, F3, F4, F5, F6, F7, F8, F9, F10]
+    - {type: ghost}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - {type: ghost}
 combos:
-  - {p: [2, 3], k: "{}", l: ["BASE"]}
-  - {p: [3, 4], k: "\\", l: ["BASE"]}
-  - {p: [6, 7], k: "[]", l: ["BASE"]}
-  - {p: [1, 2], k: "=", l: ["BASE"]}
-  - {p: [7, 8], k: "-", l: ["BASE"]}
-  - {p: [13, 14], k: "|", l: ["BASE"]}
-  - {p: [12, 13], k: ":", l: ["BASE"]}
-  - {p: [13, 16], k: "Cap Wrd", l: ["BASE"], align: top, offset: 0.1}
-  - {p: [15, 16], k: "\"", l: ["BASE"]}
-  - {p: [5, 6], k: "'", l: ["BASE"]}
-  - {p: [11, 12], k: "+", l: ["BASE"]}
-  - {p: [16, 17], k: "Ent", l: ["BASE"]}
-  - {p: [17, 18], k: "_", l: ["BASE"]}
+  - {p: [16, 17], k: $$mdi:keyboard-return$$, l: ["LAYER0"]}
+  - {p: [12, 13], k: $$mdi:apple-keyboard-caps$$, l: ["LAYER0"]}
+  - {p: [13, 16], k: "Cap Wrd", l: ["LAYER0"], align: top, offset: 0.1}

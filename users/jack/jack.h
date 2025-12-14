@@ -72,7 +72,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 
 #define ___LAYER10___ KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0
 #define ___LAYER11___ HRML(KC_PLUS, KC_MINS, KC_ASTR, KC_SLSH), REMOVE, KC_LEFT, HRMR(KC_DOWN, KC_UP, KC_RGHT, _______)
-#define ___LAYER12___ KC_VOLD, TD(PLY_NXT_PRV), KC_VOLU, _______, USRNME, _______, _______, _______, _______, _______
+#define ___LAYER12___ KC_VOLD, TD(PLY_NXT_PRV), KC_VOLU, UPDIR, USRNME, _______, _______, _______, _______, _______
 #define ___LAYER13___ _______, _______, _______, _______
 
 #define ___LAYER20___ KC_GRV, KC_LABK, KC_RABK, KC_MINS, KC_PIPE, KC_CIRC, KC_LCBR, KC_RCBR, KC_DLR, KC_BSLS
