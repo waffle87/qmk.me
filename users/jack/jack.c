@@ -41,7 +41,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
   case ESC_L1:
-  case REP_L2:
+  case UND_L2:
   case SPC_L1:
   case BSPC_L2:
     return TAPPING_TERM - 40;
@@ -74,20 +74,16 @@ tap_dance_action_t tap_dance_actions[] = {
 
 #ifdef COMBO_ENABLE
 const uint16_t PROGMEM enter_combo[] = {RSFT_T(KC_J), RCTL_T(KC_K), COMBO_END};
-const uint16_t PROGMEM caps_combo[] = {LCTL_T(KC_D), LSFT_T(KC_F), COMBO_END};
 
-combo_t key_combos[] = {
-    COMBO(enter_combo, KC_ENT),
-    COMBO(caps_combo, KC_CAPS),
-};
+combo_t key_combos[] = {COMBO(enter_combo, KC_ENT)};
 #endif
 
-bool remember_last_key_user(uint16_t keycode, keyrecord_t *record,
-                            uint8_t *remembered_mods) {
-  if (keycode == REP_L2)
-    return false;
-  return true;
-}
+#ifdef KEY_OVERRIDE_ENABLE
+const key_override_t volume_key_override =
+    ko_make_basic(MOD_MASK_SHIFT, KC_VOLU, KC_VOLD);
+
+const key_override_t *key_overrides[] = {&volume_key_override};
+#endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (!process_record_keymap(keycode, record))
@@ -119,15 +115,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed)
       SEND_STRING("jack@pngu.org");
     break;
-  case REP_L2:
-    if (record->tap.count) {
-      repeat_key_invoke(&record->event);
+
+  case LT(LAYER2, KC_UNDS):
+    if (record->tap.count && record->event.pressed) {
+      tap_code16(KC_UNDS);
       return false;
     }
     break;
-    INTERCEPT_MOD_TAP(LALT_T, KC_PLUS)
+    INTERCEPT_MOD_TAP(LSFT_T, KC_PLUS)
     INTERCEPT_MOD_TAP(LALT_T, KC_EXLM)
-    INTERCEPT_MOD_TAP(LCTL_T, KC_ASTR)
+    INTERCEPT_MOD_TAP(LGUI_T, KC_ASTR)
     INTERCEPT_MOD_TAP(RSFT_T, KC_LPRN)
     INTERCEPT_MOD_TAP(RCTL_T, KC_RPRN)
     INTERCEPT_MOD_TAP(RALT_T, KC_DQUO)
