@@ -73,14 +73,21 @@ tap_dance_action_t tap_dance_actions[] = {
 #endif
 
 #ifdef COMBO_ENABLE
-const uint16_t PROGMEM enter_combo[] = {KC_J, KC_K, COMBO_END};
-const uint16_t PROGMEM caps_combo[] = {KC_D, KC_F, COMBO_END};
+const uint16_t PROGMEM enter_combo[] = {RSFT_T(KC_J), RCTL_T(KC_K), COMBO_END};
+const uint16_t PROGMEM caps_combo[] = {LCTL_T(KC_D), LSFT_T(KC_F), COMBO_END};
 
 combo_t key_combos[] = {
     COMBO(enter_combo, KC_ENT),
     COMBO(caps_combo, KC_CAPS),
 };
 #endif
+
+bool remember_last_key_user(uint16_t keycode, keyrecord_t *record,
+                            uint8_t *remembered_mods) {
+  if (keycode == REP_L2)
+    return false;
+  return true;
+}
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (!process_record_keymap(keycode, record))
@@ -113,7 +120,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING("jack@pngu.org");
     break;
   case REP_L2:
-    if (!record->tap.count) {
+    if (record->tap.count) {
       repeat_key_invoke(&record->event);
       return false;
     }

@@ -7,9 +7,8 @@
     },
     "bootloader": "rp2040",
     "features": {
-        "backlight": true,
-        "bootmagic": true,
-        "quantum_painter": true,
+        "backlight": false,
+        "quantum_painter": false,
         "rgb_matrix": true
     },
     "matrix_pins": {
