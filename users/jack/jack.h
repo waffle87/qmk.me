@@ -54,7 +54,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 #endif
 
 #define ESC_L1 LT(LAYER1, KC_ESC)
-#define UND_L2 LT(LAYER2, KC_UNDS)
+#define REP_L2 LT(LAYER2, KC_NO)
 #define SPC_L1 LT(LAYER1, KC_SPC)
 #define BSPC_L2 LT(LAYER2, KC_BSPC)
 #define HRML(k1, k2, k3, k4) LALT_T(k1), LGUI_T(k2), LCTL_T(k3), LSFT_T(k4)
@@ -63,21 +63,17 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 // clang-format off
 #define ___LAYER00___ KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P
 #define ___LAYER01___ HRML(KC_A, KC_S, KC_D, KC_F), KC_G, KC_H, HRMR(KC_J, KC_K, KC_L, KC_SCLN)
-#define ___LAYER02___ KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_QUOT
-#define ___LAYER03___ ESC_L1, KC_SPC, KC_BSPC, UND_L2
-
-// #define ___LAYER00___ KC_V, KC_M, KC_L, KC_C, KC_P, KC_X, KC_F, KC_O, KC_U, KC_J
-// #define ___LAYER01___ KC_S, KC_T, KC_R, KC_D, KC_Y, KC_DOT, KC_N, KC_A, KC_E, KC_I
-// #define ___LAYER02___ KC_Z, KC_K, KC_Q, KC_G, KC_W, KC_B, KC_H, KC_QUOT, KC_SCLN, KC_COMM
+#define ___LAYER02___ KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH
+#define ___LAYER03___ ESC_L1, KC_SPC, KC_BSPC, REP_L2
 
 #define ___LAYER10___ KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0
-#define ___LAYER11___ HRML(KC_SLSH, KC_ASTR, KC_MINS, KC_PLUS), KC_TAB, KC_LEFT, HRMR(KC_DOWN, KC_UP, KC_RGHT, KC_CAPS)
+#define ___LAYER11___ HRML(_______, _______, _______, _______), KC_TAB, KC_LEFT, HRMR(KC_DOWN, KC_UP, KC_RGHT, KC_CAPS)
 #define ___LAYER12___ KC_VOLU, TD(PLY_NXT_PRV), REMOVE, UPDIR, USRNME, _______, _______, _______, _______, _______
 #define ___LAYER13___ _______, _______, _______, _______
 
 #define ___LAYER20___ KC_GRV, KC_LABK, KC_RABK, KC_MINS, KC_PIPE, KC_CIRC, KC_LCBR, KC_RCBR, KC_DLR, KC_BSLS
-#define ___LAYER21___ HRML(KC_EXLM, KC_ASTR, KC_SLSH, KC_EQL), KC_AMPR, KC_HASH, HRMR(KC_LPRN, KC_RPRN, KC_SCLN, KC_DQUO)
-#define ___LAYER22___ KC_TILD, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC, KC_AT, KC_COLN, KC_COMM, KC_DOT, KC_QUOT
+#define ___LAYER21___ HRML(KC_EXLM, KC_ASTR, KC_SLSH, KC_EQL), KC_AMPR, KC_HASH, HRMR(KC_LPRN, KC_RPRN, KC_QUOT, KC_DQUO)
+#define ___LAYER22___ KC_TILD, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC, KC_AT, KC_COLN, _______, _______, _______
 #define ___LAYER23___ _______, _______, _______, _______
 
 #define ___LAYER30___ XRGB_NXT,  XRGB_HUI, XRGB_SAI, XRGB_VAI, XRGB_TOG, _______, _______, _______, _______, QK_MAKE
