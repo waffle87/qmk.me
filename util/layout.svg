@@ -36,6 +36,9 @@
 <svg id="mdi:folder-arrow-left-outline">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-folder-arrow-left-outline" viewBox="0 0 24 24"><path d="M22 8V13.81C21.39 13.46 20.72 13.22 20 13.09V8H4V18H13.09C13.04 18.33 13 18.66 13 19C13 19.34 13.04 19.67 13.09 20H4C2.9 20 2 19.11 2 18V6C2 4.89 2.89 4 4 4H10L12 6H20C21.1 6 22 6.89 22 8M18 16L15 19L18 22V20H22V18H18V16Z" /></svg>
 </svg>
+<svg id="mdi:greater-than-or-equal">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-greater-than-or-equal" viewBox="0 0 24 24"><path d="M6.5,2.27L20,10.14L6.5,18L5.5,16.27L16.03,10.14L5.5,4L6.5,2.27M20,20V22H5V20H20Z" /></svg>
+</svg>
 <svg id="mdi:keyboard-return">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-keyboard-return" viewBox="0 0 24 24"><path d="M19,7V11H5.83L9.41,7.41L8,6L2,12L8,18L9.41,16.58L5.83,13H21V7H19Z" /></svg>
 </svg>
@@ -44,6 +47,9 @@
 </svg>
 <svg id="mdi:keyboard-tab">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-keyboard-tab" viewBox="0 0 24 24"><path d="M20,18H22V6H20M11.59,7.41L15.17,11H1V13H15.17L11.59,16.58L13,18L19,12L13,6L11.59,7.41Z" /></svg>
+</svg>
+<svg id="mdi:less-than-or-equal">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-less-than-or-equal" viewBox="0 0 24 24"><path d="M18.5,2.27L5,10.14L18.5,18L19.5,16.27L8.97,10.14L19.5,4L18.5,2.27M5,20V22H20V20H5Z" /></svg>
 </svg>
 <svg id="mdi:play-pause">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-play-pause" viewBox="0 0 24 24"><path d="M3,5V19L11,12M13,19H16V5H13M18,5V19H21V5" /></svg>
@@ -305,10 +311,12 @@ path.combo {
 <g transform="translate(588, 140)" class="key keypos-27">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">,</text>
+<text x="0" y="-24" class="key shifted">&lt;</text>
 </g>
 <g transform="translate(644, 147)" class="key keypos-28">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">.</text>
+<text x="0" y="-24" class="key shifted">&gt;</text>
 </g>
 <g transform="translate(700, 161)" class="key keypos-29">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -505,11 +513,11 @@ path.combo {
 </g>
 <g transform="translate(84, 35)" class="key keypos-1">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">&lt;</text>
+<use href="#mdi:less-than-or-equal" xlink:href="#mdi:less-than-or-equal" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:less-than-or-equal"/>
 </g>
 <g transform="translate(140, 28)" class="key keypos-2">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">&gt;</text>
+<use href="#mdi:greater-than-or-equal" xlink:href="#mdi:greater-than-or-equal" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:greater-than-or-equal"/>
 </g>
 <g transform="translate(196, 35)" class="key keypos-3">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>

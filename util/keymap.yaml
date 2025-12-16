@@ -15,7 +15,7 @@ layers:
         {h: $$mdi:apple-keyboard-command$$, t: "L"},
         {h: $$mdi:apple-keyboard-option$$, t: ";"}
       ]
-    - ["Z", "X", "C", "V", "B", "N", "M", ",", ".", {t: "/", s: "?"}]
+    - ["Z", "X", "C", "V", "B", "N", "M", {t: ",", s: "<"}, {t: ".", s: ">"}, {t: "/", s: "?"}]
     - {type: ghost}
     - {h: "L1", t: "Esc", type: held}
     - {t: $$mdi:keyboard-space$$ }
@@ -44,7 +44,7 @@ layers:
     - {t: "▽", type: trans}
     - {type: ghost}
   LAYER2:
-    - ["`", "<", ">", "-", "|", "^", "{", "}", "$", "\\"]
+    - ["`", $$mdi:less-than-or-equal$$, $$mdi:greater-than-or-equal$$, "-", "|", "^", "{", "}", "$", "\\"]
     - ["!", "*", "/", "=", "&", "#", "(", ")", "'", "\""]
     - ["~", "+", "[", "]", "%", "@", ":", null, null, null]
     - {type: ghost}

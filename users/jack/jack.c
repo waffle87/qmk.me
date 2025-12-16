@@ -126,6 +126,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed)
       SEND_STRING("jack@pngu.org");
     break;
+  case GEQ:
+    if (record->event.pressed)
+      SEND_STRING(">=");
+    break;
+  case LEQ:
+    if (record->event.pressed)
+      SEND_STRING("<=");
+    break;
   case REP_L2:
     if (record->tap.count) {
       repeat_key_invoke(&record->event);
