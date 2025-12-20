@@ -13,6 +13,5 @@ echo "keyboards/endgame" >> qmk_firmware/.git/info/exclude
 qmk compile -kb endgame -km jack
 ```
 ## Layout
-A simple 34-key layout that makes use of 2 (primary) layers, home-row mods, & combos for many symbols. Mostly used in Sway, Vim (C, Python), & other generic computing tasks.
 
 ![layout](util/layout.svg)

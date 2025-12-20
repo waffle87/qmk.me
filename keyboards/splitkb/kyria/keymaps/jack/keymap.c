@@ -3,30 +3,47 @@
 #include "jack.h"
 
 // clang-format off
+#undef LAYOUT
+#define LAYOUT(                                             \
+k0G, k0F, k0E, k0D, k0C,           k4C, k4D, k4E, k4F, k4G, \
+k1G, k1F, k1E, k1D, k1C,           k5C, k5D, k5E, k5F, k5G, \
+k2G, k2F, k2E, k2D, k2C,           k6C, k6D, k6E, k6F, k6G, \
+          k3F, k3D, k3C, k3B, k7B, k7C, k7D, k7F            \
+) {                                                         \
+  {XXX, k0C, k0D, k0E, k0F, k0G,},                          \
+  {XXX, k1C, k1D, k1E, k1F, k1G,},                          \
+  {XXX, k2C, k2D, k2E, k2F, k2G,},                          \
+  {k3B, k3C, k3D, XXX, k3F, XXX,},                          \
+  {XXX, k4C, k4D, k4E, k4F, k4G,},                          \
+  {XXX, k5C, k5D, k5E, k5F, k5G,},                          \
+  {XXX, k6C, k6D, k6E, k6F, k6G,},                          \
+  {k7B, k7C, k7D, XXX, k7F, XXX,}                           \
+}
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER0] = LAYOUT_jack(
-    XXXXXXX,      KC_Q, KC_W, KC_E, KC_R,  KC_T,                                          KC_Y,      KC_U,  KC_I,    KC_O,   KC_P,     XXXXXXX,
-    XXXXXXX, HRML(KC_A, KC_S, KC_D, KC_F), KC_G,                                          KC_H, HRMR(KC_J,  KC_K,    KC_L,   KC_SCLN), XXXXXXX,
-    XXXXXXX,      KC_Z, KC_X, KC_C, KC_V,  KC_B,  KC_SPC, XXXXXXX,      XXXXXXX, KC_BSPC, KC_N,      KC_M,  KC_COMM, KC_DOT, KC_SLSH,  XXXXXXX,
-                      XXXXXXX,  XXXXXXX,  ESC_L1, KC_SPC, XXXXXXX,      XXXXXXX, KC_BSPC, REP_L2, XXXXXXX, XXXXXXX
+    ___LAYER00___,
+    ___LAYER01___,
+    ___LAYER02___,
+    XXXXXXX, XXXXXX, ___LAYER03___, XXXXXXX, XXXXXXX
   ),
   [LAYER1] = LAYOUT_jack(
-    _______,      TD(PLY_NXT_PRV),     KC_9, KC_8, KC_7,  KC_TAB,                                           _______,      _______, _______, _______, _______,  _______,
-    _______, HRML(KC_VOLU, KC_3, KC_2, KC_1), KC_CAPS,                                          KC_LEFT, HRMR(KC_DOWN, KC_UP,   KC_RGHT, _______), _______,
-    _______,      KC_VOLD, KC_6, KC_5, KC_4,  _______, _______, _______,      _______, _______, _______,      _______, _______, _______, _______,  _______,
-                            _______, _______, _______, _______, _______,      _______, _______, _______, _______, _______
+    ___LAYER10___,
+    ___LAYER11___,
+    ___LAYER12___,
+    _______, _______, ___LAYER13___, _______, _______
   ),
   [LAYER2] = LAYOUT_jack(
-    _______, KC_GRV,  KC_LABK,          KC_RABK, KC_DQUO, KC_DOT,                                         KC_AMPR, REMOVE,  KC_LBRC, KC_RBRC, KC_PERC, _______,
-    _______, KC_EXLM, TD(EM_DASH_MINS), KC_PLUS, KC_EQL,  KC_HASH,                                        KC_PIPE, KC_COLN, KC_LPRN, KC_RPRN, KC_QUES, _______,
-    _______, KC_CIRC, KC_SLSH,          KC_ASTR, KC_BSLS, UPDIR, _______, _______,      _______, _______, KC_TILD, KC_DLR,  KC_LCBR, KC_RCBR, KC_AT,   _______,
-                                      _______, _______, _______, _______, _______,      _______, _______, _______, _______, _______
+    ___LAYER20___,
+    ___LAYER21___,
+    ___LAYER22___,
+    _______, _______, ___LAYER23___, _______, _______
   ),
   [LAYER3] = LAYOUT_jack(
-    _______, XRGB_TOG, XRGB_NXT, XRGB_HUI, XRGB_SAI, XRGB_VAI,                                        _______, _______, _______, _______, QK_MAKE, _______,
-    _______, LUMINO,   XRGB_PRV, XRGB_HUD, XRGB_SAD, XRGB_VAD,                                        _______, _______, _______, _______, QK_BOOT, _______,
-    _______, KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,  _______, _______,      _______, _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
-                                  _______, _______, _______, _______, _______,      _______, _______, _______, _______, _______
+    ___LAYER30___,
+    ___LAYER31___,
+    ___LAYER32___,
+    _______, _______, ___LAYER33___, _______, _______
   )
 };
 // clang-format on
