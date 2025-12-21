@@ -25,7 +25,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ___LAYER00___,
     ___LAYER01___,
     ___LAYER02___,
-    XXXXXXX, XXXXXX, ___LAYER03___, XXXXXXX, XXXXXXX
+    XXXXXXX, XXXXXXX, ___LAYER03___, XXXXXXX, XXXXXXX
   ),
   [LAYER1] = LAYOUT_jack(
     ___LAYER10___,
@@ -49,34 +49,38 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // clang-format on
 
 #ifdef OLED_ENABLE
+
+#define X_PIXEL_COUNT OLED_DISPLAY_HEIGHT - 1
+#define MAX_WPM 160
+
 uint32_t oled_timer = 0;
 
 void oled_timer_reset(void) { oled_timer = timer_read32(); }
 
 void oled_wpm_graph(void) {
-  static uint8_t height = OLED_DISPLAY_HEIGHT - 1, vert_count = 0,
-                 max_wpm = 160;
+  static uint8_t height = X_PIXEL_COUNT, vert_count = 0;
+  static uint16_t graph_timer = 0;
   extern uint8_t oled_buffer[OLED_MATRIX_SIZE];
   extern OLED_BLOCK_TYPE oled_dirty;
-  static uint16_t graph_timer = 0;
   if (timer_elapsed(graph_timer) > 100) {
-    height = 63 - ((get_current_wpm() / (float)max_wpm) * 63);
+    height =
+        X_PIXEL_COUNT - ((get_current_wpm() / (float)MAX_WPM) * X_PIXEL_COUNT);
     for (uint8_t i = 0; i <= 1; i++)
       oled_write_pixel(3, height + i, true);
     if (vert_count == 3) {
       vert_count = 0;
-      while (height <= 63) {
+      while (height <= X_PIXEL_COUNT) {
         oled_write_pixel(3, height, true);
         height++;
       }
     } else {
-      for (uint8_t i = 63; i > height; i--)
+      for (uint8_t i = X_PIXEL_COUNT; i > height; i--)
         if (!(i % 3))
           oled_write_pixel(3, i, true);
       vert_count++;
     }
     for (uint16_t y = 0; y < 8; y++) {
-      for (uint16_t x = 124; x > 0; x--) {
+      for (uint16_t x = OLED_DISPLAY_WIDTH; x > 0; x--) {
         uint16_t i = y * OLED_DISPLAY_WIDTH + x;
         oled_buffer[i] = oled_buffer[i - 1];
         oled_dirty |= ((OLED_BLOCK_TYPE)1 << (i / OLED_BLOCK_SIZE));
