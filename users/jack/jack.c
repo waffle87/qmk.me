@@ -134,12 +134,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed)
       SEND_STRING("<=");
     break;
+  case RECALL:
+    if (record->event.pressed)
+      SEND_STRING("$_");
+    break;
   case REP_L2:
     if (record->tap.count) {
       repeat_key_invoke(&record->event);
       return false;
     }
     break;
+    INTERCEPT_MOD_TAP(LSFT_T, RECALL)
     INTERCEPT_MOD_TAP(LALT_T, KC_EXLM)
     INTERCEPT_MOD_TAP(LGUI_T, KC_ASTR)
     INTERCEPT_MOD_TAP(RSFT_T, KC_LPRN)
