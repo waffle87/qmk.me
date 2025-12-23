@@ -144,7 +144,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
     }
     break;
-    INTERCEPT_MOD_TAP(LSFT_T, RECALL)
     INTERCEPT_MOD_TAP(LALT_T, KC_EXLM)
     INTERCEPT_MOD_TAP(LGUI_T, KC_ASTR)
     INTERCEPT_MOD_TAP(RSFT_T, KC_LPRN)
