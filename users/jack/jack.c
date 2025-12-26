@@ -99,10 +99,12 @@ bool remember_last_key_user(uint16_t keycode, keyrecord_t *record,
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (!process_record_keymap(keycode, record))
     return false;
+  const mod_t mods = get_mod_state();
+  bool shifted = mods.left_shift || mods.right_shift;
   switch (keycode) {
   case KC_MINS:
 #ifdef UNICODE_COMMON_ENABLE
-    if (get_mods() & MOD_MASK_SHIFT) {
+    if (shifted) {
       if (record->event.pressed)
         register_unicode(0x2014);
       return false;
@@ -138,14 +140,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed)
       SEND_STRING("$_");
     break;
+  case PM_ASGN:
+    if (record->event.pressed) {
+      tap_code16(shifted ? KC_MINS : KC_PLUS);
+      tap_code(KC_EQL);
+    }
+    break;
   case REP_L2:
     if (record->tap.count) {
       repeat_key_invoke(&record->event);
       return false;
     }
     break;
-    INTERCEPT_MOD_TAP(LALT_T, KC_EXLM)
-    INTERCEPT_MOD_TAP(LGUI_T, KC_ASTR)
     INTERCEPT_MOD_TAP(RSFT_T, KC_LPRN)
     INTERCEPT_MOD_TAP(RCTL_T, KC_RPRN)
     INTERCEPT_MOD_TAP(RALT_T, KC_DQUO)

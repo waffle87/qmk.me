@@ -7,7 +7,15 @@ enum layers { LAYER0, LAYER1, LAYER2, LAYER3 };
 
 enum tapdances { PLY_NXT_PRV };
 
-enum custom_keycodes { UPDIR = QK_USER, REMOVE, USRNME, GEQ, LEQ, RECALL };
+enum custom_keycodes {
+  UPDIR = QK_USER,
+  REMOVE,
+  USRNME,
+  GEQ,
+  LEQ,
+  RECALL,
+  PM_ASGN
+};
 
 void keyboard_post_init_keymap(void);
 layer_state_t layer_state_set_keymap(layer_state_t state);
@@ -72,7 +80,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 #define ___LAYER13___ _______, _______, _______, _______
 
 #define ___LAYER20___ KC_GRV, LEQ, GEQ, KC_MINS, KC_PIPE, KC_CIRC, KC_LCBR, KC_RCBR, KC_DLR, KC_BSLS
-#define ___LAYER21___ HRML(KC_EXLM, KC_ASTR, KC_SLSH, KC_EQL), KC_AMPR, KC_HASH, HRMR(KC_LPRN, KC_RPRN, KC_QUOT, KC_DQUO)
+#define ___LAYER21___ KC_EXLM, KC_ASTR, PM_ASGN, KC_EQL, KC_AMPR, KC_HASH, HRMR(KC_LPRN, KC_RPRN, KC_QUOT, KC_DQUO)
 #define ___LAYER22___ KC_TILD, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC, KC_AT, KC_COLN, _______, _______, _______
 #define ___LAYER23___ _______, _______, _______, _______
 
