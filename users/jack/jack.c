@@ -142,8 +142,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
   case PM_ASGN:
     if (record->event.pressed) {
-      tap_code16(shifted ? KC_MINS : KC_PLUS);
-      tap_code(KC_EQL);
+      if (shifted)
+        clear_mods(), SEND_STRING("-=");
+      else
+        SEND_STRING("+=");
     }
     break;
   case REP_L2:
