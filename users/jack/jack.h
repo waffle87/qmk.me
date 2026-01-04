@@ -90,6 +90,6 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 #define ___LAYER33___ _______, _______, _______, _______
 // clang-format on
 
-#define LAYOUT_jack_60_ts(...) LAYOUT_60_ansi_tsangan(__VA_ARGS__)
+#define LAYOUT_jack_sp(...) LAYOUT_split_space(__VA_ARGS__)
 #define LAYOUT_jack_all(...) LAYOUT_all(__VA_ARGS__)
 #define LAYOUT_jack(...) LAYOUT(__VA_ARGS__)
