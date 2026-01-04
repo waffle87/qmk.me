@@ -10,14 +10,14 @@ k1G, k1F, k1E, k1D, k1C,           k5C, k5D, k5E, k5F, k5G, \
 k2G, k2F, k2E, k2D, k2C,           k6C, k6D, k6E, k6F, k6G, \
           k3F, k3D, k3C, k3B, k7B, k7C, k7D, k7F            \
 ) {                                                         \
-  {XXX, k0C, k0D, k0E, k0F, k0G,},                          \
-  {XXX, k1C, k1D, k1E, k1F, k1G,},                          \
-  {XXX, k2C, k2D, k2E, k2F, k2G,},                          \
-  {k3B, k3C, k3D, XXX, k3F, XXX,},                          \
-  {XXX, k4C, k4D, k4E, k4F, k4G,},                          \
-  {XXX, k5C, k5D, k5E, k5F, k5G,},                          \
-  {XXX, k6C, k6D, k6E, k6F, k6G,},                          \
-  {k7B, k7C, k7D, XXX, k7F, XXX,}                           \
+  {XXX, XXX, k0C, k0D, k0E, k0F, k0G},                      \
+  {XXX, XXX, k1C, k1D, k1E, k1F, k1G},                      \
+  {XXX, XXX, k2C, k2D, k2E, k2F, k2G},                      \
+  {XXX, k3B, k3C, k3D, XXX, k3F, XXX},                      \
+  {XXX, XXX, k4C, k4D, k4E, k4F, k4G},                      \
+  {XXX, XXX, k5C, k5D, k5E, k5F, k5G},                      \
+  {XXX, XXX, k6C, k6D, k6E, k6F, k6G},                      \
+  {XXX, k7B, k7C, k7D, XXX, k7F, XXX}                       \
 }
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
