@@ -1,4 +1,4 @@
-// Copyright 2025 jack@pngu.org
+// Copyright 2026 jack@pngu.org
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "color.h"
 #include <lib/lib8tion/lib8tion.h>
