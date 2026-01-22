@@ -101,6 +101,7 @@ reprot        -> report
 singel        -> single
 stregth       -> strength
 strengh       -> strength
+strut         -> struct
 tkaes         -> takes
 therfore      -> therefore
 todya         -> today
