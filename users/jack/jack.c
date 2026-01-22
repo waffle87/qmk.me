@@ -32,12 +32,6 @@ bool process_detected_host_os_user(os_variant_t detected_os) {
 }
 #endif
 
-layer_state_t layer_state_set_user(layer_state_t state) {
-  state = update_tri_layer_state(state, LAYER1, LAYER2, LAYER3);
-  state = layer_state_set_keymap(state);
-  return state;
-}
-
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
   case ESC_L1:
@@ -168,4 +162,37 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [LAYER2] = {{_______, _______}, {_______, _______}},
     [LAYER3] = {{_______, _______}, {_______, _______}},
 };
+#endif
+
+static bool scrolling = false;
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+  switch (get_highest_layer(state)) {
+  case LAYER1:
+    scrolling = true;
+#ifdef POINTING_DEVICE_ENABLE
+    pointing_device_set_cpi(64);
+#endif
+    break;
+  default:
+    if (scrolling) {
+      scrolling = false;
+#ifdef POINTING_DEVICE_ENABLE
+      pointing_device_set_cpi(1024);
+#endif
+    }
+  }
+  return update_tri_layer_state(state, LAYER1, LAYER2, LAYER3);
+}
+
+#ifdef POINTING_DEVICE_ENABLE
+report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
+  if (scrolling) {
+    mouse_report.h = mouse_report.x;
+    mouse_report.v = -mouse_report.y;
+    mouse_report.x = 0;
+    mouse_report.y = 0;
+  }
+  return mouse_report;
+}
 #endif

@@ -18,7 +18,6 @@ enum custom_keycodes {
 };
 
 void keyboard_post_init_keymap(void);
-layer_state_t layer_state_set_keymap(layer_state_t state);
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 
 #define INTERCEPT_MOD_TAP(mod, keycode)                                        \
