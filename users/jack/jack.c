@@ -148,6 +148,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
     }
     break;
+    INTERCEPT_MOD_TAP(RALT_T, KC_CAPS)
     INTERCEPT_MOD_TAP(RSFT_T, KC_LPRN)
     INTERCEPT_MOD_TAP(RCTL_T, KC_RPRN)
     INTERCEPT_MOD_TAP(RALT_T, KC_DQUO)
