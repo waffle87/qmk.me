@@ -79,8 +79,13 @@ combo_t key_combos[] = {
 #ifdef KEY_OVERRIDE_ENABLE
 const key_override_t volume_key_override =
     ko_make_basic(MOD_MASK_SHIFT, KC_VOLU, KC_VOLD);
+const key_override_t bspc_del_override =
+    ko_make_basic(MOD_MASK_SHIFT, KC_DEL, KC_BSPC);
 
-const key_override_t *key_overrides[] = {&volume_key_override};
+const key_override_t *key_overrides[] = {
+    &volume_key_override,
+    &bspc_del_override,
+};
 #endif
 
 bool remember_last_key_user(uint16_t keycode, keyrecord_t *record,
