@@ -1,5 +1,6 @@
 {
   "modules": [
+    "getreuer/cyclotab",
     "getreuer/lumino",
     "getreuer/palettefx"
   ]
