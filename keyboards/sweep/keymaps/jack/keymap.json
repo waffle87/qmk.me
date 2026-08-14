@@ -2,6 +2,7 @@
   "modules": [
     "getreuer/cyclotab",
     "getreuer/lumino",
-    "getreuer/palettefx"
+    "getreuer/palettefx",
+    "getreuer/select_word"
   ]
 }
